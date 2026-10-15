@@ -1,0 +1,571 @@
+/**
+ * MedInson Stomatolog Relay Server & Universal SDK Client
+ * Compliant with MedInson Public Booking API Specification v1
+ *
+ * Doctor: Dr. MuhammadAli Davronov (DM Stomatologiya, Andijon)
+ * License / Site ID: ny54hk66wu
+ * Relay Server: https://dentist-medinson-license.uz
+ */
+
+import { useState, useEffect } from "react";
+import { DOCTOR_INFO } from "../constants/doctor";
+import { sanitizePatientName, sanitizeNote, isValidIsoDate } from "../utils/security";
+
+export const DEFAULT_API_URL =
+  (typeof import.meta !== "undefined" &&
+    (import.meta.env?.VITE_MEDINSON_API_URL || import.meta.env?.NEXT_PUBLIC_MEDINSON_API_URL)) ||
+  "https://dentist-medinson-license.uz";
+
+export const DEFAULT_SITE_ID =
+  (typeof import.meta !== "undefined" &&
+    (import.meta.env?.VITE_MEDINSON_SITE_ID || import.meta.env?.NEXT_PUBLIC_MEDINSON_SITE_ID)) ||
+  "ny54hk66wu";
+
+export const DEFAULT_DOMAIN =
+  (typeof import.meta !== "undefined" &&
+    (import.meta.env?.VITE_MEDINSON_DOMAIN || import.meta.env?.NEXT_PUBLIC_MEDINSON_DOMAIN)) ||
+  "stomatolog-muhammadali.uz";
+
+const LOCAL_BOOKED_STORAGE_KEY = "stomatolog_muhammadali_booked_slots_v1";
+
+const pad2 = (n) => String(n).padStart(2, "0");
+
+export const toBase64 = (bytes) => {
+  let binary = "";
+  const arr = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  for (let i = 0; i < arr.length; i += 1) binary += String.fromCharCode(arr[i]);
+  return btoa(binary);
+};
+
+export const fromBase64 = (b64) => {
+  const binary = atob(String(b64 || "").trim());
+  const out = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) out[i] = binary.charCodeAt(i);
+  return out;
+};
+
+export const randomHex = (byteLength = 24) => {
+  const bytes = new Uint8Array(byteLength);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
+};
+
+export const sha256Hex = async (text) => {
+  const data = new TextEncoder().encode(String(text || ""));
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, "0")).join("");
+};
+
+export const sealPatientDetails = async (details, publicKeyBase64) => {
+  const subtle = window.crypto?.subtle;
+  if (!subtle || !publicKeyBase64) return null;
+  const rsaKey = await subtle.importKey(
+    "spki",
+    fromBase64(publicKeyBase64),
+    { name: "RSA-OAEP", hash: "SHA-256" },
+    false,
+    ["encrypt"]
+  );
+  const aesKey = await subtle.generateKey({ name: "AES-GCM", length: 256 }, true, ["encrypt"]);
+  const iv = window.crypto.getRandomValues(new Uint8Array(12));
+  const encoded = new TextEncoder().encode(JSON.stringify(details));
+  const ciphertext = await subtle.encrypt({ name: "AES-GCM", iv }, aesKey, encoded);
+  const rawAes = await subtle.exportKey("raw", aesKey);
+  const wrappedKey = await subtle.encrypt({ name: "RSA-OAEP" }, rsaKey, rawAes);
+  return {
+    v: 1,
+    alg: "RSA-OAEP-256+A256GCM",
+    key: toBase64(wrappedKey),
+    iv: toBase64(iv),
+    data: toBase64(ciphertext),
+  };
+};
+
+export const readLocalBookedSet = () => {
+  try {
+    if (typeof window === "undefined" || !window.localStorage) return new Set();
+    const raw = window.localStorage.getItem(LOCAL_BOOKED_STORAGE_KEY);
+    const list = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(list) ? list : []);
+  } catch {
+    return new Set();
+  }
+};
+
+export const recordLocalBookedSlot = (date, time) => {
+  try {
+    if (typeof window === "undefined" || !window.localStorage) return;
+    const set = readLocalBookedSet();
+    set.add(`${date}_${time}`);
+    window.localStorage.setItem(LOCAL_BOOKED_STORAGE_KEY, JSON.stringify([...set].slice(-200)));
+  } catch {
+    /* ignore */
+  }
+};
+
+/**
+ * Returns current Date in Uzbekistan timezone (Asia/Tashkent, UTC+5).
+ */
+export const getClinicNow = () => {
+  try {
+    const now = new Date();
+    const uzStr = now.toLocaleString("en-US", { timeZone: "Asia/Tashkent" });
+    const parsed = new Date(uzStr);
+    if (!isNaN(parsed.getTime())) return parsed;
+  } catch {
+    /* fallback to local machine time */
+  }
+  return new Date();
+};
+
+/**
+ * Returns YYYY-MM-DD string for today in Uzbekistan timezone (Asia/Tashkent).
+ */
+export const getClinicTodayStr = () => {
+  const clinicNow = getClinicNow();
+  const yyyy = clinicNow.getFullYear();
+  const mm = pad2(clinicNow.getMonth() + 1);
+  const dd = pad2(clinicNow.getDate());
+  return `${yyyy}-${mm}-${dd}`;
+};
+
+/**
+ * Validates whether a time slot is bookable:
+ * 1. Must fall within normal clinic opening hours: 08:30 – 19:00
+ * 2. If the slot is today: must be at least minLeadHours (default: 2 hours) ahead of current time.
+ */
+export const isSlotAvailableWithLeadTime = (dateStr, timeStr, minLeadHours = 2) => {
+  const [slotH, slotM] = String(timeStr || "").split(":").map(Number);
+  if (isNaN(slotH)) return false;
+
+  const slotMinutes = slotH * 60 + (slotM || 0);
+  if (slotMinutes < 8 * 60 + 30 || slotMinutes > 19 * 60) {
+    return false;
+  }
+
+  const clinicNow = getClinicNow();
+  const yyyy = clinicNow.getFullYear();
+  const mm = pad2(clinicNow.getMonth() + 1);
+  const dd = pad2(clinicNow.getDate());
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  if (dateStr < todayStr) return false;
+
+  if (dateStr === todayStr) {
+    const nowMinutes = clinicNow.getHours() * 60 + clinicNow.getMinutes();
+    const minRequiredMinutes = nowMinutes + Math.round(minLeadHours * 60);
+    if (slotMinutes < minRequiredMinutes) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+/**
+ * Sanitizes and filters an array of day objects ({ date, times: [...] })
+ */
+export const filterAvailabilitySchedule = (days = [], minLeadHours = 2) => {
+  if (!Array.isArray(days)) return [];
+  const bookedSet = readLocalBookedSet();
+  const clinicNow = getClinicNow();
+  const yyyy = clinicNow.getFullYear();
+  const mm = pad2(clinicNow.getMonth() + 1);
+  const dd = pad2(clinicNow.getDate());
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  return days
+    .filter((d) => d && d.date && d.date >= todayStr)
+    .map((d) => {
+      const rawTimes = Array.isArray(d.times) ? d.times : Array.isArray(d.slots) ? d.slots : [];
+      const cleanTimes = rawTimes.filter(
+        (t) =>
+          !bookedSet.has(`${d.date}_${t}`) &&
+          isSlotAvailableWithLeadTime(d.date, t, minLeadHours)
+      );
+      return {
+        ...d,
+        times: cleanTimes,
+        slots: cleanTimes,
+        isClosed: cleanTimes.length === 0,
+      };
+    });
+};
+
+/**
+ * Builds a working hours schedule (Mon-Sat 08:30-18:30) when relay slots are empty or offline.
+ */
+export const buildWorkingHoursSchedule = (daysCount = 10, minLeadHours = 2) => {
+  const workingDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const bookedSet = readLocalBookedSet();
+  const DAY_CODES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const out = [];
+
+  const base = getClinicNow();
+  for (let i = 0; out.length < daysCount && i < 30; i++) {
+    const d = new Date(base);
+    d.setDate(base.getDate() + i);
+    const dayCode = DAY_CODES[d.getDay()];
+    if (!workingDays.includes(dayCode)) continue;
+
+    const yyyy = d.getFullYear();
+    const mm = pad2(d.getMonth() + 1);
+    const dd = pad2(d.getDate());
+    const dateStr = `${yyyy}-${mm}-${dd}`;
+
+    const slots = [
+      "09:00", "09:45", "10:30", "11:15", "12:00",
+      "13:00", "14:00", "14:45", "15:30", "16:15", "17:00", "17:45", "18:00"
+    ].filter((t) => !bookedSet.has(`${dateStr}_${t}`) && isSlotAvailableWithLeadTime(dateStr, t, minLeadHours));
+
+    out.push({
+      date: dateStr,
+      times: slots,
+      slots,
+      isClosed: slots.length === 0,
+    });
+  }
+
+  return out;
+};
+
+let cachedAvailability = null;
+
+export function getCachedAvailability() {
+  return cachedAvailability;
+}
+
+/**
+ * Calculates current active booking hours dynamically from live app availability data.
+ */
+export function getClinicOpeningHours(lang = "uz") {
+  const data = getCachedAvailability();
+  let startTime = "08:30";
+  let endTime = "18:30";
+
+  if (data?.days && Array.isArray(data.days) && data.days.length > 0) {
+    let minT = "";
+    let maxT = "";
+    for (const d of data.days) {
+      if (Array.isArray(d.times)) {
+        for (const t of d.times) {
+          const [h] = t.split(":").map(Number);
+          if (h >= 8 && h <= 21) {
+            if (!minT || t < minT) minT = t;
+            if (!maxT || t > maxT) maxT = t;
+          }
+        }
+      }
+    }
+    if (minT && maxT) {
+      startTime = minT;
+      endTime = maxT;
+    }
+  } else if (data?.dentist?.workingHours?.start && data?.dentist?.workingHours?.end) {
+    const s = data.dentist.workingHours.start;
+    const e = data.dentist.workingHours.end;
+    if (s !== "00:00" || e !== "23:30") {
+      startTime = s;
+      endTime = e;
+    }
+  }
+
+  const daysLabel = {
+    uz: "Dushanba – Shanba",
+    ru: "Понедельник – Суббота",
+    en: "Monday – Saturday",
+  }[lang] || "Dushanba – Shanba";
+
+  const sundayLabel = {
+    uz: "Yakshanba — oldindan yozilish bo'yicha",
+    ru: "Воскресенье — по предварительной записи",
+    en: "Sunday — by prior appointment",
+  }[lang] || "Yakshanba — oldindan yozilish bo'yicha";
+
+  return {
+    start: startTime,
+    end: endTime,
+    days: daysLabel,
+    hours: `${startTime} – ${endTime}`,
+    full: `${daysLabel}: ${startTime} – ${endTime}`,
+    sunday: sundayLabel,
+  };
+}
+
+/**
+ * React hook that dynamically returns the dentist's active booking hours.
+ */
+export function useClinicHours(lang = "uz") {
+  const [, setTick] = useState(0);
+
+  useEffect(() => {
+    const handler = () => {
+      setTick((t) => t + 1);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("dentist_availability_updated", handler);
+      if (!getCachedAvailability()) {
+        fetchDentistAvailability().catch(() => {});
+      }
+      return () => window.removeEventListener("dentist_availability_updated", handler);
+    }
+  }, []);
+
+  return getClinicOpeningHours(lang);
+}
+
+/**
+ * Endpoint A: Fetch Live Availability & Dentist Profile
+ * Works with MedInson Universal SDK or direct Relay API
+ */
+export async function fetchDentistAvailability({
+  siteId = DEFAULT_SITE_ID,
+  apiUrl = DEFAULT_API_URL,
+  date = "",
+} = {}) {
+  // If window.MedInsonBooking SDK is initialized, prefer it
+  if (typeof window !== "undefined" && window.MedInsonBooking?.defaultClient?.getAvailability) {
+    try {
+      const sdkData = await window.MedInsonBooking.defaultClient.getAvailability({ date: date || undefined });
+      if (sdkData && (sdkData.success !== false || sdkData.ok !== false)) {
+        cachedAvailability = sdkData;
+        window.dispatchEvent(new CustomEvent("dentist_availability_updated", { detail: sdkData }));
+        return sdkData;
+      }
+    } catch {
+      // Fall through to direct fetch
+    }
+  }
+
+  const base = String(apiUrl || DEFAULT_API_URL).replace(/\/+$/, "");
+  const params = new URLSearchParams();
+  if (siteId) params.set("site", String(siteId).slice(0, 50));
+  if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) params.set("date", date);
+  const url = `${base}/api/public/booking/availability${params.toString() ? `?${params}` : ""}`;
+
+  const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+  const timeoutId = controller ? setTimeout(() => controller.abort(), 9000) : null;
+
+  try {
+    const res = await fetch(url, {
+      headers: { Accept: "application/json" },
+      signal: controller ? controller.signal : undefined,
+    });
+    if (timeoutId) clearTimeout(timeoutId);
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      const err = new Error(data?.message || `Availability error (${res.status})`);
+      err.status = res.status;
+      err.data = data;
+      throw err;
+    }
+    cachedAvailability = data;
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("dentist_availability_updated", { detail: data }));
+    }
+    return data;
+  } catch (e) {
+    if (timeoutId) clearTimeout(timeoutId);
+    throw e;
+  }
+}
+
+/**
+ * Endpoint B: Submit a Booking Request (E2E Encrypted + Telegram Deep-Link)
+ */
+export async function submitDentistBooking({
+  siteId = DEFAULT_SITE_ID,
+  apiUrl = DEFAULT_API_URL,
+  date,
+  time,
+  name,
+  phone,
+  dob = "",
+  note = "",
+  reason = "",
+}) {
+  const cleanName = sanitizePatientName(name);
+  const cleanPhone = String(phone || "").trim().slice(0, 30);
+  const cleanDob = isValidIsoDate(dob) ? dob : "";
+  const cleanNote = sanitizeNote(note || reason, 400);
+  const cleanDate = String(date || "").trim().slice(0, 10);
+  const cleanTime = String(time || "").trim().slice(0, 5);
+  const bookingId = `DM-${Date.now().toString(36).toUpperCase().slice(-6)}`;
+
+  // Record slot locally right away
+  recordLocalBookedSlot(cleanDate, cleanTime);
+
+  // If window.MedInsonBooking SDK is available on window, try it first
+  if (typeof window !== "undefined" && window.MedInsonBooking?.defaultClient?.book) {
+    try {
+      const sdkRes = await window.MedInsonBooking.defaultClient.book({
+        date: cleanDate,
+        time: cleanTime,
+        name: cleanName,
+        phone: cleanPhone,
+        reason: cleanNote,
+        note: cleanNote,
+      });
+      if (sdkRes && (sdkRes.ok || sdkRes.success)) {
+        return {
+          ...sdkRes,
+          bookingId: sdkRes.id || bookingId,
+          telegramUrl: DOCTOR_INFO.telegramUrl,
+          botUsername: "dm_muxammadali",
+          isLiveRelay: true,
+        };
+      }
+    } catch {
+      // Continue to HTTP relay or fallback
+    }
+  }
+
+  const base = String(apiUrl || DEFAULT_API_URL).replace(/\/+$/, "");
+  if (!cachedAvailability) {
+    try {
+      await fetchDentistAvailability({ siteId, apiUrl });
+    } catch {
+      // continue gracefully
+    }
+  }
+
+  const publicKey = cachedAvailability?.publicKey || "";
+  const botUsername = String(cachedAvailability?.botUsername || "").replace(/^@+/, "");
+
+  let linkToken = "";
+  let linkTokenHash = "";
+  if (typeof window !== "undefined" && window.crypto?.subtle) {
+    linkToken = randomHex(24);
+    linkTokenHash = await sha256Hex(linkToken);
+  }
+
+  const details = {
+    name: cleanName,
+    phone: cleanPhone,
+    dob: cleanDob,
+    note: cleanNote,
+    linkToken,
+  };
+
+  const payload = {
+    site: siteId ? String(siteId).slice(0, 50) : undefined,
+    date: cleanDate,
+    time: cleanTime,
+    source: typeof window !== "undefined" ? window.location.hostname : DEFAULT_DOMAIN,
+  };
+
+  if (linkTokenHash) payload.linkTokenHash = linkTokenHash;
+
+  if (publicKey && typeof window !== "undefined" && window.crypto?.subtle) {
+    payload.sealed = await sealPatientDetails(details, publicKey);
+  } else {
+    payload.name = details.name;
+    payload.phone = details.phone;
+    if (details.dob) payload.dob = details.dob;
+    payload.note = details.note;
+  }
+
+  const params = siteId ? `?site=${encodeURIComponent(siteId)}` : "";
+  const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+  const timeoutId = controller ? setTimeout(() => controller.abort(), 10000) : null;
+
+  try {
+    const res = await fetch(`${base}/api/public/booking/request${params}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined,
+    });
+    if (timeoutId) clearTimeout(timeoutId);
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data?.success === false) {
+      const err = new Error(data?.message || "Qabulga yozilishda xatolik yuz berdi");
+      err.status = res.status;
+      err.data = data;
+      if (res.status === 409) {
+        throw err;
+      }
+      return buildFallbackBookingResult({
+        date: cleanDate,
+        time: cleanTime,
+        name: cleanName,
+        phone: cleanPhone,
+        dob: cleanDob,
+        note: cleanNote,
+        bookingId,
+        linkToken,
+        botUsername,
+      });
+    }
+
+    const telegramUrl =
+      botUsername && linkToken
+        ? `https://t.me/${botUsername}?start=${encodeURIComponent(linkToken)}`
+        : DOCTOR_INFO.telegramUrl;
+
+    return {
+      ...data,
+      bookingId: data?.id || bookingId,
+      linkToken: linkToken || null,
+      telegramUrl,
+      botUsername: botUsername || "dm_muxammadali",
+      isLiveRelay: true,
+    };
+  } catch (err) {
+    if (timeoutId) clearTimeout(timeoutId);
+    if (err.status === 409) {
+      throw err;
+    }
+    return buildFallbackBookingResult({
+      date: cleanDate,
+      time: cleanTime,
+      name: cleanName,
+      phone: cleanPhone,
+      dob: cleanDob,
+      note: cleanNote,
+      bookingId,
+      linkToken,
+      botUsername,
+    });
+  }
+}
+
+function buildFallbackBookingResult({ date, time, name, phone, dob, note, bookingId, linkToken, botUsername }) {
+  const telegramMessage = encodeURIComponent(
+    `Assalomu alaykum, Dr. MuhammadAli Davronov! 🦷\n\nDM Stomatologiya sayti orqali qabulga yozilish:\n👤 Bemor: ${name}\n📞 Tel: ${phone}${dob ? `\n🎂 Tug'ilgan sana: ${dob}` : ""}\n📅 Sana: ${date}\n⏰ Vaqt: ${time}${note ? `\n📋 Xizmat/Izoh: ${note}` : ""}\n🆔 Buyurtma: #${bookingId}`
+  );
+  const telegramUrl = botUsername && linkToken
+    ? `https://t.me/${botUsername}?start=${encodeURIComponent(linkToken)}`
+    : `https://t.me/dm_muxammadali?text=${telegramMessage}`;
+
+  return {
+    ok: true,
+    success: true,
+    status: "pending",
+    id: bookingId,
+    bookingId,
+    date,
+    time,
+    message: "So'rovingiz qabul qilindi. Tez orada Dr. MuhammadAli qabulxonasidan siz bilan bog'lanamiz.",
+    linkToken: linkToken || null,
+    telegramUrl,
+    botUsername: botUsername || "dm_muxammadali",
+    isFallback: true,
+  };
+}
+
+export async function submitMedinsonBooking(params) {
+  return submitDentistBooking({
+    siteId: params.siteId || DEFAULT_SITE_ID,
+    apiUrl: params.apiUrl || DEFAULT_API_URL,
+    date: params.preferredDate || params.date,
+    time: params.preferredTime || params.time,
+    name: params.name,
+    phone: params.phone,
+    dob: params.dob || "",
+    note: params.note || params.reason || "",
+  });
+}

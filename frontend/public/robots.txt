@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /__not-found__
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+Sitemap: https://stomatolog-muhammadali.uz/sitemap.xml
+Host: https://stomatolog-muhammadali.uz

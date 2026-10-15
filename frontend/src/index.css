@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  background-color: #000000;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-serif-classic,
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #830000;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BC0202;
+}
+
+.glass-card {
+  background: rgba(14, 6, 6, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(131, 0, 0, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(188, 2, 2, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+.glass-card-hover:hover {
+  border-color: rgba(188, 2, 2, 0.6);
+  box-shadow: 0 14px 40px -10px rgba(255, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.brand-badge {
+  background: rgba(131, 0, 0, 0.25);
+  border: 1px solid rgba(188, 2, 2, 0.45);
+  color: #FF6666;
+}
+
+/* Ambient UI Motion & Luxury Keyframes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+.animate-shimmer-sweep {
+  animation: shimmerSweep 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 3D Perspective and Transform Helpers */
+.perspective-800 {
+  perspective: 800px;
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.perspective-1500 {
+  perspective: 1500px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+.translate-z-40 {
+  transform: translateZ(40px);
+}
+.translate-z-50 {
+  transform: translateZ(50px);
+}
+
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotateX(2deg) rotateY(-3deg);
+  }
+  75% {
+    transform: translateY(4px) rotateX(-2deg) rotateY(3deg);
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(188, 2, 2, 0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(188, 2, 2, 0);
+  }
+}
+
+@keyframes redSheen {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-3d {
+  animation: float3D 7s ease-in-out infinite;
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 2.4s ease-in-out infinite;
+}
+
+.red-sheen-border {
+  background: linear-gradient(90deg, #000000, #830000, #BC0202, #FF0000, #BC0202, #830000, #000000);
+  background-size: 200% auto;
+  animation: redSheen 4s linear infinite;
+}
+
+/* Digital Dentistry Scanner & 3D Visual Keyframes */
+@keyframes laserScan {
+  0% {
+    top: -4%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  88% {
+    opacity: 0.95;
+  }
+  100% {
+    top: 104%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-scan {
+  animation: laserScan 3.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes holographicShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.holographic-sheen {
+  background: linear-gradient(135deg, rgba(20, 8, 8, 0.95) 0%, rgba(40, 10, 10, 0.8) 40%, rgba(188, 2, 2, 0.3) 70%, rgba(20, 8, 8, 0.95) 100%);
+  background-size: 200% 200%;
+  animation: holographicShine 7s ease infinite;
+}
+
+.digital-grid-pattern {
+  background-image: radial-gradient(rgba(188, 2, 2, 0.18) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+@keyframes scannerPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(131, 0, 0, 0.4), inset 0 0 15px rgba(188, 2, 2, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6), inset 0 0 25px rgba(255, 0, 0, 0.35);
+  }
+}
+
+.animate-scanner-pulse {
+  animation: scannerPulse 2.8s ease-in-out infinite;
+}
+
+@media print {
+  nav, footer, .no-print {
+    display: none !important;
+  }
+}
