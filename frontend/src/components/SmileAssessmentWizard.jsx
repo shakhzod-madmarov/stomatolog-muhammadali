@@ -155,16 +155,16 @@ export const SmileAssessmentWizard = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-[#000000]" aria-labelledby="assessment-heading">
+    <section className="w-full py-12 sm:py-16 bg-slate-50 border-y border-slate-200/80" aria-labelledby="assessment-heading">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary-electric bg-primary-dark/30 border border-primary-crimson/40 shadow-xs mb-2 uppercase">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
             {stepsData.badge}
           </span>
-          <h2 id="assessment-heading" className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+          <h2 id="assessment-heading" className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
             {stepsData.title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2">
             {stepsData.subtitle}
           </p>
         </div>
@@ -176,7 +176,7 @@ export const SmileAssessmentWizard = () => {
           glare={false}
           className="w-full"
         >
-          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-2xl">
+          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
           {/* Step Indicators */}
           <div className="flex items-center justify-center gap-2 mb-8" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3} aria-label="Assessment Progress">
             {[1, 2, 3].map((s) => (
@@ -184,10 +184,10 @@ export const SmileAssessmentWizard = () => {
                 key={s}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   s === step
-                    ? "w-10 bg-primary-electric shadow-glow-red"
+                    ? "w-10 bg-primary shadow-xs"
                     : s < step
-                    ? "w-6 bg-primary-crimson"
-                    : "w-6 bg-neutral-800"
+                    ? "w-6 bg-primary/50"
+                    : "w-6 bg-slate-200"
                 }`}
               />
             ))}
@@ -196,7 +196,7 @@ export const SmileAssessmentWizard = () => {
           {/* Step 1: Complaint */}
           {step === 1 && (
             <fieldset>
-              <legend className="text-base sm:text-lg font-bold text-white mb-4 text-center block w-full">
+              <legend className="text-base sm:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
                 {stepsData.step1Title}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3" role="group" aria-label={stepsData.step1Title}>
@@ -205,9 +205,9 @@ export const SmileAssessmentWizard = () => {
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectComplaint(item)}
-                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-black/50 border border-white/10 hover:border-primary-crimson/50 hover:bg-black/80 transition-all flex items-center gap-3 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-200 group"
+                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-3 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
                   >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-elevated border border-white/10 text-primary-electric flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary-electric group-hover:text-white transition-colors">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
                       {renderComplaintIcon(item.id, "w-4 h-4 sm:w-5 sm:h-5")}
                     </div>
                     <span>{item.label}</span>
@@ -220,7 +220,7 @@ export const SmileAssessmentWizard = () => {
           {/* Step 2: Priority */}
           {step === 2 && (
             <fieldset>
-              <legend className="text-base sm:text-lg font-bold text-white mb-4 text-center block w-full">
+              <legend className="text-base sm:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
                 {stepsData.step2Title}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3" role="group" aria-label={stepsData.step2Title}>
@@ -229,9 +229,9 @@ export const SmileAssessmentWizard = () => {
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectPriority(item)}
-                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-black/50 border border-white/10 hover:border-primary-crimson/50 hover:bg-black/80 transition-all flex items-center gap-3 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-200 group"
+                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-3 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
                   >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-elevated border border-white/10 text-primary-electric flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary-electric group-hover:text-white transition-colors">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
                       {renderPriorityIcon(item.id, "w-4 h-4 sm:w-5 sm:h-5")}
                     </div>
                     <span>{item.label}</span>
@@ -244,22 +244,22 @@ export const SmileAssessmentWizard = () => {
           {/* Step 3: Result */}
           {step === 3 && complaint && (
             <div className="text-center animate-in fade-in duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary-dark/30 text-primary-electric border border-primary-crimson/40 mx-auto flex items-center justify-center mb-3 shadow-glow-red">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary border border-primary/20 mx-auto flex items-center justify-center mb-3 shadow-xs">
                 {renderComplaintIcon(complaint.id, "w-8 h-8")}
               </div>
-              <span className="text-xs font-bold text-primary-electric uppercase tracking-wider block mb-1">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-1">
                 {stepsData.resultTitle}
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                 {complaint.label}
               </h3>
               {priority && (
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-500 mt-1">
                   {stepsData.priorityLabel} {priority.label}
                 </p>
               )}
 
-              <div className="p-4 rounded-2xl bg-black/60 border border-primary-crimson/30 max-w-md mx-auto my-6 text-xs text-slate-300 leading-relaxed text-left">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 max-w-md mx-auto my-6 text-xs text-slate-700 leading-relaxed text-left shadow-2xs">
                 {stepsData.doctorNote}
               </div>
 
@@ -267,14 +267,14 @@ export const SmileAssessmentWizard = () => {
                 <button
                   type="button"
                   onClick={() => openBooking({ service: complaint.rec, note: `Online tahlil: ${complaint.label}` })}
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric hover:shadow-glow-red shadow-glow-red transition-all"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate transition-all"
                 >
                   {stepsData.bookCta}
                 </button>
                 <button
                   type="button"
                   onClick={handleRestart}
-                  className="w-full sm:w-auto px-4 py-3 rounded-xl font-bold text-xs text-slate-400 hover:text-white transition-colors"
+                  className="w-full sm:w-auto px-4 py-3 rounded-full font-bold text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
                 >
                   {stepsData.restart}
                 </button>

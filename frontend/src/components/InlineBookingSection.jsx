@@ -329,73 +329,73 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   return (
     <section
       id="booking"
-      className="w-full py-12 sm:py-16 scroll-mt-24 text-white"
+      className="w-full py-12 sm:py-16 scroll-mt-24 text-slate-900 bg-white"
       aria-label={t.heading}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-red-400 bg-red-950/60 border border-red-800/40 shadow-xs mb-3">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-primary bg-primary/10 border border-primary/20 shadow-xs mb-3">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             {t.kicker}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
             {t.heading}
           </h2>
-          <p className="text-sm sm:text-base text-zinc-400 mt-2">
+          <p className="text-sm sm:text-base text-slate-600 mt-2">
             {t.sub}
           </p>
         </div>
 
         {/* Success Card */}
         {bookedResult ? (
-          <div className="p-6 sm:p-8 rounded-3xl bg-[#0D0505] shadow-luxury border border-red-900/50 text-center animate-in fade-in duration-300">
-            <div className="w-16 h-16 rounded-full bg-red-950/80 text-red-400 border border-red-800 mx-auto flex items-center justify-center text-3xl mb-4 shadow-[0_0_20px_rgba(255,0,0,0.3)]">
+          <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 shadow-md border border-slate-200 text-center animate-in fade-in duration-300">
+            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 border border-emerald-300 mx-auto flex items-center justify-center text-3xl mb-4 shadow-xs">
               ✓
             </div>
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-950/70 text-red-300 border border-red-800/40 mb-2">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700 border border-slate-300 mb-2">
               {t.successBadge} · #{bookedResult.bookingId || bookedResult.id}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               {t.successTitle}
             </h3>
-            <p className="text-sm text-zinc-300 max-w-lg mx-auto mt-2">
+            <p className="text-sm text-slate-600 max-w-lg mx-auto mt-2">
               {t.successBody}
             </p>
 
             {/* Summary Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto my-6 text-left p-4 rounded-2xl bg-zinc-950/90 border border-red-950/80 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto my-6 text-left p-4 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
               <div>
-                <span className="text-zinc-500 block">{t.summaryPatient}:</span>
-                <span className="font-bold text-white">{fullName}</span>
+                <span className="text-slate-500 block">{t.summaryPatient}:</span>
+                <span className="font-bold text-slate-900">{fullName}</span>
               </div>
               <div>
-                <span className="text-zinc-500 block">{t.summaryPhone}:</span>
-                <span className="font-mono font-bold text-white">{phone}</span>
+                <span className="text-slate-500 block">{t.summaryPhone}:</span>
+                <span className="font-mono font-bold text-slate-900">{phone}</span>
               </div>
               <div>
-                <span className="text-zinc-500 block">{t.summaryWhen}:</span>
-                <span className="font-bold text-red-400">
+                <span className="text-slate-500 block">{t.summaryWhen}:</span>
+                <span className="font-bold text-primary">
                   {formatDmy(selectedDate)} — {selectedTime}
                 </span>
               </div>
               <div>
-                <span className="text-zinc-500 block">{t.summaryService}:</span>
-                <span className="font-bold text-white">
+                <span className="text-slate-500 block">{t.summaryService}:</span>
+                <span className="font-bold text-slate-900">
                   {selectedServiceObj ? selectedServiceObj.name[lang] || selectedServiceObj.name.uz : "-"}
                 </span>
               </div>
             </div>
 
             {/* Telegram Action Card */}
-            <div className="p-5 rounded-2xl bg-zinc-900/80 border border-red-950/60 max-w-md mx-auto mb-6">
-              <h4 className="font-bold text-white text-sm mb-1">{t.telegramCardTitle}</h4>
-              <p className="text-xs text-zinc-400 mb-3">{t.telegramCardDesc}</p>
+            <div className="p-5 rounded-2xl bg-sky-50 border border-sky-100 max-w-md mx-auto mb-6">
+              <h4 className="font-bold text-slate-900 text-sm mb-1">{t.telegramCardTitle}</h4>
+              <p className="text-xs text-slate-600 mb-3">{t.telegramCardDesc}</p>
               <a
                 href={bookedResult.telegramUrl || DOCTOR_INFO.telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-xs transition-colors"
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-xs transition-colors"
               >
                 <IconTelegram className="w-4 h-4 text-white" />
                 <span>{t.telegramCardBtn}</span>
@@ -405,7 +405,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={DOCTOR_INFO.phoneHref}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#830000] via-[#BC0202] to-[#FF0000] text-white font-bold text-xs transition-colors shadow-xs"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-xs transition-colors shadow-sm"
               >
                 <IconPhone className="w-4 h-4" />
                 <span>{t.callBtn}: {DOCTOR_INFO.phoneDisplay}</span>
@@ -413,7 +413,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               <button
                 type="button"
                 onClick={handleReset}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-zinc-300 font-bold text-xs transition-colors"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-slate-100 border border-slate-300 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors"
               >
                 {t.bookAnother}
               </button>
@@ -423,7 +423,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
           /* Booking Form */
           <form
             onSubmit={handleFormSubmit}
-            className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-[#0A0505] shadow-luxury border border-red-950/60"
+            className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 shadow-md border border-slate-200"
           >
             {/* Honeypot field for anti-bot protection */}
             <input
@@ -440,7 +440,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
             {/* Service Selection */}
             <div className="mb-6 sm:mb-8">
-              <label htmlFor="booking-service-select" className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">
+              <label htmlFor="booking-service-select" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
                 {t.serviceLabel}
               </label>
               <select
@@ -448,10 +448,10 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 name="service"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full px-4 py-3 rounded-2xl bg-zinc-900/90 border border-zinc-800 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all"
+                className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
               >
                 {BOOKING_SERVICES.map((s) => (
-                  <option key={s.id} value={s.id} className="bg-zinc-900 text-white">
+                  <option key={s.id} value={s.id} className="bg-white text-slate-900">
                     {s.name[lang] || s.name.uz}
                   </option>
                 ))}
@@ -461,10 +461,10 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             {/* Step 1: Date Chips */}
             <fieldset className="mb-6 sm:mb-8 border-none p-0 m-0">
               <div className="flex items-center justify-between mb-3">
-                <legend className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                <legend className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                   {t.dayGroupLabel}
                 </legend>
-                <span className="text-[11px] text-zinc-500">
+                <span className="text-[11px] text-slate-500">
                   {clinicHours.days}: {clinicHours.hours}
                 </span>
               </div>
@@ -485,12 +485,12 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         setSelectedDate(day.date);
                         setSelectedTime("");
                       }}
-                      className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs font-bold border transition-all ${
+                      className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold border transition-all ${
                         isSelected
-                          ? "bg-gradient-to-r from-[#BC0202] to-[#FF0000] text-white border-transparent shadow-[0_0_15px_rgba(255,0,0,0.35)] scale-102"
+                          ? "bg-primary text-white border-transparent shadow-md scale-102"
                           : isClosed
-                          ? "bg-zinc-950 text-zinc-600 border-zinc-900 cursor-not-allowed"
-                          : "bg-zinc-900/90 text-zinc-300 border-zinc-800 hover:border-red-900 hover:text-white hover:bg-zinc-800"
+                          ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed"
+                          : "bg-white text-slate-700 border-slate-200 hover:border-primary hover:text-primary hover:bg-slate-50 shadow-2xs"
                       }`}
                     >
                       {formatDayPill(day.date, lang)}
@@ -502,7 +502,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
             {/* Step 2: Time Slots */}
             <fieldset className="mb-6 sm:mb-8 border-none p-0 m-0">
-              <legend className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">
+              <legend className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-3">
                 {t.timeGroupLabel} {selectedDate && `(${formatDmy(selectedDate)})`}
               </legend>
 
@@ -517,10 +517,10 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         role="radio"
                         aria-checked={isSelected}
                         onClick={() => setSelectedTime(timeStr)}
-                        className={`py-2 px-1.5 sm:px-3 rounded-xl text-xs font-mono font-bold border transition-all text-center ${
+                        className={`py-2 px-1.5 sm:px-3 rounded-full text-xs font-mono font-bold border transition-all text-center ${
                           isSelected
-                            ? "bg-gradient-to-r from-[#BC0202] to-[#FF0000] text-white border-red-500 shadow-[0_0_10px_rgba(255,0,0,0.4)]"
-                            : "bg-zinc-900 text-zinc-300 border-zinc-800 hover:border-red-800 hover:text-white"
+                            ? "bg-primary text-white border-primary shadow-sm"
+                            : "bg-white text-slate-700 border-slate-200 hover:border-primary hover:text-primary shadow-2xs"
                         }`}
                       >
                         {timeStr}
@@ -529,7 +529,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   })}
                 </div>
               ) : (
-                <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-400">
+                <div className="p-4 rounded-2xl bg-white border border-slate-200 text-xs text-slate-600">
                   {t.leadNoticeBody}
                 </div>
               )}
@@ -538,7 +538,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             {/* Step 3: Patient Inputs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
-                <label htmlFor="booking-full-name" className="block text-xs font-bold text-zinc-400 mb-1.5">
+                <label htmlFor="booking-full-name" className="block text-xs font-bold text-slate-800 mb-1.5">
                   {t.nameLabel}
                 </label>
                 <input
@@ -551,12 +551,12 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder={t.namePlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-900/90 border border-zinc-800 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
                 />
               </div>
 
               <div>
-                <label htmlFor="booking-phone-input" className="block text-xs font-bold text-zinc-400 mb-1.5">
+                <label htmlFor="booking-phone-input" className="block text-xs font-bold text-slate-800 mb-1.5">
                   {t.phoneLabel}
                 </label>
                 <input
@@ -569,14 +569,14 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   value={phone}
                   onChange={handlePhoneChange}
                   placeholder={t.phonePlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-900/90 border border-zinc-800 text-sm font-mono text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
                 />
               </div>
             </div>
 
             {/* Note & Reason */}
             <div className="mb-6">
-              <label htmlFor="booking-note-textarea" className="block text-xs font-bold text-zinc-400 mb-1.5">
+              <label htmlFor="booking-note-textarea" className="block text-xs font-bold text-slate-800 mb-1.5">
                 {t.noteLabel}
               </label>
               <textarea
@@ -586,7 +586,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder={t.notePlaceholder}
-                className="w-full px-4 py-2.5 rounded-xl bg-zinc-900/90 border border-zinc-800 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all resize-none"
+                className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all resize-none"
               ></textarea>
             </div>
 
@@ -594,10 +594,10 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             <button
               type="submit"
               disabled={isSubmitting || !selectedDate || !selectedTime}
-              className={`w-full py-3.5 px-6 rounded-2xl font-bold text-sm text-white shadow-luxury transition-all duration-200 flex items-center justify-center gap-2 border border-red-500/40 ${
+              className={`w-full py-3.5 px-6 rounded-full font-bold text-sm text-white shadow-md transition-all duration-200 flex items-center justify-center gap-2 ${
                 isSubmitting || !selectedDate || !selectedTime
-                  ? "bg-zinc-800 text-zinc-500 cursor-not-allowed shadow-none border-zinc-800"
-                  : "bg-gradient-to-r from-[#830000] via-[#BC0202] to-[#FF0000] hover:from-[#BC0202] hover:to-[#FF0000] hover:shadow-[0_4px_25px_rgba(255,0,0,0.4)] hover:scale-[1.01] active:scale-98"
+                  ? "bg-slate-200 text-slate-400 cursor-not-allowed shadow-none"
+                  : "bg-primary hover:bg-primary-hover hover:shadow-colgate hover:scale-[1.01] active:scale-98"
               }`}
             >
               {isSubmitting ? (

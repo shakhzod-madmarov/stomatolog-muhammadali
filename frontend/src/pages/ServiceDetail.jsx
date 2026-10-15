@@ -113,66 +113,66 @@ const ServiceDetail = () => {
       />
 
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-400 flex items-center gap-2 flex-wrap">
-        <Link to={to("/")} className="hover:text-primary-electric transition-colors">
+      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-500 flex items-center gap-2 flex-wrap">
+        <Link to={to("/")} className="hover:text-primary transition-colors">
           {lang === "ru" ? "Главная" : lang === "en" ? "Home" : "Bosh sahifa"}
         </Link>
-        <span className="text-slate-600">/</span>
-        <Link to={to("/services")} className="hover:text-primary-electric transition-colors">
+        <span className="text-slate-400">/</span>
+        <Link to={to("/services")} className="hover:text-primary transition-colors">
           {lang === "ru" ? "Услуги" : lang === "en" ? "Services" : "Xizmatlar"}
         </Link>
-        <span className="text-slate-600">/</span>
-        <span className="text-primary-electric font-bold" aria-current="page">
+        <span className="text-slate-400">/</span>
+        <span className="text-primary font-bold" aria-current="page">
           {service.title[lang]}
         </span>
       </nav>
 
       {/* Main Hero Header */}
-      <div className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7 space-y-4">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary-dark/30 text-primary-electric border border-primary-crimson/40">
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">
               {service.badge[lang]}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-black/60 text-slate-300 border border-white/10">
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 shadow-2xs">
               {service.techTag[lang]}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-black/60 text-slate-300 border border-white/10 flex items-center gap-1.5">
-              <IconShieldCheck className="w-3.5 h-3.5 text-primary-electric" />
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 shadow-2xs flex items-center gap-1.5">
+              <IconShieldCheck className="w-3.5 h-3.5 text-primary" />
               {getExperienceBadge(lang)}
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
             {service.title[lang]}
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             {service.shortDesc[lang]}
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-            <div className="p-3 rounded-2xl bg-black/50 border border-white/10 text-xs">
-              <span className="text-slate-400 block text-[11px]">
+            <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
+              <span className="text-slate-500 block text-[11px]">
                 {lang === "ru" ? "Длительность" : lang === "en" ? "Duration" : "Vaqt / Muddat"}
               </span>
-              <span className="font-bold text-white mt-0.5 block">{service.duration[lang]}</span>
+              <span className="font-bold text-slate-900 mt-0.5 block">{service.duration[lang]}</span>
             </div>
-            <div className="p-3 rounded-2xl bg-black/50 border border-white/10 text-xs">
-              <span className="text-slate-400 block text-[11px]">
+            <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
+              <span className="text-slate-500 block text-[11px]">
                 {lang === "ru" ? "Гарантия" : lang === "en" ? "Warranty" : "Kafolat"}
               </span>
-              <span className="font-bold text-emerald-400 mt-0.5 block">{service.warranty[lang]}</span>
+              <span className="font-bold text-emerald-600 mt-0.5 block">{service.warranty[lang]}</span>
             </div>
-            <div className="p-3 rounded-2xl bg-black/50 border border-white/10 text-xs col-span-2 sm:col-span-1">
-              <span className="text-slate-400 block text-[11px]">
+            <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs col-span-2 sm:col-span-1 shadow-2xs">
+              <span className="text-slate-500 block text-[11px]">
                 {lang === "ru" ? "Лечащий врач" : lang === "en" ? "Attending Doctor" : "Davolovchi Shifokor"}
               </span>
-              <span className="font-bold text-primary-electric mt-0.5 block whitespace-nowrap">Dr. MuhammadAli Davronov</span>
+              <span className="font-bold text-primary mt-0.5 block whitespace-nowrap">Dr. MuhammadAli Davronov</span>
             </div>
           </div>
-          <p className="text-[11px] text-slate-400 font-medium pt-1 flex items-center gap-1.5">
-            <IconLocationPin className="w-3.5 h-3.5 text-primary-electric shrink-0" />
+          <p className="text-[11px] text-slate-600 font-medium pt-1 flex items-center gap-1.5">
+            <IconLocationPin className="w-3.5 h-3.5 text-primary shrink-0" />
             <span>
               {lang === "ru" ? "Приём в г. Андижан, DM Stomatologiya (ул. Навои 91)" : lang === "en" ? "Practice location: Andijan, DM Stomatology (Navoiy Ave 91)" : "Qabul manzili: Andijon sh., DM Stomatologiya (Navoiy shoh ko'chasi 91)"}
             </span>
@@ -182,22 +182,22 @@ const ServiceDetail = () => {
             <button
               type="button"
               onClick={() => openBooking(service.id)}
-              className="px-6 py-3 rounded-2xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric hover:shadow-glow-red hover:scale-102 active:scale-98 shadow-glow-red transition-all text-center"
+              className="px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all text-center"
             >
               {lang === "ru" ? "Записаться на эту процедуру" : lang === "en" ? "Book Appointment for this Treatment" : "Ushbu muolajaga yozilish"}
             </button>
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm text-slate-200 bg-surface-elevated hover:bg-surface-border/60 border border-white/10 transition-colors text-center flex items-center justify-center gap-2"
+              className="px-5 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors text-center flex items-center justify-center gap-2"
             >
-              <IconPhone className="w-4 h-4 text-primary-electric" />
+              <IconPhone className="w-4 h-4 text-primary" />
               <span>{DOCTOR_INFO.phoneDisplay}</span>
             </a>
           </div>
         </div>
 
         <div className="lg:col-span-5">
-          <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-white/10 shadow-2xl relative">
+          <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 shadow-lg relative">
             <img
               src={service.image}
               alt={service.title[lang]}
@@ -213,17 +213,17 @@ const ServiceDetail = () => {
       </div>
 
       {/* Highlights & Features */}
-      <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-2xl">
-        <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-6">
+      <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
+        <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 mb-6">
           {lang === "ru" ? "Ключевые преимущества и особенности" : lang === "en" ? "Key Treatment Highlights" : "Muolajaning Asosiy Afzalliklari"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {service.highlights[lang]?.map((hl, i) => (
-            <div key={i} className="p-4 rounded-2xl bg-black/50 border border-white/10 flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-primary-dark/40 text-primary-electric border border-primary-crimson/30 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">
+            <div key={i} className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+              <span className="w-6 h-6 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">
                 ✓
               </span>
-              <span className="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+              <span className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
                 {hl}
               </span>
             </div>
@@ -232,21 +232,21 @@ const ServiceDetail = () => {
       </div>
 
       {/* 4-Step Treatment Pathway */}
-      <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-2xl">
-        <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-8 text-center">
+      <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
+        <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Этапы проведения процедуры" : lang === "en" ? "Procedure Pathway" : "Muolaja Bosqichlari"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((st, i) => (
-            <div key={i} className="p-5 rounded-2xl bg-black/60 border border-white/10 hover:border-primary-crimson/50 hover:shadow-glow-red transition-all flex flex-col justify-between">
+            <div key={i} className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-md transition-all flex flex-col justify-between">
               <div>
-                <span className="text-2xl font-serif font-bold text-primary-electric block mb-2">
+                <span className="text-2xl font-serif font-bold text-primary block mb-2">
                   {st.num}
                 </span>
-                <h3 className="font-bold text-sm text-white mb-2">
+                <h3 className="font-bold text-sm text-slate-900 mb-2">
                   {st.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {st.desc}
                 </p>
               </div>

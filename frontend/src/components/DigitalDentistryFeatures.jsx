@@ -218,36 +218,36 @@ export const DigitalDentistryFeatures = () => {
   }[lang] || content.uz;
 
   return (
-    <section aria-labelledby="features-heading" className="w-full py-14 sm:py-20 relative overflow-hidden bg-[#000000]">
-      {/* Background glow and subtle cyber grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(188,2,2,0.12),transparent_70%)] pointer-events-none" />
+    <section aria-labelledby="features-heading" className="w-full py-14 sm:py-20 relative overflow-hidden bg-slate-50 border-y border-slate-200/80">
+      {/* Background soft red clinical aura */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(200,16,46,0.04),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary-electric bg-primary-dark/30 border border-primary-crimson/40 shadow-xs mb-3 uppercase">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-3 uppercase">
             {content.badge}
           </span>
-          <h2 id="features-heading" className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight">
+          <h2 id="features-heading" className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
             {content.title}
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 mt-3 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
             {content.subtitle}
           </p>
         </div>
 
         {/* 4-Step Interactive Digital Workflow Strip */}
-        <div className="mb-14 p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-surface-elevated/80 backdrop-blur-md border border-white/10 shadow-2xl">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 pb-4 border-b border-white/10 gap-2">
+        <div className="mb-14 p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 pb-4 border-b border-slate-100 gap-2">
             <div>
-              <span className="text-[11px] font-bold text-primary-electric tracking-wider uppercase block">
+              <span className="text-[11px] font-bold text-primary tracking-wider uppercase block">
                 {content.workflowBadge}
               </span>
-              <h3 className="text-lg sm:text-xl font-serif font-bold text-white">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-slate-900">
                 {content.workflowTitle}
               </h3>
             </div>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary-dark/30 text-primary-electric border border-primary-crimson/40">
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">
               {content.workflowLocation}
             </span>
           </div>
@@ -256,20 +256,20 @@ export const DigitalDentistryFeatures = () => {
             {content.steps.map((st, i) => (
               <div
                 key={i}
-                className="relative p-5 rounded-2xl bg-black/60 hover:bg-black/90 border border-white/10 hover:border-primary-crimson/50 hover:shadow-glow-red transition-all duration-300 group"
+                className="relative p-5 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="w-8 h-8 rounded-xl bg-gradient-to-r from-primary-dark to-primary-electric text-white font-mono text-xs font-bold flex items-center justify-center shadow-xs">
+                  <span className="w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-bold flex items-center justify-center shadow-xs">
                     {st.step}
                   </span>
-                  <div className="w-8 h-8 rounded-xl bg-surface-elevated border border-white/10 text-primary-electric flex items-center justify-center group-hover:bg-primary-electric group-hover:text-white transition-all shadow-2xs">
+                  <div className="w-8 h-8 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-2xs">
                     {renderStepIcon(i, "w-4 h-4")}
                   </div>
                 </div>
-                <h4 className="text-sm font-bold text-white group-hover:text-primary-electric transition-colors mb-1">
+                <h4 className="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors mb-1">
                   {st.title}
                 </h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {st.desc}
                 </p>
               </div>
@@ -288,25 +288,25 @@ export const DigitalDentistryFeatures = () => {
               glare={true}
               className="h-full"
             >
-              <div className="h-full p-6 sm:p-7 rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-xl hover:border-primary-crimson/50 hover:shadow-glow-red transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+              <div className="h-full p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:border-primary/50 hover:shadow-colgate transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-primary-dark/30 border border-primary-crimson/30 text-primary-electric flex items-center justify-center mb-4 group-hover:scale-105 group-hover:bg-primary-electric group-hover:text-white group-hover:border-transparent transition-all shadow-xs">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mb-4 group-hover:scale-105 group-hover:bg-primary group-hover:text-white group-hover:border-transparent transition-all shadow-xs">
                     {renderFeatureIcon(idx, "w-6 h-6")}
                   </div>
-                  <span className="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary-electric bg-primary-dark/40 border border-primary-crimson/40 mb-2.5">
+                  <span className="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 border border-primary/20 mb-2.5">
                     {feat.tag}
                   </span>
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-primary-electric transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
                     {feat.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-2.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
                     {feat.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-primary-electric font-bold">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-primary font-bold">
                   <span>{content.cardAuthor}</span>
-                  <span className="text-slate-400 text-[11px] font-semibold">{content.cardBadge}</span>
+                  <span className="text-slate-500 text-[11px] font-semibold">{content.cardBadge}</span>
                 </div>
               </div>
             </Interactive3DTilt>

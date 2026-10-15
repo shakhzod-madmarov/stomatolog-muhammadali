@@ -4,8 +4,8 @@
   "description": "Dr. MuhammadAli Davronov — Vrach Stomatolog: Ortopediya, Terapiya, Implantologiya. Andijon, DM Stomatologiya",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#830000",
+  "background_color": "#FFFFFF",
+  "theme_color": "#C8102E",
   "icons": [
     {
       "src": "/favicon-32x32.png",

@@ -145,16 +145,16 @@ export const Interactive3DCostCalculator = () => {
   }[lang] || labels.uz;
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-[#000000]">
+    <section className="w-full py-12 sm:py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-xl mx-auto mb-10">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary-electric bg-primary-dark/30 border border-primary-crimson/40 shadow-xs mb-2 uppercase">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
             {labels.badge}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
             {labels.title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2">
             {labels.subtitle}
           </p>
         </div>
@@ -166,10 +166,10 @@ export const Interactive3DCostCalculator = () => {
           glare={false}
           className="w-full"
         >
-          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-2xl">
+          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
             {/* Step 1: Service Pills */}
             <div className="mb-6">
-              <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">
+              <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-3">
                 {labels.step1}
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
@@ -180,8 +180,8 @@ export const Interactive3DCostCalculator = () => {
                     onClick={() => handleServiceChange(svc.id)}
                     className={`px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all text-center leading-snug break-words ${
                       selectedServiceId === svc.id
-                        ? "bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric text-white shadow-glow-red scale-102"
-                        : "bg-black/50 text-slate-300 hover:text-white hover:bg-black/80 border border-white/10"
+                        ? "bg-primary text-white shadow-md scale-102"
+                        : "bg-white text-slate-700 hover:text-primary hover:bg-slate-100 border border-slate-200 shadow-xs"
                     }`}
                   >
                     {svc.title[lang]}
@@ -191,12 +191,12 @@ export const Interactive3DCostCalculator = () => {
             </div>
 
             {/* Step 2: Quantity Slider / Buttons */}
-            <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-black/50 border border-white/10">
+            <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
               <div className="flex items-center justify-between mb-2">
-                <label htmlFor="calculator-quantity-slider" className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+                <label htmlFor="calculator-quantity-slider" className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                   {labels.step2}
                 </label>
-                <span className="text-xs sm:text-sm font-bold text-primary-electric">
+                <span className="text-xs sm:text-sm font-bold text-primary">
                   {quantity} {current.unitLabel[lang]}
                 </span>
               </div>
@@ -206,7 +206,7 @@ export const Interactive3DCostCalculator = () => {
                   type="button"
                   aria-label={labels.decrease}
                   onClick={() => setQuantity(Math.max(current.min, quantity - 1))}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-elevated text-primary-electric font-bold border border-white/10 hover:border-primary-crimson/50 hover:bg-primary-electric hover:text-white shadow-xs flex items-center justify-center transition-colors shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 text-slate-800 font-bold border border-slate-200 hover:bg-primary hover:text-white shadow-xs flex items-center justify-center transition-colors shrink-0"
                 >
                   -
                 </button>
@@ -221,13 +221,13 @@ export const Interactive3DCostCalculator = () => {
                   aria-valuemax={current.max}
                   aria-valuenow={quantity}
                   onChange={(e) => setQuantity(Number(e.target.value))}
-                  className="w-full accent-[#FF0000] h-2 bg-neutral-800 rounded-lg cursor-pointer"
+                  className="w-full accent-[#C8102E] h-2 bg-slate-200 rounded-lg cursor-pointer"
                 />
                 <button
                   type="button"
                   aria-label={labels.increase}
                   onClick={() => setQuantity(Math.min(current.max, quantity + 1))}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-surface-elevated text-primary-electric font-bold border border-white/10 hover:border-primary-crimson/50 hover:bg-primary-electric hover:text-white shadow-xs flex items-center justify-center transition-colors shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 text-slate-800 font-bold border border-slate-200 hover:bg-primary hover:text-white shadow-xs flex items-center justify-center transition-colors shrink-0"
                 >
                   +
                 </button>
@@ -235,35 +235,35 @@ export const Interactive3DCostCalculator = () => {
             </div>
 
             {/* Summary Details Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-black/60 border border-white/10 text-xs mb-6">
-              <div className="p-2.5 rounded-xl bg-surface-elevated/70 border border-white/10 hover:border-primary-crimson/30 transition-colors">
-                <span className="text-slate-400 block text-[11px]">{labels.visits}</span>
-                <span className="font-bold text-white mt-0.5 block">{current.visits[lang]}</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 text-xs mb-6 shadow-2xs">
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[11px]">{labels.visits}</span>
+                <span className="font-bold text-slate-900 mt-0.5 block">{current.visits[lang]}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-surface-elevated/70 border border-white/10 hover:border-primary-crimson/30 transition-colors">
-                <span className="text-slate-400 block text-[11px]">{labels.duration}</span>
-                <span className="font-bold text-white mt-0.5 block">{current.durationPerUnit[lang]}</span>
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[11px]">{labels.duration}</span>
+                <span className="font-bold text-slate-900 mt-0.5 block">{current.durationPerUnit[lang]}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-surface-elevated/70 border border-white/10 hover:border-primary-crimson/30 transition-colors">
-                <span className="text-slate-400 block text-[11px]">{labels.warranty}</span>
-                <span className="font-bold text-emerald-400 mt-0.5 block">{current.warranty[lang]}</span>
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[11px]">{labels.warranty}</span>
+                <span className="font-bold text-emerald-600 mt-0.5 block">{current.warranty[lang]}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-surface-elevated/70 border border-white/10 hover:border-primary-crimson/30 transition-colors">
-                <span className="text-slate-400 block text-[11px]">{labels.tech}</span>
-                <span className="font-bold text-primary-electric mt-0.5 block">{current.tech[lang]}</span>
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[11px]">{labels.tech}</span>
+                <span className="font-bold text-primary mt-0.5 block">{current.tech[lang]}</span>
               </div>
             </div>
 
             {/* Action CTA */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-[11px] text-slate-400 text-center sm:text-left inline-flex items-center gap-1.5 justify-center sm:justify-start">
-                <IconInfoCircle className="w-3.5 h-3.5 text-primary-electric shrink-0" />
+              <p className="text-[11px] text-slate-500 text-center sm:text-left inline-flex items-center gap-1.5 justify-center sm:justify-start">
+                <IconInfoCircle className="w-3.5 h-3.5 text-primary shrink-0" />
                 <span>{labels.individualNote}</span>
               </p>
               <button
                 type="button"
                 onClick={() => openBooking({ service: current.id, note: `${quantity} ${current.unitLabel.uz}` })}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric hover:shadow-glow-red hover:scale-102 active:scale-98 shadow-glow-red transition-all"
+                className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all"
               >
                 {labels.bookBtn}
               </button>

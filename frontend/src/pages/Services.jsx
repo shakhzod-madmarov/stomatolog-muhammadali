@@ -52,30 +52,30 @@ const Services = ({ onOpenBooking }) => {
       />
 
       {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-400 flex items-center gap-2">
-        <Link to={to("/")} className="hover:text-primary-electric transition-colors">
+      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-500 flex items-center gap-2">
+        <Link to={to("/")} className="hover:text-primary transition-colors">
           {lang === "ru" ? "Главная" : lang === "en" ? "Home" : "Bosh sahifa"}
         </Link>
-        <span className="text-slate-600">/</span>
-        <span className="text-primary-electric font-bold" aria-current="page">
+        <span className="text-slate-400">/</span>
+        <span className="text-primary font-bold" aria-current="page">
           {lang === "ru" ? "Услуги" : lang === "en" ? "Services" : "Xizmatlar"}
         </span>
       </nav>
 
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-medium uppercase tracking-wider bg-primary-dark/30 text-primary-electric border border-primary-crimson/40 shadow-xs">
-          <IconShieldCheck className="w-3.5 h-3.5 text-primary-electric" />
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 shadow-xs">
+          <IconShieldCheck className="w-3.5 h-3.5 text-primary" />
           <span>{getServicesTag(lang)}</span>
         </span>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
           {lang === "uz"
             ? "Dr. MuhammadAli Davronovning Shaxsiy Muolajalari"
             : lang === "ru"
             ? "Клинические Услуги Д-ра МухаммадАли Давронова"
             : "Clinical Treatments & Care by Dr. MuhammadAli Davronov"}
         </h1>
-        <p className="text-sm sm:text-base text-slate-400">
+        <p className="text-sm sm:text-base text-slate-600">
           {lang === "uz"
             ? "Ortopediya, terapiya va implantologiya bo'yicha 5 yillik tajriba. Tishlaringiz salomatligi va tabiiy go'zalligini 3D raqamli aniqlikda, to'liq og'riqsiz tiklaymiz."
             : lang === "ru"
@@ -90,10 +90,10 @@ const Services = ({ onOpenBooking }) => {
           <button
             key={c.id}
             onClick={() => setActiveCategory(c.id)}
-            className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
               activeCategory === c.id
-                ? "bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric text-white shadow-glow-red"
-                : "bg-surface-elevated/80 text-slate-300 border border-white/10 hover:text-white hover:bg-surface-border/50"
+                ? "bg-primary text-white shadow-md scale-102"
+                : "bg-white text-slate-700 border border-slate-200 hover:text-primary hover:bg-slate-50 shadow-2xs"
             }`}
           >
             {c.label[lang]}
@@ -112,7 +112,7 @@ const Services = ({ onOpenBooking }) => {
             glare={true}
             className="h-full"
           >
-            <article className="h-full p-6 rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-xl hover:shadow-glow-red hover:border-primary-crimson/50 transition-all duration-300 flex flex-col justify-between">
+            <article className="h-full p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-colgate hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-5 relative">
                   <img
@@ -125,44 +125,44 @@ const Services = ({ onOpenBooking }) => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-black/80 text-primary-electric border border-primary-crimson/40 backdrop-blur-xs shadow-xs">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/90 text-primary border border-slate-200 backdrop-blur-xs shadow-xs">
                       {service.featurePill[lang]}
                     </span>
                   </div>
                 </div>
 
-                <span className="text-[11px] font-bold text-primary-electric uppercase tracking-wider block mb-1">
+                <span className="text-[11px] font-bold text-primary uppercase tracking-wider block mb-1">
                   {service.category[lang]}
                 </span>
-                <h3 className="text-lg font-bold text-white hover:text-primary-electric transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 hover:text-primary transition-colors">
                   {service.title[lang]}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 mt-2 line-clamp-3 leading-relaxed">
                   {service.shortDesc[lang]}
                 </p>
 
                 {/* Highlights */}
-                <ul className="mt-4 space-y-1.5 text-xs text-slate-300">
+                <ul className="mt-4 space-y-1.5 text-xs text-slate-700">
                   {service.highlights[lang]?.slice(0, 2).map((hl, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-primary-electric font-bold">✓</span>
+                      <span className="text-primary font-bold">✓</span>
                       <span>{hl}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                 <Link
                   to={to(`/services/${service.id}`)}
-                  className="text-xs font-bold text-slate-400 hover:text-white transition-colors"
+                  className="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
                 >
                   {lang === "ru" ? "Подробнее →" : lang === "en" ? "Learn more →" : "Batafsil →"}
                 </Link>
                 <button
                   type="button"
                   onClick={() => onOpenBooking(service.id)}
-                  className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric hover:shadow-glow-red hover:scale-102 active:scale-98 transition-all shadow-xs"
+                  className="px-4 py-2 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-sm hover:shadow-colgate active:scale-98 transition-all"
                 >
                   {lang === "ru" ? "Записаться" : lang === "en" ? "Book Visit" : "Qabulga yozilish"}
                 </button>

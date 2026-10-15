@@ -38,11 +38,11 @@ const FloatingActionHub = () => {
               setIsOpen(false);
               openBooking();
             }}
-            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#0D0505] text-white shadow-luxury border border-red-900/60 hover:border-red-500 hover:bg-zinc-900 transition-all active:scale-95 text-xs font-bold"
+            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white text-slate-800 shadow-md border border-slate-200 hover:border-primary hover:bg-slate-50 transition-all active:scale-95 text-xs font-bold"
           >
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            <span className="w-2 h-2 rounded-full bg-primary animate-ping"></span>
             <span>{bookLabel}</span>
-            <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-[#BC0202] to-[#FF0000] text-white flex items-center justify-center shrink-0 shadow-xs">
+            <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
               <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                 <line x1="16" y1="2" x2="16" y2="6"/>
@@ -58,7 +58,7 @@ const FloatingActionHub = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={a11y.telegramChat}
-            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#0D0505] text-white shadow-luxury border border-red-900/60 hover:border-sky-500 hover:bg-zinc-900 transition-all active:scale-95 text-xs font-bold"
+            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white text-slate-800 shadow-md border border-slate-200 hover:border-sky-500 hover:bg-slate-50 transition-all active:scale-95 text-xs font-bold"
           >
             <span>Telegram</span>
             <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-xs">
@@ -72,7 +72,7 @@ const FloatingActionHub = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={a11y.instagramPage}
-            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#0D0505] text-white shadow-luxury border border-red-900/60 hover:border-pink-500 hover:bg-zinc-900 transition-all active:scale-95 text-xs font-bold"
+            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white text-slate-800 shadow-md border border-slate-200 hover:border-pink-500 hover:bg-slate-50 transition-all active:scale-95 text-xs font-bold"
           >
             <span>Instagram</span>
             <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-xs">
@@ -84,9 +84,9 @@ const FloatingActionHub = () => {
           <a
             href={DOCTOR_INFO.phoneHref}
             aria-label={a11y.callClinic}
-            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#0D0505] text-white shadow-luxury border border-red-900/60 hover:border-emerald-500 hover:bg-zinc-900 transition-all active:scale-95 text-xs font-bold"
+            className="group flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white text-slate-800 shadow-md border border-slate-200 hover:border-emerald-500 hover:bg-slate-50 transition-all active:scale-95 text-xs font-bold"
           >
-            <span className="font-mono text-zinc-200">{DOCTOR_INFO.phoneDisplay}</span>
+            <span className="font-mono text-slate-700">{DOCTOR_INFO.phoneDisplay}</span>
             <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
               <IconPhone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </span>
@@ -100,10 +100,10 @@ const FloatingActionHub = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-label={toggleLabel}
-        className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.45)] border border-red-500/50 transition-all duration-300 active:scale-95 ${
+        className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-white shadow-colgate transition-all duration-300 active:scale-95 ${
           isOpen
-            ? "bg-zinc-900 rotate-90"
-            : "bg-gradient-to-r from-[#830000] via-[#BC0202] to-[#FF0000] hover:scale-105"
+            ? "bg-slate-900 rotate-90"
+            : "bg-primary hover:bg-primary-hover hover:scale-105"
         }`}
       >
         {isOpen ? (

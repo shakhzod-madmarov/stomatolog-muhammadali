@@ -35,30 +35,30 @@ const Booking = () => {
       />
 
       {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-400 flex items-center gap-2">
-        <Link to={to("/")} className="hover:text-primary-electric transition-colors">
+      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-500 flex items-center gap-2">
+        <Link to={to("/")} className="hover:text-primary transition-colors">
           {lang === "ru" ? "Главная" : lang === "en" ? "Home" : "Bosh sahifa"}
         </Link>
-        <span className="text-slate-600">/</span>
-        <span className="text-primary-electric font-bold" aria-current="page">
+        <span className="text-slate-400">/</span>
+        <span className="text-primary font-bold" aria-current="page">
           {lang === "ru" ? "Запись на приём" : lang === "en" ? "Appointment Booking" : "Qabulga yozilish"}
         </span>
       </nav>
 
       {/* Doctor Summary Banner */}
-      <header className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-surface-elevated/90 border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <header className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-primary-dark/30 text-primary-electric text-xs font-black uppercase border border-primary-crimson/40">
+            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black uppercase border border-primary/20">
               {DOCTOR_INFO.name}
             </span>
-            <span className="px-3 py-1 rounded-full bg-black/50 text-slate-300 text-xs font-bold border border-white/10 flex items-center gap-1.5">
-              <IconShieldCheck className="w-3.5 h-3.5 text-primary-electric" />
+            <span className="px-3 py-1 rounded-full bg-white text-slate-700 text-xs font-bold border border-slate-200 shadow-2xs flex items-center gap-1.5">
+              <IconShieldCheck className="w-3.5 h-3.5 text-primary" />
               <span>{years} {lang === "uz" ? "Yillik Klinik Tajriba" : lang === "ru" ? "Лет Клинического Опыта" : "Years Clinical Experience"}</span>
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-bold text-white font-serif tracking-tight">
+          <h1 className="text-2xl sm:text-4xl font-bold text-slate-900 font-serif tracking-tight">
             {lang === "uz"
               ? "Dr. MuhammadAli Davronov Qabuliga Onlayn Yozilish"
               : lang === "ru"
@@ -66,7 +66,7 @@ const Booking = () => {
               : "Book Online Appointment with Dr. MuhammadAli Davronov"}
           </h1>
 
-          <p className="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
             {lang === "uz"
               ? "Dr. MuhammadAli Davronov qabuliga qulay vaqtni tanlang. Ortopediya, terapiya va implantologiya bo'yicha DM Stomatologiyada to'liq og'riqsiz, samimiy shaxsiy qabul."
               : lang === "ru"
@@ -74,26 +74,26 @@ const Booking = () => {
               : "Choose a convenient time for your consultation with Dr. MuhammadAli Davronov at DM Stomatology. Orthopedics, therapy, and dental implants with dedicated gentle care."}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-300 pt-1">
+          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-700 pt-1">
             <span className="flex items-center gap-1.5">
-              <DentalDigitalScannerIcon className="w-4 h-4 text-primary-electric" />
+              <DentalDigitalScannerIcon className="w-4 h-4 text-primary" />
               <span>{DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz}</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <IconShieldCheck className="w-4 h-4 text-emerald-400" />
+              <IconShieldCheck className="w-4 h-4 text-emerald-600" />
               <span>{lang === "uz" ? "DM Stomatologiya · 100% Shaxsiy Qabul" : lang === "ru" ? "DM Stomatologiya · 100% Личный Приём" : "DM Stomatology · 100% Personal Care"}</span>
             </span>
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-2 shrink-0 text-center sm:text-left">
-          <p className="font-bold text-white">{hours.full}</p>
-          <p className="text-slate-400">{hours.sunday}</p>
+        <div className="p-5 rounded-2xl bg-white border border-slate-200 text-xs space-y-2 shrink-0 text-center sm:text-left shadow-2xs">
+          <p className="font-bold text-slate-900">{hours.full}</p>
+          <p className="text-slate-500">{hours.sunday}</p>
           <a
             href={DOCTOR_INFO.phoneHref}
-            className="inline-flex items-center gap-2 font-mono font-bold text-primary-electric hover:underline pt-1 text-sm"
+            className="inline-flex items-center gap-2 font-mono font-bold text-primary hover:underline pt-1 text-sm"
           >
-            <IconPhone className="w-4 h-4 text-primary-electric" />
+            <IconPhone className="w-4 h-4 text-primary" />
             <span>{DOCTOR_INFO.phoneDisplay}</span>
           </a>
         </div>

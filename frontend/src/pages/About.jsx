@@ -94,7 +94,7 @@ const About = ({ onOpenBooking }) => {
 
   const values = [
     {
-      icon: <IconShieldCheck className="w-6 h-6 text-red-400" />,
+      icon: <IconShieldCheck className="w-6 h-6 text-primary" />,
       title: {
         uz: "100% Sterillik va Xavfsizlik",
         ru: "100% Стерильность и Безопасность",
@@ -107,7 +107,7 @@ const About = ({ onOpenBooking }) => {
       },
     },
     {
-      icon: <IconGentleComfort className="w-6 h-6 text-red-400" />,
+      icon: <IconGentleComfort className="w-6 h-6 text-primary" />,
       title: {
         uz: "100% Og'riqsiz Anesteziya",
         ru: "Бережная Анестезия Без Боли",
@@ -120,7 +120,7 @@ const About = ({ onOpenBooking }) => {
       },
     },
     {
-      icon: <DentalDigitalScannerIcon className="w-6 h-6 text-red-400" />,
+      icon: <DentalDigitalScannerIcon className="w-6 h-6 text-primary" />,
       title: {
         uz: "Tsirkon va CAD/CAM Aniqligi",
         ru: "Цирконий и Точность CAD/CAM",
@@ -133,7 +133,7 @@ const About = ({ onOpenBooking }) => {
       },
     },
     {
-      icon: <IconTrophyWarranty className="w-6 h-6 text-red-400" />,
+      icon: <IconTrophyWarranty className="w-6 h-6 text-primary" />,
       title: {
         uz: "Shaxsiy Shifokorlik Mas'uliyati",
         ru: "Личная Врачебная Ответственность",
@@ -154,7 +154,7 @@ const About = ({ onOpenBooking }) => {
   const schema = buildDoctorProfileSchema(lang, breadcrumbs);
 
   return (
-    <div className="py-6 sm:py-10 space-y-12 text-white">
+    <div className="py-6 sm:py-10 space-y-12 text-slate-900">
       <Seo
         title={seo.title}
         description={seo.description}
@@ -162,29 +162,29 @@ const About = ({ onOpenBooking }) => {
       />
 
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-zinc-400 flex items-center gap-2">
-        <Link to={to("/")} className="hover:text-red-400 transition-colors">
+      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-500 flex items-center gap-2">
+        <Link to={to("/")} className="hover:text-primary transition-colors">
           {lang === "ru" ? "Главная" : lang === "en" ? "Home" : "Bosh sahifa"}
         </Link>
         <span>/</span>
-        <span className="text-red-400 font-bold" aria-current="page">
+        <span className="text-primary font-bold" aria-current="page">
           {lang === "ru" ? "О враче" : lang === "en" ? "About Doctor" : "Shifokor haqida"}
         </span>
       </nav>
 
       {/* Header with Primary H1 for SEO & Semantics */}
       <header className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-red-400 bg-red-950/70 border border-red-800/40 shadow-xs uppercase">
+        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs uppercase">
           {lang === "uz" ? "SHIFOKOR HAQIDA" : lang === "ru" ? "О СПЕЦИАЛИСТЕ" : "ABOUT THE SPECIALIST"}
         </span>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
           {lang === "uz"
             ? `Dr. MuhammadAli Davronov — DM Stomatologiya`
             : lang === "ru"
             ? `Д-р МухаммадАли Давронов — DM Stomatology`
             : `Dr. MuhammadAli Davronov — DM Stomatology`}
         </h1>
-        <p className="text-sm sm:text-base text-zinc-300">
+        <p className="text-sm sm:text-base text-slate-600">
           {lang === "uz"
             ? "Andijon davlat tibbiyot instituti bitiruvchisi. 5 yillik faol klinik tajriba. Ortopediya, terapiya va implantologiya sohasida zamonaviy og'riqsiz yechimlar."
             : lang === "ru"
@@ -197,19 +197,19 @@ const About = ({ onOpenBooking }) => {
       <Doctor3DCard />
 
       {/* Professional Philosophy & Bio */}
-      <section aria-labelledby="philosophy-heading" className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-[#0A0505] border border-red-950/60 shadow-luxury grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <section aria-labelledby="philosophy-heading" className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-12 space-y-4">
-          <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-red-950/70 text-red-300 border border-red-800/40 uppercase tracking-wider inline-block">
+          <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider inline-block">
             {lang === "ru" ? "ФИЛОСОФИЯ ЛЕЧЕНИЯ" : lang === "en" ? "CLINICAL PHILOSOPHY" : "DAVOLASH FALSAFASI"}
           </span>
-          <h2 id="philosophy-heading" className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+          <h2 id="philosophy-heading" className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
             {lang === "uz"
               ? "Har Bir Bemorga Shaxsiy E'tibor va Sifatli Natija"
               : lang === "ru"
               ? "Индивидуальный подход и бескомпромиссное качество"
               : "Dedicated Personal Care and Clinical Excellence"}
           </h2>
-          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             {lang === "uz"
               ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. Andijon davlat tibbiyot institutida olgan fundamental bilimlarim va 5 yillik klinik amaliyotim davomida men har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib oldim. DM Stomatologiya klinikasida biz keraksiz muolajalarni tavsiya qilmaymiz: sog'lom tish to'qimasini maksimal darajada asrab qolamiz, yo'qotilgan tishlarni esa mustahkam tsirkon qoplamalar va biotitan implantlar bilan ishonchli tiklaymiz."
               : lang === "ru"
@@ -221,13 +221,13 @@ const About = ({ onOpenBooking }) => {
             <button
               type="button"
               onClick={onOpenBooking}
-              className="px-6 py-3 rounded-2xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#830000] via-[#BC0202] to-[#FF0000] hover:scale-102 active:scale-98 shadow-[0_4px_20px_rgba(255,0,0,0.4)] border border-red-500/40 transition-all"
+              className="px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover hover:scale-102 active:scale-98 shadow-md hover:shadow-colgate transition-all"
             >
               {lang === "ru" ? "Записаться на консультацию" : lang === "en" ? "Book a Consultation" : "Konsultatsiyaga yozilish"}
             </button>
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="px-6 py-3 rounded-2xl font-bold text-xs sm:text-sm text-zinc-200 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/60 transition-colors"
+              className="px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors"
             >
               {DOCTOR_INFO.phoneDisplay}
             </a>
@@ -236,8 +236,8 @@ const About = ({ onOpenBooking }) => {
       </section>
 
       {/* Clinical Values & Standards */}
-      <section aria-labelledby="standards-heading" className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-[#0A0505] border border-red-950/60 shadow-luxury">
-        <h2 id="standards-heading" className="font-serif text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+      <section aria-labelledby="standards-heading" className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
+        <h2 id="standards-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Стандарты лечения Д-ра МухаммадАли Давронова" : lang === "en" ? "Dr. MuhammadAli Davronov's Clinical Standards" : "Dr. MuhammadAli Davronovning Davolash Standartlari"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -250,15 +250,15 @@ const About = ({ onOpenBooking }) => {
               glare={true}
               className="h-full"
             >
-              <article className="h-full p-5 rounded-2xl bg-zinc-950/90 border border-zinc-900 flex flex-col justify-between hover:border-red-900/60 hover:shadow-card transition-all duration-300 group">
+              <article className="h-full p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-300 group">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-red-950/60 border border-red-900/40 text-red-400 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mb-4 shadow-2xs group-hover:bg-primary group-hover:text-white transition-all">
                     {val.icon}
                   </div>
-                  <h3 className="font-bold text-sm sm:text-base text-white mb-2">
+                  <h3 className="font-bold text-sm sm:text-base text-slate-900 mb-2">
                     {val.title[lang]}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {val.desc[lang]}
                   </p>
                 </div>
@@ -269,21 +269,21 @@ const About = ({ onOpenBooking }) => {
       </section>
 
       {/* Career Timeline */}
-      <section aria-labelledby="timeline-heading" className="p-6 sm:p-10 rounded-3xl bg-[#0A0505] border border-red-950/60 shadow-luxury">
-        <h2 id="timeline-heading" className="font-serif text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+      <section aria-labelledby="timeline-heading" className="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
+        <h2 id="timeline-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Профессиональный путь" : lang === "en" ? "Career & Experience Timeline" : "Shifokorning Professional Yo'li"}
         </h2>
         <div className="space-y-6 max-w-3xl mx-auto">
           {timeline.map((item, idx) => (
             <div key={idx} className="flex gap-4 sm:gap-6 items-start">
-              <span className="w-28 sm:w-32 shrink-0 text-xs font-mono font-bold text-red-300 bg-red-950/70 px-2.5 py-1.5 rounded-lg text-center border border-red-900/40">
+              <span className="w-28 sm:w-32 shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-2.5 py-1.5 rounded-full text-center border border-primary/20">
                 {item.year[lang]}
               </span>
-              <div className="pb-6 border-b border-zinc-900 flex-1">
-                <h3 className="text-sm sm:text-base font-bold text-white mb-1">
+              <div className="pb-6 border-b border-slate-200 flex-1">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
                   {item.title[lang]}
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {item.desc[lang]}
                 </p>
               </div>

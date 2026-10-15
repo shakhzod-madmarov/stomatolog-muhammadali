@@ -123,13 +123,13 @@ export const BeforeAfterSlider = ({
   return (
     <div className="w-full max-w-4xl mx-auto my-12 px-4 sm:px-6">
       <div className="text-center mb-8">
-        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary-electric bg-primary-dark/30 border border-primary-crimson/40 shadow-xs mb-2 uppercase">
+        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
           {lang === "uz" ? "KLINIK TAJRIBA VA NATIJALAR" : lang === "ru" ? "КЛИНИЧЕСКИЕ РЕЗУЛЬТАТЫ" : "CLINICAL TRANSFORMATIONS"}
         </span>
-        <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+        <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
           {defaultTitle}
         </h3>
-        <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-xl mx-auto">
+        <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-xl mx-auto">
           {defaultSub}
         </p>
 
@@ -143,10 +143,10 @@ export const BeforeAfterSlider = ({
                 setActiveCaseId(item.id);
                 setSliderPos(50);
               }}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 activeCaseId === item.id
-                  ? "bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric text-white shadow-glow-red scale-102"
-                  : "bg-surface-elevated/80 text-slate-300 hover:text-white hover:bg-surface-border/50 border border-white/10 shadow-xs"
+                  ? "bg-primary text-white shadow-md scale-102"
+                  : "bg-white text-slate-700 hover:text-primary hover:bg-slate-50 border border-slate-200 shadow-xs"
               }`}
             >
               {item.label[lang]}
@@ -174,7 +174,7 @@ export const BeforeAfterSlider = ({
           aria-valuenow={Math.round(sliderPos)}
           aria-valuemin={0}
           aria-valuemax={100}
-          className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-crimson/30 cursor-ew-resize select-none touch-pan-y focus:outline-none focus:ring-2 focus:ring-primary-electric group"
+          className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-slate-200 cursor-ew-resize select-none touch-pan-y focus:outline-none focus:ring-2 focus:ring-primary group"
         >
           {/* After Image (Background) */}
           <img
@@ -205,12 +205,12 @@ export const BeforeAfterSlider = ({
 
           {/* Divider Line */}
           <div
-            className="absolute top-0 bottom-0 w-1 bg-white/90 shadow-[0_0_15px_rgba(255,0,0,0.6)] pointer-events-none"
+            className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_12px_rgba(200,16,46,0.5)] pointer-events-none"
             style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
           >
             {/* Central Handle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#000000] text-primary-electric shadow-glow-red border-2 border-primary-electric flex items-center justify-center font-bold text-xs sm:text-sm">
-              <svg className="w-4 h-4 text-primary-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-primary shadow-lg border-2 border-primary flex items-center justify-center font-bold text-xs sm:text-sm">
+              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7l-4 4 4 4m8-8l4 4-4 4M4 11h16" />
               </svg>
             </div>
@@ -218,19 +218,19 @@ export const BeforeAfterSlider = ({
 
           {/* Category Tag Top Center */}
           <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 pointer-events-none z-10">
-            <span className="px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-[#000000]/80 text-primary-electric backdrop-blur-md border border-primary-crimson/40 shadow-xs whitespace-nowrap">
+            <span className="px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-white/90 text-primary backdrop-blur-md border border-slate-200 shadow-sm whitespace-nowrap">
               {activeCase.tag[lang]}
             </span>
           </div>
 
           {/* Labels */}
           <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 pointer-events-none z-10">
-            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-lg sm:rounded-xl text-[10.5px] sm:text-xs font-bold bg-black/80 text-white backdrop-blur-md shadow-xs border border-white/10">
+            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-slate-900/80 text-white backdrop-blur-md shadow-xs border border-slate-700">
               {defaultBefore}
             </span>
           </div>
           <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 pointer-events-none z-10">
-            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-lg sm:rounded-xl text-[10.5px] sm:text-xs font-bold bg-gradient-to-r from-primary-dark via-primary-crimson to-primary-electric text-white backdrop-blur-md shadow-glow-red border border-primary-crimson/40">
+            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-primary text-white backdrop-blur-md shadow-sm border border-primary">
               {defaultAfter}
             </span>
           </div>

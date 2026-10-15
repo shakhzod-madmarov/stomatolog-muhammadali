@@ -65,15 +65,15 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
         style={{ top: `${topOffset}px` }}
         className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-black/92 backdrop-blur-md shadow-2xl border-b border-[#830000]/40 py-2.5"
-            : "bg-black/75 backdrop-blur-md border-b border-[#830000]/25 py-3 sm:py-3.5"
+            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-2.5"
+            : "bg-white/90 backdrop-blur-md border-b border-slate-100 py-3 sm:py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
           {/* Brand Logo */}
-          <Logo className="h-9 sm:h-10 shrink-0" />
+          <Logo className="h-9 sm:h-10 shrink-0" isWhite={false} />
 
-          {/* Desktop Navigation Links — Airy, typographic luxury design */}
+          {/* Desktop Navigation Links */}
           <nav
             aria-label={a11y.mainNavigation}
             className="hidden lg:flex items-center gap-1 xl:gap-2"
@@ -84,10 +84,10 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
                 to={to(link.path)}
                 end={link.path === "/"}
                 className={({ isActive }) =>
-                  `relative px-3 py-1.5 text-[13.5px] xl:text-[14px] transition-colors duration-150 ${
+                  `relative px-3.5 py-2 text-[14px] font-bold transition-colors duration-150 rounded-lg ${
                     isActive
-                      ? "text-red-500 font-bold after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-red-500 after:rounded-full after:shadow-[0_0_8px_#FF0000]"
-                      : "text-zinc-300 font-medium hover:text-white"
+                      ? "text-primary bg-red-50/80 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary after:rounded-full"
+                      : "text-slate-700 hover:text-primary hover:bg-slate-50"
                   }`
                 }
               >
@@ -96,32 +96,32 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             ))}
           </nav>
 
-          {/* Action Hub (Compact Phone + Language + Booking Button) */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          {/* Action Hub (Phone + Language + Colgate Red Booking Button) */}
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Direct Phone Call */}
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="hidden min-[400px]:inline-flex items-center justify-center gap-2 h-9 px-2.5 2xl:px-3 rounded-xl text-xs font-semibold text-red-400 bg-red-950/40 border border-red-900/50 hover:bg-red-600 hover:text-white hover:border-red-500 transition-all duration-200 group shadow-xs"
+              className="hidden min-[400px]:inline-flex items-center justify-center gap-2 h-9 px-3 rounded-full text-xs font-bold text-slate-700 bg-slate-100 border border-slate-200 hover:bg-red-50 hover:text-primary hover:border-red-200 transition-all duration-200 group shadow-2xs"
               aria-label={a11y.callClinic}
               title={`${DOCTOR_INFO.phoneDisplay} (Dr. MuhammadAli Davronov)`}
             >
-              <IconPhone className="w-3.5 h-3.5 shrink-0 group-hover:scale-110 transition-transform text-red-400 group-hover:text-white" />
-              <span className="hidden 2xl:inline font-mono tracking-tight font-medium">
+              <IconPhone className="w-3.5 h-3.5 shrink-0 group-hover:scale-110 transition-transform text-primary" />
+              <span className="hidden 2xl:inline font-mono tracking-tight">
                 {DOCTOR_INFO.phoneDisplay}
               </span>
             </a>
 
             {/* Language Switcher */}
-            <div className="flex items-center p-0.5 rounded-xl bg-zinc-900/90 border border-red-950/60 shadow-xs">
+            <div className="flex items-center p-0.5 rounded-full bg-slate-100 border border-slate-200">
               {LANGS.map((code) => (
                 <button
                   key={code}
                   type="button"
                   onClick={() => changeLanguage(code)}
-                  className={`px-1.5 min-[380px]:px-2 py-1 text-[10.5px] min-[380px]:text-[11px] font-bold rounded-lg transition-all ${
+                  className={`px-2 py-1 text-[11px] font-bold rounded-full transition-all ${
                     lang === code
-                      ? "bg-gradient-to-r from-[#BC0202] to-[#FF0000] text-white shadow-[0_0_10px_rgba(255,0,0,0.4)]"
-                      : "text-zinc-400 hover:text-white"
+                      ? "bg-primary text-white shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                   aria-label={`${a11y.languageSwitcher}: ${code.toUpperCase()}`}
                 >
@@ -130,11 +130,11 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
               ))}
             </div>
 
-            {/* Booking CTA Button */}
+            {/* Booking CTA Button (Colgate Red Pill) */}
             <button
               type="button"
               onClick={handleBookingClick}
-              className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 h-9 rounded-xl text-xs sm:text-[13px] font-bold text-white bg-gradient-to-r from-[#830000] via-[#BC0202] to-[#FF0000] hover:from-[#BC0202] hover:to-[#FF2E2E] shadow-[0_4px_20px_rgba(255,0,0,0.35)] transition-all duration-200 active:scale-95 shrink-0 border border-red-500/40"
+              className="hidden sm:inline-flex items-center justify-center px-5 h-9 rounded-full text-xs sm:text-[13px] font-bold text-white bg-primary hover:bg-primary-hover shadow-colgate hover:shadow-colgate-lg transition-all duration-200 active:scale-95 shrink-0"
             >
               {bookingBtnLabel}
             </button>
@@ -143,7 +143,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             <button
               type="button"
               onClick={() => setShowMenu(!showMenu)}
-              className="lg:hidden p-2 rounded-xl text-zinc-300 hover:text-white hover:bg-zinc-800/60 focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="lg:hidden p-2 rounded-xl text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary"
               aria-label={showMenu ? a11y.closeMenu : a11y.openMenu}
               aria-expanded={showMenu}
             >
@@ -162,24 +162,24 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
       {/* Mobile Drawer Overlay */}
       {showMenu && (
         <div
-          className="fixed inset-0 z-40 bg-black/70 backdrop-blur-xs lg:hidden transition-opacity"
+          className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-xs lg:hidden transition-opacity"
           onClick={closeDrawer}
         />
       )}
 
       {/* Mobile Drawer Content */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-72 max-w-[85vw] bg-[#0A0505] border-l border-red-950/60 shadow-2xl p-6 pt-[calc(1.5rem+env(safe-area-inset-top,0px))] pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] flex flex-col justify-between overflow-y-auto overscroll-contain transform transition-transform duration-300 lg:hidden ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-72 max-w-[85vw] bg-white border-l border-slate-200 shadow-2xl p-6 pt-[calc(1.5rem+env(safe-area-inset-top,0px))] pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] flex flex-col justify-between overflow-y-auto overscroll-contain transform transition-transform duration-300 lg:hidden ${
           showMenu ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div>
-          <div className="flex items-center justify-between pb-4 border-b border-red-950/40">
-            <Logo className="h-8" />
+          <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+            <Logo className="h-8" isWhite={false} />
             <button
               type="button"
               onClick={closeDrawer}
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100"
               aria-label={a11y.closeMenu}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,10 +196,10 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
                 end={link.path === "/"}
                 onClick={closeDrawer}
                 className={({ isActive }) =>
-                  `px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                  `px-4 py-2.5 rounded-xl text-sm font-bold transition-colors ${
                     isActive
-                      ? "text-white bg-red-950/80 border border-red-800/50"
-                      : "text-zinc-300 hover:text-white hover:bg-zinc-900/60"
+                      ? "text-primary bg-red-50 border-l-4 border-primary"
+                      : "text-slate-700 hover:text-primary hover:bg-slate-50"
                   }`
                 }
               >
@@ -209,24 +209,24 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
           </nav>
         </div>
 
-        <div className="pt-6 border-t border-red-950/40 flex flex-col gap-3">
+        <div className="pt-6 border-t border-slate-100 flex flex-col gap-3">
           <a
             href={DOCTOR_INFO.phoneHref}
-            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-bold text-red-300 bg-red-950/50 border border-red-900/50"
+            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-bold text-slate-800 bg-slate-100 hover:bg-red-50 hover:text-primary border border-slate-200 transition-colors"
           >
-            <IconPhone className="w-3.5 h-3.5 text-red-400" />
+            <IconPhone className="w-3.5 h-3.5 text-primary" />
             <span>{DOCTOR_INFO.phoneDisplay}</span>
           </a>
 
           <button
             type="button"
             onClick={handleBookingClick}
-            className="w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#830000] via-[#BC0202] to-[#FF0000] shadow-[0_4px_20px_rgba(255,0,0,0.35)] text-center border border-red-500/40"
+            className="w-full py-3 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-colgate text-center transition-all"
           >
             {bookingBtnLabel}
           </button>
 
-          <p className="text-[11px] text-center text-zinc-400">
+          <p className="text-[11px] text-center text-slate-400">
             {lang === "ru"
               ? "Д-р МухаммадАли Давронов · DM Stomatology"
               : lang === "en"
