@@ -63,8 +63,8 @@ export const Doctor3DCard = () => {
   }[lang] || labels.uz;
 
   return (
-    <div className="w-full p-6 sm:p-10 rounded-3xl bg-white border border-slate-200/90 shadow-lg relative overflow-hidden text-slate-900">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+    <div className="w-full p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-lg relative overflow-hidden text-slate-900">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
         {/* Left: 3D Flippable Business Card with Interactive Tilt */}
         <div className="lg:col-span-6 flex flex-col items-center">
           <Interactive3DTilt
@@ -137,30 +137,30 @@ export const Doctor3DCard = () => {
 
 
                 {/* Card Back: Clinic Credentials & Contacts */}
-                <div className="absolute inset-0 backface-hidden [transform:rotateY(180deg)] bg-gradient-to-br from-white via-slate-50 to-red-50/40 p-6 flex flex-col justify-between border border-slate-200">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-                    <div className="flex items-center gap-2.5">
-                      <DmToothEmblem className="w-8 h-8" glow={true} />
+                <div className="absolute inset-0 backface-hidden [transform:rotateY(180deg)] bg-gradient-to-br from-white via-slate-50 to-red-50/40 p-4 sm:p-6 flex flex-col justify-between border border-slate-200">
+                  <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-slate-200">
+                    <div className="flex items-center gap-2 sm:gap-2.5">
+                      <DmToothEmblem className="w-7 h-7 sm:w-8 sm:h-8" glow={true} />
                       <div>
-                        <div className="font-sans font-black text-slate-900 text-base tracking-wide">
+                        <div className="font-sans font-black text-slate-900 text-sm sm:text-base tracking-wide">
                           MUHAMMAD ALI
                         </div>
-                        <div className="text-[10px] text-primary uppercase tracking-widest font-bold">
+                        <div className="text-[9px] sm:text-[10px] text-primary uppercase tracking-widest font-bold">
                           Stomatolog
                         </div>
                       </div>
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-primary border border-red-200">
+                    <span className="px-2.5 py-0.5 rounded-full text-[9.5px] sm:text-[10px] font-bold bg-red-50 text-primary border border-red-200">
                       5 Yil Tajriba
                     </span>
                   </div>
 
-                  <div className="space-y-3 py-2 text-xs text-slate-700">
+                  <div className="space-y-2 sm:space-y-3 py-1.5 sm:py-2 text-[11.5px] sm:text-xs text-slate-700">
                     <div className="flex items-center gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-red-50 text-primary flex items-center justify-center shrink-0 border border-red-100 font-bold">
                         <IconGraduationCap className="w-4 h-4 text-primary" />
                       </div>
-                      <span className="font-semibold text-slate-900">
+                      <span className="font-semibold text-slate-900 line-clamp-2">
                         {labels.education}
                       </span>
                     </div>
@@ -169,7 +169,7 @@ export const Doctor3DCard = () => {
                       <div className="w-7 h-7 rounded-lg bg-red-50 text-primary flex items-center justify-center shrink-0 border border-red-100">
                         <IconLocationPin className="w-3.5 h-3.5 text-primary" />
                       </div>
-                      <span className="text-slate-700">
+                      <span className="text-slate-700 line-clamp-2">
                         Andijon shahar, Navoiy shoh ko'chasi, 91-uy
                       </span>
                     </div>
@@ -184,9 +184,9 @@ export const Doctor3DCard = () => {
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                  <div className="pt-2 sm:pt-3 border-t border-slate-200 flex items-center justify-between text-[10.5px] sm:text-[11px] text-slate-500 font-medium">
                     <span className="font-semibold text-slate-700">@dm.muxammadali</span>
-                    <span className="px-2 py-0.5 rounded-full bg-red-50 text-primary border border-red-200 font-mono text-[10px] font-bold">
+                    <span className="px-2 py-0.5 rounded-full bg-red-50 text-primary border border-red-200 font-mono text-[9.5px] sm:text-[10px] font-bold">
                       Kafolat 5 Yil
                     </span>
                   </div>
@@ -202,7 +202,7 @@ export const Doctor3DCard = () => {
             onClick={() => setIsFlipped(!isFlipped)}
             aria-pressed={isFlipped}
             aria-label={labels.flipPrompt}
-            className="mt-4 inline-flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-red-50 hover:text-primary px-4 py-2 rounded-full border border-slate-200 transition-all active:scale-95 group shadow-2xs"
+            className="mt-4 min-h-[44px] inline-flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-red-50 hover:text-primary px-4 py-2.5 rounded-full border border-slate-200 transition-all active:scale-95 group shadow-2xs"
           >
             <svg className="w-4 h-4 text-primary transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />

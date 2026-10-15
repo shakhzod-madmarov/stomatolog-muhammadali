@@ -155,9 +155,9 @@ export const SmileAssessmentWizard = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-slate-50 border-y border-slate-200/80" aria-labelledby="assessment-heading">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8">
+    <section className="w-full py-10 sm:py-16 bg-slate-50 border-y border-slate-200/80" aria-labelledby="assessment-heading">
+      <div className="max-w-3xl mx-auto px-3.5 sm:px-6">
+        <div className="text-center mb-6 sm:mb-8">
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
             {stepsData.badge}
           </span>
@@ -176,9 +176,9 @@ export const SmileAssessmentWizard = () => {
           glare={false}
           className="w-full"
         >
-          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
+          <div className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
           {/* Step Indicators */}
-          <div className="flex items-center justify-center gap-2 mb-8" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3} aria-label="Assessment Progress">
+          <div className="flex items-center justify-center gap-2 mb-6 sm:mb-8" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3} aria-label="Assessment Progress">
             {[1, 2, 3].map((s) => (
               <div
                 key={s}
@@ -196,21 +196,21 @@ export const SmileAssessmentWizard = () => {
           {/* Step 1: Complaint */}
           {step === 1 && (
             <fieldset>
-              <legend className="text-base sm:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
+              <legend className="text-sm sm:text-base md:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
                 {stepsData.step1Title}
               </legend>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3" role="group" aria-label={stepsData.step1Title}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3" role="group" aria-label={stepsData.step1Title}>
                 {stepsData.complaints.map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectComplaint(item)}
-                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-3 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
+                    className="min-h-[48px] p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-2.5 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
                   >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
                       {renderComplaintIcon(item.id, "w-4 h-4 sm:w-5 sm:h-5")}
                     </div>
-                    <span>{item.label}</span>
+                    <span className="leading-snug">{item.label}</span>
                   </button>
                 ))}
               </div>
@@ -220,21 +220,21 @@ export const SmileAssessmentWizard = () => {
           {/* Step 2: Priority */}
           {step === 2 && (
             <fieldset>
-              <legend className="text-base sm:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
+              <legend className="text-sm sm:text-base md:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
                 {stepsData.step2Title}
               </legend>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3" role="group" aria-label={stepsData.step2Title}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3" role="group" aria-label={stepsData.step2Title}>
                 {stepsData.priorities.map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectPriority(item)}
-                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-3 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
+                    className="min-h-[48px] p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-2.5 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
                   >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
                       {renderPriorityIcon(item.id, "w-4 h-4 sm:w-5 sm:h-5")}
                     </div>
-                    <span>{item.label}</span>
+                    <span className="leading-snug">{item.label}</span>
                   </button>
                 ))}
               </div>

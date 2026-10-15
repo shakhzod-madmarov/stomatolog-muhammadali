@@ -69,7 +69,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             : "bg-white/90 backdrop-blur-md border-b border-slate-100 py-3 sm:py-3.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-3">
           {/* Brand Logo */}
           <Logo className="h-9 sm:h-10 shrink-0" isWhite={false} />
 
@@ -143,7 +143,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             <button
               type="button"
               onClick={() => setShowMenu(!showMenu)}
-              className="lg:hidden p-2 rounded-xl text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-xl text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary"
               aria-label={showMenu ? a11y.closeMenu : a11y.openMenu}
               aria-expanded={showMenu}
             >
@@ -179,7 +179,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             <button
               type="button"
               onClick={closeDrawer}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100"
               aria-label={a11y.closeMenu}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

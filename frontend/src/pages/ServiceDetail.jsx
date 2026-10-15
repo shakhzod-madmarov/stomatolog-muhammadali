@@ -130,7 +130,7 @@ const ServiceDetail = () => {
       </nav>
 
       {/* Main Hero Header */}
-      <div className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="p-3.5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
         <div className="lg:col-span-7 space-y-4">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">
@@ -145,7 +145,7 @@ const ServiceDetail = () => {
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+          <h1 className="font-serif text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
             {service.title[lang]}
           </h1>
 
@@ -153,24 +153,24 @@ const ServiceDetail = () => {
             {service.shortDesc[lang]}
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2">
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
-              <span className="text-slate-500 block text-[11px]">
+              <span className="text-slate-500 block text-[10.5px] sm:text-[11px]">
                 {lang === "ru" ? "Длительность" : lang === "en" ? "Duration" : "Vaqt / Muddat"}
               </span>
               <span className="font-bold text-slate-900 mt-0.5 block">{service.duration[lang]}</span>
             </div>
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
-              <span className="text-slate-500 block text-[11px]">
+              <span className="text-slate-500 block text-[10.5px] sm:text-[11px]">
                 {lang === "ru" ? "Гарантия" : lang === "en" ? "Warranty" : "Kafolat"}
               </span>
               <span className="font-bold text-emerald-600 mt-0.5 block">{service.warranty[lang]}</span>
             </div>
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs col-span-2 sm:col-span-1 shadow-2xs">
-              <span className="text-slate-500 block text-[11px]">
+              <span className="text-slate-500 block text-[10.5px] sm:text-[11px]">
                 {lang === "ru" ? "Лечащий врач" : lang === "en" ? "Attending Doctor" : "Davolovchi Shifokor"}
               </span>
-              <span className="font-bold text-primary mt-0.5 block whitespace-nowrap">Dr. MuhammadAli Davronov</span>
+              <span className="font-bold text-primary mt-0.5 block">Dr. MuhammadAli Davronov</span>
             </div>
           </div>
           <p className="text-[11px] text-slate-600 font-medium pt-1 flex items-center gap-1.5">
@@ -180,17 +180,17 @@ const ServiceDetail = () => {
             </span>
           </p>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <button
               type="button"
               onClick={() => openBooking(service.id)}
-              className="px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all text-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all text-center"
             >
               {lang === "ru" ? "Записаться на эту процедуру" : lang === "en" ? "Book Appointment for this Treatment" : "Ushbu muolajaga yozilish"}
             </button>
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="px-5 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors text-center flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-5 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors text-center flex items-center justify-center gap-2"
             >
               <IconPhone className="w-4 h-4 text-primary" />
               <span>{DOCTOR_INFO.phoneDisplay}</span>

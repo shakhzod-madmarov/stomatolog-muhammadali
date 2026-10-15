@@ -198,7 +198,7 @@ const About = ({ onOpenBooking }) => {
       <Doctor3DCard />
 
       {/* Professional Philosophy & Bio */}
-      <section aria-labelledby="philosophy-heading" className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <section aria-labelledby="philosophy-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
         <div className="lg:col-span-12 space-y-4">
           <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider inline-block">
             {lang === "ru" ? "ФИЛОСОФИЯ ЛЕЧЕНИЯ" : lang === "en" ? "CLINICAL PHILOSOPHY" : "DAVOLASH FALSAFASI"}
@@ -218,17 +218,17 @@ const About = ({ onOpenBooking }) => {
               : "Dentistry is the art of restoring health, natural beauty, and daily confidence. With rigorous training at the Andijan State Medical Institute and 5 years of active practice, my commitment is to preserve your natural teeth wherever possible and deliver long-lasting, aesthetic restorations through precision zirconia crowns and biocompatible implants."}
           </p>
 
-          <div className="pt-2 flex flex-wrap gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <button
               type="button"
               onClick={onOpenBooking}
-              className="px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover hover:scale-102 active:scale-98 shadow-md hover:shadow-colgate transition-all"
+              className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all text-center"
             >
               {lang === "ru" ? "Записаться на консультацию" : lang === "en" ? "Book a Consultation" : "Konsultatsiyaga yozilish"}
             </button>
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors"
+              className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors text-center"
             >
               {DOCTOR_INFO.phoneDisplay}
             </a>
@@ -237,11 +237,11 @@ const About = ({ onOpenBooking }) => {
       </section>
 
       {/* Clinical Values & Standards */}
-      <section aria-labelledby="standards-heading" className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
+      <section aria-labelledby="standards-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
         <h2 id="standards-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Стандарты лечения Д-ра МухаммадАли Давронова" : lang === "en" ? "Dr. MuhammadAli Davronov's Clinical Standards" : "Dr. MuhammadAli Davronovning Davolash Standartlari"}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {values.map((val, idx) => (
             <Interactive3DTilt
               key={idx}
@@ -251,7 +251,7 @@ const About = ({ onOpenBooking }) => {
               glare={true}
               className="h-full"
             >
-              <article className="h-full p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-300 group">
+              <article className="h-full p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-300 group">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mb-4 shadow-2xs group-hover:bg-primary group-hover:text-white transition-all">
                     {val.icon}
@@ -274,17 +274,17 @@ const About = ({ onOpenBooking }) => {
 
 
       {/* Career Timeline */}
-      <section aria-labelledby="timeline-heading" className="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
+      <section aria-labelledby="timeline-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
         <h2 id="timeline-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Профессиональный путь" : lang === "en" ? "Career & Experience Timeline" : "Shifokorning Professional Yo'li"}
         </h2>
         <div className="space-y-6 max-w-3xl mx-auto">
           {timeline.map((item, idx) => (
-            <div key={idx} className="flex gap-4 sm:gap-6 items-start">
-              <span className="w-28 sm:w-32 shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-2.5 py-1.5 rounded-full text-center border border-primary/20">
+            <div key={idx} className="flex flex-col sm:flex-row gap-2.5 sm:gap-6 items-start">
+              <span className="inline-block sm:w-32 shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-full text-center border border-primary/20 self-start">
                 {item.year[lang]}
               </span>
-              <div className="pb-6 border-b border-slate-200 flex-1">
+              <div className="pb-5 sm:pb-6 border-b border-slate-200 flex-1 w-full">
                 <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
                   {item.title[lang]}
                 </h3>

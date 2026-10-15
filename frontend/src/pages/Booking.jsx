@@ -48,7 +48,7 @@ const Booking = () => {
       </nav>
 
       {/* Doctor Summary Banner */}
-      <header className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      <header className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 sm:gap-6">
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-2">
             <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black uppercase border border-primary/20">
@@ -76,7 +76,7 @@ const Booking = () => {
               : "Choose a convenient time for your consultation with Dr. MuhammadAli Davronov at DM Stomatology. Orthopedics, therapy, and dental implants with dedicated gentle care."}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-700 pt-1">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-semibold text-slate-700 pt-1">
             <span className="flex items-center gap-1.5">
               <DentalDigitalScannerIcon className="w-4 h-4 text-primary" />
               <span>{DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz}</span>
@@ -88,12 +88,12 @@ const Booking = () => {
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white border border-slate-200 text-xs space-y-2 shrink-0 text-center sm:text-left shadow-2xs">
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-xs space-y-2 shrink-0 text-center sm:text-left shadow-2xs w-full md:w-auto">
           <p className="font-bold text-slate-900">{hours.full}</p>
           <p className="text-slate-500">{hours.sunday}</p>
           <a
             href={DOCTOR_INFO.phoneHref}
-            className="inline-flex items-center gap-2 font-mono font-bold text-primary hover:underline pt-1 text-sm"
+            className="inline-flex items-center justify-center sm:justify-start gap-2 font-mono font-bold text-primary hover:underline pt-1 text-sm w-full"
           >
             <IconPhone className="w-4 h-4 text-primary" />
             <span>{DOCTOR_INFO.phoneDisplay}</span>

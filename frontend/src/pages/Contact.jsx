@@ -73,9 +73,9 @@ const Contact = () => {
       </header>
 
       {/* 4 Contact Cards */}
-      <section aria-label={lang === "uz" ? "Aloqa vositalari" : lang === "ru" ? "Способы связи" : "Contact Methods"} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <section aria-label={lang === "uz" ? "Aloqa vositalari" : lang === "ru" ? "Способы связи" : "Contact Methods"} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
         {/* Phone 1 */}
-        <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-primary/50 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
+        <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-primary/50 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
               <IconPhone className="w-6 h-6 text-primary" />
@@ -98,7 +98,7 @@ const Contact = () => {
         </div>
 
         {/* Location Info */}
-        <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-primary/50 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
+        <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-primary/50 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
               <IconLocationPin className="w-6 h-6 text-primary" />
@@ -123,7 +123,7 @@ const Contact = () => {
         </div>
 
         {/* Telegram */}
-        <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-sky-500 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
+        <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-sky-500 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-500 border border-sky-100 flex items-center justify-center">
               <IconTelegram className="w-6 h-6 text-sky-500" />
@@ -148,7 +148,7 @@ const Contact = () => {
         </div>
 
         {/* Instagram */}
-        <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-pink-500 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
+        <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-pink-500 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-pink-50 text-pink-500 border border-pink-100 flex items-center justify-center">
               <IconInstagram className="w-6 h-6 text-pink-400" />

@@ -96,25 +96,25 @@ const HeroSection = ({ onOpenBooking }) => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/50 rounded-full blur-3xl -z-10 pointer-events-none" />
       <div className="absolute top-20 left-10 w-72 h-72 bg-red-50/70 rounded-full blur-2xl -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs mb-5">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-xs font-bold text-primary tracking-wide">
+            <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs mb-4 sm:mb-5 max-w-full">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
+              <span className="text-[11px] sm:text-xs font-bold text-primary tracking-wide truncate">
                 {t.badge}
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl min-[360px]:text-4xl sm:text-5xl lg:text-[54px] font-serif font-bold text-slate-950 leading-[1.14] sm:leading-[1.12] tracking-tight mb-5">
+            <h1 className="text-2xl min-[360px]:text-3xl sm:text-5xl lg:text-[54px] font-serif font-bold text-slate-950 leading-[1.15] sm:leading-[1.12] tracking-tight mb-4 sm:mb-5">
               {t.headline}
             </h1>
 
             {/* Doctor Credentials Subhead */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-primary mb-3 flex-wrap">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-primary mb-3 flex-wrap">
               <span className="font-bold text-slate-900">{t.doctorName}</span>
               <span className="text-slate-300">·</span>
               <span>{t.specialtyTitle}</span>
@@ -182,19 +182,19 @@ const HeroSection = ({ onOpenBooking }) => {
               <div className="absolute -inset-3 bg-red-100/60 rounded-3xl blur-2xl -z-10 animate-pulse-subtle" />
 
               {/* Floating Badge Top-Left */}
-              <div className="absolute -top-3.5 left-1 sm:-left-4 px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[11px] font-bold text-slate-900 flex items-center gap-1.5 sm:gap-2 animate-float-slow z-20 pointer-events-none">
+              <div className="absolute -top-3.5 left-2 sm:-left-4 max-w-[85%] px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[10.5px] sm:text-[11px] font-bold text-slate-900 flex items-center gap-1.5 sm:gap-2 animate-float-slow z-20 pointer-events-none">
                 <span className="w-5 h-5 rounded-full bg-red-50 text-primary flex items-center justify-center shrink-0">
                   <IconScannerOptical3D className="w-3.5 h-3.5" />
                 </span>
-                <span>{t.floatBadge1}</span>
+                <span className="truncate">{t.floatBadge1}</span>
               </div>
 
               {/* Floating Badge Bottom-Right */}
-              <div className="absolute -bottom-3.5 right-1 sm:-right-4 px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[11px] font-bold text-primary flex items-center gap-1.5 sm:gap-2 animate-float-3d z-20 pointer-events-none">
+              <div className="absolute -bottom-3.5 right-2 sm:-right-4 max-w-[85%] px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[10.5px] sm:text-[11px] font-bold text-primary flex items-center gap-1.5 sm:gap-2 animate-float-3d z-20 pointer-events-none">
                 <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
                   <IconAligners className="w-3.5 h-3.5" />
                 </span>
-                <span>{t.floatBadge2}</span>
+                <span className="truncate">{t.floatBadge2}</span>
               </div>
 
               {/* Floating 3D Tooth Brand Sticker */}
@@ -220,7 +220,7 @@ const HeroSection = ({ onOpenBooking }) => {
                 glare={false}
                 className="w-full"
               >
-                <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xl flex flex-col gap-5 relative overflow-hidden">
+                <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-xl flex flex-col gap-4 sm:gap-5 relative overflow-hidden">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                     <div className="flex items-center gap-3">
                       <DmToothEmblem className="w-10 h-10" />
@@ -334,9 +334,9 @@ const Home = ({ onOpenBooking }) => {
       <DigitalDentistryFeatures />
 
       {/* 3. Services Catalog Overview Grid (Clean Porcelain Section) */}
-      <section className="w-full py-16 sm:py-24 bg-slate-50/80 border-y border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <section className="w-full py-14 sm:py-20 lg:py-24 bg-slate-50/80 border-y border-slate-200/60">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
             <div>
               <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-red-50 border border-red-200/70 shadow-2xs mb-3 uppercase">
                 {labels.servicesBadge}
@@ -357,7 +357,7 @@ const Home = ({ onOpenBooking }) => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {SERVICES_CATALOG.slice(0, 6).map((service) => (
               <Interactive3DTilt
                 key={service.id}
@@ -367,7 +367,7 @@ const Home = ({ onOpenBooking }) => {
                 glare={false}
                 className="h-full"
               >
-                <article className="h-full p-6 rounded-3xl bg-white border border-slate-200/80 shadow-sm hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
+                <article className="h-full p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/80 shadow-sm hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
                   <div>
                     <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-5 relative">
                       <img
@@ -419,7 +419,7 @@ const Home = ({ onOpenBooking }) => {
 
       {/* 4. Doctor Profile & 3D Flippable Business Card */}
       <section className="w-full py-14 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
           <Doctor3DCard />
         </div>
       </section>

@@ -146,8 +146,8 @@ export const Interactive3DCostCalculator = () => {
 
   return (
     <section className="w-full py-12 sm:py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-xl mx-auto mb-10">
+        <div className="max-w-4xl mx-auto px-3.5 sm:px-6">
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10">
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
             {labels.badge}
           </span>
@@ -166,10 +166,10 @@ export const Interactive3DCostCalculator = () => {
           glare={false}
           className="w-full"
         >
-          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
             {/* Step 1: Service Pills */}
-            <div className="mb-6">
-              <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-3">
+            <div className="mb-5 sm:mb-6">
+              <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2.5 sm:mb-3">
                 {labels.step1}
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
@@ -178,7 +178,7 @@ export const Interactive3DCostCalculator = () => {
                     key={svc.id}
                     type="button"
                     onClick={() => handleServiceChange(svc.id)}
-                    className={`px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all text-center leading-snug break-words ${
+                    className={`min-h-[44px] flex items-center justify-center px-2 sm:px-3.5 py-2 rounded-xl text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-bold transition-all text-center leading-tight break-words ${
                       selectedServiceId === svc.id
                         ? "bg-primary text-white shadow-md scale-102"
                         : "bg-white text-slate-700 hover:text-primary hover:bg-slate-100 border border-slate-200 shadow-xs"
@@ -235,22 +235,22 @@ export const Interactive3DCostCalculator = () => {
             </div>
 
             {/* Summary Details Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 text-xs mb-6 shadow-2xs">
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[11px]">{labels.visits}</span>
-                <span className="font-bold text-slate-900 mt-0.5 block">{current.visits[lang]}</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 text-xs mb-6 shadow-2xs">
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.visits}</span>
+                <span className="font-bold text-slate-900 mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.visits[lang]}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[11px]">{labels.duration}</span>
-                <span className="font-bold text-slate-900 mt-0.5 block">{current.durationPerUnit[lang]}</span>
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.duration}</span>
+                <span className="font-bold text-slate-900 mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.durationPerUnit[lang]}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[11px]">{labels.warranty}</span>
-                <span className="font-bold text-emerald-600 mt-0.5 block">{current.warranty[lang]}</span>
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.warranty}</span>
+                <span className="font-bold text-emerald-600 mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.warranty[lang]}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[11px]">{labels.tech}</span>
-                <span className="font-bold text-primary mt-0.5 block">{current.tech[lang]}</span>
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
+                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.tech}</span>
+                <span className="font-bold text-primary mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.tech[lang]}</span>
               </div>
             </div>
 

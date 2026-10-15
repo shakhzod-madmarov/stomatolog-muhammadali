@@ -121,8 +121,8 @@ export const BeforeAfterSlider = ({
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-12 px-4 sm:px-6">
-      <div className="text-center mb-8">
+    <div className="w-full max-w-4xl mx-auto my-10 sm:my-12 px-3.5 sm:px-6">
+      <div className="text-center mb-6 sm:mb-8">
         <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
           {lang === "uz" ? "KLINIK TAJRIBA VA NATIJALAR" : lang === "ru" ? "КЛИНИЧЕСКИЕ РЕЗУЛЬТАТЫ" : "CLINICAL TRANSFORMATIONS"}
         </span>
@@ -134,7 +134,7 @@ export const BeforeAfterSlider = ({
         </p>
 
         {/* Case Switcher Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6">
           {Object.values(CASES).map((item) => (
             <button
               key={item.id}
@@ -143,7 +143,7 @@ export const BeforeAfterSlider = ({
                 setActiveCaseId(item.id);
                 setSliderPos(50);
               }}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+              className={`min-h-[40px] px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 activeCaseId === item.id
                   ? "bg-primary text-white shadow-md scale-102"
                   : "bg-white text-slate-700 hover:text-primary hover:bg-slate-50 border border-slate-200 shadow-xs"
@@ -174,7 +174,7 @@ export const BeforeAfterSlider = ({
           aria-valuenow={Math.round(sliderPos)}
           aria-valuemin={0}
           aria-valuemax={100}
-          className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-slate-200 cursor-ew-resize select-none touch-pan-y focus:outline-none focus:ring-2 focus:ring-primary group"
+          className="relative w-full aspect-[16/11] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-slate-200 cursor-ew-resize select-none touch-pan-y focus:outline-none focus:ring-2 focus:ring-primary group"
         >
           {/* After Image (Background) */}
           <img
@@ -217,20 +217,20 @@ export const BeforeAfterSlider = ({
           </div>
 
           {/* Category Tag Top Center */}
-          <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 pointer-events-none z-10">
-            <span className="px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-white/90 text-primary backdrop-blur-md border border-slate-200 shadow-sm whitespace-nowrap">
+          <div className="absolute top-2.5 sm:top-4 left-1/2 -translate-x-1/2 pointer-events-none z-10 max-w-[80%]">
+            <span className="px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-white/90 text-primary backdrop-blur-md border border-slate-200 shadow-sm block truncate">
               {activeCase.tag[lang]}
             </span>
           </div>
 
           {/* Labels */}
-          <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 pointer-events-none z-10">
-            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-slate-900/80 text-white backdrop-blur-md shadow-xs border border-slate-700">
+          <div className="absolute bottom-2.5 sm:bottom-4 left-2.5 sm:left-4 pointer-events-none z-10 max-w-[42%]">
+            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-slate-900/80 text-white backdrop-blur-md shadow-xs border border-slate-700 block truncate">
               {defaultBefore}
             </span>
           </div>
-          <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 pointer-events-none z-10">
-            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-bold bg-primary text-white backdrop-blur-md shadow-sm border border-primary">
+          <div className="absolute bottom-2.5 sm:bottom-4 right-2.5 sm:right-4 pointer-events-none z-10 max-w-[42%]">
+            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-primary text-white backdrop-blur-md shadow-sm border border-primary block truncate">
               {defaultAfter}
             </span>
           </div>

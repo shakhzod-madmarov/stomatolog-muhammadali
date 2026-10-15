@@ -115,11 +115,13 @@ export const TrustStickers = ({ className = "" }) => {
       }
       className={`w-full ${className}`}
     >
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-        {STICKERS_DATA.map((sticker) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
+        {STICKERS_DATA.map((sticker, idx) => (
           <div
             key={sticker.id}
-            className="group relative p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-primary/40 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden"
+            className={`group relative p-3 sm:p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-primary/40 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden ${
+              idx === STICKERS_DATA.length - 1 ? "col-span-2 sm:col-span-1 lg:col-span-1" : "col-span-1"
+            }`}
           >
             {/* Soft decorative background tint */}
             <div

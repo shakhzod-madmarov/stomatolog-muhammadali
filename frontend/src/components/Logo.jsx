@@ -28,7 +28,7 @@ const Logo = ({ className = "h-10 sm:h-11 w-auto", showText = true, isWhite = fa
       className={`group flex items-center gap-2.5 sm:gap-3 select-none outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl transition-all duration-300 active:scale-95 ${className}`}
       aria-label="Dr. MuhammadAli Davronov — Stomatolog"
     >
-      <div className="relative flex items-center justify-center shrink-0 w-9 h-9 sm:w-11 sm:h-11 group-hover:scale-105 transition-transform duration-300">
+      <div className="relative flex items-center justify-center shrink-0 w-8 h-8 min-[380px]:w-9 min-[380px]:h-9 sm:w-11 sm:h-11 group-hover:scale-105 transition-transform duration-300">
         <DmToothEmblem className="w-full h-full" glow={!isWhite} />
       </div>
 
@@ -36,7 +36,7 @@ const Logo = ({ className = "h-10 sm:h-11 w-auto", showText = true, isWhite = fa
         <div className="flex flex-col leading-tight">
           <div className="flex items-center gap-1.5">
             <span
-              className={`font-sans text-[14px] sm:text-[17px] font-black tracking-wider transition-colors uppercase ${
+              className={`font-sans text-[12.5px] min-[360px]:text-[13.5px] sm:text-[17px] font-black tracking-wider transition-colors uppercase ${
                 isWhite ? "text-white group-hover:text-red-200" : "text-slate-900 group-hover:text-primary"
               }`}
             >
@@ -45,15 +45,15 @@ const Logo = ({ className = "h-10 sm:h-11 w-auto", showText = true, isWhite = fa
           </div>
           <div className="flex items-center gap-1.5">
             <span
-              className={`text-[9px] sm:text-[10.5px] font-bold tracking-[0.22em] uppercase whitespace-nowrap ${
+              className={`text-[8.5px] min-[360px]:text-[9px] sm:text-[10.5px] font-bold tracking-[0.2em] uppercase whitespace-nowrap ${
                 isWhite ? "text-red-200" : "text-primary"
               }`}
             >
               Stomatolog
             </span>
-            <span className={isWhite ? "text-white/40 text-[7.5px]" : "text-slate-300 text-[7.5px]"}>•</span>
+            <span className={isWhite ? "text-white/40 text-[7px]" : "text-slate-300 text-[7px]"}>•</span>
             <span
-              className={`text-[8px] sm:text-[9.5px] font-medium tracking-wide whitespace-nowrap uppercase ${
+              className={`text-[7.5px] min-[360px]:text-[8px] sm:text-[9.5px] font-medium tracking-wide whitespace-nowrap uppercase ${
                 isWhite ? "text-white/70" : "text-slate-500"
               }`}
             >

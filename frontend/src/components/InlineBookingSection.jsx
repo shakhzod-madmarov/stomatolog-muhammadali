@@ -423,7 +423,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
           /* Booking Form */
           <form
             onSubmit={handleFormSubmit}
-            className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 shadow-md border border-slate-200"
+            className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 shadow-md border border-slate-200"
           >
             {/* Honeypot field for anti-bot protection */}
             <input
@@ -439,7 +439,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             />
 
             {/* Service Selection */}
-            <div className="mb-6 sm:mb-8">
+            <div className="mb-5 sm:mb-8">
               <label htmlFor="booking-service-select" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
                 {t.serviceLabel}
               </label>
@@ -448,7 +448,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 name="service"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
+                className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-base sm:text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
               >
                 {BOOKING_SERVICES.map((s) => (
                   <option key={s.id} value={s.id} className="bg-white text-slate-900">
@@ -459,17 +459,17 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             </div>
 
             {/* Step 1: Date Chips */}
-            <fieldset className="mb-6 sm:mb-8 border-none p-0 m-0">
-              <div className="flex items-center justify-between mb-3">
+            <fieldset className="mb-5 sm:mb-8 border-none p-0 m-0">
+              <div className="flex items-center justify-between mb-3 gap-2">
                 <legend className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                   {t.dayGroupLabel}
                 </legend>
-                <span className="text-[11px] text-slate-500">
+                <span className="text-[10.5px] sm:text-[11px] text-slate-500 text-right">
                   {clinicHours.days}: {clinicHours.hours}
                 </span>
               </div>
 
-              <div role="radiogroup" aria-label={t.dayGroupLabel} className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar scroll-touch">
+              <div role="radiogroup" aria-label={t.dayGroupLabel} className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 no-scrollbar scroll-touch">
                 {days.map((day) => {
                   const isSelected = day.date === selectedDate;
                   const isClosed = day.isClosed;
@@ -485,7 +485,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         setSelectedDate(day.date);
                         setSelectedTime("");
                       }}
-                      className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold border transition-all ${
+                      className={`shrink-0 min-h-[44px] flex items-center justify-center px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold border transition-all ${
                         isSelected
                           ? "bg-primary text-white border-transparent shadow-md scale-102"
                           : isClosed
@@ -507,7 +507,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               </legend>
 
               {availableSlots.length > 0 ? (
-                <div role="radiogroup" aria-label={t.timeGroupLabel} className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                <div role="radiogroup" aria-label={t.timeGroupLabel} className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5 sm:gap-2">
                   {availableSlots.map((timeStr) => {
                     const isSelected = selectedTime === timeStr;
                     return (
@@ -517,7 +517,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         role="radio"
                         aria-checked={isSelected}
                         onClick={() => setSelectedTime(timeStr)}
-                        className={`py-2 px-1.5 sm:px-3 rounded-full text-xs font-mono font-bold border transition-all text-center ${
+                        className={`min-h-[40px] flex items-center justify-center py-2 px-1 sm:px-3 rounded-full text-xs font-mono font-bold border transition-all text-center ${
                           isSelected
                             ? "bg-primary text-white border-primary shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:border-primary hover:text-primary shadow-2xs"
@@ -536,7 +536,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             </fieldset>
 
             {/* Step 3: Patient Inputs */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-5 sm:mb-6">
               <div>
                 <label htmlFor="booking-full-name" className="block text-xs font-bold text-slate-800 mb-1.5">
                   {t.nameLabel}
@@ -551,7 +551,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder={t.namePlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
                 />
               </div>
 
@@ -569,7 +569,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   value={phone}
                   onChange={handlePhoneChange}
                   placeholder={t.phonePlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-base sm:text-sm font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
                 />
               </div>
             </div>
@@ -586,7 +586,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder={t.notePlaceholder}
-                className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all resize-none"
+                className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all resize-none"
               ></textarea>
             </div>
 

@@ -51,6 +51,23 @@ button, a, input, select, textarea {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Prevent iOS Safari automatic zoom on focus when font-size is below 16px */
+@media screen and (max-width: 640px) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Prevent accidental horizontal overflow on narrow mobile screens */
+* {
+  overflow-wrap: break-word;
+}
+img, svg, video, canvas, audio, iframe, embed, object {
+  max-width: 100%;
+}
+
 .scroll-touch {
   -webkit-overflow-scrolling: touch;
 }

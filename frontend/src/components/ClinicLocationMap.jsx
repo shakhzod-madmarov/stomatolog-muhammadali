@@ -51,8 +51,8 @@ export const ClinicLocationMap = () => {
 
   return (
     <section aria-labelledby="clinic-location-heading" className="w-full py-12 sm:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-3 uppercase">
             {labels.badge}
           </span>
@@ -64,9 +64,9 @@ export const ClinicLocationMap = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* Left Info Card */}
-          <div className="lg:col-span-5 p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-md flex flex-col justify-between text-slate-900">
+          <div className="lg:col-span-5 p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-md flex flex-col justify-between text-slate-900">
             <div className="space-y-6">
               <div>
                 <span className="text-[11px] font-bold text-primary tracking-wider uppercase block mb-1">
@@ -114,12 +114,12 @@ export const ClinicLocationMap = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="mt-8 pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="mt-6 sm:mt-8 pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <a
                 href={PRIMARY_CLINIC.maps.google}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-2.5 rounded-full text-center text-xs font-bold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors"
+                className="min-h-[44px] flex items-center justify-center px-3.5 py-2.5 rounded-full text-center text-xs font-bold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors"
               >
                 {labels.openGoogle}
               </a>
@@ -127,7 +127,7 @@ export const ClinicLocationMap = () => {
                 href={PRIMARY_CLINIC.maps.yandex}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-2.5 rounded-full text-center text-xs font-bold text-white bg-primary hover:bg-primary-hover transition-all shadow-md hover:shadow-colgate"
+                className="min-h-[44px] flex items-center justify-center px-3.5 py-2.5 rounded-full text-center text-xs font-bold text-white bg-primary hover:bg-primary-hover transition-all shadow-md hover:shadow-colgate"
               >
                 {labels.openYandex}
               </a>
@@ -135,27 +135,27 @@ export const ClinicLocationMap = () => {
           </div>
 
           {/* Right Map View / Interactive Location Frame */}
-          <div className="lg:col-span-7 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-200 min-h-[300px] sm:min-h-[440px] relative bg-slate-100 flex flex-col items-center justify-center">
+          <div className="lg:col-span-7 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-200 min-h-[260px] sm:min-h-[440px] relative bg-slate-100 flex flex-col items-center justify-center">
             {/* Direct Yandex Maps Link Card / Embedded representation */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50 flex flex-col items-center justify-center p-6 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 shadow-xs">
-                <IconLocationPin className="w-8 h-8 text-primary animate-bounce" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50 flex flex-col items-center justify-center p-4 sm:p-6 text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 sm:mb-4 shadow-xs">
+                <IconLocationPin className="w-7 h-7 sm:w-8 sm:h-8 text-primary animate-bounce" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2 font-serif">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1.5 sm:mb-2 font-serif">
                 DM Stomatologiya
               </h3>
-              <p className="text-sm text-slate-600 max-w-md mb-2">
+              <p className="text-xs sm:text-sm text-slate-600 max-w-md mb-1.5 sm:mb-2">
                 Andijon shahri, Navoiy shoh ko'chasi 91-uy
               </p>
-              <p className="text-xs text-primary mb-6 font-mono font-bold">
+              <p className="text-xs text-primary mb-4 sm:mb-6 font-mono font-bold">
                 +998 97 676 01 01
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto px-4">
                 <a
                   href={PRIMARY_CLINIC.maps.yandex}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate transition-all transform hover:scale-105"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate transition-all transform active:scale-98"
                 >
                   <span>{labels.directionsBtn}</span>
                 </a>

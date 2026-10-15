@@ -63,7 +63,7 @@ const AppShell = () => {
 
       <Nav onOpenBooking={() => openBooking()} />
 
-      <main id="main-content" className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
+      <main id="main-content" className="flex-grow w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-18 sm:pt-24">
         <Routes>
           {LANGS.flatMap((code) => {
             const at = (path) =>

@@ -90,7 +90,7 @@ const Services = ({ onOpenBooking }) => {
       <div
         role="tablist"
         aria-label={lang === "ru" ? "Категории услуг" : lang === "en" ? "Service categories" : "Xizmat toifalari"}
-        className="flex overflow-x-auto sm:flex-wrap items-center justify-start sm:justify-center gap-2 pb-1 no-scrollbar scroll-touch"
+        className="flex overflow-x-auto sm:flex-wrap items-center justify-start sm:justify-center gap-1.5 sm:gap-2 pb-2 no-scrollbar scroll-touch px-1"
       >
         {categories.map((c) => {
           const isSelected = activeCategory === c.id;
@@ -101,7 +101,7 @@ const Services = ({ onOpenBooking }) => {
               role="tab"
               aria-selected={isSelected}
               onClick={() => setActiveCategory(c.id)}
-              className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap min-h-[40px] px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 isSelected
                   ? "bg-primary text-white shadow-md scale-102"
                   : "bg-white text-slate-700 border border-slate-200 hover:text-primary hover:bg-slate-50 shadow-2xs"
@@ -114,7 +114,7 @@ const Services = ({ onOpenBooking }) => {
       </div>
 
       {/* Services Grid */}
-      <section aria-label={lang === "ru" ? "Каталог услуг" : lang === "en" ? "Services catalog" : "Xizmatlar katalogi"} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <section aria-label={lang === "ru" ? "Каталог услуг" : lang === "en" ? "Services catalog" : "Xizmatlar katalogi"} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
         {filteredServices.map((service) => (
           <Interactive3DTilt
             key={service.id}
@@ -124,7 +124,7 @@ const Services = ({ onOpenBooking }) => {
             glare={true}
             className="h-full"
           >
-            <article className="h-full p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-colgate hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
+            <article className="h-full p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-colgate hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-5 relative">
                   <img
