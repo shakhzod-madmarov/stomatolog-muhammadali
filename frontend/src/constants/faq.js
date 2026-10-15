@@ -77,4 +77,30 @@ export const FAQ_ITEMS = [
       en: "Ultrasonic hygiene and AirFlow cleaning at DM Stomatology gently remove tartar and staining without abrading dental enamel. Post-whitening remineralizing care ensures complete comfort and enamel protection.",
     },
   },
+  {
+    id: "zirconia-vs-metal",
+    q: {
+      uz: "Nega oddiy metall-keramika o'rniga tsirkoniy qoplamalari tavsiya etiladi?",
+      ru: "Почему циркониевые коронки лучше обычной металлокерамики?",
+      en: "Why are monolithic zirconia crowns superior to metal-ceramic crowns?",
+    },
+    a: {
+      uz: "Tsirkoniy 100% metallsiz, biomos keluvchi materialdir. Metall-keramikadan farqli o'laroq, u milk chetida qoraygan chiziq hosil qilmaydi, tish go'shtini bezovta qilmaydi, yorug'likni tabiiy tishdek o'tkazadi va 15-20+ yildan ortiq mustahkam xizmat qiladi.",
+      ru: "Диоксид циркония — это 100% биосовместимый и безметалловый материал. В отличие от металлокерамики, десна вокруг него не темнеет и не синеет, коронка обладает естественной полупрозрачностью и выдерживает нагрузки более 15-20 лет.",
+      en: "Monolithic zirconia is 100% metal-free and biocompatible. Unlike metal-fused crowns, it eliminates dark gum lines, matches natural tooth translucency, and reliably lasts 15-20+ years.",
+    },
+  },
+  {
+    id: "consultation-steps",
+    q: {
+      uz: "Birlamchi qabul va konsultatsiyada nimalar amalga oshiriladi?",
+      ru: "Что входит в первичную консультацию доктора МухаммадАли Давронова?",
+      en: "What is included in the initial consultation with Dr. MuhammadAli Davronov?",
+    },
+    a: {
+      uz: "Dr. MuhammadAli Davronov og'iz bo'shlig'ini shaxsan ko'rikdan o'tkazadi, zarur bo'lsa 3D raqamli optik skanerlash o'tkaziladi va tishlarning holati bo'yicha shaffof, bosqichma-bosqich davolash rejasi tuzib beriladi.",
+      ru: "Доктор лично проводит осмотр, при необходимости выполняется 3D оптическое сканирование зубов и составляется прозрачный пошаговый план лечения с фиксацией сроков и стоимости.",
+      en: "Dr. MuhammadAli personally conducts a thorough clinical examination, performs 3D optical intraoral scanning when indicated, and crafts a bespoke, transparent treatment roadmap.",
+    },
+  },
 ];

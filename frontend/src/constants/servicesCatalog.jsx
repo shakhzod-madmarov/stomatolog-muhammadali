@@ -72,6 +72,11 @@ export const SERVICES_CATALOG = [
         "Airtight marginal fit guarding against plaque accumulation and decay",
       ],
     },
+    keywords: {
+      uz: "tsirkon qoplama andijon, tsirkon tish narxi, tish qoplatish andijon, keramika koronka, monolit tsirkoniy, tabiiy tish emali, ortopediya andijon, dr muhammadali tsirkon",
+      ru: "циркониевые коронки андижан, диоксид циркония цена, коронки на зубы андижан, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
+      en: "zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, broken tooth restoration andijan, dental clinic andijan",
+    },
   },
   {
     id: "dental-implant",
@@ -134,6 +139,11 @@ export const SERVICES_CATALOG = [
         "3D computer-guided placement protects anatomical structures at ideal angle",
         "Full restoration of natural biting strength and smiling confidence",
       ],
+    },
+    keywords: {
+      uz: "dental implantatsiya andijon, tish implant narxi, sun'iy tish ildizi, biotitan implant, bir kunda tish qo'yish, implantolog andijon, dr muhammadali implantatsiya",
+      ru: "имплантация зубов андижан, зубные импланты цена, титановые импланты, имплантация за один день, хирург имплантолог андижан, восстановить зуб без обточки",
+      en: "dental implants andijan, tooth implant specialist, biocompatible titanium implant, immediate load implant, oral surgery andijan, permanent tooth replacement",
     },
   },
   {
@@ -198,6 +208,11 @@ export const SERVICES_CATALOG = [
         "Precision root canal cleaning and 3D airtight obturation",
       ],
     },
+    keywords: {
+      uz: "og'riqsiz tish davolash andijon, karies davolash, tish plombalash, tish asabi olish og'riqsiz, kompozit restavratsiya, tish kanallarini davolash, endodontiya andijon",
+      ru: "лечение зубов без боли андижан, лечение кариеса андижан, безболезненное пломбирование, лечение корневых каналов, эстетическая реставрация зубов, световая пломба",
+      en: "pain free dentistry andijan, gentle tooth filling, cavity treatment, root canal therapy endodontics, aesthetic dental restoration, dentist without pain",
+    },
   },
   {
     id: "vinirlar",
@@ -260,6 +275,11 @@ export const SERVICES_CATALOG = [
         "Bespoke aesthetic shaping harmonized with your lips and facial lines",
         "Renowned lifelike depth, luster, and vitality of authentic IPS e.max",
       ],
+    },
+    keywords: {
+      uz: "keramik vinirlar andijon, e-max vinir narxi, estetik tish qoplamasi, gollivud tabassumi andijon, tish tirqishlarini yopish, tabassum estetikasi, dr muhammadali vinir",
+      ru: "виниры андижан, керамические виниры e-max цена, голливудская улыбка андижан, виниры без обточки, эстетическая стоматология андижан, реставрация зоны улыбки",
+      en: "porcelain veneers andijan, ips e-max veneers, cosmetic dentistry andijan, smile makeover, diastema closure, aesthetic tooth laminates",
     },
   },
   {
@@ -324,6 +344,11 @@ export const SERVICES_CATALOG = [
         "Rediscover the joy of eating favorite foods without discomfort",
       ],
     },
+    keywords: {
+      uz: "tish protezlari andijon, yengil protez tishlar, elastik neylon protez, byugel protez narxi, olinadigan tish protezi, tish protezlash andijon",
+      ru: "зубные протезы андижан, съемные протезы цена, нейлоновые мягкие протезы, бюгельные протезы, протезирование зубов андижан, восстановление зубов",
+      en: "dental dentures andijan, removable dentures, flexible nylon dentures, partial dentures, clasp prosthetics, modern prosthodontics andijan",
+    },
   },
   {
     id: "tish-oqartirish",
@@ -387,6 +412,11 @@ export const SERVICES_CATALOG = [
         "Noticeably brighter, sparkling smile immediately visible in the mirror",
       ],
     },
+    keywords: {
+      uz: "tish oqartirish andijon, airflow tozalash narxi, tish toshlarini tozalash, xavfsiz tish oqartirish, tish emalini mustahkamlash, oppoq tishlar",
+      ru: "отбеливание зубов андижан, чистка зубов airflow, ультразвуковая чистка зубного камня, безопасное отбеливание эмали, профессиональная гигиена полости рта",
+      en: "teeth whitening andijan, dental scaling airflow, safe enamel whitening, tartar removal, professional dental hygiene andijan",
+    },
   },
   {
     id: "digital-dentistry",
@@ -449,6 +479,11 @@ export const SERVICES_CATALOG = [
         "Micron-grade precision ensuring airtight, natural-feeling restorations",
         "Clear, visual consultation directly with Dr. MuhammadAli Davronov",
       ],
+    },
+    keywords: {
+      uz: "3d tish skanerlash andijon, raqamli stomatologiya, qoliplarsiz tish o'lchash, intraoral 3d skaner, virtual tabassum loyihasi, zamonaviy tish diagnostikasi",
+      ru: "3d сканирование зубов андижан, цифровая стоматология, слепки без слепочной массы, интраоральный сканер, 3d моделирование улыбки",
+      en: "3d intraoral scanning andijan, digital dentistry, gag free optical impressions, digital smile design, computerized dental diagnostics",
     },
   },
 ];

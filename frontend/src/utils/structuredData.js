@@ -50,6 +50,7 @@ export const buildMedicalProcedureSchema = (service, lang = "uz", breadcrumbs = 
       "@type": "MedicalSpecialty",
       "name": "Dentistry",
     },
+    "keywords": service.keywords?.[lang] || service.keywords?.uz,
     "provider": {
       "@id": `${SITE_ORIGIN}/#dentist`,
     },

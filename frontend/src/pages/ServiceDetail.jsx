@@ -111,6 +111,7 @@ const ServiceDetail = () => {
       <Seo
         title={title}
         description={description}
+        keywords={service.keywords?.[lang] || service.keywords?.uz}
         schemaJson={schema}
       />
 
