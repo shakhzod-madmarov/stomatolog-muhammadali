@@ -45,7 +45,7 @@ const Footer = () => {
             <Logo className="h-10 w-auto" isWhite={true} />
             <p className="text-sm text-slate-400 leading-relaxed mt-2">
               {lang === "ru"
-                ? "Д-р МухаммадАли Давронов — 5 лет успешной практики. Ортопедия (цирконий, виниры), лечение зубов без боли, имплантология. Андижан, клиника DM Stomatology, проспект Навои 91."
+                ? "Д-р МухаммадАли Давронов — 5 лет успешной практики. Ортопедия (цирконий, виниры), лечение зубов без боли, имплантология. Андижан, клиника DM Stomatology, проспект Навои, 91."
                 : lang === "en"
                 ? "Dr. MuhammadAli Davronov — 5 years of dental excellence. Orthopedics, pain-free therapy, dental implants, and aesthetic smiles. DM Stomatology, 91 Navoi Avenue, Andijan."
                 : "Dr. MuhammadAli Davronov — 5 yillik tajribali shifokor-stomatolog. Ortopediya (tsirkon, vinirlar), terapiya (og'riqsiz davolash) va dental implantologiya. DM Stomatologiya, Andijon, Navoiy shox 91-uy."}

@@ -109,10 +109,10 @@ const Contact = () => {
               </h3>
               <p className="text-xs text-slate-500 mt-1">
                 {lang === "uz"
-                  ? "Andijon sh., Navoiy shox 91-uy (SARIQ BOLA pizza yonida)"
+                  ? "Andijon sh., Navoiy shoh ko'chasi, 91-uy (mo'ljal: SARIQ BOLA pizza yonida)"
                   : lang === "ru"
-                  ? "г. Андижан, проспект Навои 91 (рядом с SARIQ BOLA)"
-                  : "91 Navoi Ave, Andijan (next to SARIQ BOLA)"}
+                  ? "г. Андижан, проспект Навои, 91 (ориентир: рядом с пиццерией SARIQ BOLA)"
+                  : "91 Navoi Ave, Andijan (landmark: next to SARIQ BOLA pizza)"}
               </p>
             </div>
           </div>

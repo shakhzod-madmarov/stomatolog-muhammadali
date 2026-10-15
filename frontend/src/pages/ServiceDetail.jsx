@@ -176,7 +176,7 @@ const ServiceDetail = () => {
           <p className="text-[11px] text-slate-600 font-medium pt-1 flex items-center gap-1.5">
             <IconLocationPin className="w-3.5 h-3.5 text-primary shrink-0" />
             <span>
-              {lang === "ru" ? "Приём в г. Андижан, DM Stomatologiya (ул. Навои 91)" : lang === "en" ? "Practice location: Andijan, DM Stomatology (Navoiy Ave 91)" : "Qabul manzili: Andijon sh., DM Stomatologiya (Navoiy shoh ko'chasi 91)"}
+              {lang === "ru" ? "Приём в г. Андижан, клиника DM Stomatology (пр-т Навои, 91)" : lang === "en" ? "Practice location: Andijan, DM Stomatology (91 Navoi Ave)" : "Qabul manzili: Andijon sh., DM Stomatologiya (Navoiy shoh ko'chasi, 91-uy)"}
             </span>
           </p>
 

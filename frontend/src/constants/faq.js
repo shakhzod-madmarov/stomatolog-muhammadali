@@ -46,8 +46,8 @@ export const FAQ_ITEMS = [
       en: "Where is Dr. MuhammadAli Davronov's clinic located?",
     },
     a: {
-      uz: "Dr. MuhammadAli Davronov shaxsiy qabuli Andijon shahri, Navoiy shoh ko'chasi 91-uyda (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya) o'tkaziladi. Bemorlar uchun bepul avtoturargoh mavjud. Siz Yandex Xarita (https://yandex.uz/maps/-/CXBjRG4Q) yoki Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z) orqali to'g'ridan-to'g'ri marshrut chizishingiz mumkin.",
-      ru: "Персональный приём проходит в клинике DM Stomatology по адресу: г. Андижан, проспект Навои 91 (ориентир: рядом с пиццерией SARIQ BOLA). Имеется парковка. Маршрут можно проложить в Яндекс Картах (https://yandex.uz/maps/-/CXBjRG4Q) или в Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z).",
+      uz: "Dr. MuhammadAli Davronov shaxsiy qabuli Andijon shahri, Navoiy shoh ko'chasi, 91-uyda (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya) o'tkaziladi. Bemorlar uchun bepul avtoturargoh mavjud. Siz Yandex Xarita (https://yandex.uz/maps/-/CXBjRG4Q) yoki Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z) orqali to'g'ridan-to'g'ri marshrut chizishingiz mumkin.",
+      ru: "Персональный приём проходит в клинике DM Stomatology по адресу: г. Андижан, проспект Навои, 91 (ориентир: рядом с пиццерией SARIQ BOLA). Имеется парковка. Маршрут можно проложить в Яндекс Картах (https://yandex.uz/maps/-/CXBjRG4Q) или в Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z).",
       en: "Dr. MuhammadAli Davronov practices at DM Stomatology, 91 Navoi Avenue, Andijan (landmark: next to SARIQ BOLA pizza). Free parking is available. You can navigate directly via Yandex Maps (https://yandex.uz/maps/-/CXBjRG4Q) or Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z).",
     },
   },

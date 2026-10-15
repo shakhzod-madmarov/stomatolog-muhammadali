@@ -15,7 +15,7 @@ export const PAGE_SEO = {
     },
     ru: {
       title: "Д-р МухаммадАли Давронов — Врач-Стоматолог | Ортопедия, Терапия, Имплантология | DM Stomatology",
-      description: `Врач-стоматолог Д-р МухаммадАли Давронов — ${years} лет успешной клинической практики. Выпускник АГМИ. Ортопедия (коронки, виниры), лечение зубов без боли, имплантация. Андижан, проспект Навои 91. Тел: +998 97 676 01 01.`,
+      description: `Врач-стоматолог Д-р МухаммадАли Давронов — ${years} лет успешной клинической практики. Выпускник АГМИ. Ортопедия (коронки, виниры), лечение зубов без боли, имплантация. Андижан, проспект Навои, 91. Тел: +998 97 676 01 01.`,
     },
     en: {
       title: "Dr. MuhammadAli Davronov — Dental Specialist | Orthopedics, Therapy & Implantology | DM Stomatology",
@@ -62,7 +62,7 @@ export const PAGE_SEO = {
     ru: {
       title: "Контакты и Локация — DM Stomatology | Д-р МухаммадАли Давронов (Андижан)",
       description:
-        "Запись на личный приём к Д-ру МухаммадАли Давронову — клиника DM Stomatology (Андижан, проспект Навои 91, рядом с SARIQ BOLA). Телефон: +998 97 676 01 01, Instagram: @dm.muxammadali.",
+        "Запись на личный приём к Д-ру МухаммадАли Давронову — клиника DM Stomatology (Андижан, проспект Навои, 91, рядом с пиццерией SARIQ BOLA). Телефон: +998 97 676 01 01, Instagram: @dm.muxammadali.",
     },
     en: {
       title: "Contact & Location — DM Stomatology | Dr. MuhammadAli Davronov (Andijan)",

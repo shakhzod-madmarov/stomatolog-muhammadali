@@ -38,12 +38,12 @@ export const DOCTOR_INFO = {
   clinicBrand: "DM | Stomatology",
   clinicLocation: {
     uz: "DM Stomatologiya · Andijon shahar, Navoiy shoh ko'chasi 91-uy",
-    ru: "DM Stomatology · г. Андижан, проспект Навои, 91-дом",
+    ru: "DM Stomatology · г. Андижан, проспект Навои, дом 91",
     en: "DM Stomatology · 91 Navoi Avenue, Andijan",
   },
   addressShort: {
     uz: "Andijon shahar, Navoiy shoh ko'chasi 91-uy",
-    ru: "г. Андижан, проспект Навои 91-дом",
+    ru: "г. Андижан, проспект Навои, дом 91",
     en: "91 Navoi Avenue, Andijan",
   },
   phone: "+998 (97) 676-01-01",

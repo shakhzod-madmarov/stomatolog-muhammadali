@@ -28,12 +28,12 @@ export const CLINICS = [
     },
     shortAddress: {
       uz: "Andijon sh., Navoiy shox 91-uy",
-      ru: "г. Андижан, пр-т Навои 91",
+      ru: "г. Андижан, пр-т Навои, 91",
       en: "91 Navoi Ave, Andijan",
     },
     landmark: {
       uz: "Navoiy shoh ko'chasi 91-uy (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya)",
-      ru: "Проспект Навои 91 (ориентир: рядом с пиццерией SARIQ BOLA, DM Stomatology)",
+      ru: "Проспект Навои, 91 (ориентир: рядом с пиццерией SARIQ BOLA, DM Stomatology)",
       en: "91 Navoi Avenue (landmark: next to SARIQ BOLA pizza, DM Stomatology)",
     },
     hours: {
