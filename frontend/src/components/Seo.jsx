@@ -37,7 +37,7 @@ const Seo = ({
   const copy = page ? getPageSeo(page, lang) : null;
   const resolvedTitle = title || copy?.title;
   const resolvedDescription = description || copy?.description;
-  const resolvedKeywords = keywords;
+  const resolvedKeywords = keywords || copy?.keywords;
   const resolvedCanonical = canonical || (effectivePath ? urlFor(effectivePath, lang) : undefined);
 
   const alternates = effectivePath
