@@ -6,11 +6,8 @@ import { PAGE_SEO } from "../constants/seo";
 import { SERVICES_CATALOG } from "../constants/servicesCatalog";
 import Seo from "../components/Seo";
 import { buildServicesCatalogSchema } from "../utils/structuredData";
-import Interactive3DCostCalculator from "../components/Interactive3DCostCalculator";
-import SmileAssessmentWizard from "../components/SmileAssessmentWizard";
 import { IconShieldCheck } from "../components/MedicalIcons";
 import Interactive3DTilt from "../components/Interactive3DTilt";
-import TrustStickers from "../components/TrustStickers";
 
 
 const Services = ({ onOpenBooking }) => {
@@ -181,16 +178,6 @@ const Services = ({ onOpenBooking }) => {
           </Interactive3DTilt>
         ))}
       </section>
-
-      {/* Clinical Standards & Trust Stickers */}
-      <TrustStickers className="mt-6" />
-
-      {/* Interactive Calculator */}
-
-      <Interactive3DCostCalculator />
-
-      {/* Smile Assessment Wizard */}
-      <SmileAssessmentWizard />
     </div>
   );
 };

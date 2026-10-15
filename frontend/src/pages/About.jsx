@@ -14,7 +14,6 @@ import {
   IconTrophyWarranty,
 } from "../components/MedicalIcons";
 import Interactive3DTilt from "../components/Interactive3DTilt";
-import TrustStickers from "../components/TrustStickers";
 
 const About = ({ onOpenBooking }) => {
   const { lang } = useLanguage();
@@ -267,9 +266,6 @@ const About = ({ onOpenBooking }) => {
             </Interactive3DTilt>
           ))}
         </div>
-
-        {/* Clinical Guarantees & Quality Standards */}
-        <TrustStickers className="mt-8 pt-8 border-t border-slate-100" />
       </section>
 
 

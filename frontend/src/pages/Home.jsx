@@ -8,126 +8,111 @@ import InlineBookingSection from "../components/InlineBookingSection";
 import ClinicLocationMap from "../components/ClinicLocationMap";
 import FaqAccordion from "../components/FaqAccordion";
 import { buildHomePageSchema } from "../utils/structuredData";
-import { SERVICES_CATALOG } from "../constants/servicesCatalog";
-import DigitalDentistryFeatures from "../components/DigitalDentistryFeatures";
-import Doctor3DCard from "../components/Doctor3DCard";
-import Interactive3DCostCalculator from "../components/Interactive3DCostCalculator";
-import SmileAssessmentWizard from "../components/SmileAssessmentWizard";
-import Interactive3DTilt from "../components/Interactive3DTilt";
-import { IconScannerOptical3D, IconDentalImplant, IconClock } from "../components/MedicalIcons";
-import { DmToothEmblem } from "../components/Logo";
-import TrustStickers from "../components/TrustStickers";
+import {
+  IconPhone,
+  IconShieldCheck,
+  IconClock,
+  IconGraduationCap,
+  IconTelegram,
+  IconInstagram,
+  DentalVeneerCrown,
+  DentalToothMolar,
+  DentalImplantFixture,
+} from "../components/MedicalIcons";
 
 /* ═══════════════════════════════════════════════════════════════════
-   HERO SECTION — DR. MUHAMMADALI DAVRONOV (COLGATE CLEAN DESIGN)
+   HERO SECTION — DR. MUHAMMADALI DAVRONOV (CLEAN & INDIVIDUAL)
    ═══════════════════════════════════════════════════════════════════ */
 const HeroSection = ({ onOpenBooking }) => {
   const { lang } = useLanguage();
-  const to = useLocalizedPath();
 
   const T = {
     uz: {
-      badge: "Shaxsiy Qabul · 5 Yillik Tajriba · Andijon",
-      doctorName: DOCTOR_INFO.name,
-      specialtyTitle: "Shifokor-Stomatolog · Ortopediya, Terapiya va Implantologiya",
-      headline: "Sog'lom, oppoq va ishonchli tabassum sari birgalikda",
-      subtitle:
-        "Stomatologik muolajalardan xavotir olmang. Men har bir bemorimni shaxsan qabul qilaman: Andijon davlat tibbiyot institutining professional bilimlari, 5 yillik amaliy tajriba, yuqori aniqlikdagi tsirkon koronkalar, estetik vinirlar hamda 100% og'riqsiz davolash usullari.",
+      badge: "Shifokor-Stomatolog · 5 Yillik Tajriba · Andijon",
+      name: DOCTOR_INFO.name,
+      specialty: "Ortopediya · Terapiya · Implantologiya",
+      bio: "Andijon davlat tibbiyot instituti bitiruvchisi. 5 yillik tajriba asosida DM Stomatologiya klinikasida har bir bemorni shaxsan qabul qilaman — 100% og'riqsiz davolash, zamonaviy tsirkon koronkalar va mustahkam biotitan implantlar.",
       ctaBook: "Qabulga Yozilish",
-      ctaServices: "Xizmatlar bilan tanishish",
-      stat1Num: "5+ Yil",
-      stat1Label: "Klinik Tajriba",
-      stat2Num: "3,500+",
-      stat2Label: "Sog'lom Tabassumlar",
-      stat3Num: "100%",
-      stat3Label: "Og'riqsiz Muolaja",
-      stat4Num: "CAD/CAM",
-      stat4Label: "Tsirkon Aniqligi",
-      floatBadge1: "Ortopediya & Tsirkon",
-      floatBadge2: "Dental Implantologiya",
+      ctaCall: "Qo'ng'iroq qilish",
+      stat1Val: "5 Yil",
+      stat1Lbl: "Klinik Tajriba",
+      stat2Val: "100%",
+      stat2Lbl: "Og'riqsiz Davolash",
+      stat3Val: "ADTI",
+      stat3Lbl: "Oliy Tibbiy Ta'lim",
+      cardPill: "Shaxsiy Qabul · Andijon",
+      cardRole: "Ortopediya, Terapiya, Implantologiya",
     },
     ru: {
-      badge: "Личный Приём · 5 Лет Опыта · Андижан",
-      doctorName: DOCTOR_INFO.name,
-      specialtyTitle: "Врач-Стоматолог · Ортопедия, Терапия, Имплантология",
-      headline: "Здоровая, белоснежная и уверенная улыбка без боли",
-      subtitle:
-        "Забудьте о страхе перед визитом к стоматологу. Доктор МухаммадАли Давронов ведёт приём лично в клинике DM Stomatology: точные циркониевые коронки, эстетические виниры E-max, надёжные титановые импланты и лечение кариеса с заботой о вашем комфорте.",
+      badge: "Врач-Стоматолог · 5 Лет Опыта · Андижан",
+      name: DOCTOR_INFO.name,
+      specialty: "Ортопедия · Терапия · Имплантология",
+      bio: "Выпускник Андижанского государственного медицинского института. Веду персональный приём в клинике DM Stomatology: точные циркониевые коронки, лечение кариеса без боли и надёжная дентальная имплантация.",
       ctaBook: "Записаться на Приём",
-      ctaServices: "Все Направления",
-      stat1Num: "5+ Лет",
-      stat1Label: "Клинического Опыта",
-      stat2Num: "3,500+",
-      stat2Label: "Довольных Пациентов",
-      stat3Num: "100%",
-      stat3Label: "Лечение Без Боли",
-      stat4Num: "CAD/CAM",
-      stat4Label: "Циркониевая Точность",
-      floatBadge1: "Ортопедия и Виниры",
-      floatBadge2: "Титановая Имплантация",
+      ctaCall: "Позвонить",
+      stat1Val: "5 Лет",
+      stat1Lbl: "Клинического Опыта",
+      stat2Val: "100%",
+      stat2Lbl: "Лечение Без Боли",
+      stat3Val: "АГМИ",
+      stat3Lbl: "Высшее Образование",
+      cardPill: "Личный Приём · Андижан",
+      cardRole: "Ортопедия, Терапия, Имплантология",
     },
     en: {
-      badge: "Personal Care · 5 Years Experience · Andijan",
-      doctorName: DOCTOR_INFO.name,
-      specialtyTitle: "Dental Specialist · Orthopedics, Therapy & Implantology",
-      headline: "A Healthy, Bright and Confident Smile with Gentle Care",
-      subtitle:
-        "Experience modern dental excellence with genuine personal attention. Dr. MuhammadAli Davronov welcomes patients at DM Stomatology: high-precision zirconia crowns, handcrafted veneers, gentle therapy, and lifetime biocompatible implants.",
+      badge: "Dental Specialist · 5 Years Experience · Andijan",
+      name: DOCTOR_INFO.name,
+      specialty: "Orthopedics · Therapy · Implantology",
+      bio: "Graduate of Andijan State Medical Institute. Providing dedicated personal care at DM Stomatology: high-precision zirconia crowns, 100% pain-free treatments, and lifetime biocompatible dental implants.",
       ctaBook: "Book Appointment",
-      ctaServices: "Explore Treatments",
-      stat1Num: "5+ Yrs",
-      stat1Label: "Clinical Mastery",
-      stat2Num: "3,500+",
-      stat2Label: "Restored Smiles",
-      stat3Num: "100%",
-      stat3Label: "Pain-Free Care",
-      stat4Num: "CAD/CAM",
-      stat4Label: "Zirconia Precision",
-      floatBadge1: "Orthopedics & Veneers",
-      floatBadge2: "Titanium Implants",
+      ctaCall: "Call Doctor",
+      stat1Val: "5 Years",
+      stat1Lbl: "Clinical Mastery",
+      stat2Val: "100%",
+      stat2Lbl: "Pain-Free Care",
+      stat3Val: "ASMI",
+      stat3Lbl: "Medical Degree",
+      cardPill: "Personal Practice · Andijan",
+      cardRole: "Orthopedics, Therapy, Implantology",
     },
   };
   const t = T[lang] || T.uz;
 
   return (
-    <section className="relative w-full pt-8 sm:pt-14 pb-16 sm:pb-20 overflow-hidden bg-gradient-to-b from-red-50/40 via-white to-white">
-      {/* Subtle Colgate-style soft background glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/50 rounded-full blur-3xl -z-10 pointer-events-none" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-red-50/70 rounded-full blur-2xl -z-10 pointer-events-none" />
+    <section className="relative w-full pt-6 sm:pt-12 pb-14 sm:pb-20 overflow-hidden bg-gradient-to-b from-red-50/30 via-white to-white">
+      {/* Soft Colgate glow background */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/40 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-24 left-6 w-80 h-80 bg-red-50/60 rounded-full blur-2xl -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-          {/* Left Text Column */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Text Column: Focused entirely on Doctor MuhammadAli */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs mb-4 sm:mb-5 max-w-full">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
-              <span className="text-[11px] sm:text-xs font-bold text-primary tracking-wide truncate">
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
+              <span className="text-xs font-bold text-primary tracking-wide">
                 {t.badge}
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-2xl min-[360px]:text-3xl sm:text-5xl lg:text-[54px] font-serif font-bold text-slate-950 leading-[1.15] sm:leading-[1.12] tracking-tight mb-4 sm:mb-5">
-              {t.headline}
+            {/* Main Headline: Doctor Name */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-950 leading-[1.12] tracking-tight mb-3">
+              {t.name}
             </h1>
 
-            {/* Doctor Credentials Subhead */}
-            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-primary mb-3 flex-wrap">
-              <span className="font-bold text-slate-900">{t.doctorName}</span>
-              <span className="text-slate-300">·</span>
-              <span>{t.specialtyTitle}</span>
-              <span className="text-slate-300">·</span>
-              <span className="text-slate-600">DM Stomatologiya (Navoiy shox 91)</span>
-            </div>
+            {/* Doctor Subhead: 3 Specialties */}
+            <p className="text-base sm:text-xl font-bold text-primary mb-4">
+              {t.specialty}
+            </p>
 
-            {/* Paragraph Description */}
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mb-8">
-              {t.subtitle}
+            {/* Bio paragraph: Concise, warm, personal */}
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mb-8">
+              {t.bio}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-10">
               <button
                 type="button"
                 onClick={onOpenBooking}
@@ -137,305 +122,486 @@ const HeroSection = ({ onOpenBooking }) => {
                 <span>→</span>
               </button>
 
-              <Link
-                to={to("/services")}
-                className="px-7 py-3.5 rounded-full font-bold text-sm text-slate-700 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-primary hover:text-primary transition-all text-center shadow-2xs"
+              <a
+                href={DOCTOR_INFO.phoneHref}
+                className="px-6 py-3.5 rounded-full font-bold text-sm text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 hover:border-primary hover:text-primary transition-all text-center flex items-center justify-center gap-2 shadow-2xs"
               >
-                {t.ctaServices}
-              </Link>
+                <IconPhone className="w-4 h-4 text-primary" />
+                <span className="font-mono">{DOCTOR_INFO.phoneDisplay}</span>
+              </a>
             </div>
 
-            {/* Key Facts / Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-6 border-t border-slate-200/80">
+            {/* 3 Simple Key Facts */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 w-full max-w-lg pt-6 border-t border-slate-200/80">
               <div>
                 <span className="text-2xl sm:text-3xl font-bold font-serif text-primary block">
-                  {t.stat1Num}
+                  {t.stat1Val}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat1Label}</span>
+                <span className="text-xs text-slate-500 font-medium">{t.stat1Lbl}</span>
               </div>
               <div>
                 <span className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 block">
-                  {t.stat2Num}
+                  {t.stat2Val}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat2Label}</span>
+                <span className="text-xs text-slate-500 font-medium">{t.stat2Lbl}</span>
               </div>
               <div>
                 <span className="text-2xl sm:text-3xl font-bold font-serif text-primary block">
-                  {t.stat3Num}
+                  {t.stat3Val}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat3Label}</span>
-              </div>
-              <div>
-                <span className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 block">
-                  {t.stat4Num}
-                </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat4Label}</span>
+                <span className="text-xs text-slate-500 font-medium">{t.stat3Lbl}</span>
               </div>
             </div>
           </div>
 
-          {/* Right Visual Column (Colgate Clinical Doctor Preview Card) */}
+          {/* Right Visual Column: Clear, Large, Beautiful Doctor Portrait */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-[420px]">
               {/* Subtle ambient red background blur */}
-              <div className="absolute -inset-3 bg-red-100/60 rounded-3xl blur-2xl -z-10 animate-pulse-subtle" />
+              <div className="absolute -inset-2 bg-gradient-to-tr from-red-500/10 via-transparent to-red-100/50 rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-              {/* Floating Badge Top-Left */}
-              <div className="absolute -top-3.5 left-2 sm:-left-4 max-w-[85%] px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[10.5px] sm:text-[11px] font-bold text-slate-900 flex items-center gap-1.5 sm:gap-2 animate-float-slow z-20 pointer-events-none">
-                <span className="w-5 h-5 rounded-full bg-red-50 text-primary flex items-center justify-center shrink-0">
-                  <IconScannerOptical3D className="w-3.5 h-3.5" />
-                </span>
-                <span className="truncate">{t.floatBadge1}</span>
-              </div>
-
-              {/* Floating Badge Bottom-Right */}
-              <div className="absolute -bottom-3.5 right-2 sm:-right-4 max-w-[85%] px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[10.5px] sm:text-[11px] font-bold text-primary flex items-center gap-1.5 sm:gap-2 animate-float-3d z-20 pointer-events-none">
-                <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
-                  <IconDentalImplant className="w-3.5 h-3.5" />
-                </span>
-                <span className="truncate">{t.floatBadge2}</span>
-              </div>
-
-              {/* Floating 3D Tooth Brand Sticker */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-5 w-20 h-20 rounded-2xl bg-white p-1.5 border-2 border-slate-200 shadow-lg z-25 items-center justify-center animate-float-slow hover:scale-105 transition-transform">
+              {/* Clean Doctor Photo Frame */}
+              <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200/90 shadow-xl group">
                 <img
-                  src={assets.hero_3d_tooth}
-                  alt="3D Translucent Tooth Model"
-                  width="72"
-                  height="72"
-                  loading="lazy"
+                  src={assets.dr_muhammadali}
+                  alt="Dr. MuhammadAli Davronov — Shifokor-Stomatolog"
+                  width="527"
+                  height="641"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
-                  className="w-full h-full object-contain"
+                  className="w-full h-auto aspect-[527/641] object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <span className="absolute -top-1.5 -right-1.5 px-1.5 py-0.5 rounded-full text-[8px] font-black bg-primary text-white shadow-xs">
-                  3D
-                </span>
-              </div>
 
-              <Interactive3DTilt
-                maxTilt={8}
-                perspective={1000}
-                scale={1.01}
-                glare={false}
-                className="w-full"
-              >
-                <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-xl flex flex-col gap-4 sm:gap-5 relative overflow-hidden">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <div className="flex items-center gap-3">
-                      <DmToothEmblem className="w-10 h-10" />
-                      <div>
-                        <h3 className="font-serif font-bold text-base text-slate-900 leading-tight">
-                          Dr. MuhammadAli
-                        </h3>
-                        <p className="text-[11px] font-bold text-primary tracking-wider uppercase">
-                          DM Stomatologiya
-                        </p>
-                      </div>
+                {/* Clean Bottom Glass Info Bar */}
+                <div className="absolute bottom-3 left-3 right-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                        {t.cardPill}
+                      </span>
                     </div>
-                    <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-red-50 text-primary border border-red-200">
-                      5 Yil Tajriba
-                    </span>
+                    <h2 className="font-serif font-bold text-sm sm:text-base text-slate-900 leading-tight truncate mt-0.5">
+                      {DOCTOR_INFO.name}
+                    </h2>
+                    <p className="text-[11px] font-semibold text-primary truncate">
+                      {t.cardRole}
+                    </p>
                   </div>
-
-                  <div className="rounded-2xl overflow-hidden aspect-[4/3] border border-slate-100 shadow-xs relative group">
-                    <img
-                      src={assets.dr_muhammadali}
-                      alt="Dr. MuhammadAli Davronov"
-                      width="600"
-                      height="450"
-                      loading="eager"
-                      fetchPriority="high"
-                      decoding="async"
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute bottom-2 right-2 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-xs text-[10px] text-slate-900 font-bold z-10 border border-slate-200 shadow-xs">
-                      DM Stomatologiya · Andijon
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 text-xs text-slate-600">
-                    <div className="flex items-center justify-between py-1 border-b border-slate-100">
-                      <span className="text-slate-400">Mutaxassislik:</span>
-                      <span className="font-bold text-slate-800">Ortopediya · Terapiya · Implant</span>
-                    </div>
-                    <div className="flex items-center justify-between py-1 border-b border-slate-100">
-                      <span className="text-slate-400">Ta'limi:</span>
-                      <span className="font-bold text-slate-800">Andijon davlat tibbiyot instituti</span>
-                    </div>
-                    <div className="flex items-center justify-between py-1">
-                      <span className="text-slate-400">Manzil:</span>
-                      <span className="font-bold text-primary">Navoiy shoh ko'chasi, 91-uy</span>
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={onOpenBooking}
-                    className="w-full py-3 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-colgate transition-all text-center"
-                  >
-                    Onlayn Qabulga Yozilish →
-                  </button>
+                  <span className="shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold bg-red-50 text-primary border border-red-200/80">
+                    {lang === "ru" ? "5 Лет Опыта" : lang === "en" ? "5 Yrs Exp" : "5 Yil Tajriba"}
+                  </span>
                 </div>
-              </Interactive3DTilt>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Clinical Quality & Trust Stickers Strip */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/80">
-          <TrustStickers />
         </div>
       </div>
     </section>
-
   );
 };
 
 /* ═══════════════════════════════════════════════════════════════════
-   MAIN HOME PAGE (COLGATE-INSPIRED CLEAN CLINICAL SECTIONS)
+   3 CORE SPECIALTIES SECTION (SIMPLE & DIRECT)
    ═══════════════════════════════════════════════════════════════════ */
-const Home = ({ onOpenBooking }) => {
+const CoreSpecialtiesSection = ({ onOpenBooking }) => {
   const { lang } = useLanguage();
   const to = useLocalizedPath();
 
   const labels = {
     uz: {
-      servicesBadge: "ASOSIY MUTAXASSISLIKLAR",
-      servicesTitle: "Dr. MuhammadAli Davronov Xizmatlari",
-      servicesSub: "Ortopediya, 100% og'riqsiz terapiya hamda yuqori aniqlikdagi dental implantologiya — barcha muolajalar shaxsan Dr. MuhammadAli tomonidan amalga oshiriladi.",
-      viewAll: "Barcha Xizmatlar Ro'yxati →",
-      bookNow: "Qabulga yozilish",
+      badge: "ASOSIY 3 YO'NALISH",
+      title: "Dr. MuhammadAli Davronov Xizmatlari",
+      subtitle: "Barcha muolajalar shaxsan Dr. MuhammadAli tomonidan zamonaviy uskunalar bilan 100% og'riqsiz amalga oshiriladi.",
+      viewAll: "Barcha xizmatlar →",
+      bookBtn: "Qabulga yozilish",
+      services: [
+        {
+          id: "tsirkon-keramika-koronka",
+          title: "Ortopediya & Vinirlar",
+          subtitle: "Tsirkon koronkalar, E-max vinirlar va ko'priklar",
+          desc: "Monolit tsirkoniy va press-keramikadan tabiiy tishdek mustahkam va shaffof qoplamalar. 15+ yillik chidamlilik.",
+          image: assets.treatment_crowns,
+          icon: <DentalVeneerCrown className="w-6 h-6 text-primary" />,
+          duration: "2-3 qabul",
+          pill: "Tsirkon & E-max",
+        },
+        {
+          id: "ogriqsiz-terapiya",
+          title: "100% Og'riqsiz Terapiya",
+          subtitle: "Karies, asab (kanal) davolash va restavratsiya",
+          desc: "Yumshoq anesteziya ostida karies va ildiz kanallarini og'riqsiz davolash. Nano-kompozitlar bilan tabiiy shaklni tiklash.",
+          image: assets.treatment_therapy,
+          icon: <DentalToothMolar className="w-6 h-6 text-primary" />,
+          duration: "30-50 daqiqa",
+          pill: "Og'riqsiz",
+        },
+        {
+          id: "dental-implant",
+          title: "Dental Implantologiya",
+          subtitle: "Premium biotitan implantlar va jarrohlik",
+          desc: "Yo'qotilgan tishlarni zamonaviy biotitan implantlar bilan og'riqsiz tiklash. Bir kunda tish qo'yish imkoniyati.",
+          image: assets.treatment_implant,
+          icon: <DentalImplantFixture className="w-6 h-6 text-primary" />,
+          duration: "15-30 daqiqa",
+          pill: "Biotitan",
+        },
+      ],
     },
     ru: {
-      servicesBadge: "НАПРАВЛЕНИЯ ЛЕЧЕНИЯ",
-      servicesTitle: "Услуги Доктора МухаммадАли",
-      servicesSub: "Ортопедия, безболезненная терапия и современная дентальная имплантация — приём лично ведёт доктор МухаммадАли Давронов.",
-      viewAll: "Смотреть все услуги →",
-      bookNow: "Записаться",
+      badge: "3 ОСНОВНЫХ НАПРАВЛЕНИЯ",
+      title: "Направления Лечения Д-ра МухаммадАли",
+      subtitle: "Все процедуры выполняет лично доктор МухаммадАли Давронов с применением проверенных материалов и анестезии без боли.",
+      viewAll: "Все услуги →",
+      bookBtn: "Записаться",
+      services: [
+        {
+          id: "tsirkon-keramika-koronka",
+          title: "Ортопедия и Виниры",
+          subtitle: "Циркониевые коронки, виниры E-max и мосты",
+          desc: "Сверхпрочный монолитный цирконий и эстетическая керамика. Натуральный блеск и идеальное прилегание на 15+ лет.",
+          image: assets.treatment_crowns,
+          icon: <DentalVeneerCrown className="w-6 h-6 text-primary" />,
+          duration: "2-3 визита",
+          pill: "Цирконий и E-max",
+        },
+        {
+          id: "ogriqsiz-terapiya",
+          title: "Терапия Без Боли",
+          subtitle: "Лечение кариеса, каналов и реставрация",
+          desc: "100% безболезненное лечение кариеса и пломбирование каналов под мягкой анестезией. Художественное восстановление зубов.",
+          image: assets.treatment_therapy,
+          icon: <DentalToothMolar className="w-6 h-6 text-primary" />,
+          duration: "30-50 минут",
+          pill: "Без боли",
+        },
+        {
+          id: "dental-implant",
+          title: "Дентальная Имплантация",
+          subtitle: "Биосовместимый титан и хирургия",
+          desc: "Восстановление утраченных зубов надёжными титановыми имплантами. Приживаемость более 98%, имплантация за один день.",
+          image: assets.treatment_implant,
+          icon: <DentalImplantFixture className="w-6 h-6 text-primary" />,
+          duration: "15-30 минут",
+          pill: "Биотитан",
+        },
+      ],
     },
     en: {
-      servicesBadge: "CLINICAL SPECIALTIES",
-      servicesTitle: "Dr. MuhammadAli's Treatments",
-      servicesSub: "Orthopedics, completely pain-free therapy, and precision dental implantology — all care personally provided by Dr. MuhammadAli Davronov.",
-      viewAll: "View All Treatments →",
-      bookNow: "Book Now",
+      badge: "3 CORE SPECIALTIES",
+      title: "Clinical Specialties of Dr. MuhammadAli",
+      subtitle: "All procedures are performed personally by Dr. MuhammadAli Davronov using modern pain-free technology.",
+      viewAll: "All services →",
+      bookBtn: "Book Now",
+      services: [
+        {
+          id: "tsirkon-keramika-koronka",
+          title: "Orthopedics & Veneers",
+          subtitle: "Zirconia crowns, E-max veneers & bridges",
+          desc: "Monolithic zirconia and press-ceramics restoring natural strength and translucency for 15+ years of durability.",
+          image: assets.treatment_crowns,
+          icon: <DentalVeneerCrown className="w-6 h-6 text-primary" />,
+          duration: "2-3 visits",
+          pill: "Zirconia & E-max",
+        },
+        {
+          id: "ogriqsiz-terapiya",
+          title: "Pain-Free Therapy",
+          subtitle: "Cavity treatment, root canals & restorations",
+          desc: "100% pain-free cavity removal and sealed root canal therapy under gentle anesthesia. Natural tooth preservation.",
+          image: assets.treatment_therapy,
+          icon: <DentalToothMolar className="w-6 h-6 text-primary" />,
+          duration: "30-50 mins",
+          pill: "Zero Pain",
+        },
+        {
+          id: "dental-implant",
+          title: "Dental Implantology",
+          subtitle: "Biotitanium implants & oral surgery",
+          desc: "Permanent tooth replacement with premium biocompatible titanium implants. Safe, gentle, and long-lasting.",
+          image: assets.treatment_implant,
+          icon: <DentalImplantFixture className="w-6 h-6 text-primary" />,
+          duration: "15-30 mins",
+          pill: "Titanium",
+        },
+      ],
     },
   }[lang] || labels.uz;
+
+  return (
+    <section className="w-full py-12 sm:py-16 bg-slate-50/70 border-y border-slate-200/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
+          <div>
+            <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-red-50 border border-red-200/70 shadow-2xs mb-2.5 uppercase">
+              {labels.badge}
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+              {labels.title}
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-xl">
+              {labels.subtitle}
+            </p>
+          </div>
+
+          <Link
+            to={to("/services")}
+            className="text-xs sm:text-sm font-bold text-primary hover:text-primary-hover flex items-center gap-1 transition-colors self-start md:self-auto"
+          >
+            {labels.viewAll}
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {labels.services.map((svc) => (
+            <article
+              key={svc.id}
+              className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-4 relative">
+                  <img
+                    src={svc.image}
+                    alt={svc.title}
+                    width="600"
+                    height="375"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-2.5 left-2.5">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 text-primary border border-red-100 shadow-xs">
+                      {svc.pill}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="w-8 h-8 rounded-xl bg-red-50 text-primary flex items-center justify-center shrink-0">
+                    {svc.icon}
+                  </span>
+                  <h3 className="text-lg font-serif font-bold text-slate-900">
+                    {svc.title}
+                  </h3>
+                </div>
+                <p className="text-xs font-semibold text-primary mb-2">
+                  {svc.subtitle}
+                </p>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {svc.desc}
+                </p>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-xs font-medium text-slate-500 inline-flex items-center gap-1.5">
+                  <IconClock className="w-3.5 h-3.5 text-primary" />
+                  <span>{svc.duration}</span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onOpenBooking(svc.id)}
+                  className="px-4 py-2 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-2xs hover:shadow-colgate transition-all"
+                >
+                  {labels.bookBtn}
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   ABOUT THE DENTIST SECTION (PERSONAL & DEDICATED)
+   ═══════════════════════════════════════════════════════════════════ */
+const AboutDoctorSection = () => {
+  const { lang } = useLanguage();
+
+  const labels = {
+    uz: {
+      badge: "SHIFOKOR HAQIDA",
+      title: "Dr. MuhammadAli Davronov",
+      subtitle: "5 yillik klinik tajriba · Andijon davlat tibbiyot instituti",
+      p1: "Men har bir bemorni shaxsan qabul qilaman va muolaja natijasiga shaxsan javob beraman. Andijon davlat tibbiyot institutida olgan bilimlarim va zamonaviy stomatologiya texnologiyalari yordamida tishlarni og'riqsiz va yuqori aniqlikda davolayman.",
+      p2: "Klinikamizda faqat 3 asosiy yo'nalishga e'tibor qaratilgan: Ortopediya (tsirkon koronkalar va vinirlar), Terapiya (100% og'riqsiz davolash) hamda Dental Implantologiya.",
+      feat1Title: "Shaxsiy Qabul",
+      feat1Desc: "Bemorlar yordamchilarga topshirilmaydi, har bir bosqich shaxsan o'zim tomonidan nazorat qilinadi.",
+      feat2Title: "ADTI Diplomi",
+      feat2Desc: "Andijon davlat tibbiyot instituti stomatologiya fakulteti oliy ma'lumotli shifokori.",
+      feat3Title: "100% Og'riqsiz",
+      feat3Desc: "Yumshoq anesteziya va ehtiyotkorona muolaja orqali hech qanday qo'rquvsiz qabul.",
+      callTitle: "To'g'ridan-to'g'ri bog'lanish:",
+    },
+    ru: {
+      badge: "О ВРАЧЕ",
+      title: "Д-р МухаммадАли Давронов",
+      subtitle: "5 лет практики · Андижанский государственный медицинский институт",
+      p1: "Я лично принимаю каждого пациента и несу персональную ответственность за результат лечения. Фундаментальное образование в АГМИ и современные технологии позволяют проводить лечение зубов абсолютно без боли и с максимальной точностью.",
+      p2: "Моя практика сосредоточена исключительно на 3 ключевых направлениях: Ортопедия (циркониевые коронки и виниры), Терапия (лечение кариеса без боли) и Дентальная Имплантация.",
+      feat1Title: "Личный Приём",
+      feat1Desc: "Каждый пациент получает персональное внимание врача от первого осмотра до финала.",
+      feat2Title: "Диплом АГМИ",
+      feat2Desc: "Высшее медицинское образование стоматологического факультета.",
+      feat3Title: "Лечение Без Боли",
+      feat3Desc: "Современная бережная анестезия гарантирует полный комфорт на приёме.",
+      callTitle: "Прямая связь с доктором:",
+    },
+    en: {
+      badge: "ABOUT THE DOCTOR",
+      title: "Dr. MuhammadAli Davronov",
+      subtitle: "5 Years Practice · Andijan State Medical Institute",
+      p1: "I personally welcome every patient and stand behind the quality of every treatment. My medical foundation from ASMI combined with modern technology ensures high precision and completely pain-free dental care.",
+      p2: "My practice is dedicated strictly to 3 core disciplines: Orthopedics (zirconia crowns & veneers), Therapy (gentle, pain-free restorations), and Dental Implantology.",
+      feat1Title: "Personal Practice",
+      feat1Desc: "You receive undivided attention and direct treatment from Dr. MuhammadAli himself.",
+      feat2Title: "ASMI Medical Degree",
+      feat2Desc: "Higher dental education from Andijan State Medical Institute.",
+      feat3Title: "100% Pain-Free",
+      feat3Desc: "Gentle anesthesia protocols guarantee a completely stress-free visit.",
+      callTitle: "Direct contact with Dr. MuhammadAli:",
+    },
+  }[lang] || labels.uz;
+
+  return (
+    <section className="w-full py-12 sm:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Column: Doctor Bio */}
+            <div className="lg:col-span-7 space-y-4">
+              <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs uppercase">
+                {labels.badge}
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                {labels.title}
+              </h2>
+              <p className="text-sm font-bold text-primary">
+                {labels.subtitle}
+              </p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {labels.p1}
+              </p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {labels.p2}
+              </p>
+
+              {/* Direct Contact Bar */}
+              <div className="pt-4 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+                    {labels.callTitle}
+                  </span>
+                  <a
+                    href={DOCTOR_INFO.phoneHref}
+                    className="font-mono text-base font-bold text-primary hover:underline"
+                  >
+                    {DOCTOR_INFO.phoneDisplay}
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <a
+                    href={DOCTOR_INFO.telegramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full bg-sky-500 text-white flex items-center justify-center hover:bg-sky-600 transition-colors shadow-2xs"
+                    aria-label="Telegram"
+                  >
+                    <IconTelegram className="w-4 h-4 text-white" />
+                  </a>
+                  <a
+                    href={DOCTOR_INFO.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-2xs"
+                    aria-label="Instagram"
+                  >
+                    <IconInstagram className="w-4 h-4 text-white" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: 3 Clean Value Cards */}
+            <div className="lg:col-span-5 space-y-3">
+              <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-start gap-3">
+                <span className="w-9 h-9 rounded-xl bg-red-50 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                  <IconShieldCheck className="w-5 h-5" />
+                </span>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">
+                    {labels.feat1Title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-0.5">
+                    {labels.feat1Desc}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-start gap-3">
+                <span className="w-9 h-9 rounded-xl bg-red-50 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                  <IconGraduationCap className="w-5 h-5" />
+                </span>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">
+                    {labels.feat2Title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-0.5">
+                    {labels.feat2Desc}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-start gap-3">
+                <span className="w-9 h-9 rounded-xl bg-red-50 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                  <DentalToothMolar className="w-5 h-5 text-primary" />
+                </span>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">
+                    {labels.feat3Title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-0.5">
+                    {labels.feat3Desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   MAIN HOME PAGE COMPONENT (CLEAN, SIMPLE & FOCUSED)
+   ═══════════════════════════════════════════════════════════════════ */
+const Home = ({ onOpenBooking }) => {
+  const { lang } = useLanguage();
 
   return (
     <>
       <Seo page="home" schemaJson={buildHomePageSchema(lang)} />
 
-      {/* 1. Hero Section */}
+      {/* 1. Clear Doctor Hero Section */}
       <HeroSection onOpenBooking={onOpenBooking} />
 
-      {/* 2. Digital Dentistry & Innovation Showcase */}
-      <DigitalDentistryFeatures />
+      {/* 2. Focused 3 Specialties (Orthopedics, Therapy, Implantology) */}
+      <CoreSpecialtiesSection onOpenBooking={onOpenBooking} />
 
-      {/* 3. Services Catalog Overview Grid (Clean Porcelain Section) */}
-      <section className="w-full py-14 sm:py-20 lg:py-24 bg-slate-50/80 border-y border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
-            <div>
-              <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-red-50 border border-red-200/70 shadow-2xs mb-3 uppercase">
-                {labels.servicesBadge}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
-                {labels.servicesTitle}
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-xl">
-                {labels.servicesSub}
-              </p>
-            </div>
+      {/* 3. About Dr. MuhammadAli Davronov & Personal Philosophy */}
+      <AboutDoctorSection />
 
-            <Link
-              to={to("/services")}
-              className="text-xs sm:text-sm font-bold text-primary hover:text-primary-hover flex items-center gap-1.5 transition-colors self-start md:self-auto"
-            >
-              {labels.viewAll}
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            {SERVICES_CATALOG.slice(0, 6).map((service) => (
-              <Interactive3DTilt
-                key={service.id}
-                maxTilt={6}
-                perspective={950}
-                scale={1.02}
-                glare={false}
-                className="h-full"
-              >
-                <article className="h-full p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/80 shadow-sm hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
-                  <div>
-                    <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-5 relative">
-                      <img
-                        src={service.image}
-                        alt={service.title[lang]}
-                        width="640"
-                        height="400"
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 text-primary border border-red-100 backdrop-blur-xs shadow-xs">
-                          {service.featurePill[lang]}
-                        </span>
-                      </div>
-                    </div>
-
-                    <span className="text-[11px] font-bold text-primary uppercase tracking-wider block mb-1">
-                      {service.category[lang]}
-                    </span>
-                    <h3 className="text-lg font-bold text-slate-900 hover:text-primary transition-colors">
-                      {service.title[lang]}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 mt-2 line-clamp-3 leading-relaxed">
-                      {service.shortDesc[lang]}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-slate-500 inline-flex items-center gap-1.5">
-                      <IconClock className="w-3.5 h-3.5 text-primary" />
-                      <span>{service.duration[lang]}</span>
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => onOpenBooking(service.id)}
-                      className="px-4 py-2 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-2xs hover:shadow-colgate transition-all"
-                    >
-                      {labels.bookNow}
-                    </button>
-                  </div>
-                </article>
-              </Interactive3DTilt>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Doctor Profile & 3D Flippable Business Card */}
-      <section className="w-full py-14 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
-          <Doctor3DCard />
-        </div>
-      </section>
-
-      {/* 5. Interactive Cost & Chair Time Calculator */}
-      <Interactive3DCostCalculator />
-
-      {/* 6. Online Smile Assessment Wizard */}
-      <SmileAssessmentWizard />
-
-      {/* 7. Online Booking System Section */}
+      {/* 4. Direct Online Booking Section */}
       <InlineBookingSection />
 
-      {/* 8. Clinic Location Map */}
+      {/* 5. Practice Location Map (Google & Yandex Maps) */}
       <ClinicLocationMap />
 
-      {/* 9. Frequently Asked Questions */}
+      {/* 6. Concise FAQ */}
       <FaqAccordion />
     </>
   );
