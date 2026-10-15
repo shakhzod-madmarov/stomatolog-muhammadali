@@ -57,17 +57,17 @@ export const PAGE_SEO = {
     uz: {
       title: "Aloqa va Manzil — DM Stomatologiya | Dr. MuhammadAli Davronov (Andijon)",
       description:
-        "Dr. MuhammadAli Davronov qabuliga yozilish — DM Stomatologiya (Andijon, Navoiy shox 91-uy). Tel: +998 97 676 01 01, Instagram: @dm.muxammadali.",
+        "Dr. MuhammadAli Davronov qabuliga yozilish — DM Stomatologiya (Andijon, Navoiy shox 91-uy, SARIQ BOLA pizza yonida). Tel: +998 97 676 01 01, Instagram: @dm.muxammadali.",
     },
     ru: {
       title: "Контакты и Локация — DM Stomatology | Д-р МухаммадАли Давронов (Андижан)",
       description:
-        "Запись на личный приём к Д-ру МухаммадАли Давронову — клиника DM Stomatology (Андижан, проспект Навои 91). Телефон: +998 97 676 01 01, Instagram: @dm.muxammadali.",
+        "Запись на личный приём к Д-ру МухаммадАли Давронову — клиника DM Stomatology (Андижан, проспект Навои 91, рядом с SARIQ BOLA). Телефон: +998 97 676 01 01, Instagram: @dm.muxammadali.",
     },
     en: {
       title: "Contact & Location — DM Stomatology | Dr. MuhammadAli Davronov (Andijan)",
       description:
-        "Book personal appointment with Dr. MuhammadAli Davronov — DM Stomatology (Andijan, 91 Navoi Avenue). Phone: +998 97 676 01 01, Instagram: @dm.muxammadali.",
+        "Book personal appointment with Dr. MuhammadAli Davronov — DM Stomatology (Andijan, 91 Navoi Avenue, next to SARIQ BOLA). Phone: +998 97 676 01 01, Instagram: @dm.muxammadali.",
     },
   },
   booking: {

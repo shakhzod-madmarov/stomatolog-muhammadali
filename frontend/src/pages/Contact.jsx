@@ -108,18 +108,32 @@ const Contact = () => {
                 {lang === "uz" ? "Klinika Manzili" : lang === "ru" ? "Адрес Клиники" : "Clinic Location"}
               </h3>
               <p className="text-xs text-slate-500 mt-1">
-                Andijon sh., Navoiy shox 91-uy
+                {lang === "uz"
+                  ? "Andijon sh., Navoiy shox 91-uy (SARIQ BOLA pizza yonida)"
+                  : lang === "ru"
+                  ? "г. Андижан, проспект Навои 91 (рядом с SARIQ BOLA)"
+                  : "91 Navoi Ave, Andijan (next to SARIQ BOLA)"}
               </p>
             </div>
           </div>
-          <a
-            href={DOCTOR_INFO.yandexMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-xs font-bold text-primary hover:underline"
-          >
-            Yandex Xaritada ochish ↗
-          </a>
+          <div className="flex flex-col gap-1.5 pt-2">
+            <a
+              href={DOCTOR_INFO.yandexMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-xs font-bold text-primary hover:underline"
+            >
+              {lang === "uz" ? "Yandex Xaritada ochish ↗" : lang === "ru" ? "Открыть в Яндекс Картах ↗" : "Open in Yandex Maps ↗"}
+            </a>
+            <a
+              href={DOCTOR_INFO.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-xs font-bold text-slate-600 hover:text-primary hover:underline"
+            >
+              {lang === "uz" ? "Google Maps orqali ochish ↗" : lang === "ru" ? "Открыть в Google Maps ↗" : "Open in Google Maps ↗"}
+            </a>
+          </div>
         </div>
 
         {/* Telegram */}
