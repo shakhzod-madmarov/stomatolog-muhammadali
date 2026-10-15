@@ -1,0 +1,52 @@
+User-agent: *
+Allow: /
+Disallow: /__not-found__
+
+# Google Search & Google Extended (Gemini / SGE)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Yandex Search & Webmaster
+User-agent: Yandex
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# OpenAI / ChatGPT / SearchGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI Search
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Bing / Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://stomatolog-muhammadali.uz/sitemap.xml
+Host: stomatolog-muhammadali.uz
