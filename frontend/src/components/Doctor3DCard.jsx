@@ -120,11 +120,20 @@ export const Doctor3DCard = () => {
                     </span>
                   </div>
 
+                  {/* Top-Left Verified Clinic Badge */}
+                  <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-xs text-[10px] text-slate-900 font-bold flex items-center gap-1.5 shadow-sm border border-slate-200">
+                    <span className="w-3.5 h-3.5 rounded-full bg-emerald-500 text-white text-[8px] font-black flex items-center justify-center">
+                      ✓
+                    </span>
+                    <span>DM Stomatologiya</span>
+                  </div>
+
                   <div className="absolute top-2.5 right-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-xs text-[10px] text-slate-800 font-bold flex items-center gap-1.5 shadow-sm border border-slate-200">
                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     <span>{labels.interactiveBadge}</span>
                   </div>
                 </div>
+
 
                 {/* Card Back: Clinic Credentials & Contacts */}
                 <div className="absolute inset-0 backface-hidden [transform:rotateY(180deg)] bg-gradient-to-br from-white via-slate-50 to-red-50/40 p-6 flex flex-col justify-between border border-slate-200">
@@ -175,9 +184,12 @@ export const Doctor3DCard = () => {
                   </div>
 
                   <div className="pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500 font-medium">
-                    <span>Instagram: @dm.muxammadali</span>
-                    <span className="text-primary font-bold">Andijon</span>
+                    <span className="font-semibold text-slate-700">@dm.muxammadali</span>
+                    <span className="px-2 py-0.5 rounded-full bg-red-50 text-primary border border-red-200 font-mono text-[10px] font-bold">
+                      Kafolat 5 Yil
+                    </span>
                   </div>
+
                 </div>
               </div>
             </div>

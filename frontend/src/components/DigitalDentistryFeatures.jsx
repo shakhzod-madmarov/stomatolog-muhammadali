@@ -219,7 +219,7 @@ export const DigitalDentistryFeatures = () => {
 
   return (
     <section aria-labelledby="features-heading" className="w-full py-14 sm:py-20 relative overflow-hidden bg-slate-50 border-y border-slate-200/80">
-      {/* Background soft red clinical aura */}
+      {/* Background soft red clinical glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(200,16,46,0.04),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

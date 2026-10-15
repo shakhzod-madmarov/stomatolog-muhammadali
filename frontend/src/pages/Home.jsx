@@ -15,8 +15,9 @@ import Interactive3DCostCalculator from "../components/Interactive3DCostCalculat
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import SmileAssessmentWizard from "../components/SmileAssessmentWizard";
 import Interactive3DTilt from "../components/Interactive3DTilt";
-import { IconScannerOptical3D, IconAligners, IconClock, IconShieldCheck } from "../components/MedicalIcons";
+import { IconScannerOptical3D, IconAligners, IconClock } from "../components/MedicalIcons";
 import { DmToothEmblem } from "../components/Logo";
+import TrustStickers from "../components/TrustStickers";
 
 /* ═══════════════════════════════════════════════════════════════════
    HERO SECTION — DR. MUHAMMADALI DAVRONOV (COLGATE CLEAN DESIGN)
@@ -196,6 +197,20 @@ const HeroSection = ({ onOpenBooking }) => {
                 <span>{t.floatBadge2}</span>
               </div>
 
+              {/* Floating 3D Tooth Brand Sticker */}
+              <div className="hidden sm:flex absolute -bottom-5 -left-5 w-20 h-20 rounded-2xl bg-white p-1.5 border-2 border-slate-200 shadow-lg z-25 items-center justify-center animate-float-slow hover:scale-105 transition-transform">
+                <img
+                  src={assets.hero_3d_tooth}
+                  alt="3D Translucent Tooth Model"
+                  width="72"
+                  height="72"
+                  className="w-full h-full object-contain"
+                />
+                <span className="absolute -top-1.5 -right-1.5 px-1.5 py-0.5 rounded-full text-[8px] font-black bg-primary text-white shadow-xs">
+                  3D
+                </span>
+              </div>
+
               <Interactive3DTilt
                 maxTilt={8}
                 perspective={1000}
@@ -264,8 +279,14 @@ const HeroSection = ({ onOpenBooking }) => {
             </div>
           </div>
         </div>
+
+        {/* Clinical Quality & Trust Stickers Strip */}
+        <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/80">
+          <TrustStickers />
+        </div>
       </div>
     </section>
+
   );
 };
 

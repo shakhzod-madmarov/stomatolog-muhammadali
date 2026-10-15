@@ -8,6 +8,8 @@ import { buildMedicalProcedureSchema } from "../utils/structuredData";
 import { IconPhone, IconLocationPin, IconShieldCheck } from "../components/MedicalIcons";
 import { useBooking } from "../context/BookingContext";
 import InlineBookingSection from "../components/InlineBookingSection";
+import TrustStickers from "../components/TrustStickers";
+
 
 const ServiceDetail = () => {
   const { serviceId, slug } = useParams();
@@ -255,8 +257,12 @@ const ServiceDetail = () => {
         </div>
       </div>
 
+      {/* Quality Guarantee & Clinical Trust Stickers */}
+      <TrustStickers className="my-6" />
+
       {/* Direct Booking Section */}
       <InlineBookingSection initialServiceId={service.id} />
+
     </div>
   );
 };

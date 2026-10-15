@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import {
   DentalImplantFixture,
   DentalBracesIcon,
@@ -32,9 +32,9 @@ export const SERVICES_CATALOG = [
       en: "No Putty Impressions",
     },
     badgeTheme: {
-      badgeBg: "bg-red-950/85 text-red-300 border-red-600/50",
-      warrantyBg: "bg-red-900/80 text-red-200 border-red-600/40",
-      accentGlow: "hover:shadow-red-500/20",
+      badgeBg: "bg-red-50 text-red-700 border-red-200",
+      warrantyBg: "bg-slate-100 text-slate-700 border-slate-200",
+      accentGlow: "hover:shadow-red-500/10",
     },
     category: {
       uz: "Raqamli Diagnostika",
