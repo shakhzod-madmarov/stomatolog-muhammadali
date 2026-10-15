@@ -11,7 +11,9 @@ import {
   IconPhone,
   IconTelegram,
   IconInstagram,
+  IconLocationPin,
 } from "../components/MedicalIcons";
+
 
 const Contact = () => {
   const { lang } = useLanguage();
@@ -98,8 +100,8 @@ const Contact = () => {
         {/* Location Info */}
         <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-primary/50 hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
           <div className="space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center text-xl">
-              📍
+            <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center">
+              <IconLocationPin className="w-6 h-6 text-primary" />
             </div>
             <div>
               <h3 className="text-base font-bold text-slate-900">

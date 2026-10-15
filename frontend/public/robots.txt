@@ -9,4 +9,5 @@ User-agent: Yandex
 Allow: /
 
 Sitemap: https://stomatolog-muhammadali.uz/sitemap.xml
-Host: https://stomatolog-muhammadali.uz
+Host: stomatolog-muhammadali.uz
+

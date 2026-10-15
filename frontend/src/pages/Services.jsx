@@ -10,6 +10,8 @@ import Interactive3DCostCalculator from "../components/Interactive3DCostCalculat
 import SmileAssessmentWizard from "../components/SmileAssessmentWizard";
 import { IconShieldCheck } from "../components/MedicalIcons";
 import Interactive3DTilt from "../components/Interactive3DTilt";
+import TrustStickers from "../components/TrustStickers";
+
 
 const Services = ({ onOpenBooking }) => {
   const { lang } = useLanguage();
@@ -85,20 +87,30 @@ const Services = ({ onOpenBooking }) => {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex overflow-x-auto sm:flex-wrap items-center justify-start sm:justify-center gap-2 pb-1 no-scrollbar scroll-touch">
-        {categories.map((c) => (
-          <button
-            key={c.id}
-            onClick={() => setActiveCategory(c.id)}
-            className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
-              activeCategory === c.id
-                ? "bg-primary text-white shadow-md scale-102"
-                : "bg-white text-slate-700 border border-slate-200 hover:text-primary hover:bg-slate-50 shadow-2xs"
-            }`}
-          >
-            {c.label[lang]}
-          </button>
-        ))}
+      <div
+        role="tablist"
+        aria-label={lang === "ru" ? "Категории услуг" : lang === "en" ? "Service categories" : "Xizmat toifalari"}
+        className="flex overflow-x-auto sm:flex-wrap items-center justify-start sm:justify-center gap-2 pb-1 no-scrollbar scroll-touch"
+      >
+        {categories.map((c) => {
+          const isSelected = activeCategory === c.id;
+          return (
+            <button
+              key={c.id}
+              type="button"
+              role="tab"
+              aria-selected={isSelected}
+              onClick={() => setActiveCategory(c.id)}
+              className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                isSelected
+                  ? "bg-primary text-white shadow-md scale-102"
+                  : "bg-white text-slate-700 border border-slate-200 hover:text-primary hover:bg-slate-50 shadow-2xs"
+              }`}
+            >
+              {c.label[lang]}
+            </button>
+          );
+        })}
       </div>
 
       {/* Services Grid */}
@@ -172,7 +184,11 @@ const Services = ({ onOpenBooking }) => {
         ))}
       </section>
 
+      {/* Clinical Standards & Trust Stickers */}
+      <TrustStickers className="mt-6" />
+
       {/* Interactive Calculator */}
+
       <Interactive3DCostCalculator />
 
       {/* Smile Assessment Wizard */}

@@ -19,6 +19,7 @@ export const ClinicLocationMap = () => {
       openYandex: "Yandex Xaritada ochish ↗",
       callUs: "Qo'ng'iroq qilish",
       telegram: "Telegram orqali yozish",
+      directionsBtn: "Yandex Xaritada Marshrut Chizish ↗",
     },
     ru: {
       badge: "ЛОКАЦИЯ И ПРИЁМ",
@@ -27,10 +28,11 @@ export const ClinicLocationMap = () => {
       addressTitle: "Адрес:",
       landmarkTitle: "Ориентир:",
       hoursTitle: "Часы приёма:",
-      openGoogle: "Открыть карту ↗",
-      openYandex: "Открыть в Яндекс Картах ↗",
+      openGoogle: "Google Xarita ↗",
+      openYandex: "Yandex Xarita ↗",
       callUs: "Позвонить",
       telegram: "Написать в Telegram",
+      directionsBtn: "Построить маршрут в Яндекс Картах ↗",
     },
     en: {
       badge: "PRACTICE LOCATION",
@@ -39,10 +41,11 @@ export const ClinicLocationMap = () => {
       addressTitle: "Address:",
       landmarkTitle: "Landmark:",
       hoursTitle: "Working Hours:",
-      openGoogle: "Open Map ↗",
-      openYandex: "Open in Yandex Maps ↗",
+      openGoogle: "Google Maps ↗",
+      openYandex: "Yandex Maps ↗",
       callUs: "Call Hotline",
       telegram: "Message on Telegram",
+      directionsBtn: "Get Directions on Yandex Maps ↗",
     },
   }[lang] || labels.uz;
 
@@ -113,7 +116,7 @@ export const ClinicLocationMap = () => {
             {/* Navigation Buttons */}
             <div className="mt-8 pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <a
-                href={PRIMARY_CLINIC.maps.yandex}
+                href={PRIMARY_CLINIC.maps.google}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3.5 py-2.5 rounded-full text-center text-xs font-bold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors"
@@ -149,12 +152,12 @@ export const ClinicLocationMap = () => {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href="https://yandex.uz/maps/-/CXBZfQM2"
+                  href={PRIMARY_CLINIC.maps.yandex}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate transition-all transform hover:scale-105"
                 >
-                  <span>Yandex Xaritada Marshrut Chizish ↗</span>
+                  <span>{labels.directionsBtn}</span>
                 </a>
               </div>
             </div>

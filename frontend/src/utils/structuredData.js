@@ -1,8 +1,8 @@
-import { SITE_ORIGIN } from "../constants/seo";
-import { localizePath } from "./language";
-import { DOCTOR_INFO } from "../constants/doctor";
-import { PRIMARY_CLINIC } from "../constants/clinics";
-import { FAQ_ITEMS } from "../constants/faq";
+import { SITE_ORIGIN } from "../constants/seo.js";
+import { localizePath } from "./language.js";
+import { DOCTOR_INFO } from "../constants/doctor.js";
+import { PRIMARY_CLINIC } from "../constants/clinics.js";
+import { FAQ_ITEMS } from "../constants/faq.js";
 
 export const withTrailingSlash = (path) => (path.endsWith("/") ? path : `${path}/`);
 

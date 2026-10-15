@@ -204,6 +204,8 @@ const HeroSection = ({ onOpenBooking }) => {
                   alt="3D Translucent Tooth Model"
                   width="72"
                   height="72"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
                 <span className="absolute -top-1.5 -right-1.5 px-1.5 py-0.5 rounded-full text-[8px] font-black bg-primary text-white shadow-xs">

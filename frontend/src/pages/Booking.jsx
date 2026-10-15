@@ -12,6 +12,8 @@ import {
   IconShieldCheck,
   DentalDigitalScannerIcon,
 } from "../components/MedicalIcons";
+import TrustStickers from "../components/TrustStickers";
+
 
 const Booking = () => {
   const { lang } = useLanguage();
@@ -101,7 +103,11 @@ const Booking = () => {
 
       {/* Main Interactive Booking Section */}
       <InlineBookingSection />
+
+      {/* Clinical Warranty & Guarantees */}
+      <TrustStickers className="mt-8" />
     </div>
+
   );
 };
 

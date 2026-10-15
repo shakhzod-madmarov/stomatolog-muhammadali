@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { DOCTOR_INFO } from "../constants/doctor";
 import { assets } from "../assets/assets";
-import { IconTelegram, IconInstagram, IconShieldCheck, IconLocationPin, IconPhone } from "./MedicalIcons";
+import { IconTelegram, IconInstagram, IconShieldCheck, IconLocationPin, IconPhone, IconGraduationCap } from "./MedicalIcons";
+
 import Interactive3DTilt from "./Interactive3DTilt";
 import { DmToothEmblem } from "./Logo";
 
@@ -157,7 +158,7 @@ export const Doctor3DCard = () => {
                   <div className="space-y-3 py-2 text-xs text-slate-700">
                     <div className="flex items-center gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-red-50 text-primary flex items-center justify-center shrink-0 border border-red-100 font-bold">
-                        🎓
+                        <IconGraduationCap className="w-4 h-4 text-primary" />
                       </div>
                       <span className="font-semibold text-slate-900">
                         {labels.education}
@@ -231,7 +232,9 @@ export const Doctor3DCard = () => {
           </div>
 
           <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 flex items-center gap-3">
-            <span className="text-xl">🏛️</span>
+            <span className="w-8 h-8 rounded-xl bg-red-50 text-primary border border-red-100 flex items-center justify-center shrink-0">
+              <IconGraduationCap className="w-4 h-4 text-primary" />
+            </span>
             <div>
               <span className="font-bold text-slate-900 block">
                 {labels.education}
