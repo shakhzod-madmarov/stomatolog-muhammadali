@@ -5,7 +5,6 @@ import {
   IconScannerOptical3D,
   IconVirtualSmile,
   IconPrecisionTarget,
-  IconAligners,
   IconCadCamRobotics,
   IconShieldCheck,
 } from "./MedicalIcons";
@@ -34,7 +33,7 @@ const renderFeatureIcon = (idx, className = "w-6 h-6") => {
     case 2:
       return <IconPrecisionTarget className={className} />;
     case 3:
-      return <IconAligners className={className} />;
+      return <IconCadCamRobotics className={className} />;
     default:
       return <IconScannerOptical3D className={className} />;
   }
@@ -92,9 +91,9 @@ export const DigitalDentistryFeatures = () => {
           desc: "3D jarrohlik shabloni implantni asab va tomirlarga teginmasdan, eng xavfsiz nuqtaga joylashtirishni ta'minlaydi.",
         },
         {
-          tag: "Erkinlik",
-          title: "Shaffof Elayner Kapalari",
-          desc: "Metall simlarsiz tish to'g'irlash: suhbatlashganda ko'rinmaydi, ovqatlanishda esa oson yechiladi.",
+          tag: "Aniqlik",
+          title: "CAD/CAM Tsirkon va E-max",
+          desc: "Mikron darajasidagi robotlashtirilgan frezerlash: qoplamalar va vinirlar tishga ideal jipslashadi.",
         },
       ],
       workflowLocation: "Andijon · DM Stomatologiya",
@@ -149,9 +148,9 @@ export const DigitalDentistryFeatures = () => {
           desc: "Индивидуальный 3D шаблон гарантирует установку импланта в безопасную зону без риска для нервов.",
         },
         {
-          tag: "Эстетика",
-          title: "Прозрачные Элайнеры",
-          desc: "Выравнивание зубов без металлических замков: незаметно для окружающих и удобно в повседневной жизни.",
+          tag: "Точность",
+          title: "CAD/CAM Цирконий и E-max",
+          desc: "Роботизированная фрезеровка с микронной точностью: коронки и виниры идеально прилегают к десне.",
         },
       ],
       workflowLocation: "Андижан · DM Stomatologiya",
@@ -206,9 +205,9 @@ export const DigitalDentistryFeatures = () => {
           desc: "Custom 3D surgical guides position implants at the safest anatomical depth and angle.",
         },
         {
-          tag: "Discretion",
-          title: "Invisible Clear Trays",
-          desc: "Straighten teeth discreetly: undetectable in conversations and simple to remove when dining.",
+          tag: "Precision",
+          title: "CAD/CAM Zirconia & E-max",
+          desc: "Robotic sub-micron milling: crowns and veneers fit seamlessly with natural bite alignment.",
         },
       ],
       workflowLocation: "Andijan · DM Stomatology",

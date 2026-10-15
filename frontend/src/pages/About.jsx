@@ -268,7 +268,7 @@ const About = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* Brand New Clinical Warranty & Certification Stickers */}
+        {/* Clinical Guarantees & Quality Standards */}
         <TrustStickers className="mt-8 pt-8 border-t border-slate-100" />
       </section>
 

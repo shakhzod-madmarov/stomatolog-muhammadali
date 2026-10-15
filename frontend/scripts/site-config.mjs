@@ -85,26 +85,6 @@ export const ROUTES = [
     },
   },
   {
-    path: "/services/elaynerlar",
-    changefreq: "monthly",
-    priority: "0.85",
-    image: {
-      src: "src/assets/treatment_aligners.webp",
-      title: "Shaffof Elaynerlar (Ko'rinmas Kapalar) — Dr. MuhammadAli Davronov",
-      caption: "Breketsiz tishlarni to'g'irlashning zamonaviy usuli",
-    },
-  },
-  {
-    path: "/services/breketlar",
-    changefreq: "monthly",
-    priority: "0.85",
-    image: {
-      src: "src/assets/treatment_braces.webp",
-      title: "Breket Tizimlari — Dr. MuhammadAli Davronov",
-      caption: "Metall, keramika va sapfir breketlar bilan tishlarni to'g'irlash",
-    },
-  },
-  {
     path: "/services/tsirkon-keramika-koronka",
     changefreq: "monthly",
     priority: "0.8",

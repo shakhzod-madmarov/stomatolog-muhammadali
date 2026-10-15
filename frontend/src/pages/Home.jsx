@@ -12,10 +12,9 @@ import { SERVICES_CATALOG } from "../constants/servicesCatalog";
 import DigitalDentistryFeatures from "../components/DigitalDentistryFeatures";
 import Doctor3DCard from "../components/Doctor3DCard";
 import Interactive3DCostCalculator from "../components/Interactive3DCostCalculator";
-import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import SmileAssessmentWizard from "../components/SmileAssessmentWizard";
 import Interactive3DTilt from "../components/Interactive3DTilt";
-import { IconScannerOptical3D, IconAligners, IconClock } from "../components/MedicalIcons";
+import { IconScannerOptical3D, IconDentalImplant, IconClock } from "../components/MedicalIcons";
 import { DmToothEmblem } from "../components/Logo";
 import TrustStickers from "../components/TrustStickers";
 
@@ -192,7 +191,7 @@ const HeroSection = ({ onOpenBooking }) => {
               {/* Floating Badge Bottom-Right */}
               <div className="absolute -bottom-3.5 right-2 sm:-right-4 max-w-[85%] px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-[10.5px] sm:text-[11px] font-bold text-primary flex items-center gap-1.5 sm:gap-2 animate-float-3d z-20 pointer-events-none">
                 <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
-                  <IconAligners className="w-3.5 h-3.5" />
+                  <IconDentalImplant className="w-3.5 h-3.5" />
                 </span>
                 <span className="truncate">{t.floatBadge2}</span>
               </div>
@@ -424,22 +423,19 @@ const Home = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 5. Interactive Cost & Timeline Calculator */}
+      {/* 5. Interactive Cost & Chair Time Calculator */}
       <Interactive3DCostCalculator />
 
-      {/* 6. Before / After Smile Transformation */}
-      <BeforeAfterSlider />
-
-      {/* 7. Online Smile Assessment Wizard */}
+      {/* 6. Online Smile Assessment Wizard */}
       <SmileAssessmentWizard />
 
-      {/* 8. Online Booking System Section */}
+      {/* 7. Online Booking System Section */}
       <InlineBookingSection />
 
-      {/* 9. Clinic Location Map */}
+      {/* 8. Clinic Location Map */}
       <ClinicLocationMap />
 
-      {/* 10. Frequently Asked Questions */}
+      {/* 9. Frequently Asked Questions */}
       <FaqAccordion />
     </>
   );

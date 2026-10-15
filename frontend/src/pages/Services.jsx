@@ -22,20 +22,18 @@ const Services = ({ onOpenBooking }) => {
 
   const categories = [
     { id: "all", label: { uz: "Barcha Xizmatlar", ru: "Все Услуги", en: "All Services" } },
-    { id: "digital", label: { uz: "Raqamli & 3D", ru: "Цифровые & 3D", en: "Digital & 3D" } },
-    { id: "implant", label: { uz: "Dental Implant", ru: "Имплантация", en: "Implants" } },
-    { id: "ortho", label: { uz: "Elayner & Breket", ru: "Элайнеры & Брекеты", en: "Orthodontics" } },
-    { id: "aesthetics", label: { uz: "Tsirkon & Vinir", ru: "Цирконий & Виниры", en: "Crowns & Veneers" } },
-    { id: "therapy", label: { uz: "Terapiya & Protez", ru: "Терапия & Протезы", en: "Therapy & Dentures" } },
+    { id: "orthopedia", label: { uz: "Ortopediya & Protezlash", ru: "Ортопедия & Протезы", en: "Orthopedics" } },
+    { id: "therapy", label: { uz: "Terapiya & Oqartirish", ru: "Терапия & Лечение", en: "Therapy" } },
+    { id: "implantology", label: { uz: "Dental Implantologiya", ru: "Имплантология", en: "Implantology" } },
+    { id: "digital", label: { uz: "Raqamli & 3D", ru: "Цифровые & 3D", en: "Digital 3D" } },
   ];
 
   const filteredServices = SERVICES_CATALOG.filter((s) => {
     if (activeCategory === "all") return true;
-    if (activeCategory === "digital") return s.id.includes("digital");
-    if (activeCategory === "implant") return s.id.includes("implant");
-    if (activeCategory === "ortho") return s.id.includes("breket") || s.id.includes("elayner");
-    if (activeCategory === "aesthetics") return s.id.includes("tsirkon") || s.id.includes("vinir") || s.id.includes("oqartirish");
-    if (activeCategory === "therapy") return s.id.includes("terapiya") || s.id.includes("protez");
+    if (activeCategory === "orthopedia") return s.specialtyKey === "orthopedia";
+    if (activeCategory === "therapy") return s.specialtyKey === "therapy";
+    if (activeCategory === "implantology") return s.specialtyKey === "implantology";
+    if (activeCategory === "digital") return s.specialtyKey === "digital";
     return true;
   });
 

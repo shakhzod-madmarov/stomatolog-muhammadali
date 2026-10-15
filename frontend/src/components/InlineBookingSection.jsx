@@ -15,7 +15,7 @@ import {
 } from "../lib/medinsonBooking";
 import { formatUzPhone, isUzPhoneComplete } from "../utils/phone";
 import { sanitizePatientName, sanitizeNote, checkRateLimit, isBotSubmission } from "../utils/security";
-import { BOOKING_SERVICES } from "../constants/bookingServices";
+import { BOOKING_SERVICES, normalizeBookingServiceId } from "../constants/bookingServices";
 
 const pad2 = (n) => String(n).padStart(2, "0");
 
@@ -191,9 +191,8 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   });
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedService, setSelectedService] = useState(() => {
-    const q = searchParams.get("service") || bookingRequest?.service;
-    if (q && BOOKING_SERVICES.some((s) => s.id === q)) return q;
-    return initialServiceId || "consultation";
+    const raw = searchParams.get("service") || bookingRequest?.service || initialServiceId;
+    return normalizeBookingServiceId(raw);
   });
 
   const [fullName, setFullName] = useState(() => bookingRequest?.name || "");
@@ -228,8 +227,8 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
   useEffect(() => {
     if (bookingRequest) {
-      if (bookingRequest.service && BOOKING_SERVICES.some((s) => s.id === bookingRequest.service)) {
-        setSelectedService(bookingRequest.service);
+      if (bookingRequest.service) {
+        setSelectedService(normalizeBookingServiceId(bookingRequest.service));
       }
       if (bookingRequest.name) setFullName(bookingRequest.name);
       if (bookingRequest.phone) setPhone(bookingRequest.phone);

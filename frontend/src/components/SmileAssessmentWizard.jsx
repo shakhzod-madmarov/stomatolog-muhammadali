@@ -4,11 +4,11 @@ import { useBooking } from "../context/BookingContext";
 import Interactive3DTilt from "./Interactive3DTilt";
 import {
   IconDentalImplant,
-  IconAligners,
-  IconBraces,
   IconDiamondGem,
   IconTherapeuticTooth,
   IconLaserWhitening,
+  DentalVeneerCrown,
+  DentalDenturesIcon,
   IconGentleComfort,
   IconEyeInvisible,
   IconSpeedLightning,
@@ -19,12 +19,12 @@ const renderComplaintIcon = (id, className = "w-5 h-5") => {
   switch (id) {
     case "implant":
       return <IconDentalImplant className={className} />;
-    case "aligners":
-      return <IconAligners className={className} />;
-    case "braces":
-      return <IconBraces className={className} />;
+    case "crowns":
+      return <DentalVeneerCrown className={className} />;
     case "veneers":
       return <IconDiamondGem className={className} />;
+    case "dentures":
+      return <DentalDenturesIcon className={className} />;
     case "therapy":
       return <IconTherapeuticTooth className={className} />;
     case "whitening":
@@ -57,94 +57,97 @@ export const SmileAssessmentWizard = () => {
   const [complaint, setComplaint] = useState(null);
   const [priority, setPriority] = useState(null);
 
-  const stepsData = {
+  const STEPS_DATA = {
     uz: {
-      badge: "TABASSUM TAHLILI",
+      badge: "ONLAYN MUOLAJA TAHLILI",
       title: "Sizga Qaysi Muolaja To'g'ri Keladi?",
-      subtitle: "2 ta oddiy savolga javob bering va Dr. MuhammadAli Davronov tavsiya etadigan optimal davolash rejasini bilib oling.",
-      step1Title: "1-qadam: Sizni nima bezovta qilmoqda?",
+      subtitle: "2 ta oddiy savolga javob bering va Dr. MuhammadAli Davronov tavsiya etadigan optimal davolash yo'nalishini bilib oling.",
+      step1Title: "1-qadam: Sizni qanday holat bezovta qilmoqda?",
       complaints: [
-        { id: "implant", label: "Tish yo'qotilgan yoki olingan", rec: "implant" },
-        { id: "aligners", label: "Tishlar qiyshiq, ko'rinmas to'g'irlash kerak", rec: "aligners" },
-        { id: "braces", label: "Murakkab prikus, breket qo'ymoqchiman", rec: "braces" },
-        { id: "veneers", label: "Gollivud tabassumi va vinirlar kerak", rec: "veneers" },
-        { id: "therapy", label: "Tishda karies yoki og'riq bor", rec: "therapy" },
-        { id: "whitening", label: "Tishlarni oppoq oqartirish", rec: "whitening" },
+        { id: "implant", label: "Tish yo'qotilgan yoki olingan (Implantologiya)", rec: "implant" },
+        { id: "crowns", label: "Tish singan / yemirilgan, mustahkam qoplama kerak (Ortopediya)", rec: "crowns" },
+        { id: "veneers", label: "Gollivud tabassumi, oqlik va nozik vinirlar (Ortopediya)", rec: "veneers" },
+        { id: "dentures", label: "Bir nechta yoki barcha tishlarni protezlash (Ortopediya)", rec: "dentures" },
+        { id: "therapy", label: "Tishda karies, og'riq yoki plomba kerak (Terapiya)", rec: "therapy" },
+        { id: "whitening", label: "Tishlarni xavfsiz tozalash va oppoq oqartirish (Terapiya)", rec: "whitening" },
       ],
       step2Title: "2-qadam: Siz uchun eng muhim mezon qaysi?",
       priorities: [
         { id: "painless", label: "100% og'riqsiz va qulay bo'lishi" },
-        { id: "invisible", label: "Atrofdagilarga umuman sezilmasligi" },
+        { id: "invisible", label: "Tabiiy tishdan aslo ajralmasligi" },
         { id: "speed", label: "Imkon qadar tez va aniq bajarilishi" },
-        { id: "longevity", label: "Umrbod yoki uzoq yillik kafolat" },
+        { id: "longevity", label: "Umrbod yoki uzoq yillik rasmiy kafolat" },
       ],
-      resultTitle: "Siz uchun tavsiya etilgan dastlabki reja:",
-      priorityLabel: "Ustuvorlik:",
-      doctorNote: "Dr. MuhammadAli Davronov ko'rigida 3D skanerlash o'tkaziladi va sizga eng xavfsiz hamda mukammal natija beruvchi individual reja tuziladi.",
+      resultTitle: "Siz uchun tavsiya etilgan mutaxassislik yo'nalishi:",
+      priorityLabel: "Ustuvor mezon:",
+      doctorNote: "Dr. MuhammadAli Davronov shaxsiy qabulida 3D raqamli ko'rik o'tkaziladi va sizga eng xavfsiz hamda uzoq muddatli individual davolash rejasi tuziladi.",
       restart: "Qaytadan tahlil qilish",
-      bookCta: "Shifokor bilan 3D ko'rikka yozilish →",
+      bookCta: "Ushbu muolajaga onlayn qabulga yozilish →",
     },
     ru: {
-      badge: "ЭКСПРЕСС-ПОДБОР ЛЕЧЕНИЯ",
+      badge: "ОНЛАЙН-ПОДБОР ЛЕЧЕНИЯ",
       title: "Какое лечение подойдёт именно вам?",
       subtitle: "Ответьте на 2 простых вопроса, чтобы узнать предварительную рекомендацию Д-ра МухаммадАли Давронова.",
       step1Title: "Шаг 1: Что именно вас беспокоит?",
       complaints: [
-        { id: "implant", label: "Отсутствует один или несколько зубов", rec: "implant" },
-        { id: "aligners", label: "Кривизна зубов, хочу незаметные капы", rec: "aligners" },
-        { id: "braces", label: "Сложный прикус, нужны брекеты", rec: "braces" },
-        { id: "veneers", label: "Хочу голливудскую улыбку и виниры", rec: "veneers" },
-        { id: "therapy", label: "Боль в зубе или подозрение на кариес", rec: "therapy" },
-        { id: "whitening", label: "Хочу белоснежное отбеливание", rec: "whitening" },
+        { id: "implant", label: "Отсутствует зуб, нужен надёжный имплант (Имплантология)", rec: "implant" },
+        { id: "crowns", label: "Зуб разрушен / сколот, нужна точная коронка (Ортопедия)", rec: "crowns" },
+        { id: "veneers", label: "Хочу голливудскую улыбку и тонкие виниры (Ортопедия)", rec: "veneers" },
+        { id: "dentures", label: "Восстановление нескольких или всех зубов (Ортопедия)", rec: "dentures" },
+        { id: "therapy", label: "Боль в зубе, кариес или замена пломбы (Терапия)", rec: "therapy" },
+        { id: "whitening", label: "Профессиональная чистка и отбеливание (Терапия)", rec: "whitening" },
       ],
       step2Title: "Шаг 2: Что для вас важнее всего?",
       priorities: [
         { id: "painless", label: "Абсолютно без боли и страха" },
-        { id: "invisible", label: "Максимальная незаметность для окружающих" },
+        { id: "invisible", label: "100% естественность и незаметность" },
         { id: "speed", label: "Быстрый и прогнозируемый результат" },
-        { id: "longevity", label: "Пожизненная надёжность и гарантия" },
+        { id: "longevity", label: "Пожизненная надёжность и официальная гарантия" },
       ],
       resultTitle: "Рекомендованное направление лечения:",
-      priorityLabel: "Приоритет:",
-      doctorNote: "На очной консультации Д-р МухаммадАли Давронов проведёт цифровое 3D-сканирование и составит безопасный персональный план лечения.",
-      restart: "Пройти тест заново",
-      bookCta: "Записаться на 3D диагностику →",
+      priorityLabel: "Главный приоритет:",
+      doctorNote: "На очной консультации Д-р МухаммадАли Давронов проведёт 3D-диагностику и составит безопасный персональный план лечения.",
+      restart: "Пройти опрос заново",
+      bookCta: "Записаться на этот приём онлайн →",
     },
     en: {
       badge: "ONLINE SMILE ASSESSMENT",
       title: "Find Your Ideal Treatment in 1 Minute",
-      subtitle: "Answer a couple of simple questions to receive Dr. MuhammadAli Davronov's recommended treatment pathway.",
-      step1Title: "Step 1: What is your primary dental concern?",
+      subtitle: "Answer 2 simple questions to receive Dr. MuhammadAli Davronov's tailored treatment recommendation.",
+      step1Title: "Step 1: What is your primary dental need?",
       complaints: [
-        { id: "implant", label: "Missing one or more natural teeth", rec: "implant" },
-        { id: "aligners", label: "Crooked teeth, prefer invisible aligners", rec: "aligners" },
-        { id: "braces", label: "Complex bite issues, interested in braces", rec: "braces" },
-        { id: "veneers", label: "Dreaming of a Hollywood smile / veneers", rec: "veneers" },
-        { id: "therapy", label: "Toothache or suspected dental cavity", rec: "therapy" },
-        { id: "whitening", label: "Professional teeth whitening", rec: "whitening" },
+        { id: "implant", label: "Missing natural tooth, need solid implant (Implantology)", rec: "implant" },
+        { id: "crowns", label: "Damaged or worn tooth needing crown (Orthopedics)", rec: "crowns" },
+        { id: "veneers", label: "Dreaming of a bright smile with veneers (Orthopedics)", rec: "veneers" },
+        { id: "dentures", label: "Replacing multiple missing teeth with dentures (Orthopedics)", rec: "dentures" },
+        { id: "therapy", label: "Toothache, cavity, or gentle filling (Therapy)", rec: "therapy" },
+        { id: "whitening", label: "Safe professional cleaning & whitening (Therapy)", rec: "whitening" },
       ],
       step2Title: "Step 2: What matters most to you?",
       priorities: [
-        { id: "painless", label: "100% gentle and painless care" },
-        { id: "invisible", label: "Discrete aesthetics with zero metal" },
+        { id: "painless", label: "100% gentle and pain-free care" },
+        { id: "invisible", label: "Completely natural, lifelike aesthetics" },
         { id: "speed", label: "Fast, precise, and digital workflow" },
-        { id: "longevity", label: "Lifetime durability and warranty" },
+        { id: "longevity", label: "Long-term durability and clinical warranty" },
       ],
       resultTitle: "Your Recommended Pathway:",
-      priorityLabel: "Priority:",
-      doctorNote: "During your in-person visit, Dr. MuhammadAli Davronov will conduct 3D digital intraoral scanning to build an optimal, gentle treatment plan.",
+      priorityLabel: "Priority criteria:",
+      doctorNote: "During your personal visit, Dr. MuhammadAli Davronov will perform 3D digital diagnostics to craft an optimal clinical plan.",
       restart: "Retake Assessment",
-      bookCta: "Schedule 3D Digital Consultation →",
+      bookCta: "Book Online for This Treatment →",
     },
-  }[lang] || stepsData.uz;
+  };
+  const stepsData = STEPS_DATA[lang] || STEPS_DATA.uz;
+
+  const currentComplaint = stepsData.complaints.find((c) => c.id === complaint);
 
   const handleSelectComplaint = (item) => {
-    setComplaint(item);
+    setComplaint(item.id);
     setStep(2);
   };
 
   const handleSelectPriority = (item) => {
-    setPriority(item);
+    setPriority(item.id);
     setStep(3);
   };
 
@@ -154,133 +157,143 @@ export const SmileAssessmentWizard = () => {
     setPriority(null);
   };
 
+  const recommendedBookingService = currentComplaint?.rec || "consultation";
+
   return (
-    <section className="w-full py-10 sm:py-16 bg-slate-50 border-y border-slate-200/80" aria-labelledby="assessment-heading">
-      <div className="max-w-3xl mx-auto px-3.5 sm:px-6">
-        <div className="text-center mb-6 sm:mb-8">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
+    <section aria-labelledby="smile-wizard-heading" className="w-full py-12 sm:py-16 lg:py-20 bg-white border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-red-50 border border-red-200 shadow-2xs mb-3 uppercase">
             {stepsData.badge}
           </span>
-          <h2 id="assessment-heading" className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          <h2 id="smile-wizard-heading" className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
             {stepsData.title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-xl mx-auto">
             {stepsData.subtitle}
           </p>
         </div>
 
         <Interactive3DTilt
           maxTilt={4}
-          perspective={1400}
+          perspective={1000}
           scale={1.01}
           glare={false}
-          className="w-full"
+          className="max-w-3xl mx-auto"
         >
-          <div className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
-          {/* Step Indicators */}
-          <div className="flex items-center justify-center gap-2 mb-6 sm:mb-8" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3} aria-label="Assessment Progress">
-            {[1, 2, 3].map((s) => (
-              <div
-                key={s}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  s === step
-                    ? "w-10 bg-primary shadow-xs"
-                    : s < step
-                    ? "w-6 bg-primary/50"
-                    : "w-6 bg-slate-200"
-                }`}
-              />
-            ))}
-          </div>
+          <div className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-lg">
+            {/* Step 1: Complaint */}
+            {step === 1 && (
+              <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-300">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                  <h3 className="font-serif font-bold text-sm sm:text-base text-slate-900">
+                    {stepsData.step1Title}
+                  </h3>
+                  <span className="text-xs font-mono font-bold text-primary bg-white px-2.5 py-1 rounded-full border border-slate-200">
+                    1 / 2
+                  </span>
+                </div>
 
-          {/* Step 1: Complaint */}
-          {step === 1 && (
-            <fieldset>
-              <legend className="text-sm sm:text-base md:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
-                {stepsData.step1Title}
-              </legend>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3" role="group" aria-label={stepsData.step1Title}>
-                {stepsData.complaints.map((item) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => handleSelectComplaint(item)}
-                    className="min-h-[48px] p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-2.5 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
-                  >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
-                      {renderComplaintIcon(item.id, "w-4 h-4 sm:w-5 sm:h-5")}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  {stepsData.complaints.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => handleSelectComplaint(item)}
+                      className="min-h-[48px] p-3 sm:p-4 rounded-xl bg-white border border-slate-200 hover:border-primary hover:bg-red-50/40 text-left transition-all flex items-center gap-3 cursor-pointer group shadow-2xs"
+                    >
+                      <span className="w-9 h-9 rounded-xl bg-red-50 text-primary border border-red-100 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                        {renderComplaintIcon(item.id)}
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors leading-snug">
+                        {item.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Step 2: Priority */}
+            {step === 2 && (
+              <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-300">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                  <h3 className="font-serif font-bold text-sm sm:text-base text-slate-900">
+                    {stepsData.step2Title}
+                  </h3>
+                  <span className="text-xs font-mono font-bold text-primary bg-white px-2.5 py-1 rounded-full border border-slate-200">
+                    2 / 2
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  {stepsData.priorities.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => handleSelectPriority(item)}
+                      className="min-h-[48px] p-3 sm:p-4 rounded-xl bg-white border border-slate-200 hover:border-primary hover:bg-red-50/40 text-left transition-all flex items-center gap-3 cursor-pointer group shadow-2xs"
+                    >
+                      <span className="w-9 h-9 rounded-xl bg-red-50 text-primary border border-red-100 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                        {renderPriorityIcon(item.id)}
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors leading-snug">
+                        {item.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Step 3: Result & Direct Booking */}
+            {step === 3 && (
+              <div className="space-y-5 animate-in fade-in duration-300">
+                <div className="p-4 sm:p-6 rounded-2xl bg-white border border-red-100 shadow-sm flex flex-col gap-4">
+                  <div className="flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-wider">
+                    <span>✓</span>
+                    <span>{stepsData.resultTitle}</span>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-red-50/50 border border-red-100 flex items-center gap-3.5">
+                    <span className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
+                      {renderComplaintIcon(complaint, "w-6 h-6")}
+                    </span>
+                    <div>
+                      <h4 className="font-serif font-bold text-base sm:text-lg text-slate-900">
+                        {stepsData.complaints.find((c) => c.id === complaint)?.label}
+                      </h4>
+                      <p className="text-xs text-slate-600 mt-0.5">
+                        <span className="font-semibold text-slate-700">{stepsData.priorityLabel}</span>{" "}
+                        {stepsData.priorities.find((p) => p.id === priority)?.label}
+                      </p>
                     </div>
-                    <span className="leading-snug">{item.label}</span>
-                  </button>
-                ))}
-              </div>
-            </fieldset>
-          )}
+                  </div>
 
-          {/* Step 2: Priority */}
-          {step === 2 && (
-            <fieldset>
-              <legend className="text-sm sm:text-base md:text-lg font-bold text-slate-900 mb-4 text-center block w-full">
-                {stepsData.step2Title}
-              </legend>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3" role="group" aria-label={stepsData.step2Title}>
-                {stepsData.priorities.map((item) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => handleSelectPriority(item)}
-                    className="min-h-[48px] p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-primary/50 hover:bg-white transition-all flex items-center gap-2.5 sm:gap-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs group"
-                  >
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary group-hover:text-white transition-colors">
-                      {renderPriorityIcon(item.id, "w-4 h-4 sm:w-5 sm:h-5")}
-                    </div>
-                    <span className="leading-snug">{item.label}</span>
-                  </button>
-                ))}
-              </div>
-            </fieldset>
-          )}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {stepsData.doctorNote}
+                  </p>
 
-          {/* Step 3: Result */}
-          {step === 3 && complaint && (
-            <div className="text-center animate-in fade-in duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary border border-primary/20 mx-auto flex items-center justify-center mb-3 shadow-xs">
-                {renderComplaintIcon(complaint.id, "w-8 h-8")}
-              </div>
-              <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-1">
-                {stepsData.resultTitle}
-              </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                {complaint.label}
-              </h3>
-              {priority && (
-                <p className="text-xs text-slate-500 mt-1">
-                  {stepsData.priorityLabel} {priority.label}
-                </p>
-              )}
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                    <button
+                      type="button"
+                      onClick={() => openBooking(recommendedBookingService)}
+                      className="flex-1 py-3.5 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-colgate hover:shadow-colgate-lg active:scale-98 transition-all text-center flex items-center justify-center gap-2"
+                    >
+                      <span>{stepsData.bookCta}</span>
+                    </button>
 
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 max-w-md mx-auto my-6 text-xs text-slate-700 leading-relaxed text-left shadow-2xs">
-                {stepsData.doctorNote}
+                    <button
+                      type="button"
+                      onClick={handleRestart}
+                      className="px-5 py-3.5 rounded-full font-bold text-xs text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors text-center"
+                    >
+                      {stepsData.restart}
+                    </button>
+                  </div>
+                </div>
               </div>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => openBooking({ service: complaint.rec, note: `Online tahlil: ${complaint.label}` })}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate transition-all"
-                >
-                  {stepsData.bookCta}
-                </button>
-                <button
-                  type="button"
-                  onClick={handleRestart}
-                  className="w-full sm:w-auto px-4 py-3 rounded-full font-bold text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-                >
-                  {stepsData.restart}
-                </button>
-              </div>
-            </div>
-          )}
+            )}
           </div>
         </Interactive3DTilt>
       </div>

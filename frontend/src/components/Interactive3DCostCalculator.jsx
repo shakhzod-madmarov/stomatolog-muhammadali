@@ -14,42 +14,22 @@ export const Interactive3DCostCalculator = () => {
   const servicesData = {
     implant: {
       id: "implant",
+      bookingServiceId: "implant",
+      specialty: { uz: "Dental Implantologiya", ru: "Имплантология", en: "Implantology" },
       title: { uz: "Dental Implantatsiya", ru: "Имплантация Зубов", en: "Dental Implants" },
       unitLabel: { uz: "ta tish", ru: "зуб(а)", en: "tooth/teeth" },
       min: 1,
       max: 12,
       defaultQty: 1,
-      durationPerUnit: { uz: "20 daqiqa", ru: "20 минут", en: "20 mins" },
+      durationPerUnit: { uz: "20-25 daqiqa", ru: "20-25 минут", en: "20-25 mins" },
       visits: { uz: "2-3 qabul", ru: "2-3 визита", en: "2-3 visits" },
-      warranty: { uz: "Umrbod kafolat", ru: "Пожизненная гарантия", en: "Lifetime warranty" },
-      tech: { uz: "Premium Biotitan", ru: "Премиум Биотитан", en: "Premium Biotinium" },
-    },
-    aligners: {
-      id: "aligners",
-      title: { uz: "Shaffof Elaynerlar", ru: "Прозрачные Элайнеры", en: "Clear Aligners" },
-      unitLabel: { uz: "jag'", ru: "челюсть", en: "arch(es)" },
-      min: 1,
-      max: 2,
-      defaultQty: 2,
-      durationPerUnit: { uz: "Har 2 haftada kapa", ru: "Смена кап каждые 2 недели", en: "Tray change every 2 wks" },
-      visits: { uz: "1 oyda 1 marta nazorat", ru: "1 раз в месяц контроль", en: "1 monthly checkup" },
-      warranty: { uz: "3D kafolatlangan prikus", ru: "3D гарантия прикуса", en: "3D bite warranty" },
-      tech: { uz: "Ko'rinmas polimer", ru: "Невидимый полимер", en: "Invisible polymer" },
-    },
-    braces: {
-      id: "braces",
-      title: { uz: "Breket Tizimlari", ru: "Брекет-Системы", en: "Braces Systems" },
-      unitLabel: { uz: "jag'", ru: "челюсть", en: "arch(es)" },
-      min: 1,
-      max: 2,
-      defaultQty: 2,
-      durationPerUnit: { uz: "O'rtacha 12-18 oy", ru: "В среднем 12-18 мес", en: "Avg 12-18 months" },
-      visits: { uz: "Har 4-5 haftada aktivatsiya", ru: "Активация каждые 4-5 недель", en: "Activation every 4-5 wks" },
-      warranty: { uz: "To'liq prikus kafolati", ru: "Гарантия ровного ряда", en: "Occlusion warranty" },
-      tech: { uz: "Metall / Keramika / Sapfir", ru: "Металл / Керамика", en: "Metal / Ceramic" },
+      warranty: { uz: "Umrbod rasmiy kafolat", ru: "Пожизненная гарантия", en: "Lifetime warranty" },
+      tech: { uz: "Premium Biotitan & 3D Navigatsiya", ru: "Премиум Биотитан и 3D Навигация", en: "Premium Biotinium & 3D Guided" },
     },
     crowns: {
       id: "crowns",
+      bookingServiceId: "crowns",
+      specialty: { uz: "Ortopediya", ru: "Ортопедия", en: "Orthopedics" },
       title: { uz: "Tsirkon Koronkalar", ru: "Циркониевые Коронки", en: "Zirconia Crowns" },
       unitLabel: { uz: "ta tish", ru: "зуб(а)", en: "tooth/teeth" },
       min: 1,
@@ -58,31 +38,63 @@ export const Interactive3DCostCalculator = () => {
       durationPerUnit: { uz: "3-5 kun", ru: "3-5 дней", en: "3-5 days" },
       visits: { uz: "2 qabul", ru: "2 визита", en: "2 visits" },
       warranty: { uz: "15+ yillik chidamlilik", ru: "Служба 15+ лет", en: "15+ years durability" },
-      tech: { uz: "Zargarlik aniqligidagi monolit tsirkon", ru: "Высокоточный монолитный цирконий", en: "High-precision monolithic zirconia" },
+      tech: { uz: "Monolit Tsirkon & CAD/CAM", ru: "Монолитный Цирконий и CAD/CAM", en: "Monolithic Zirconia & CAD/CAM" },
     },
     veneers: {
       id: "veneers",
-      title: { uz: "Keramik Vinirlar", ru: "Керамические Виниры", en: "Ceramic Veneers" },
+      bookingServiceId: "veneers",
+      specialty: { uz: "Ortopediya & Estetika", ru: "Ортопедия и Эстетика", en: "Aesthetic Orthopedics" },
+      title: { uz: "Keramik Vinirlar E-max", ru: "Керамические Виниры E-max", en: "E-max Ceramic Veneers" },
       unitLabel: { uz: "ta tish", ru: "зуб(а)", en: "tooth/teeth" },
       min: 2,
       max: 20,
       defaultQty: 6,
       durationPerUnit: { uz: "5-7 kun", ru: "5-7 дней", en: "5-7 days" },
       visits: { uz: "2 qabul", ru: "2 визита", en: "2 visits" },
-      warranty: { uz: "10-15 yil porlash", ru: "10-15 лет белизны", en: "10-15 years shine" },
-      tech: { uz: "E-max Press Keramika", ru: "E-max Пресс-керамика", en: "E-max Press Ceramic" },
+      warranty: { uz: "10-15 yil doimiy jilo", ru: "10-15 лет сияния", en: "10-15 years shine" },
+      tech: { uz: "Shveytsariya IPS E-max 0.3 mm", ru: "Швейцарский IPS E-max 0.3 мм", en: "Swiss IPS E-max 0.3 mm" },
+    },
+    dentures: {
+      id: "dentures",
+      bookingServiceId: "dentures",
+      specialty: { uz: "Ortopediya & Protezlash", ru: "Ортопедическое Протезирование", en: "Prosthodontics" },
+      title: { uz: "Zamonaviy Tish Protezlari", ru: "Зубные Протезы", en: "Modern Dentures" },
+      unitLabel: { uz: "jag'", ru: "челюсть", en: "arch(es)" },
+      min: 1,
+      max: 2,
+      defaultQty: 1,
+      durationPerUnit: { uz: "3-5 kun", ru: "3-5 дней", en: "3-5 days" },
+      visits: { uz: "2-3 qabul", ru: "2-3 визита", en: "2-3 visits" },
+      warranty: { uz: "Ishonchli xizmat kafolati", ru: "Гарантия на конструкцию", en: "Structural warranty" },
+      tech: { uz: "Elastik Neylon va Byugel", ru: "Эластичный Нейлон и Бюгель", en: "Flexible Nylon & Clasp" },
+    },
+    therapy: {
+      id: "therapy",
+      bookingServiceId: "therapy",
+      specialty: { uz: "Terapevtik Stomatologiya", ru: "Терапевтическая Стоматология", en: "Restorative Dentistry" },
+      title: { uz: "Og'riqsiz Karies & Terapiya", ru: "Лечение Кариеса Без Боли", en: "Pain-Free Caries Therapy" },
+      unitLabel: { uz: "ta tish", ru: "зуб(а)", en: "tooth/teeth" },
+      min: 1,
+      max: 8,
+      defaultQty: 1,
+      durationPerUnit: { uz: "30-40 daqiqa", ru: "30-40 минут", en: "30-40 mins" },
+      visits: { uz: "1 qabul", ru: "1 визит", en: "1 visit" },
+      warranty: { uz: "5 yillik sifat kafolati", ru: "5 лет гарантии на пломбу", en: "5-year restoration warranty" },
+      tech: { uz: "2 Bosqichli Gel Anesteziya & Nano-Kompozit", ru: "Двухэтапная Анестезия и Нанокомпозит", en: "Two-Stage Anesthesia & Nano-Composite" },
     },
     whitening: {
       id: "whitening",
-      title: { uz: "Tish Oqartirish", ru: "Отбеливание Зубов", en: "Teeth Whitening" },
+      bookingServiceId: "whitening",
+      specialty: { uz: "Terapiya & Gigiyena", ru: "Терапия и Гигиена", en: "Therapy & Hygiene" },
+      title: { uz: "Xavfsiz Tish Oqartirish", ru: "Отбеливание Зубов", en: "Safe Teeth Whitening" },
       unitLabel: { uz: "seans", ru: "сеанс", en: "session" },
       min: 1,
       max: 2,
       defaultQty: 1,
-      durationPerUnit: { uz: "45 daqiqa", ru: "45 минут", en: "45 mins" },
+      durationPerUnit: { uz: "45-60 daqiqa", ru: "45-60 минут", en: "45-60 mins" },
       visits: { uz: "1 qabul", ru: "1 визит", en: "1 visit" },
-      warranty: { uz: "6-8 ton oqlik", ru: "На 6-8 тонов светлее", en: "6-8 shades lighter" },
-      tech: { uz: "AirFlow & Professional Gel", ru: "AirFlow и Проф. Гель", en: "AirFlow & Pro Gel" },
+      warranty: { uz: "6-8 ton yorqinlik (2 yilgacha)", ru: "На 6-8 тонов светлее (до 2 лет)", en: "6-8 shades lighter (up to 2 yrs)" },
+      tech: { uz: "Shveytsariya AirFlow & Rem-Gel", ru: "Швейцарский AirFlow и Рем-Гель", en: "Swiss AirFlow & Rem-Gel" },
     },
   };
 
@@ -95,177 +107,216 @@ export const Interactive3DCostCalculator = () => {
 
   const labels = {
     uz: {
-      badge: "MUOLAJA BO'YICHA MA'LUMOT",
-      title: "Vaqtingiz va Rejangizni Qulay Baholang",
-      subtitle: "Kerakli muolajani tanlang, tishlar sonini belgilang va nechta tashrifda qancha vaqt ketishini oldindan bilib oling.",
-      step1: "1. Xizmat turini tanlang:",
+      badge: "MUOLAJA TAFSILOTLARI",
+      title: "Ortopediya, Terapiya va Implantologiya Rejasini Baholang",
+      subtitle: "Kerakli yo'nalishni tanlang, tishlar sonini belgilang va tashriflar soni hamda muolaja davomiyligini oldindan bilib oling.",
+      step1: "1. Mutaxassislik bo'yicha xizmatni tanlang:",
       step2: "2. Tishlar sonini belgilang:",
-      resultTitle: "Davolash rejasi ma'lumotlari:",
+      resultTitle: "Rejalashtirilgan muolaja parametrlari:",
+      specialtyLabel: "Yo'nalish:",
       visits: "Klinikaga tashrif:",
-      duration: "Muolaja vaqti:",
-      warranty: "Kafolat:",
+      duration: "Kreslodagi vaqt:",
+      warranty: "Rasmiy kafolat:",
       tech: "Qo'llaniladigan texnologiya:",
-      bookBtn: "Ushbu muolajaga qabulga yozilish →",
-      individualNote: "Har bir insonning tish tuzilishi takrorlanmas. Yakuniy aniq reja shifokor bilan 3D ko'rikda belgilanadi.",
+      bookBtn: "Ushbu muolajaga onlayn qabulga yozilish →",
+      individualNote: "Har bir insonning tish tuzilishi individual. Aniq reja Dr. MuhammadAli Davronov shaxsiy 3D ko'rigida tuziladi.",
       decrease: "Miqdorni kamaytirish",
       increase: "Miqdorni oshirish",
     },
     ru: {
       badge: "ПАРАМЕТРЫ ЛЕЧЕНИЯ",
-      title: "Удобный расчёт времени и параметров лечения",
-      subtitle: "Выберите интересующую услугу и количество зубов, чтобы заранее узнать количество визитов и длительность процедур.",
+      title: "Расчёт времени и параметров ортопедии, терапии и имплантации",
+      subtitle: "Выберите направление лечения и количество зубов, чтобы заранее оценить длительность процедур и количество визитов.",
       step1: "1. Выберите услугу:",
       step2: "2. Укажите количество зубов:",
       resultTitle: "Параметры плана лечения:",
+      specialtyLabel: "Специализация:",
       visits: "Визиты в клинику:",
-      duration: "Время процедуры:",
-      warranty: "Гарантия:",
-      tech: "Используемая технология:",
-      bookBtn: "Записаться на эту процедуру →",
-      individualNote: "Каждая улыбка уникальна. Окончательный план лечения и материалы подбираются на личной 3D-консультации у врача.",
+      duration: "Время в кресле:",
+      warranty: "Официальная гарантия:",
+      tech: "Используемые технологии:",
+      bookBtn: "Записаться на этот приём онлайн →",
+      individualNote: "Анатомия каждого пациента уникальна. Точный план формируется на личном 3D-осмотре у доктора МухаммадАли Давронова.",
       decrease: "Уменьшить количество",
       increase: "Увеличить количество",
     },
     en: {
-      badge: "TREATMENT PLANNER",
-      title: "Estimate Your Treatment Timeline & Visits",
-      subtitle: "Choose your desired treatment and tooth count to preview visit counts and estimated chair time before coming in.",
-      step1: "1. Choose service:",
-      step2: "2. Set tooth count:",
-      resultTitle: "Treatment Plan Overview:",
+      badge: "TREATMENT TIMELINE",
+      title: "Plan Your Orthopedics, Therapy & Implant Care",
+      subtitle: "Select your desired treatment and tooth count to preview chair time and visits before your personal consultation.",
+      step1: "1. Select specialty treatment:",
+      step2: "2. Specify number of teeth:",
+      resultTitle: "Planned clinical parameters:",
+      specialtyLabel: "Specialty:",
       visits: "Clinic visits:",
-      duration: "Procedure time:",
-      warranty: "Warranty:",
-      tech: "Technology used:",
-      bookBtn: "Book Appointment for this Treatment →",
-      individualNote: "Every patient is unique. Your exact tailored clinical plan and materials are finalized during your in-person 3D scan.",
+      duration: "Chair time:",
+      warranty: "Official warranty:",
+      tech: "Clinical protocol:",
+      bookBtn: "Book This Treatment Online →",
+      individualNote: "Every smile is anatomically unique. Finalized treatment plans are confirmed during in-person 3D digital consultation.",
       decrease: "Decrease quantity",
       increase: "Increase quantity",
     },
   }[lang] || labels.uz;
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-3.5 sm:px-6">
-        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2 uppercase">
+    <section aria-labelledby="cost-calc-heading" className="w-full py-12 sm:py-16 lg:py-20 bg-slate-50 border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-red-50 border border-red-200 shadow-2xs mb-3 uppercase">
             {labels.badge}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          <h2 id="cost-calc-heading" className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
             {labels.title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-xl mx-auto">
             {labels.subtitle}
           </p>
         </div>
 
         <Interactive3DTilt
           maxTilt={4}
-          perspective={1400}
+          perspective={1000}
           scale={1.01}
           glare={false}
-          className="w-full"
+          className="max-w-4xl mx-auto"
         >
-          <div className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
-            {/* Step 1: Service Pills */}
-            <div className="mb-5 sm:mb-6">
-              <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2.5 sm:mb-3">
+          <div className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-lg flex flex-col gap-6 sm:gap-8">
+            {/* Step 1: Select Service */}
+            <div>
+              <span className="block text-xs sm:text-sm font-bold text-slate-900 mb-3">
                 {labels.step1}
-              </label>
+              </span>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
-                {Object.values(servicesData).map((svc) => (
-                  <button
-                    key={svc.id}
-                    type="button"
-                    onClick={() => handleServiceChange(svc.id)}
-                    className={`min-h-[44px] flex items-center justify-center px-2 sm:px-3.5 py-2 rounded-xl text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-bold transition-all text-center leading-tight break-words ${
-                      selectedServiceId === svc.id
-                        ? "bg-primary text-white shadow-md scale-102"
-                        : "bg-white text-slate-700 hover:text-primary hover:bg-slate-100 border border-slate-200 shadow-xs"
-                    }`}
-                  >
-                    {svc.title[lang]}
-                  </button>
-                ))}
+                {Object.values(servicesData).map((srv) => {
+                  const isSelected = selectedServiceId === srv.id;
+                  return (
+                    <button
+                      key={srv.id}
+                      type="button"
+                      onClick={() => handleServiceChange(srv.id)}
+                      className={`min-h-[46px] p-2 sm:p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center justify-center text-center cursor-pointer ${
+                        isSelected
+                          ? "bg-primary text-white border-primary shadow-sm scale-102"
+                          : "bg-slate-50 text-slate-700 border-slate-200 hover:border-primary/50 hover:bg-red-50/30"
+                      }`}
+                    >
+                      <span className="block leading-tight">{srv.title[lang]}</span>
+                      <span className={`text-[10px] mt-0.5 ${isSelected ? "text-red-100" : "text-slate-400"}`}>
+                        {srv.specialty[lang]}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Step 2: Quantity Slider / Buttons */}
-            <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-              <div className="flex items-center justify-between mb-2">
-                <label htmlFor="calculator-quantity-slider" className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+            {/* Step 2: Slider Quantity */}
+            <div className="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs sm:text-sm font-bold text-slate-900">
                   {labels.step2}
-                </label>
-                <span className="text-xs sm:text-sm font-bold text-primary">
+                </span>
+                <span className="text-base sm:text-lg font-mono font-bold text-primary bg-white px-3 py-1 rounded-xl border border-slate-200 shadow-2xs">
                   {quantity} {current.unitLabel[lang]}
                 </span>
               </div>
 
-              <div className="flex items-center gap-3 sm:gap-4">
+              <div className="flex items-center gap-3">
                 <button
                   type="button"
+                  onClick={() => setQuantity((q) => Math.max(current.min, q - 1))}
+                  disabled={quantity <= current.min}
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 font-bold text-lg flex items-center justify-center shrink-0 cursor-pointer shadow-2xs"
                   aria-label={labels.decrease}
-                  onClick={() => setQuantity(Math.max(current.min, quantity - 1))}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 text-slate-800 font-bold border border-slate-200 hover:bg-primary hover:text-white shadow-xs flex items-center justify-center transition-colors shrink-0"
                 >
                   -
                 </button>
+
                 <input
-                  id="calculator-quantity-slider"
                   type="range"
                   min={current.min}
                   max={current.max}
                   value={quantity}
-                  aria-label={labels.step2}
-                  aria-valuemin={current.min}
-                  aria-valuemax={current.max}
-                  aria-valuenow={quantity}
                   onChange={(e) => setQuantity(Number(e.target.value))}
-                  className="w-full accent-[#C8102E] h-2 bg-slate-200 rounded-lg cursor-pointer"
+                  className="flex-1 accent-primary h-2 bg-slate-200 rounded-lg cursor-pointer"
+                  aria-label={labels.step2}
                 />
+
                 <button
                   type="button"
+                  onClick={() => setQuantity((q) => Math.min(current.max, q + 1))}
+                  disabled={quantity >= current.max}
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 font-bold text-lg flex items-center justify-center shrink-0 cursor-pointer shadow-2xs"
                   aria-label={labels.increase}
-                  onClick={() => setQuantity(Math.min(current.max, quantity + 1))}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 text-slate-800 font-bold border border-slate-200 hover:bg-primary hover:text-white shadow-xs flex items-center justify-center transition-colors shrink-0"
                 >
                   +
                 </button>
               </div>
             </div>
 
-            {/* Summary Details Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 text-xs mb-6 shadow-2xs">
-              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.visits}</span>
-                <span className="font-bold text-slate-900 mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.visits[lang]}</span>
+            {/* Results Grid */}
+            <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-red-50/50 via-white to-slate-50 border border-red-100 flex flex-col gap-4">
+              <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-red-100">
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">
+                  {labels.resultTitle}
+                </span>
+                <span className="text-xs font-bold text-slate-700">
+                  {current.title[lang]} ({quantity} {current.unitLabel[lang]})
+                </span>
               </div>
-              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.duration}</span>
-                <span className="font-bold text-slate-900 mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.durationPerUnit[lang]}</span>
-              </div>
-              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.warranty}</span>
-                <span className="font-bold text-emerald-600 mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.warranty[lang]}</span>
-              </div>
-              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200 transition-colors">
-                <span className="text-slate-500 block text-[10.5px] sm:text-[11px] truncate">{labels.tech}</span>
-                <span className="font-bold text-primary mt-0.5 block break-words text-[11.5px] sm:text-xs">{current.tech[lang]}</span>
-              </div>
-            </div>
 
-            {/* Action CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-[11px] text-slate-500 text-center sm:text-left inline-flex items-center gap-1.5 justify-center sm:justify-start">
-                <IconInfoCircle className="w-3.5 h-3.5 text-primary shrink-0" />
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                <div className="p-2.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold uppercase block truncate">
+                    {labels.visits}
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 mt-1 block">
+                    {current.visits[lang]}
+                  </span>
+                </div>
+
+                <div className="p-2.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold uppercase block truncate">
+                    {labels.duration}
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 mt-1 block">
+                    {current.durationPerUnit[lang]}
+                  </span>
+                </div>
+
+                <div className="p-2.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold uppercase block truncate">
+                    {labels.warranty}
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-emerald-700 mt-1 block">
+                    {current.warranty[lang]}
+                  </span>
+                </div>
+
+                <div className="p-2.5 sm:p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold uppercase block truncate">
+                    {labels.tech}
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-primary mt-1 block truncate">
+                    {current.tech[lang]}
+                  </span>
+                </div>
+              </div>
+
+              {/* Individual Note */}
+              <div className="flex items-start gap-2 text-xs text-slate-500 pt-1">
+                <IconInfoCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span>{labels.individualNote}</span>
-              </p>
+              </div>
+
+              {/* Online Booking CTA with service pre-selected */}
               <button
                 type="button"
-                onClick={() => openBooking({ service: current.id, note: `${quantity} ${current.unitLabel.uz}` })}
-                className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all"
+                onClick={() => openBooking(current.bookingServiceId)}
+                className="w-full py-3.5 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-colgate hover:shadow-colgate-lg active:scale-98 transition-all text-center flex items-center justify-center gap-2 mt-2"
               >
-                {labels.bookBtn}
+                <span>{labels.bookBtn}</span>
               </button>
             </div>
           </div>

@@ -36,7 +36,7 @@ const ServiceDetail = () => {
       {
         num: "03",
         title: "Raqamli Aniqlikdagi Asosiy Muolaja",
-        desc: "Biotitan implantlar, shaffof elaynerlar, tsirkon yoki kompozit materiallar yordamida mukammal tiklash.",
+        desc: "Biotitan implantlar, tsirkon koronkalar, vinirlar yoki nano-kompozit restavratsiya yordamida mukammal tiklash.",
       },
       {
         num: "04",
@@ -58,7 +58,7 @@ const ServiceDetail = () => {
       {
         num: "03",
         title: "Высокоточное Лечение и Реставрация",
-        desc: "Использование титановых имплантов, элайнеров, циркония и премиальных биоматериалов.",
+        desc: "Установка титановых имплантов, циркониевых коронок, виниров или нанокомпозитное лечение без боли.",
       },
       {
         num: "04",
@@ -80,7 +80,7 @@ const ServiceDetail = () => {
       {
         num: "03",
         title: "Precision Restorative Procedure",
-        desc: "Guided placement of implants, clear aligners, zirconia crowns, or nano-composite restorations.",
+        desc: "Guided placement of biocompatible titanium implants, zirconia crowns, veneers, or nano-composite restorations.",
       },
       {
         num: "04",
