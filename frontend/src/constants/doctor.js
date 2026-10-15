@@ -58,7 +58,7 @@ export const DOCTOR_INFO = {
   telegramHandle: "@dm_muxammadali",
   instagramUrl: "https://www.instagram.com/dm.muxammadali/",
   instagramHandle: "@dm.muxammadali",
-  yandexMapsUrl: "https://yandex.uz/maps/-/CXBZfQM2",
+  yandexMapsUrl: "https://yandex.uz/maps/org/stomatologiya/214793392317/",
   email: "dr@gmail.com",
   siteUrl: "https://stomatolog-muhammadali.uz",
   medinsonSiteId: "ny54hk66wu",

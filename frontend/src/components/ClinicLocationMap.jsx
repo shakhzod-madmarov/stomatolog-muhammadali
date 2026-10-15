@@ -134,29 +134,29 @@ export const ClinicLocationMap = () => {
             </div>
           </div>
 
-          {/* Right Map View / Interactive Location Frame */}
-          <div className="lg:col-span-7 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-200 min-h-[260px] sm:min-h-[440px] relative bg-slate-100 flex flex-col items-center justify-center">
-            {/* Direct Yandex Maps Link Card / Embedded representation */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50 flex flex-col items-center justify-center p-4 sm:p-6 text-center">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 sm:mb-4 shadow-xs">
-                <IconLocationPin className="w-7 h-7 sm:w-8 sm:h-8 text-primary animate-bounce" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1.5 sm:mb-2 font-serif">
-                DM Stomatologiya
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-md mb-1.5 sm:mb-2">
-                Andijon shahri, Navoiy shoh ko'chasi 91-uy
-              </p>
-              <p className="text-xs text-primary mb-4 sm:mb-6 font-mono font-bold">
-                +998 97 676 01 01
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto px-4">
+          {/* Right Map View / Interactive Yandex Location Frame */}
+          <div className="lg:col-span-7 rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-200 min-h-[380px] sm:min-h-[460px] relative bg-slate-100 flex flex-col">
+            <div className="relative w-full h-full min-h-[380px] sm:min-h-[460px] flex-1">
+              <iframe
+                src={PRIMARY_CLINIC.maps.yandexWidget}
+                width="100%"
+                height="100%"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                title={PRIMARY_CLINIC.dentistOffice[lang] || PRIMARY_CLINIC.name[lang]}
+                className="w-full h-full"
+              />
+
+              {/* Floating Quick Action Button on Top of the Map */}
+              <div className="absolute top-3 right-3 z-10 pointer-events-auto">
                 <a
                   href={PRIMARY_CLINIC.maps.yandex}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate transition-all transform active:scale-98"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold bg-white/95 backdrop-blur-md text-primary hover:bg-primary hover:text-white border border-slate-200 shadow-md transition-all active:scale-95"
                 >
+                  <IconLocationPin className="w-3.5 h-3.5" />
                   <span>{labels.directionsBtn}</span>
                 </a>
               </div>

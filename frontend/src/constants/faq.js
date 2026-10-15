@@ -46,9 +46,9 @@ export const FAQ_ITEMS = [
       en: "Where is Dr. MuhammadAli Davronov's clinic located?",
     },
     a: {
-      uz: "Dr. MuhammadAli Davronov shaxsiy qabuli Andijon shahri, Navoiy shoh ko'chasi 91-uyda, DM Stomatologiya markazida o'tkaziladi. Bemorlarimiz uchun qulay sharoit va avtoturargoh mavjud. Saytimizdagi Yandex Xarita havolasi (https://yandex.uz/maps/-/CXBZfQM2) orqali to'g'ridan-to'g'ri marshrut chizishingiz mumkin.",
-      ru: "Персональный приём проходит в клинике DM Stomatology по адресу: город Андижан, проспект Навои, дом 91. Доступна удобная парковка. Вы можете проложить маршрут в один клик по ссылке в Яндекс.Картах (https://yandex.uz/maps/-/CXBZfQM2).",
-      en: "Dr. MuhammadAli Davronov practices at DM Stomatology, located at 91 Navoi Avenue, Andijan. Ample parking is available on-site. You can navigate directly using our Yandex Maps link (https://yandex.uz/maps/-/CXBZfQM2).",
+      uz: "Dr. MuhammadAli Davronov shaxsiy qabuli Andijon shahri, Navoiy shoh ko'chasi 91-uyda, DM Stomatologiya markazida o'tkaziladi. Bemorlarimiz uchun qulay sharoit va avtoturargoh mavjud. Saytimizdagi Yandex Xarita havolasi (https://yandex.uz/maps/org/stomatologiya/214793392317/) orqali to'g'ridan-to'g'ri marshrut chizishingiz mumkin.",
+      ru: "Персональный приём проходит в клинике DM Stomatology по адресу: город Андижан, проспект Навои, дом 91. Доступна удобная парковка. Вы можете проложить маршрут в один клик по ссылке в Яндекс.Картах (https://yandex.uz/maps/org/stomatologiya/214793392317/).",
+      en: "Dr. MuhammadAli Davronov practices at DM Stomatology, located at 91 Navoi Avenue, Andijan. Ample parking is available on-site. You can navigate directly using our Yandex Maps link (https://yandex.uz/maps/org/stomatologiya/214793392317/).",
     },
   },
   {
