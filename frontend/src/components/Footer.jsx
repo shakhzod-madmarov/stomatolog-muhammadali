@@ -148,7 +148,12 @@ const Footer = () => {
               >
                 {DOCTOR_INFO.phoneDisplay}
               </a>
-              <span className="text-xs text-slate-400">{DOCTOR_INFO.email}</span>
+              <a
+                href={`mailto:${DOCTOR_INFO.email}`}
+                className="text-xs text-slate-400 hover:text-white transition-colors"
+              >
+                {DOCTOR_INFO.email}
+              </a>
             </div>
           </div>
         </div>

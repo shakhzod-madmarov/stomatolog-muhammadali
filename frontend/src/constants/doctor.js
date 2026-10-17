@@ -62,7 +62,7 @@ export const DOCTOR_INFO = {
   googleMapsUrl: "https://share.google/BCXsYyZgbu8x3mQ4Z",
   googleKgmid: "/g/11nr3dmbmh",
   plusCode: "Q9H3+8WG, Andijan",
-  email: "dr@gmail.com",
+  email: "muhammadali.medinson@gmail.com",
   siteUrl: "https://stomatolog-muhammadali.uz",
   medinsonSiteId: "ny54hk66wu",
   medinsonLicense: "Medinson-Dentist-20261014-123316-A9BE4F",

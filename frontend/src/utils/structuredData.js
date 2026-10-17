@@ -140,6 +140,7 @@ export const buildDoctorProfileSchema = (lang = "uz", breadcrumbs = []) => {
       "jobTitle": DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz,
       "description": DOCTOR_INFO.specialtiesText,
       "telephone": DOCTOR_INFO.phoneRaw,
+      "email": DOCTOR_INFO.email,
       "url": aboutUrl,
       "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
       "alumniOf": {
@@ -234,6 +235,7 @@ export const buildContactPageSchema = (lang = "uz", breadcrumbs = []) => {
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": DOCTOR_INFO.phoneRaw,
+        "email": DOCTOR_INFO.email,
         "contactType": "reservations",
         "availableLanguage": ["uz", "ru", "en"],
       },
@@ -325,6 +327,7 @@ export const buildHomePageSchema = (lang = "uz") => {
         "description": DOCTOR_INFO.specialtiesTextLang[lang] || DOCTOR_INFO.specialtiesTextLang.uz,
         "url": `${SITE_ORIGIN}/`,
         "telephone": DOCTOR_INFO.phoneRaw,
+        "email": DOCTOR_INFO.email,
         "priceRange": "$$",
         "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
         "logo": `${SITE_ORIGIN}/logo_icon.png`,
@@ -373,6 +376,7 @@ export const buildHomePageSchema = (lang = "uz") => {
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": DOCTOR_INFO.phoneRaw,
+          "email": DOCTOR_INFO.email,
           "contactType": "reservations",
           "availableLanguage": ["uz", "ru", "en"],
         },
@@ -407,6 +411,7 @@ export const buildHomePageSchema = (lang = "uz") => {
           "https://schema.org/OralSurgery",
         ],
         "telephone": DOCTOR_INFO.phoneRaw,
+        "email": DOCTOR_INFO.email,
         "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
         "alumniOf": {
           "@type": "EducationalOrganization",
