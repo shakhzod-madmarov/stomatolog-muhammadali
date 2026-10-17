@@ -48,8 +48,8 @@ export const PAGE_SEO = {
   about: {
     uz: {
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba | DM Stomatologiya",
-      description: `Dr. MuhammadAli Davronov: Andijon davlat tibbiyot instituti bitiruvchisi, ${years} yillik tajribali shifokor-stomatolog, DM Stomatologiya asoschisi. Ortopediya, terapiya va implantologiya.`,
-      keywords: "dr muhammadali davronov biografiya, adti stomatologiya, tajribali tish shifokori andijon, stomatolog diplom, dm stomatologiya bosh shifokori",
+      description: `Dr. MuhammadAli Davronov: Andijon davlat tibbiyot instituti bitiruvchisi, ${years} yillik tajribali shifokor-stomatolog. Ortopediya, terapiya va implantologiya. DM Stomatologiya, Andijon.`,
+      keywords: "dr muhammadali davronov biografiya, adti stomatologiya, tajribali tish shifokori andijon, stomatolog diplom, dm stomatologiya shifokori",
     },
     ru: {
       title: "О Докторе МухаммадАли Давронове — Врач-Стоматолог, Ортопед, Имплантолог",

@@ -80,14 +80,14 @@ const About = ({ onOpenBooking }) => {
         en: "2021 – Present",
       },
       title: {
-        uz: `DM Stomatologiya Asoschisi va Bosh Shifokori (${years} Yillik Tajriba)`,
-        ru: `Основатель и ведущий врач клиники DM Stomatology (${years} Лет Опыта)`,
-        en: `Founder & Lead Dentist at DM Stomatology (${years} Years Clinical Practice)`,
+        uz: `Shifokor-Stomatolog — Ortopediya, Terapiya, Implantologiya (${years} Yillik Tajriba)`,
+        ru: `Врач-Стоматолог — Ортопедия, Терапия, Имплантология (${years} Лет Опыта)`,
+        en: `Dental Specialist — Orthopedics, Therapy, Implantology (${years} Years Practice)`,
       },
       desc: {
-        uz: "Andijon shahri, Navoiy shoh ko'chasi 91-uyda joylashgan shaxsiy DM Stomatologiya klinikasida 3,500+ dan ortiq bemorlarga individual, professional va og'riqsiz xizmat ko'rsatish.",
-        ru: "Приём более 3 500 пациентов в собственной клинике DM Stomatology (Андижан, пр-т Навои, 91): ортопедия, терапия и имплантация.",
-        en: "Personal clinical care for over 3,500 patients at DM Stomatology (91 Navoi Avenue, Andijan).",
+        uz: "Andijon shahri, Navoiy shoh ko'chasi 91-uyda joylashgan DM Stomatologiya klinikasida 3,500+ dan ortiq bemorlarga individual, professional va og'riqsiz xizmat ko'rsatish.",
+        ru: "Приём более 3 500 пациентов в клинике DM Stomatology (Андижан, пр-т Навои, 91): ортопедия, терапия и имплантация.",
+        en: "Personal clinical care for over 3,500 patients at DM Stomatology clinic (91 Navoi Avenue, Andijan).",
       },
     },
   ];

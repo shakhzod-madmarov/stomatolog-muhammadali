@@ -339,9 +339,6 @@ export const buildHomePageSchema = (lang = "uz") => {
         "isAcceptingNewPatients": true,
         "currenciesAccepted": "UZS",
         "paymentAccepted": "Cash, Credit Card, Humo, Uzcard",
-        "founder": {
-          "@id": `${SITE_ORIGIN}/#doctor`,
-        },
         "employee": [
           {
             "@id": `${SITE_ORIGIN}/#doctor`,
