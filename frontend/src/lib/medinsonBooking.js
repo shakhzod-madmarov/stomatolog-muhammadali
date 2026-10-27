@@ -9,7 +9,7 @@
 
 import { useState, useEffect } from "react";
 import { DOCTOR_INFO } from "../constants/doctor";
-import { sanitizePatientName, sanitizeNote, isValidIsoDate } from "../utils/security";
+import { sanitizePatientName, sanitizeNote, isValidIsoDate, normalizeDobInput } from "../utils/security";
 
 export const DEFAULT_API_URL =
   (typeof import.meta !== "undefined" &&
@@ -388,7 +388,7 @@ export async function submitDentistBooking({
 }) {
   const cleanName = sanitizePatientName(name);
   const cleanPhone = String(phone || "").trim().slice(0, 30);
-  const cleanDob = isValidIsoDate(dob) ? dob : "";
+  const cleanDob = normalizeDobInput(dob);
   const cleanNote = sanitizeNote(note || reason, 400);
   const cleanDate = String(date || "").trim().slice(0, 10);
   const cleanTime = String(time || "").trim().slice(0, 5);
@@ -405,6 +405,7 @@ export async function submitDentistBooking({
         time: cleanTime,
         name: cleanName,
         phone: cleanPhone,
+        dob: cleanDob,
         reason: cleanNote,
         note: cleanNote,
       });

@@ -58,6 +58,38 @@ export const isValidIsoDate = (dateStr = "") => {
 };
 
 /**
+ * Normalizes and validates a date of birth string.
+ * Accepts ISO (YYYY-MM-DD) or common formats (DD.MM.YYYY, DD-MM-YYYY, DD/MM/YYYY).
+ * Ensures DOB is realistic (between 1920 and today, cannot be born in the future).
+ * Returns ISO 'YYYY-MM-DD' or empty string if invalid.
+ */
+export const normalizeDobInput = (dob = "") => {
+  if (!dob || typeof dob !== "string") return "";
+  const trimmed = dob.trim();
+  if (!trimmed) return "";
+
+  let iso = "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+    iso = trimmed;
+  } else {
+    const match = trimmed.match(/^(\d{1,2})[./-](\d{1,2})[./-](\d{4})$/);
+    if (match) {
+      const [, day, month, year] = match;
+      iso = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    }
+  }
+
+  if (!iso || !isValidIsoDate(iso)) return "";
+
+  // Patient DOB cannot be in the future
+  const dobDate = new Date(iso);
+  const now = new Date();
+  if (dobDate.getTime() > now.getTime()) return "";
+
+  return iso;
+};
+
+/**
  * Validates that an outbound or redirect URL is safe (prevents Open Redirect attacks).
  * Only allows relative paths or secure HTTPS links.
  */

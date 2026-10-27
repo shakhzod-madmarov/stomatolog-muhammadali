@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { useBooking } from "../context/BookingContext";
@@ -12,9 +12,10 @@ import {
   buildWorkingHoursSchedule,
   filterAvailabilitySchedule,
   useClinicHours,
+  getClinicTodayStr,
 } from "../lib/medinsonBooking";
 import { formatUzPhone, isUzPhoneComplete } from "../utils/phone";
-import { sanitizePatientName, sanitizeNote, checkRateLimit, isBotSubmission } from "../utils/security";
+import { sanitizePatientName, sanitizeNote, checkRateLimit, isBotSubmission, normalizeDobInput } from "../utils/security";
 import { BOOKING_SERVICES, normalizeBookingServiceId } from "../constants/bookingServices";
 
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -31,11 +32,16 @@ const parseYmd = (s) => {
   return new Date(y, m - 1, d);
 };
 
-const formatDayPill = (ymd, lang) => {
+const formatDayParts = (ymd, lang) => {
   const date = parseYmd(ymd);
-  if (!date) return ymd;
+  if (!date) return { weekday: "", dayMonth: ymd, isToday: false };
   const wds = WEEKDAY_SHORT[lang] || WEEKDAY_SHORT.uz;
-  return `${wds[date.getDay()]} ${pad2(date.getDate())}.${pad2(date.getMonth() + 1)}`;
+  const clinicToday = getClinicTodayStr();
+  return {
+    weekday: wds[date.getDay()],
+    dayMonth: `${pad2(date.getDate())}.${pad2(date.getMonth() + 1)}`,
+    isToday: ymd === clinicToday,
+  };
 };
 
 const formatDmy = (ymd) => {
@@ -57,7 +63,11 @@ const TEXT = {
     nameLabel: "Ism va familiya *",
     phoneLabel: "Telefon raqami *",
     dobLabel: "Tug'ilgan sana (ixtiyoriy)",
-    dobHint: "Bir xil telefon raqamidan oila a'zolari yozilganda bemorlarni farqlash uchun yordam beradi.",
+    dobHint: "MedInson: Bemor tibbiy kartasini aniqlash va oila a'zolarini farqlash uchun.",
+    clearDob: "Tozalash",
+    scrollDaysLeft: "Oldingi kunlar",
+    scrollDaysRight: "Keyingi kunlar",
+    todayLabel: "Bugun",
     noteLabel: "Shikoyat yoki izoh (ixtiyoriy)",
     namePlaceholder: "Masalan: Jasur Aliyev",
     phonePlaceholder: "+998 97 676 01 01",
@@ -100,7 +110,11 @@ const TEXT = {
     nameLabel: "Имя и фамилия *",
     phoneLabel: "Номер телефона *",
     dobLabel: "Дата рождения (необязательно)",
-    dobHint: "Помогает отличить пациентов при записи членов семьи с одного номера телефона.",
+    dobHint: "MedInson: Помогает найти медкарту пациента и различить членов семьи с одним номером.",
+    clearDob: "Очистить",
+    scrollDaysLeft: "Предыдущие дни",
+    scrollDaysRight: "Следующие дни",
+    todayLabel: "Сегодня",
     noteLabel: "Жалоба или пожелание (необязательно)",
     namePlaceholder: "Например: Алишер Усманов",
     phonePlaceholder: "+998 97 676 01 01",
@@ -143,7 +157,11 @@ const TEXT = {
     nameLabel: "Full Name *",
     phoneLabel: "Phone Number *",
     dobLabel: "Date of Birth (optional)",
-    dobHint: "Helps distinguish medical records when multiple family members share one phone number.",
+    dobHint: "MedInson: Helps identify medical records and distinguish family members sharing a phone number.",
+    clearDob: "Clear",
+    scrollDaysLeft: "Previous days",
+    scrollDaysRight: "Next days",
+    todayLabel: "Today",
     noteLabel: "Complaints or note (optional)",
     namePlaceholder: "e.g. Jasur Aliyev",
     phonePlaceholder: "+998 97 676 01 01",
@@ -183,6 +201,8 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   const t = TEXT[lang] || TEXT.uz;
   const clinicHours = useClinicHours(lang);
 
+  const dateScrollRef = useRef(null);
+
   const [days, setDays] = useState(() => buildWorkingHoursSchedule(14, 2));
   const [selectedDate, setSelectedDate] = useState(() => {
     const initialFallback = buildWorkingHoursSchedule(14, 2);
@@ -197,6 +217,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
   const [fullName, setFullName] = useState(() => bookingRequest?.name || "");
   const [phone, setPhone] = useState(() => bookingRequest?.phone || "+998 ");
+  const [dob, setDob] = useState(() => bookingRequest?.dob || "");
   const [note, setNote] = useState(() => bookingRequest?.note || "");
   const [honeypot, setHoneypot] = useState("");
   const [formMountTime] = useState(() => Date.now());
@@ -232,6 +253,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
       }
       if (bookingRequest.name) setFullName(bookingRequest.name);
       if (bookingRequest.phone) setPhone(bookingRequest.phone);
+      if (bookingRequest.dob) setDob(bookingRequest.dob);
       if (bookingRequest.note) setNote(bookingRequest.note);
     }
   }, [bookingRequest]);
@@ -247,6 +269,13 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   const handlePhoneChange = (e) => {
     const formatted = formatUzPhone(e.target.value, phone);
     setPhone(formatted);
+  };
+
+  const scrollDays = (direction) => {
+    if (dateScrollRef.current) {
+      const scrollAmount = direction === "left" ? -240 : 240;
+      dateScrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
   };
 
   const handleFormSubmit = async (e) => {
@@ -287,6 +316,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
         time: selectedTime,
         name: cleanName,
         phone,
+        dob,
         note: cleanNoteText,
         reason: serviceName,
       });
@@ -319,6 +349,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   const handleReset = () => {
     setBookedResult(null);
     setSelectedTime("");
+    setDob("");
     clearBookingRequest();
     loadSchedule();
   };
@@ -331,9 +362,9 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
       className="w-full py-12 sm:py-16 scroll-mt-24 text-slate-900 bg-white"
       aria-label={t.heading}
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-primary bg-primary/10 border border-primary/20 shadow-xs mb-3">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             {t.kicker}
@@ -348,11 +379,11 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
         {/* Success Card */}
         {bookedResult ? (
-          <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 shadow-md border border-slate-200 text-center animate-in fade-in duration-300">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 border border-emerald-300 mx-auto flex items-center justify-center text-3xl mb-4 shadow-xs">
+          <div className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 shadow-md border border-slate-200 text-center animate-in fade-in duration-300">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 text-emerald-600 border border-emerald-300 mx-auto flex items-center justify-center text-2xl sm:text-3xl mb-4 shadow-xs">
               ✓
             </div>
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700 border border-slate-300 mb-2">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700 border border-slate-300 mb-2 font-mono">
               {t.successBadge} · #{bookedResult.bookingId || bookedResult.id}
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -363,23 +394,29 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             </p>
 
             {/* Summary Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto my-6 text-left p-4 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-lg mx-auto my-6 text-left p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm shadow-2xs">
               <div>
-                <span className="text-slate-500 block">{t.summaryPatient}:</span>
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryPatient}:</span>
                 <span className="font-bold text-slate-900">{fullName}</span>
               </div>
               <div>
-                <span className="text-slate-500 block">{t.summaryPhone}:</span>
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryPhone}:</span>
                 <span className="font-mono font-bold text-slate-900">{phone}</span>
               </div>
+              {dob ? (
+                <div>
+                  <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryDob}:</span>
+                  <span className="font-mono font-bold text-slate-900">{formatDmy(dob)}</span>
+                </div>
+              ) : null}
               <div>
-                <span className="text-slate-500 block">{t.summaryWhen}:</span>
-                <span className="font-bold text-primary">
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryWhen}:</span>
+                <span className="font-bold text-primary font-mono">
                   {formatDmy(selectedDate)} — {selectedTime}
                 </span>
               </div>
-              <div>
-                <span className="text-slate-500 block">{t.summaryService}:</span>
+              <div className={dob ? "sm:col-span-2" : ""}>
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryService}:</span>
                 <span className="font-bold text-slate-900">
                   {selectedServiceObj ? selectedServiceObj.name[lang] || selectedServiceObj.name.uz : "-"}
                 </span>
@@ -387,7 +424,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             </div>
 
             {/* Telegram Action Card */}
-            <div className="p-5 rounded-2xl bg-sky-50 border border-sky-100 max-w-md mx-auto mb-6">
+            <div className="p-4 sm:p-5 rounded-2xl bg-sky-50 border border-sky-100 max-w-md mx-auto mb-6">
               <h4 className="font-bold text-slate-900 text-sm mb-1">{t.telegramCardTitle}</h4>
               <p className="text-xs text-slate-600 mb-3">{t.telegramCardDesc}</p>
               <a
@@ -422,7 +459,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
           /* Booking Form */
           <form
             onSubmit={handleFormSubmit}
-            className="p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 shadow-md border border-slate-200"
+            className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 shadow-md border border-slate-200"
           >
             {/* Honeypot field for anti-bot protection */}
             <input
@@ -438,40 +475,75 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             />
 
             {/* Service Selection */}
-            <div className="mb-5 sm:mb-8">
+            <div className="mb-5 sm:mb-7">
               <label htmlFor="booking-service-select" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
                 {t.serviceLabel}
               </label>
-              <select
-                id="booking-service-select"
-                name="service"
-                value={selectedService}
-                onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-base sm:text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
-              >
-                {BOOKING_SERVICES.map((s) => (
-                  <option key={s.id} value={s.id} className="bg-white text-slate-900">
-                    {s.name[lang] || s.name.uz}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="booking-service-select"
+                  name="service"
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-base sm:text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all appearance-none pr-10 cursor-pointer"
+                >
+                  {BOOKING_SERVICES.map((s) => (
+                    <option key={s.id} value={s.id} className="bg-white text-slate-900 py-1">
+                      {s.name[lang] || s.name.uz}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
             </div>
 
             {/* Step 1: Date Chips */}
-            <fieldset className="mb-5 sm:mb-8 border-none p-0 m-0">
+            <fieldset className="mb-5 sm:mb-7 border-none p-0 m-0">
               <div className="flex items-center justify-between mb-3 gap-2">
                 <legend className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                   {t.dayGroupLabel}
                 </legend>
-                <span className="text-[10.5px] sm:text-[11px] text-slate-500 text-right">
-                  {clinicHours.days}: {clinicHours.hours}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="hidden sm:inline text-[11px] text-slate-500">
+                    {clinicHours.days}: {clinicHours.hours}
+                  </span>
+                  <div className="flex items-center gap-1">
+                    <button
+                      type="button"
+                      aria-label={t.scrollDaysLeft}
+                      title={t.scrollDaysLeft}
+                      onClick={() => scrollDays("left")}
+                      className="w-7 h-7 rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 flex items-center justify-center transition-colors text-xs font-bold cursor-pointer active:scale-95 shadow-2xs"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      type="button"
+                      aria-label={t.scrollDaysRight}
+                      title={t.scrollDaysRight}
+                      onClick={() => scrollDays("right")}
+                      className="w-7 h-7 rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 flex items-center justify-center transition-colors text-xs font-bold cursor-pointer active:scale-95 shadow-2xs"
+                    >
+                      ›
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              <div role="radiogroup" aria-label={t.dayGroupLabel} className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 no-scrollbar scroll-touch">
+              <div
+                ref={dateScrollRef}
+                role="radiogroup"
+                aria-label={t.dayGroupLabel}
+                className="flex items-center gap-2 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory scroll-touch no-scrollbar"
+              >
                 {days.map((day) => {
                   const isSelected = day.date === selectedDate;
                   const isClosed = day.isClosed;
+                  const { weekday, dayMonth, isToday } = formatDayParts(day.date, lang);
 
                   return (
                     <button
@@ -484,15 +556,24 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         setSelectedDate(day.date);
                         setSelectedTime("");
                       }}
-                      className={`shrink-0 min-h-[44px] flex items-center justify-center px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold border transition-all ${
+                      className={`shrink-0 snap-start flex flex-col items-center justify-center min-w-[70px] sm:min-w-[82px] min-h-[52px] sm:min-h-[58px] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-2xl text-center border transition-all duration-200 ${
                         isSelected
-                          ? "bg-primary text-white border-transparent shadow-md scale-102"
+                          ? "bg-primary text-white border-primary shadow-md scale-[1.02]"
                           : isClosed
-                          ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed"
-                          : "bg-white text-slate-700 border-slate-200 hover:border-primary hover:text-primary hover:bg-slate-50 shadow-2xs"
+                          ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed opacity-60"
+                          : "bg-white text-slate-700 border-slate-200 hover:border-primary/50 hover:text-primary hover:bg-slate-50/80 shadow-2xs"
                       }`}
                     >
-                      {formatDayPill(day.date, lang)}
+                      <span
+                        className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${
+                          isSelected ? "text-white/90" : "text-slate-500"
+                        }`}
+                      >
+                        {isToday ? t.todayLabel : weekday}
+                      </span>
+                      <span className="text-xs sm:text-sm font-extrabold font-mono mt-0.5">
+                        {dayMonth}
+                      </span>
                     </button>
                   );
                 })}
@@ -500,13 +581,25 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             </fieldset>
 
             {/* Step 2: Time Slots */}
-            <fieldset className="mb-6 sm:mb-8 border-none p-0 m-0">
-              <legend className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-3">
-                {t.timeGroupLabel} {selectedDate && `(${formatDmy(selectedDate)})`}
-              </legend>
+            <fieldset className="mb-6 sm:mb-7 border-none p-0 m-0">
+              <div className="flex items-center justify-between mb-3 gap-2">
+                <legend className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                  {t.timeGroupLabel} {selectedDate && `(${formatDmy(selectedDate)})`}
+                </legend>
+                {selectedTime && (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    {selectedTime}
+                  </span>
+                )}
+              </div>
 
               {availableSlots.length > 0 ? (
-                <div role="radiogroup" aria-label={t.timeGroupLabel} className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5 sm:gap-2">
+                <div
+                  role="radiogroup"
+                  aria-label={t.timeGroupLabel}
+                  className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-2 sm:gap-2.5"
+                >
                   {availableSlots.map((timeStr) => {
                     const isSelected = selectedTime === timeStr;
                     return (
@@ -516,10 +609,10 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         role="radio"
                         aria-checked={isSelected}
                         onClick={() => setSelectedTime(timeStr)}
-                        className={`min-h-[40px] flex items-center justify-center py-2 px-1 sm:px-3 rounded-full text-xs font-mono font-bold border transition-all text-center ${
+                        className={`min-h-[44px] flex items-center justify-center py-2 px-2 rounded-xl text-xs sm:text-sm font-mono font-bold border transition-all duration-150 text-center ${
                           isSelected
-                            ? "bg-primary text-white border-primary shadow-sm"
-                            : "bg-white text-slate-700 border-slate-200 hover:border-primary hover:text-primary shadow-2xs"
+                            ? "bg-primary text-white border-primary shadow-sm scale-[1.02]"
+                            : "bg-white text-slate-700 border-slate-200 hover:border-primary/50 hover:text-primary hover:bg-primary/5 shadow-2xs"
                         }`}
                       >
                         {timeStr}
@@ -534,47 +627,87 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               )}
             </fieldset>
 
-            {/* Step 3: Patient Inputs */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-5 sm:mb-6">
-              <div>
-                <label htmlFor="booking-full-name" className="block text-xs font-bold text-slate-800 mb-1.5">
-                  {t.nameLabel}
-                </label>
-                <input
-                  id="booking-full-name"
-                  name="fullName"
-                  type="text"
-                  required
-                  aria-required="true"
-                  autoComplete="name"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder={t.namePlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
-                />
-              </div>
+            {/* Step 3: Patient Inputs & DOB */}
+            <fieldset className="mb-5 sm:mb-6 border-none p-0 m-0">
+              <legend className="sr-only">Bemor ma'lumotlari</legend>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+                {/* Full Name */}
+                <div>
+                  <label htmlFor="booking-full-name" className="block text-xs font-bold text-slate-800 mb-1.5">
+                    {t.nameLabel}
+                  </label>
+                  <input
+                    id="booking-full-name"
+                    name="fullName"
+                    type="text"
+                    required
+                    aria-required="true"
+                    autoComplete="name"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder={t.namePlaceholder}
+                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="booking-phone-input" className="block text-xs font-bold text-slate-800 mb-1.5">
-                  {t.phoneLabel}
-                </label>
-                <input
-                  id="booking-phone-input"
-                  name="tel"
-                  type="tel"
-                  required
-                  aria-required="true"
-                  autoComplete="tel"
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  placeholder={t.phonePlaceholder}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-base sm:text-sm font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
-                />
+                {/* Phone Number */}
+                <div>
+                  <label htmlFor="booking-phone-input" className="block text-xs font-bold text-slate-800 mb-1.5">
+                    {t.phoneLabel}
+                  </label>
+                  <input
+                    id="booking-phone-input"
+                    name="tel"
+                    type="tel"
+                    required
+                    aria-required="true"
+                    autoComplete="tel"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    placeholder={t.phonePlaceholder}
+                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
+                  />
+                </div>
+
+                {/* Date of Birth (MedInson requirement) */}
+                <div className="sm:col-span-2 lg:col-span-1">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label htmlFor="booking-dob-input" className="block text-xs font-bold text-slate-800">
+                      {t.dobLabel}
+                    </label>
+                    {dob && (
+                      <button
+                        type="button"
+                        onClick={() => setDob("")}
+                        className="text-[11px] text-slate-500 hover:text-rose-600 underline transition-colors"
+                      >
+                        {t.clearDob}
+                      </button>
+                    )}
+                  </div>
+                  <div className="relative">
+                    <input
+                      id="booking-dob-input"
+                      name="dob"
+                      type="date"
+                      max={getClinicTodayStr()}
+                      min="1920-01-01"
+                      value={dob}
+                      onChange={(e) => setDob(e.target.value)}
+                      placeholder={t.dobPlaceholder}
+                      aria-label={t.dobLabel}
+                      className="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all font-mono"
+                    />
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-snug">
+                    {t.dobHint}
+                  </p>
+                </div>
               </div>
-            </div>
+            </fieldset>
 
             {/* Note & Reason */}
-            <div className="mb-6">
+            <div className="mb-5 sm:mb-6">
               <label htmlFor="booking-note-textarea" className="block text-xs font-bold text-slate-800 mb-1.5">
                 {t.noteLabel}
               </label>
@@ -585,27 +718,49 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder={t.notePlaceholder}
-                className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all resize-none"
+                className="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all resize-none"
               ></textarea>
             </div>
+
+            {/* Selected Slot Summary Callout */}
+            {selectedDate && selectedTime && (
+              <div className="mb-4 p-3 rounded-xl bg-primary/5 border border-primary/20 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="text-slate-600">{t.selectedSlotLabel}</span>
+                  <span className="font-bold text-primary font-mono">
+                    {formatDmy(selectedDate)} — {selectedTime}
+                  </span>
+                </div>
+                <span className="text-[11px] text-slate-500 font-medium">
+                  {selectedServiceObj ? selectedServiceObj.name[lang] || selectedServiceObj.name.uz : ""}
+                </span>
+              </div>
+            )}
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting || !selectedDate || !selectedTime}
-              className={`w-full py-3.5 px-6 rounded-full font-bold text-sm text-white shadow-md transition-all duration-200 flex items-center justify-center gap-2 ${
+              className={`w-full min-h-[50px] sm:min-h-[54px] py-3.5 px-6 rounded-full font-bold text-sm sm:text-base text-white shadow-md transition-all duration-200 flex items-center justify-center gap-2 ${
                 isSubmitting || !selectedDate || !selectedTime
                   ? "bg-slate-200 text-slate-400 cursor-not-allowed shadow-none"
                   : "bg-primary hover:bg-primary-hover hover:shadow-colgate hover:scale-[1.01] active:scale-98"
               }`}
             >
               {isSubmitting ? (
-                <span>{t.submitting}</span>
+                <div className="flex items-center gap-2">
+                  <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>{t.submitting}</span>
+                </div>
               ) : (
                 <>
                   <span>{t.submit}</span>
                   {selectedTime && (
-                    <span className="opacity-90 font-mono text-xs">
+                    <span className="opacity-90 font-mono text-xs sm:text-sm">
                       ({formatDmy(selectedDate)} {selectedTime})
                     </span>
                   )}

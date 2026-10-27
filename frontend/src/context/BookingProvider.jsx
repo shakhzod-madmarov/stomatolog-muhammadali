@@ -12,12 +12,13 @@ export const BookingProvider = ({ children }) => {
     (details) => {
       let safe = {};
       if (typeof details === "string") {
-        safe = { service: details, name: "", phone: "", note: "" };
+        safe = { service: details, name: "", phone: "", dob: "", note: "" };
       } else if (details && typeof details === "object" && !details.nativeEvent) {
         safe = {
           service: details.service || null,
           name: details.name || "",
           phone: details.phone || "",
+          dob: details.dob || "",
           note: details.note || "",
         };
       }
