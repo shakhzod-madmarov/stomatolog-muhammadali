@@ -122,7 +122,7 @@ const About = ({ onOpenBooking }) => {
       },
       desc: {
         uz: "Andijon shahri, Prospekt, Navoiy shoh ko'chasi 91-uyda joylashgan DM Stomatologiya klinikasida 3,500+ dan ortiq bemorlarga individual, professional va og'riqsiz xizmat ko'rsatish.",
-        ru: "Приём более 3 500 пациентов в клинике DM Stomatology (Андижан, пр-т Навои, 91): ортопедия, терапия и имплантация.",
+        ru: "Приём более 3 500 пациентов в клинике DM Stomatology (г. Андижан, проспект, Навои, 91): имплантология, ортопедия и терапия.",
         en: "Personal clinical care for over 3,500 patients at DM Stomatology clinic (91 Navoi Avenue, Andijan).",
       },
     },
