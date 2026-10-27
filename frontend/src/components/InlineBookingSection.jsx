@@ -45,9 +45,26 @@ const formatDayParts = (ymd, lang) => {
 };
 
 const formatDmy = (ymd) => {
-  const [y, m, d] = String(ymd || "").split("-");
-  if (!y || !m || !d) return ymd;
-  return `${d}.${m}.${y}`;
+  if (!ymd) return "";
+  const s = String(ymd).trim();
+  if (/^\d{1,2}\.\d{1,2}\.\d{4}$/.test(s)) return s;
+  const [y, m, d] = s.split("-");
+  if (y && m && d && y.length === 4) return `${d}.${m}.${y}`;
+  return s;
+};
+
+const formatDobInput = (value) => {
+  if (!value) return "";
+  const trimmed = String(value).trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+    const [y, m, d] = trimmed.split("-");
+    return `${d}.${m}.${y}`;
+  }
+  const digits = trimmed.replace(/\D/g, "").slice(0, 8);
+  if (!digits) return "";
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 4) return `${digits.slice(0, 2)}.${digits.slice(2)}`;
+  return `${digits.slice(0, 2)}.${digits.slice(2, 4)}.${digits.slice(4, 8)}`;
 };
 
 const TEXT = {
@@ -63,7 +80,7 @@ const TEXT = {
     nameLabel: "Ism va familiya *",
     phoneLabel: "Telefon raqami *",
     dobLabel: "Tug'ilgan sana (ixtiyoriy)",
-    dobHint: "MedInson: Bemor tibbiy kartasini aniqlash va oila a'zolarini farqlash uchun.",
+    dobHint: "Bir raqamdan bir nechta oila a'zosi foydalansa, kartangizni aniq topishga yordam beradi",
     clearDob: "Tozalash",
     scrollDaysLeft: "Oldingi kunlar",
     scrollDaysRight: "Keyingi kunlar",
@@ -71,8 +88,9 @@ const TEXT = {
     noteLabel: "Shikoyat yoki izoh (ixtiyoriy)",
     namePlaceholder: "Masalan: Jasur Aliyev",
     phonePlaceholder: "+998 97 676 01 01",
-    dobFormat: "kun-oy-yil",
-    dobPlaceholder: "kun-oy-yil",
+    dobFormat: "KK.OO.YYYY",
+    dobFormatBadge: "KK.OO.YYYY",
+    dobPlaceholder: "KK.OO.YYYY (kun.oy.yil)",
     notePlaceholder: "Ortopediya, sirkon koronka, vinir, terapiya yoki implantologiya bo'yicha...",
     submit: "Qabulga Yozilishni Tasdiqlash",
     submitting: "Yuborilmoqda...",
@@ -110,7 +128,7 @@ const TEXT = {
     nameLabel: "Имя и фамилия *",
     phoneLabel: "Номер телефона *",
     dobLabel: "Дата рождения (необязательно)",
-    dobHint: "MedInson: Помогает найти медкарту пациента и различить членов семьи с одним номером.",
+    dobHint: "Если один номер используют несколько членов семьи, это поможет точно найти вашу медкарту",
     clearDob: "Очистить",
     scrollDaysLeft: "Предыдущие дни",
     scrollDaysRight: "Следующие дни",
@@ -118,8 +136,9 @@ const TEXT = {
     noteLabel: "Жалоба или пожелание (необязательно)",
     namePlaceholder: "Например: Алишер Усманов",
     phonePlaceholder: "+998 97 676 01 01",
-    dobFormat: "дд-мм-гггг",
-    dobPlaceholder: "дд-мм-гггг",
+    dobFormat: "ДД.ММ.ГГГГ",
+    dobFormatBadge: "ДД.ММ.ГГГГ",
+    dobPlaceholder: "ДД.ММ.ГГГГ (день.месяц.год)",
     notePlaceholder: "По поводу ортопедии, коронок, виниров, терапии или имплантации...",
     submit: "Подтвердить Запись на Приём",
     submitting: "Отправка...",
@@ -157,7 +176,7 @@ const TEXT = {
     nameLabel: "Full Name *",
     phoneLabel: "Phone Number *",
     dobLabel: "Date of Birth (optional)",
-    dobHint: "MedInson: Helps identify medical records and distinguish family members sharing a phone number.",
+    dobHint: "Helps locate your record if multiple family members share the same phone number",
     clearDob: "Clear",
     scrollDaysLeft: "Previous days",
     scrollDaysRight: "Next days",
@@ -165,8 +184,9 @@ const TEXT = {
     noteLabel: "Complaints or note (optional)",
     namePlaceholder: "e.g. Jasur Aliyev",
     phonePlaceholder: "+998 97 676 01 01",
-    dobFormat: "DD-MM-YYYY",
-    dobPlaceholder: "DD-MM-YYYY",
+    dobFormat: "DD.MM.YYYY",
+    dobFormatBadge: "DD.MM.YYYY",
+    dobPlaceholder: "DD.MM.YYYY (day.month.year)",
     notePlaceholder: "Regarding orthopedics, zirconia crowns, veneers, pain-free therapy, or implants...",
     submit: "Confirm Appointment Booking",
     submitting: "Submitting...",
@@ -217,10 +237,34 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
   const [fullName, setFullName] = useState(() => bookingRequest?.name || "");
   const [phone, setPhone] = useState(() => bookingRequest?.phone || "+998 ");
-  const [dob, setDob] = useState(() => bookingRequest?.dob || "");
+  const [dob, setDob] = useState(() => formatDobInput(bookingRequest?.dob || ""));
   const [note, setNote] = useState(() => bookingRequest?.note || "");
   const [honeypot, setHoneypot] = useState("");
   const [formMountTime] = useState(() => Date.now());
+
+  const hiddenDatePickerRef = useRef(null);
+
+  const handleDobChange = (e) => {
+    const formatted = formatDobInput(e.target.value);
+    setDob(formatted);
+  };
+
+  const handleNativeDatePick = (e) => {
+    const val = e.target.value;
+    if (val) {
+      setDob(formatDobInput(val));
+    }
+  };
+
+  const openDatePicker = () => {
+    if (hiddenDatePickerRef.current) {
+      try {
+        hiddenDatePickerRef.current.showPicker?.();
+      } catch {
+        hiddenDatePickerRef.current.focus?.();
+      }
+    }
+  };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookedResult, setBookedResult] = useState(null);
@@ -253,7 +297,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
       }
       if (bookingRequest.name) setFullName(bookingRequest.name);
       if (bookingRequest.phone) setPhone(bookingRequest.phone);
-      if (bookingRequest.dob) setDob(bookingRequest.dob);
+      if (bookingRequest.dob) setDob(formatDobInput(bookingRequest.dob));
       if (bookingRequest.note) setNote(bookingRequest.note);
     }
   }, [bookingRequest]);
@@ -669,7 +713,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   />
                 </div>
 
-                {/* Date of Birth (MedInson requirement) */}
+                {/* Date of Birth */}
                 <div className="sm:col-span-2 lg:col-span-1">
                   <div className="flex items-center justify-between mb-1.5">
                     <label htmlFor="booking-dob-input" className="block text-xs font-bold text-slate-800">
@@ -685,21 +729,52 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                       </button>
                     )}
                   </div>
-                  <div className="relative">
+                  <div className="relative flex items-center">
                     <input
                       id="booking-dob-input"
                       name="dob"
+                      type="text"
+                      inputMode="numeric"
+                      autoComplete="bday"
+                      maxLength={10}
+                      value={dob}
+                      onChange={handleDobChange}
+                      placeholder={t.dobPlaceholder}
+                      aria-label={t.dobLabel}
+                      className="w-full pl-4 pr-24 sm:pr-28 py-2.5 sm:py-3 rounded-xl bg-white border border-slate-200 text-sm sm:text-base text-slate-900 placeholder:text-slate-400 placeholder:text-xs sm:placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
+                    />
+
+                    {/* Hidden native date input for optional calendar picker */}
+                    <input
+                      ref={hiddenDatePickerRef}
                       type="date"
                       max={getClinicTodayStr()}
                       min="1920-01-01"
-                      value={dob}
-                      onChange={(e) => setDob(e.target.value)}
-                      placeholder={t.dobPlaceholder}
-                      aria-label={t.dobLabel}
-                      className="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-slate-200 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all font-mono"
+                      onChange={handleNativeDatePick}
+                      tabIndex={-1}
+                      aria-hidden="true"
+                      className="sr-only"
                     />
+
+                    {/* Right side indicator: calendar trigger and format badge */}
+                    <div className="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-slate-400">
+                      <button
+                        type="button"
+                        onClick={openDatePicker}
+                        title={t.dobLabel}
+                        className="p-1 hover:text-primary transition-colors cursor-pointer text-slate-400 hover:text-slate-600"
+                        aria-label={t.dobLabel}
+                      >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                      <span className="text-xs sm:text-[13px] font-medium text-slate-400 select-none tracking-wide">
+                        {t.dobFormatBadge}
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-snug">
+                  <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
                     {t.dobHint}
                   </p>
                 </div>
