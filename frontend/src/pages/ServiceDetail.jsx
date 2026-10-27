@@ -29,8 +29,8 @@ const ServiceDetail = () => {
     uz: [
       {
         num: "01",
-        title: "3D Skanerlash va Raqamli Diagnostika",
-        desc: "Dr. MuhammadAli Davronov intraoral 3D skaner orqali tish qatorini o'rganadi va ekranda virtual reja tuzadi.",
+        title: "Batafsil Ko'rik va Konsultatsiya",
+        desc: "Dr. MuhammadAli Davronov tishlar holatini to'liq ko'rikdan o'tkazadi va individual davolash rejasini tuzadi.",
       },
       {
         num: "02",
@@ -51,8 +51,8 @@ const ServiceDetail = () => {
     ru: [
       {
         num: "01",
-        title: "3D Сканирование и Диагностика",
-        desc: "Д-р МухаммадАли Давронов проводит интраоральное 3D сканирование и составляет точный цифровой план лечения.",
+        title: "Детальный Осмотр и Консультация",
+        desc: "Д-р МухаммадАли Давронов проводит подробный клинический осмотр зубов и составляет точный план лечения.",
       },
       {
         num: "02",
@@ -73,8 +73,8 @@ const ServiceDetail = () => {
     en: [
       {
         num: "01",
-        title: "3D Intraoral Scan & Diagnostics",
-        desc: "Dr. MuhammadAli Davronov creates a 3D digital model of your teeth and visualizes the procedure in advance.",
+        title: "Thorough Consultation & Examination",
+        desc: "Dr. MuhammadAli Davronov carries out a detailed clinical evaluation and designs your personalized treatment plan.",
       },
       {
         num: "02",

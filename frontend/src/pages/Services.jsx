@@ -22,7 +22,7 @@ const Services = ({ onOpenBooking }) => {
     { id: "implantology", label: { uz: "Dental Implantologiya", ru: "Имплантология", en: "Implantology" } },
     { id: "orthopedia", label: { uz: "Ortopediya & Protezlash", ru: "Ортопедия & Протезы", en: "Orthopedics" } },
     { id: "therapy", label: { uz: "Terapiya & Oqartirish", ru: "Терапия & Лечение", en: "Therapy" } },
-    { id: "digital", label: { uz: "Raqamli & 3D", ru: "Цифровые & 3D", en: "Digital 3D" } },
+    { id: "digital", label: { uz: "Raqamli Stomatologiya", ru: "Цифровая Стоматология", en: "Digital Dentistry" } },
   ];
 
   const filteredServices = SERVICES_CATALOG.filter((s) => {
@@ -74,9 +74,9 @@ const Services = ({ onOpenBooking }) => {
         </h1>
         <p className="text-sm sm:text-base text-slate-600">
           {lang === "uz"
-            ? "Ortopediya, terapiya va implantologiya bo'yicha 5 yillik tajriba. Tishlaringiz salomatligi va tabiiy go'zalligini 3D raqamli aniqlikda, to'liq og'riqsiz tiklaymiz."
+            ? "Ortopediya, terapiya va implantologiya bo'yicha 5 yillik tajriba. Tishlaringiz salomatligi va tabiiy go'zalligini yuqori aniqlikda, to'liq og'riqsiz tiklaymiz."
             : lang === "ru"
-            ? "5 лет клинического опыта в ортопедии, терапии и имплантологии. Восстановление здоровья и эстетики зубов с 3D точностью и искренней заботой."
+            ? "5 лет клинического опыта в ортопедии, терапии и имплантологии. Восстановление здоровья и эстетики зубов с высокой точностью и искренней заботой."
             : "5 years of clinical experience in orthopedics, therapy, and implantology. Restoring your smile with precision and gentle comfort."}
         </p>
       </div>

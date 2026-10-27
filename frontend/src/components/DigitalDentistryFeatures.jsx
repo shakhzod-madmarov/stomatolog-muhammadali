@@ -51,7 +51,7 @@ export const DigitalDentistryFeatures = () => {
       workflowBadge: "BEMOR YO'LI",
       workflowTitle: "Yangi Tabassumingiz Qanday Yaratiladi?",
       workflowSubtitle:
-        "Birinchi 3D ko'rikdan to yakuniy natijagacha bo'lgan 4 ta xotirjam va tushunarli qadam.",
+        "Birinchi ko'rik va konsultatsiyadan to yakuniy natijagacha bo'lgan 4 ta xotirjam va tushunarli qadam.",
       steps: [
         {
           step: "01",
@@ -108,12 +108,12 @@ export const DigitalDentistryFeatures = () => {
       workflowBadge: "ПУТЬ ПАЦИЕНТА",
       workflowTitle: "Как создаётся ваша новая улыбка?",
       workflowSubtitle:
-        "Четыре спокойных и понятных шага: от первого 3D снимка до искренней уверенной улыбки.",
+        "Четыре спокойных и понятных шага: от первого осмотра и консультации до искренней уверенной улыбки.",
       steps: [
         {
           step: "01",
           title: "60s 3D Сканирование",
-          desc: "Без рвотного рефлекса и слепочной массы: точный цифровой снимок челюсти за 60 секунд.",
+          desc: "Без рвотного рефлекса и слепочной массы: комфортный цифровой 3D-скан зубов за 60 секунд.",
         },
         {
           step: "02",
@@ -165,7 +165,7 @@ export const DigitalDentistryFeatures = () => {
       workflowBadge: "YOUR PATIENT JOURNEY",
       workflowTitle: "How Your Confident Smile is Created",
       workflowSubtitle:
-        "Four calm and transparent steps: from your initial 3D scan to a confident smile in the mirror.",
+        "Four calm and transparent steps: from your initial consultation to a confident smile in the mirror.",
       steps: [
         {
           step: "01",

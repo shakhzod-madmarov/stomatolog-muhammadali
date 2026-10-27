@@ -58,7 +58,7 @@ export const Interactive3DCostCalculator = () => {
       id: "dentures",
       bookingServiceId: "dentures",
       specialty: { uz: "Ortopediya & Protezlash", ru: "Ортопедическое Протезирование", en: "Prosthodontics" },
-      title: { uz: "Zamonaviy Tish Protezlari", ru: "Зубные Протезы", en: "Modern Dentures" },
+      title: { uz: "Tish Protezlari", ru: "Зубные Протезы", en: "Dentures" },
       unitLabel: { uz: "jag'", ru: "челюсть", en: "arch(es)" },
       min: 1,
       max: 2,

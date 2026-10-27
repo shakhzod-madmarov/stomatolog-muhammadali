@@ -2,9 +2,9 @@ export const BOOKING_SERVICES = [
   {
     id: "consultation",
     name: {
-      uz: "Bepul Konsultatsiya & 3D Diagnostika",
-      ru: "Бесплатная Консультация & 3D Диагностика",
-      en: "Free Consultation & 3D Diagnostics",
+      uz: "Bepul Konsultatsiya & Ko'rik",
+      ru: "Бесплатная Консультация & Осмотр",
+      en: "Free Consultation & Checkup",
     },
     specialty: "all",
     duration: 30,
@@ -46,9 +46,9 @@ export const BOOKING_SERVICES = [
   {
     id: "dentures",
     name: {
-      uz: "Ortopediya: Zamonaviy Yengil Tish Protezlari",
-      ru: "Ортопедия: Современные Зубные Протезы",
-      en: "Orthopedics: Modern Ergonomic Dentures",
+      uz: "Ortopediya: Tish Protezlari",
+      ru: "Ортопедия: Зубные Протезы",
+      en: "Orthopedics: Dentures",
     },
     specialty: "orthopedia",
     duration: 40,
@@ -68,7 +68,7 @@ export const BOOKING_SERVICES = [
   {
     id: "endodontics",
     name: {
-      uz: "Terapiya: Tish Kanallarini Zich Plombalash (Endodontiya)",
+      uz: "Terapiya: Tish Kanallar davolash (Endodontiya)",
       ru: "Терапия: Лечение Корневых Каналов (Эндодонтия)",
       en: "Therapy: Root Canal Treatment (Endodontics)",
     },

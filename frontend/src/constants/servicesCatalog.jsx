@@ -193,7 +193,7 @@ export const SERVICES_CATALOG = [
         "Inyeksiya o'rni oldindan mevali gel bilan muzlatiladi — ukol umuman sezilmaydi",
         "Kariesni asabga yetkazmasdan erta bosqichda to'xtatish va asrab qolish",
         "Yapon nano-kompozitlari: plomba qo'yilgani ko'rinmaydi va tishdek tuyuladi",
-        "Tish ildiz kanallarini zamonaviy 3D zich plombalash (endodontiya)",
+        "Tish ildiz kanallarini zamonaviy davolash (endodontiya)",
       ],
       ru: [
         "Место укола предварительно 'замораживается' гелем — укол не чувствуется",
@@ -313,9 +313,9 @@ export const SERVICES_CATALOG = [
       en: "Removable & Fixed Prosthetics",
     },
     title: {
-      uz: "Zamonaviy Yengil Tish Protezlari va Ko'priklar",
-      ru: "Современные Зубные Протезы и Мостовидные Конструкции",
-      en: "Modern Removable & Fixed Dentures",
+      uz: "Tish Protezlari va Ko'priklar",
+      ru: "Зубные Протезы и Мостовидные Конструкции",
+      en: "Dentures & Bridges",
     },
     shortDesc: {
       uz: "Ko'p sonli tishlar yo'qotilganda chaynash va suhbatlashish qulayligini tez hamda ishonchli qaytaruvchi elastik, nozik va yengil protezlar.",
@@ -424,9 +424,9 @@ export const SERVICES_CATALOG = [
     image: assets.clinic_room,
     specialtyKey: "digital",
     badge: {
-      uz: "RAQAMLI DIAGNOSTIKA · 3D",
-      ru: "ЦИФРОВАЯ ДИАГНОСТИКА · 3D",
-      en: "DIGITAL DIAGNOSTICS · 3D",
+      uz: "RAQAMLI STOMATOLOGIYA",
+      ru: "ЦИФРОВАЯ СТОМАТОЛОГИЯ",
+      en: "DIGITAL DENTISTRY",
     },
     techTag: {
       uz: "Qoliplarsiz & 60 Soniyada",
@@ -444,9 +444,9 @@ export const SERVICES_CATALOG = [
       accentGlow: "hover:shadow-red-500/10",
     },
     category: {
-      uz: "Raqamli Diagnostika",
-      ru: "Цифровая Диагностика",
-      en: "Digital Diagnostics",
+      uz: "Raqamli Stomatologiya",
+      ru: "Цифровая Стоматология",
+      en: "Digital Dentistry",
     },
     title: {
       uz: "3D Skanerlash & Virtual Tabassum Loyihasi",
@@ -481,9 +481,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "3d tish skanerlash andijon, raqamli stomatologiya, qoliplarsiz tish o'lchash, intraoral 3d skaner, virtual tabassum loyihasi, zamonaviy tish diagnostikasi",
+      uz: "3d tish skanerlash andijon, raqamli stomatologiya, qoliplarsiz tish o'lchash, intraoral 3d skaner, virtual tabassum loyihasi, zamonaviy stomatologiya",
       ru: "3d сканирование зубов андижан, цифровая стоматология, слепки без слепочной массы, интраоральный сканер, 3d моделирование улыбки",
-      en: "3d intraoral scanning andijan, digital dentistry, gag free optical impressions, digital smile design, computerized dental diagnostics",
+      en: "3d intraoral scanning andijan, digital dentistry, gag free optical impressions, digital smile design, modern dental care",
     },
   },
 ];

@@ -7,9 +7,9 @@ export const FAQ_ITEMS = [
       en: "What are Dr. MuhammadAli Davronov's primary dental specialties?",
     },
     a: {
-      uz: "Dr. MuhammadAli Davronov 5 yillik faol klinik amaliyotga ega bo'lib, uchta asosiy yo'nalishga ixtisoslashgan: 1) Ortopediya (Sirkon koronkalar, E-max vinirlar, ko'priklar va estetik protezlash); 2) Terapiya (100% og'riqsiz karies va asab davolash, badiiy restavratsiya, ildiz kanallarini zich plombalash); 3) Implantologiya (Yuqori darajadagi biotitan implantlar, 3D navigatsion implantatsiya va jarrohlik).",
-      ru: "Доктор МухаммадАли Давронов имеет 5 лет успешной клинической практики и специализируется по трём ключевым направлениям: 1) Ортопедия (циркониевые коронки, виниры E-max, мостовидные протезы); 2) Терапия (безболезненное лечение кариеса и пульпита, художественная реставрация, эндодонтия); 3) Имплантология (биосовместимые титановые импланты, 3D навигация).",
-      en: "Dr. MuhammadAli Davronov has 5 years of active clinical experience and focuses on three core pillars: 1) Orthopedics (Zirconia crowns, E-max veneers, bridges, and advanced prosthetics); 2) Therapy (100% painless cavity care, artistic composite restorations, root canal treatments); 3) Implantology (Biocompatible titanium implants and 3D guided surgery).",
+      uz: "Dr. MuhammadAli Davronov 5 yillik faol klinik amaliyotga ega bo'lib, uchta asosiy yo'nalishga ixtisoslashgan: 1) Implantologiya (Yuqori darajadagi biotitan implantlar, navigatsion jarrohlik); 2) Ortopediya (Sirkon koronkalar, E-max vinirlar, ko'priklar va estetik protezlash); 3) Terapiya (100% og'riqsiz karies va asab davolash, badiiy restavratsiya, ildiz kanallarini davolash).",
+      ru: "Доктор МухаммадАли Давронов имеет 5 лет успешной клинической практики и специализируется по трём ключевым направлениям: 1) Имплантология (биосовместимые титановые импланты, навигационная хирургия); 2) Ортопедия (циркониевые коронки, виниры E-max, мостовидные протезы); 3) Терапия (безболезненное лечение кариеса и пульпита, художественная реставрация, эндодонтия).",
+      en: "Dr. MuhammadAli Davronov has 5 years of active clinical experience and focuses on three core pillars: 1) Implantology (Biocompatible titanium implants and precision guided surgery); 2) Orthopedics (Zirconia crowns, E-max veneers, bridges, and advanced prosthetics); 3) Therapy (100% painless cavity care, artistic composite restorations, root canal treatments).",
     },
   },
   {
@@ -98,9 +98,9 @@ export const FAQ_ITEMS = [
       en: "What is included in the initial consultation with Dr. MuhammadAli Davronov?",
     },
     a: {
-      uz: "Dr. MuhammadAli Davronov og'iz bo'shlig'ini shaxsan ko'rikdan o'tkazadi, zarur bo'lsa 3D raqamli optik skanerlash o'tkaziladi va tishlarning holati bo'yicha shaffof, bosqichma-bosqich davolash rejasi tuzib beriladi.",
-      ru: "Доктор лично проводит осмотр, при необходимости выполняется 3D оптическое сканирование зубов и составляется прозрачный пошаговый план лечения с фиксацией сроков и стоимости.",
-      en: "Dr. MuhammadAli personally conducts a thorough clinical examination, performs 3D optical intraoral scanning when indicated, and crafts a bespoke, transparent treatment roadmap.",
+      uz: "Dr. MuhammadAli Davronov og'iz bo'shlig'ini shaxsan ko'rikdan o'tkazadi va tishlarning holati bo'yicha shaffof, bosqichma-bosqich davolash rejasi tuzib beriladi.",
+      ru: "Доктор лично проводит клинический осмотр и составляет прозрачный пошаговый план лечения с фиксацией сроков и стоимости.",
+      en: "Dr. MuhammadAli personally conducts a thorough clinical examination and crafts a bespoke, transparent treatment roadmap.",
     },
   },
 ];

@@ -51,9 +51,9 @@ const About = ({ onOpenBooking }) => {
         en: "Zirconia Crowns, Veneers & Pain-Free Therapy",
       },
       desc: {
-        uz: "CAD/CAM raqamli frezerlash texnologiyalari, E-max press-keramika, nano-kompozit restavratsiya va ildiz kanallarini (endodontiya) 3D zich plombalash bo'yicha maxsus malaka.",
-        ru: "Цифровое моделирование CAD/CAM, виниры E-max, микро-пломбирование нано-композитами и обтурация корневых каналов.",
-        en: "Mastery in CAD/CAM zirconia milling, E-max press ceramic veneers, and microscopic endodontic canal obturation.",
+        uz: "CAD/CAM frezerlash texnologiyalari, E-max press-keramika, nano-kompozit restavratsiya va ildiz kanallarini (endodontiya) zamonaviy davolash bo'yicha maxsus malaka.",
+        ru: "Цифровое моделирование CAD/CAM, виниры E-max, микро-пломбирование нано-композитами и протоколы эндодонтического лечения каналов.",
+        en: "Mastery in CAD/CAM zirconia milling, E-max press ceramic veneers, and modern endodontic root canal treatments.",
       },
     },
     {
@@ -68,7 +68,7 @@ const About = ({ onOpenBooking }) => {
         en: "Dental Implants & Oral Surgery",
       },
       desc: {
-        uz: "Biotitan implantlar, 3D navigatsion jarrohlik shablonlari asosida og'riqsiz va asoratsiz tish tiklash amaliyoti.",
+        uz: "Biotitan implantlar, navigatsion jarrohlik shablonlari asosida og'riqsiz va asoratsiz tish tiklash amaliyoti.",
         ru: "Биосовместимые титановые импланты, навигационные хирургические шаблоны, бережная имплантация без разрезов десны.",
         en: "Computer-guided titanium implants, atraumatic surgical protocols, and immediate restorations.",
       },

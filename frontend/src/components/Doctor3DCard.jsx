@@ -21,9 +21,9 @@ export const Doctor3DCard = () => {
       experience: "5 Yillik Klinik Tajriba",
       education: "DM Stomatologiya shifokor-stomatologi",
       highlights: [
-        "Dental Implantologiya: Biotitan implantlar va 3D navigatsion jarrohlik",
+        "Dental Implantologiya: Biotitan implantlar va navigatsion jarrohlik",
         "Ortopediya: Sirkon koronkalar, E-max press-vinirlar va estetik protezlash",
-        "Terapiya: 100% og'riqsiz karies va ildiz kanallarini (endodontiya) zich plombalash",
+        "Terapiya: 100% og'riqsiz karies va ildiz kanallarini davolash (endodontiya)",
         "DM Stomatologiya klinikasida zamonaviy xalqaro standartlar asosida faoliyat",
       ],
       callDirect: "Dr. MuhammadAli bilan to'g'ridan-to'g'ri bog'lanish:",
@@ -35,7 +35,7 @@ export const Doctor3DCard = () => {
       experience: "5 Лет Клинической Практики",
       education: "Врач-стоматолог клиники DM Stomatology",
       highlights: [
-        "Имплантология: Биосовместимые титановые импланты и цифровая навигация",
+        "Имплантология: Биосовместимые титановые импланты и навигационная хирургия",
         "Ортопедия: Циркониевые коронки, эстетические виниры E-max и точное протезирование",
         "Терапия: 100% безболезненное лечение кариеса и корневых каналов без страха",
         "Клиническая практика по международным стандартам стоматологии",
@@ -49,9 +49,9 @@ export const Doctor3DCard = () => {
       experience: "5 Years Clinical Excellence",
       education: "Dental specialist at DM Stomatology",
       highlights: [
-        "Dental Implantology: Biocompatible titanium implants and 3D guided surgery",
+        "Dental Implantology: Biocompatible titanium implants and precision guided surgery",
         "Orthopedics: Zirconia crowns, E-max veneers, and precision prosthetics",
-        "Therapy: 100% painless cavity treatment and microscopically sealed root canals",
+        "Therapy: 100% painless cavity treatment and root canal therapy",
         "High-precision clinical practice at DM Stomatology following international standards",
       ],
       callDirect: "Direct contact with Dr. MuhammadAli:",

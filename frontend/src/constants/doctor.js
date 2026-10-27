@@ -7,9 +7,9 @@ export const DOCTOR_INFO = {
   shortName: "Dr. Muhammad-Ali",
   fullName: "MuhammadAli Davronov",
   titleLang: {
-    uz: "Shifokor-Stomatolog · Ortopediya, Terapiya va Implantologiya",
-    ru: "Врач-Стоматолог · Ортопедия, Терапия и Имплантология",
-    en: "Dental Specialist · Orthopedics, Therapy & Implantology",
+    uz: "Shifokor-Stomatolog · Implantologiya, Ortopediya va Terapiya",
+    ru: "Врач-Стоматолог · Имплантология, Ортопедия и Терапия",
+    en: "Dental Specialist · Implantology, Orthopedics & Therapy",
   },
   titles: {
     uz: "Shifokor-Stomatolog · Implantologiya, Ortopediya va Terapiya",
