@@ -34,7 +34,7 @@
     ]
   },
   "index.html": {
-    "file": "assets/index-DGy7t_kE.js",
+    "file": "assets/index-mYY2MlxA.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -45,7 +45,7 @@
       "_rolldown-runtime-y2wrX6ue.js"
     ],
     "css": [
-      "assets/index-BFePiN8H.css"
+      "assets/index-DMkeUSNv.css"
     ],
     "assets": [
       "assets/logo_icon-Cu3-mu0E.webp",
@@ -61,13 +61,18 @@
       "assets/treatment_veneers-16IoRRNE.webp",
       "assets/treatment_whitening-DAVxj-hD.webp",
       "assets/treatment_surgery-Cr2Gvv1f.webp",
-      "assets/clinic_room-_XYo5Du4.webp",
+      "assets/clinic_room-DkeS2JJd.webp",
+      "assets/clinic_door-DEYuhn9S.webp",
       "assets/hero_3d_tooth-VE549khk.webp",
       "assets/hero_smile-Xx0LVDIw.webp"
     ]
   },
+  "src/assets/clinic_door.webp": {
+    "file": "assets/clinic_door-DEYuhn9S.webp",
+    "src": "src/assets/clinic_door.webp"
+  },
   "src/assets/clinic_room.webp": {
-    "file": "assets/clinic_room-_XYo5Du4.webp",
+    "file": "assets/clinic_room-DkeS2JJd.webp",
     "src": "src/assets/clinic_room.webp"
   },
   "src/assets/dr_muhammadali.png": {
