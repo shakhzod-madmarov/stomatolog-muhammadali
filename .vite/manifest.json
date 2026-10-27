@@ -34,7 +34,7 @@
     ]
   },
   "index.html": {
-    "file": "assets/index-mYY2MlxA.js",
+    "file": "assets/index-DI4d81BO.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -45,7 +45,7 @@
       "_rolldown-runtime-y2wrX6ue.js"
     ],
     "css": [
-      "assets/index-DMkeUSNv.css"
+      "assets/index-Di6me_q7.css"
     ],
     "assets": [
       "assets/logo_icon-Cu3-mu0E.webp",
@@ -64,8 +64,23 @@
       "assets/clinic_room-DkeS2JJd.webp",
       "assets/clinic_door-DEYuhn9S.webp",
       "assets/hero_3d_tooth-VE549khk.webp",
-      "assets/hero_smile-Xx0LVDIw.webp"
+      "assets/hero_smile-Xx0LVDIw.webp",
+      "assets/cert_one_stage-CucRFZjZ.webp",
+      "assets/cert_dentium-C6StzL7L.webp",
+      "assets/cert_dio_implant-wKztj0lT.webp"
     ]
+  },
+  "src/assets/cert_dentium.webp": {
+    "file": "assets/cert_dentium-C6StzL7L.webp",
+    "src": "src/assets/cert_dentium.webp"
+  },
+  "src/assets/cert_dio_implant.webp": {
+    "file": "assets/cert_dio_implant-wKztj0lT.webp",
+    "src": "src/assets/cert_dio_implant.webp"
+  },
+  "src/assets/cert_one_stage.webp": {
+    "file": "assets/cert_one_stage-CucRFZjZ.webp",
+    "src": "src/assets/cert_one_stage.webp"
   },
   "src/assets/clinic_door.webp": {
     "file": "assets/clinic_door-DEYuhn9S.webp",
