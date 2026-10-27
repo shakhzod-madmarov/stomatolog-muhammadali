@@ -72,12 +72,12 @@ const Services = ({ onOpenBooking }) => {
             ? "Клинические Услуги Д-ра МухаммадАли Давронова"
             : "Clinical Treatments & Care by Dr. MuhammadAli Davronov"}
         </h1>
-        <p className="text-sm sm:text-base text-slate-600">
+        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
           {lang === "uz"
-            ? "Ortopediya, terapiya va implantologiya bo'yicha 5 yillik tajriba. Tishlaringiz salomatligi va tabiiy go'zalligini yuqori aniqlikda, to'liq og'riqsiz tiklaymiz."
+            ? "Mustahkam biotitan implantlar, estetik sirkon qoplamalar va 100% og'riqsiz davolash. Tishlaringizning tabiiy go'zalligi va chaynash qulayligini 5 yillik tajriba hamda zargarlik aniqligida qayta tiklaymiz."
             : lang === "ru"
-            ? "5 лет клинического опыта в ортопедии, терапии и имплантологии. Восстановление здоровья и эстетики зубов с высокой точностью и искренней заботой."
-            : "5 years of clinical experience in orthopedics, therapy, and implantology. Restoring your smile with precision and gentle comfort."}
+            ? "Надёжная дентальная имплантация, эстетичный цирконий и 100% лечение без боли. Возвращаем естественную красоту улыбки и комфорт жевания с ювелирной точностью и 5-летним клиническим опытом."
+            : "Biocompatible dental implants, aesthetic zirconia restorations, and 100% pain-free care. Restoring your natural smile and chewing comfort with artisan precision and 5 years of clinical mastery."}
         </p>
       </div>
 

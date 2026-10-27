@@ -110,14 +110,14 @@ export const getExperienceBadge = (lang = "uz") => {
 
 export const getHeroTag = (lang = "uz") => {
   const years = getYearsOfExperience();
-  if (lang === "ru") return `${years} Лет Опыта · Ортопедия, Терапия, Имплантология · Андижан`;
-  if (lang === "en") return `${years} Years Experience · Orthopedics, Therapy, Implantology · Andijan`;
-  return `${years} Yillik Tajriba · Ortopediya, Terapiya, Implantologiya · Andijon`;
+  if (lang === "ru") return `${years} Лет Опыта · Имплантология, Ортопедия, Терапия · Андижан`;
+  if (lang === "en") return `${years} Years Experience · Implantology, Orthopedics, Therapy · Andijan`;
+  return `${years} Yillik Tajriba · Implantologiya, Ortopediya, Terapiya · Andijon`;
 };
 
 export const getServicesTag = (lang = "uz") => {
   const years = getYearsOfExperience();
-  if (lang === "ru") return `${years} ЛЕТ ПРАКТИКИ · ОРТОПЕДИЯ, ТЕРАПИЯ И ИМПЛАНТОЛОГИЯ`;
-  if (lang === "en") return `${years} YEARS EXPERIENCE · ORTHOPEDICS, THERAPY & IMPLANTOLOGY`;
-  return `${years} YILLIK TAJRIBA · ORTOPEDIYA, TERAPIYA VA IMPLANTOLOGIYA`;
+  if (lang === "ru") return `${years} ЛЕТ ПРАКТИКИ · ИМПЛАНТОЛОГИЯ, ОРТОПЕДИЯ И ТЕРАПИЯ`;
+  if (lang === "en") return `${years} YEARS EXPERIENCE · IMPLANTOLOGY, ORTHOPEDICS & THERAPY`;
+  return `${years} YILLIK TAJRIBA · IMPLANTOLOGIYA, ORTOPEDIYA VA TERAPIYA`;
 };
