@@ -25,14 +25,31 @@ export const DOCTOR_INFO = {
     en: "Implantology (Biotitanium) · Orthopedics (Zirconia & E-max) · Therapy (Painless Care) · Aesthetic Veneers",
   },
   education: {
-    uz: "DM Stomatologiya shifokor-stomatologi",
-    ru: "Врач-стоматолог клиники DM Stomatology",
-    en: "Dental Specialist at DM Stomatology",
+    uz: "Andijon davlat tibbiyot instituti — Yuz-jag' jarrohligi klinik ordinaturasi",
+    ru: "Андижанский государственный медицинский институт — Клиническая ординатура по челюстно-лицевой хирургии (ЧЛХ)",
+    en: "Andijan State Medical Institute — Clinical Residency in Oral & Maxillofacial Surgery",
   },
   educationFull: {
-    uz: "DM Stomatologiya klinikasida shaxsiy qabul: Implantologiya, Ortopediya va Terapiya",
-    ru: "Персональный приём в клинике DM Stomatology: имплантология, ортопедия и терапия",
-    en: "Personal clinical care at DM Stomatology: implantology, orthopedics, and therapy",
+    uz: "Andijon davlat tibbiyot instituti (Yuz-jag' jarrohligi klinik ordinaturasi) hamda DM Stomatologiya shifokor-stomatologi",
+    ru: "Клиническая ординатура по челюстно-лицевой хирургии в АГМИ. Врач-стоматолог клиники DM Stomatology",
+    en: "Clinical Residency in Oral & Maxillofacial Surgery at ASMI. Dental specialist at DM Stomatology",
+  },
+  residency: {
+    institution: {
+      uz: "Andijon davlat tibbiyot instituti (ADTI)",
+      ru: "Андижанский государственный медицинский институт (АГМИ)",
+      en: "Andijan State Medical Institute (ASMI)",
+    },
+    specialty: {
+      uz: "Yuz-jag' jarrohligi",
+      ru: "Челюстно-лицевая хирургия (ЧЛХ)",
+      en: "Oral & Maxillofacial Surgery (OMFS)",
+    },
+    status: {
+      uz: "Klinik ordinatura",
+      ru: "Клиническая ординатура",
+      en: "Clinical Residency",
+    },
   },
   careerStartYear: 2021, // 5+ years of clinical experience in 2026
   experienceYears: 5,

@@ -48,18 +48,18 @@ export const PAGE_SEO = {
   about: {
     uz: {
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba | DM Stomatologiya",
-      description: `Dr. MuhammadAli Davronov: ${years} yillik tajribali shifokor-stomatolog. Ortopediya, terapiya va implantologiya. DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy.`,
-      keywords: "dr muhammadali davronov biografiya, tajribali tish shifokori andijon, sirkon tishlar, dm stomatologiya shifokori",
+      description: `Dr. MuhammadAli Davronov: Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinaturasi, ${years} yillik tajriba. Implantologiya, ortopediya va terapiya. DM Stomatologiya, Andijon, Prospekt Navoiy 91.`,
+      keywords: "dr muhammadali davronov, yuz jag jarrohligi ordinatura, stomatolog andijon, dental implantologiya, dm stomatologiya shifokori",
     },
     ru: {
       title: "О Докторе МухаммадАли Давронове — Врач-Стоматолог, Ортопед, Имплантолог",
-      description: `О докторе МухаммадАли Давронове: выпускник АГМИ, ${years} лет клинической практики, современные технологии протезирования и бережное лечение зубов в Андижане.`,
-      keywords: "доктор мухаммадали давронов биография, стоматолог выпускник агми, врач ортопед имплантолог андижан, dm stomatology врач",
+      description: `Д-р МухаммадАли Давронов: ординатура по челюстно-лицевой хирургии в АГМИ, ${years} лет клинической практики, имплантология, ортопедия и бережное лечение зубов в Андижане.`,
+      keywords: "доктор мухаммадали давронов, челюстно лицевой хирург андижан, ординатура члх агми, врач имплантолог андижан, dm stomatology",
     },
     en: {
       title: "About Dr. MuhammadAli Davronov — Dental Specialist & Implantologist",
-      description: `Learn about Dr. MuhammadAli Davronov: graduate of ASMI, ${years} years of dental practice, tooth restoration, and aesthetic dentistry in Andijan.`,
-      keywords: "about dr muhammadali davronov, andijan dental specialist, dental education asmi, certified implantologist andijan",
+      description: `Learn about Dr. MuhammadAli Davronov: clinical residency in Oral & Maxillofacial Surgery at ASMI, ${years} years of dental practice and implantology in Andijan.`,
+      keywords: "about dr muhammadali davronov, oral and maxillofacial surgery asmi, residency dentist andijan, certified implantologist andijan",
     },
   },
   contact: {

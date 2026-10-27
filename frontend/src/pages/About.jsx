@@ -26,19 +26,19 @@ const About = ({ onOpenBooking }) => {
   const timeline = [
     {
       year: {
-        uz: "Klinik Tayyorgarlik",
-        ru: "Клиническая Подготовка",
-        en: "Clinical Training",
+        uz: "Klinik Ordinatura",
+        ru: "Клиническая Ординатура",
+        en: "Clinical Residency",
       },
       title: {
-        uz: "Zamonaviy Stomatologiya va Yuqori Standartlar",
-        ru: "Современная Стоматология и Международные Протоколы",
-        en: "Modern Dentistry & International Standards",
+        uz: "Andijon Davlat Tibbiyot Instituti — Yuz-Jag' Jarrohligi",
+        ru: "Андижанский Государственный Медицинский Институт — Челюстно-лицевая хирургия (ЧЛХ)",
+        en: "Andijan State Medical Institute — Oral & Maxillofacial Surgery",
       },
       desc: {
-        uz: "Ilg'or xalqaro stomatologiya protokollari, yumshoq anesteziologiya va xavfsiz sterilizatsiya asosida har bir bemorga individual yondashuv.",
-        ru: "Международные протоколы стоматологии, бережное обезболивание, строгие стандарты стерилизации и персонализированное лечение.",
-        en: "International clinical protocols, gentle local anesthesia, strict sterilization safety, and patient-centered restorative care.",
+        uz: "Andijon davlat tibbiyot institutida Yuz-jag' jarrohligi bo'yicha klinik ordinatura: jag' suyaklari anatomiyasi, murakkab jarrohlik va suyak tiklash protokollari bo'yicha chuqur klinik tayyorgarlik.",
+        ru: "Клиническая ординатура по специальности «Челюстно-лицевая хирургия» в АГМИ: стационарная хирургическая школа, углублённая анатомия челюстей и хирургическая точность.",
+        en: "Postgraduate Clinical Residency in Oral & Maxillofacial Surgery at ASMI: advanced jaw anatomy, complex oral surgery, and bone reconstructive protocols.",
       },
     },
     {
@@ -222,10 +222,10 @@ const About = ({ onOpenBooking }) => {
         </h1>
         <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
           {lang === "uz"
-            ? "DM Stomatologiya klinikasida har bir bemorga samimiy g'amxo'rlik va shaxsiy e'tibor: mustahkam biotitan implantlar, nafis sirkon qoplamalar va 100% og'riqsiz muolajalar bilan sog'lom jilmayishingizni tiklaymiz."
+            ? "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinaturasini tamomlagan. DM Stomatologiya klinikasida mustahkam biotitan implantlar, nafis sirkon qoplamalar va 100% og'riqsiz muolajalar bilan sog'lom jilmayishingizni tiklaymiz."
             : lang === "ru"
-            ? "В клинике DM Stomatology каждый пациент в надёжных руках: персональный подход, долговечные титановые импланты, ювелирные циркониевые коронки и бережное лечение без боли."
-            : "Dedicated personal practice at DM Stomatology: restoring lifelong dental health and confidence through biocompatible titanium implants, precision zirconia crowns, and gentle pain-free care."}
+            ? "Клиническая ординатура по челюстно-лицевой хирургии (ЧЛХ) в Андижанском государственном медицинском институте. В клинике DM Stomatology проводит приём по имплантации, ортопедии и терапии без боли."
+            : "Clinical Residency in Oral & Maxillofacial Surgery at Andijan State Medical Institute. Dedicated practice at DM Stomatology restoring smiles with biocompatible implants, zirconia crowns, and pain-free care."}
         </p>
       </header>
 
@@ -253,9 +253,9 @@ const About = ({ onOpenBooking }) => {
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             {lang === "uz"
-              ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. DM Stomatologiya klinikasida 5 yillik klinik amaliyotim davomida har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib olganman. Klinikamizda biz keraksiz muolajalarni tavsiya qilmaymiz: sog'lom tish to'qimasini maksimal darajada asrab qolamiz, yo'qotilgan tishlarni esa mustahkam sirkon qoplamalar va biotitan implantlar bilan ishonchli tiklaymiz."
+              ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. Andijon davlat tibbiyot institutida Yuz-jag' jarrohligi bo'yicha olgan klinik ordinatura tayyorgarligim har bir implantatsiya va jarrohlik muolajasini yuqori anatomik aniqlikda, asoratsiz va 100% xavfsiz bajarishimga poydevor bo'ldi. DM Stomatologiya klinikasida 5 yillik amaliyotim davomida har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib olganman: tabiiy tish to'qimasini maksimal asraymiz, yo'qotilgan tishlarni esa mustahkam sirkon qoplamalar va xalqaro biotitan implantlar bilan ishonchli tiklaymiz."
               : lang === "ru"
-              ? "Стоматология — это искусство возвращения уверенности и здоровья улыбки. В клинике DM Stomatology за 5 лет практики я руководствуюсь главным правилом: бережное отношение к пациенту и сохранение каждого родного зуба. Мы используем проверенные титановые импланты, монолитный цирконий и современную анестезию."
+              ? "Стоматология — это искусство возвращения уверенности и здоровья улыбки. Базовая хирургическая школа ординатуры по челюстно-лицевой хирургии в АГМИ дала мне фундаментальные знания анатомии и позволяет проводить любую имплантацию с максимальной безопасностью и без риска осложнений. В клинике DM Stomatology за 5 лет практики я руководствуюсь главным правилом: бережное отношение к пациенту, сохранение каждого родного зуба и проверенные международные протоколы."
               : "Dentistry is the art of restoring health, natural beauty, and daily confidence. At DM Stomatology, my commitment is to preserve your natural teeth wherever possible and deliver long-lasting, aesthetic restorations through precision zirconia crowns and biocompatible implants."}
           </p>
 

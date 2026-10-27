@@ -146,8 +146,9 @@ export const buildDoctorProfileSchema = (lang = "uz", breadcrumbs = []) => {
       "alumniOf": {
         "@type": "EducationalOrganization",
         "name": DOCTOR_INFO.education[lang] || DOCTOR_INFO.education.uz,
+        "url": "https://adti.uz"
       },
-      "medicalSpecialty": ["Dentistry", "Prosthodontics", "Implantology", "RestorativeDentistry"],
+      "medicalSpecialty": ["Dentistry", "OralAndMaxillofacialSurgery", "Implantology", "Prosthodontics", "RestorativeDentistry"],
       "hasCredential": [
         {
           "@type": "EducationalOccupationalCredential",

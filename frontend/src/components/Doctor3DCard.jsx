@@ -19,8 +19,9 @@ export const Doctor3DCard = () => {
       heading: "Dr. MuhammadAli Davronov",
       subheading: "Shifokor-Stomatolog · Implantolog, Ortoped & Terapevt (DM Stomatologiya, 1-xona, Andijon)",
       experience: "5 Yillik Klinik Tajriba",
-      education: "DM Stomatologiya shifokor-stomatologi",
+      education: "Andijon davlat tibbiyot instituti — Yuz-jag' jarrohligi klinik ordinaturasi",
       highlights: [
+        "Yuz-jag' jarrohligi ordinaturasi maktabi: har qanday murakkablikdagi anatomik xavfsiz dental implantologiya",
         "Dental Implantologiya: Dentium va DIO Implant tizimlari bo'yicha xalqaro sertifikatlangan amaliyot",
         "Bir bosqichli (One-Stage) tezkor implantatsiya: tish olingan kuni o'sha zahoti yangi tish qo'yish",
         "Ortopediya: Estetik sirkon koronkalar, E-max press-vinirlar va aniq protezlash",
@@ -34,8 +35,9 @@ export const Doctor3DCard = () => {
       heading: "Д-р МухаммадАли Давронов",
       subheading: "Врач-Стоматолог · Имплантолог, Ортопед и Терапевт (DM Stomatology, кабинет №1, Андижан)",
       experience: "5 Лет Клинической Практики",
-      education: "Врач-стоматолог клиники DM Stomatology",
+      education: "АГМИ — Клиническая ординатура по челюстно-лицевой хирургии (ЧЛХ)",
       highlights: [
+        "Школа ординатуры ЧЛХ: анатомическая безопасность и ювелирная хирургическая имплантация",
         "Имплантология: Сертифицированный хирург южнокорейских систем Dentium и DIO Implant",
         "Одномоментная имплантация (One-Stage): установка импланта сразу в день удаления зуба",
         "Ортопедия: Циркониевые коронки, эстетические виниры E-max и точное протезирование",
@@ -49,8 +51,9 @@ export const Doctor3DCard = () => {
       heading: "Dr. MuhammadAli Davronov",
       subheading: "Dental Specialist · Implantology, Orthopedics & Therapy (DM Stomatology, Room #1, Andijan)",
       experience: "5 Years Clinical Excellence",
-      education: "Dental specialist at DM Stomatology",
+      education: "ASMI — Clinical Residency in Oral & Maxillofacial Surgery",
       highlights: [
+        "Oral & Maxillofacial Surgery residency mastery: safe anatomical protocols for all surgical implant cases",
         "Dental Implantology: Certified clinical specialist on Dentium & DIO Implant systems",
         "One-Stage Immediate Implants: Same-day post-extraction implant placement and restoration",
         "Orthopedics: Zirconia crowns, E-max veneers, and precision aesthetic prosthetics",
@@ -146,10 +149,10 @@ export const Doctor3DCard = () => {
               </span>
               <span className="text-[11px] text-slate-500">
                 {lang === "ru"
-                  ? "5 лет непрерывной клинической работы в стоматологии"
+                  ? "Специализированная подготовка по челюстно-лицевой хирургии и 5 лет клинической практики"
                   : lang === "en"
-                  ? "5 years of dedicated dental practice and aesthetic smiles"
-                  : "5 yillik uzluksiz shaxsiy klinik amaliyot"}
+                  ? "Specialized residency in Oral & Maxillofacial Surgery with 5 years clinical excellence"
+                  : "Yuz-jag' jarrohligi bo'yicha maxsus ordinatura tayyorgarligi va 5 yillik klinik tajriba"}
               </span>
             </div>
           </div>
