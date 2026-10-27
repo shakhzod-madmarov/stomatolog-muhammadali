@@ -89,7 +89,7 @@ export const buildServicesCatalogSchema = (services, lang = "uz", breadcrumbs = 
     "@type": "MedicalWebPage",
     "@id": `${catalogUrl}#catalog`,
     "url": catalogUrl,
-    "name": lang === "ru" ? "Услуги стоматологии — Ортопедия, Терапия, Имплантология" : lang === "en" ? "Dental Services — Orthopedics, Therapy, Implantology" : "Stomatologik xizmatlar — Ortopediya, Terapiya, Implantologiya",
+    "name": lang === "ru" ? "Услуги стоматологии — Имплантология, Ортопедия, Терапия" : lang === "en" ? "Dental Services — Implantology, Orthopedics, Therapy" : "Stomatologik xizmatlar — Implantologiya, Ortopediya, Terapiya",
     "about": {
       "@type": "Dentist",
       "@id": `${SITE_ORIGIN}/#dentist`,
@@ -376,6 +376,7 @@ export const buildHomePageSchema = (lang = "uz") => {
         ],
         "medicalSpecialty": [
           "https://schema.org/Dentistry",
+          "https://schema.org/OralAndMaxillofacialSurgery",
           "https://schema.org/Prosthodontics",
           "https://schema.org/OralSurgery",
         ],
@@ -440,22 +441,57 @@ export const buildHomePageSchema = (lang = "uz") => {
         "description": DOCTOR_INFO.specialtiesTextLang[lang] || DOCTOR_INFO.specialtiesTextLang.uz,
         "medicalSpecialty": [
           "https://schema.org/Dentistry",
+          "https://schema.org/OralAndMaxillofacialSurgery",
           "https://schema.org/Prosthodontics",
           "https://schema.org/OralSurgery",
         ],
         "telephone": DOCTOR_INFO.phoneRaw,
         "email": DOCTOR_INFO.email,
         "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "license",
-          "name": DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz,
-          "recognizedBy": {
-            "@type": "MedicalOrganization",
-            "name": DOCTOR_INFO.clinicName,
-            "url": DOCTOR_INFO.siteUrl,
-          },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Andijon davlat tibbiyot instituti",
+          "url": "https://adti.uz"
         },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz,
+            "recognizedBy": {
+              "@type": "MedicalOrganization",
+              "name": DOCTOR_INFO.clinicName,
+              "url": DOCTOR_INFO.siteUrl
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "DIO Implant — Digital Implantology & Complete Clinical Cases",
+            "credentialCategory": "Certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "DIO Implant"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Dentium Implant System — Basic Course for Implantation",
+            "credentialCategory": "Certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Dentium Uzbekistan"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Moissanite Dental — One-Stage Implant Masterclass",
+            "credentialCategory": "Certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Moissanite Dental"
+            }
+          }
+        ],
         "knowsAbout": [
           "Orthopedics",
           "Ortopediya",

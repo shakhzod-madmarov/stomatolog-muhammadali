@@ -46,7 +46,7 @@ export const ROUTES = [
     image: {
       src: "src/assets/dr_muhammadali.png",
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba",
-      caption: "Dr. MuhammadAli Davronov — implantologiya, ortopediya va terapiya mutaxassisi (DM Stomatologiya).",
+      caption: "Dr. MuhammadAli Davronov — Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinaturasi, implantologiya, ortopediya va terapiya mutaxassisi (DM Stomatologiya).",
     },
   },
   {
@@ -110,7 +110,7 @@ export const ROUTES = [
     priority: "0.8",
     image: {
       src: "src/assets/treatment_dentures.webp",
-      title: "Zamonaviy Tish Protezlari va Ko'priklar — Dr. MuhammadAli Davronov",
+      title: "Ortopediya: Tish Protezlari va Ko'priklar — Dr. MuhammadAli Davronov",
       caption: "Byugel, neylon va ko'prikli tish protezlari",
     },
   },

@@ -86,19 +86,19 @@ export const PAGE_SEO = {
     uz: {
       title: "Onlayn Qabulga Yozilish — Dr. MuhammadAli Davronov | DM Stomatologiya",
       description:
-        "Dr. MuhammadAli Davronov qabuliga qulay vaqtni tanlang. Ortopediya, terapiya, implantologiya va navbatsiz shaxsiy qabul. Tel: +998 97 676 01 01.",
+        "Dr. MuhammadAli Davronov qabuliga qulay vaqtni tanlang. Implantologiya, ortopediya, terapiya va navbatsiz shaxsiy qabul. Tel: +998 97 676 01 01.",
       keywords: "onlayn qabulga yozilish stomatolog, tish shifokoriga navbatsiz yozilish, dr muhammadali qabuli, bepul stomatolog konsultatsiyasi",
     },
     ru: {
       title: "Онлайн Запись на Приём — Д-р МухаммадАли Давронов | DM Stomatology",
       description:
-        "Удобная онлайн-запись на персональный приём к Д-ру МухаммадАли Давронову без очередей. Протезирование, лечение без боли и импланты. Тел: +998 97 676 01 01.",
+        "Удобная онлайн-запись на персональный приём к Д-ру МухаммадАли Давронову без очередей. Имплантация, ортопедия и лечение без боли. Тел: +998 97 676 01 01.",
       keywords: "онлайн запись к стоматологу андижан, записаться на прием к врачу мухаммадали, консультация стоматолога без очередей",
     },
     en: {
       title: "Book Online Appointment — Dr. MuhammadAli Davronov | DM Stomatology",
       description:
-        "Reserve your personal consultation with Dr. MuhammadAli Davronov. Fast online booking, orthopedics, therapy, implants, and gentle care. Phone: +998 97 676 01 01.",
+        "Reserve your personal consultation with Dr. MuhammadAli Davronov. Fast online booking, dental implants, orthopedics, therapy, and gentle care. Phone: +998 97 676 01 01.",
       keywords: "book dental appointment andijan, online reservation dr muhammadali davronov, free dental consultation andijan",
     },
   },

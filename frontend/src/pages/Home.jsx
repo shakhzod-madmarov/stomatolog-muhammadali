@@ -183,9 +183,9 @@ const HeroSection = ({ onOpenBooking }) => {
                         {t.cardPill}
                       </span>
                     </div>
-                    <h2 className="font-serif font-bold text-sm sm:text-base text-slate-900 leading-tight truncate mt-0.5">
+                    <strong className="font-serif font-bold text-sm sm:text-base text-slate-900 leading-tight truncate mt-0.5 block">
                       {DOCTOR_INFO.name}
-                    </h2>
+                    </strong>
                     <p className="text-[11px] font-semibold text-primary truncate">
                       {t.cardRole}
                     </p>

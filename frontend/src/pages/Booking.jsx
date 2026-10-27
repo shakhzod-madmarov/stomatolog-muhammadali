@@ -70,10 +70,10 @@ const Booking = () => {
 
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
             {lang === "uz"
-              ? "Dr. MuhammadAli Davronov qabuliga qulay vaqtni tanlang. Ortopediya, terapiya va implantologiya bo'yicha DM Stomatologiyada to'liq og'riqsiz, samimiy shaxsiy qabul."
+              ? "Dr. MuhammadAli Davronov qabuliga qulay vaqtni tanlang. Dental implantologiya, ortopediya va terapiya bo'yicha DM Stomatologiyada to'liq og'riqsiz, samimiy shaxsiy qabul."
               : lang === "ru"
-              ? "Выберите удобное время для визита к доктору МухаммадАли Давронову в DM Stomatologiya. Ортопедия, терапия и дентальная имплантация на высшем уровне."
-              : "Choose a convenient time for your consultation with Dr. MuhammadAli Davronov at DM Stomatology. Orthopedics, therapy, and dental implants with dedicated gentle care."}
+              ? "Выберите удобное время для визита к доктору МухаммадАли Давронову в DM Stomatologiya. Дентальная имплантация, ортопедия и терапия на высшем уровне."
+              : "Choose a convenient time for your consultation with Dr. MuhammadAli Davronov at DM Stomatology. Dental implants, orthopedics, and therapy with dedicated gentle care."}
           </p>
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-semibold text-slate-700 pt-1">
