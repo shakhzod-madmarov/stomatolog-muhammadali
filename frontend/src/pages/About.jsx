@@ -24,36 +24,19 @@ const About = ({ onOpenBooking }) => {
   const timeline = [
     {
       year: {
-        uz: "Fundamental Ta'lim",
-        ru: "Высшее Образование",
-        en: "Medical Education",
+        uz: "Klinik Tayyorgarlik",
+        ru: "Клиническая Подготовка",
+        en: "Clinical Training",
       },
       title: {
-        uz: "Andijon Davlat Tibbiyot Instituti (ADTI)",
-        ru: "Андижанский Государственный Медицинский Институт (АГМИ)",
-        en: "Andijan State Medical Institute (ASMI)",
+        uz: "Zamonaviy Stomatologiya va Yuqori Standartlar",
+        ru: "Современная Стоматология и Международные Протоколы",
+        en: "Modern Dentistry & International Standards",
       },
       desc: {
-        uz: "Stomatologiya fakultetida chuqurlashtirilgan nazariy va amaliy tayyorgarlik. Zamonaviy stomatologiya asoslari, anesteziologiya va klinik diagnostika.",
-        ru: "Стоматологический факультет, фундаментальная клиническая подготовка, современные протоколы обезболивания и диагностики.",
-        en: "Dental faculty graduate with comprehensive training in contemporary dentistry, pain management, and diagnostics.",
-      },
-    },
-    {
-      year: {
-        uz: "Ortopediya & Terapiya",
-        ru: "Ортопедия и Терапия",
-        en: "Orthopedics & Therapy",
-      },
-      title: {
-        uz: "Sirkon Koronkalar, Vinirlar va Og'riqsiz Terapiya",
-        ru: "Циркониевые коронки, виниры и бережная терапия",
-        en: "Zirconia Crowns, Veneers & Pain-Free Therapy",
-      },
-      desc: {
-        uz: "CAD/CAM frezerlash texnologiyalari, E-max press-keramika, nano-kompozit restavratsiya va ildiz kanallarini (endodontiya) zamonaviy davolash bo'yicha maxsus malaka.",
-        ru: "Цифровое моделирование CAD/CAM, виниры E-max, микро-пломбирование нано-композитами и протоколы эндодонтического лечения каналов.",
-        en: "Mastery in CAD/CAM zirconia milling, E-max press ceramic veneers, and modern endodontic root canal treatments.",
+        uz: "Ilg'or xalqaro stomatologiya protokollari, yumshoq anesteziologiya va xavfsiz sterilizatsiya asosida har bir bemorga individual yondashuv.",
+        ru: "Международные протоколы стоматологии, бережное обезболивание, строгие стандарты стерилизации и персонализированное лечение.",
+        en: "International clinical protocols, gentle local anesthesia, strict sterilization safety, and patient-centered restorative care.",
       },
     },
     {
@@ -71,6 +54,23 @@ const About = ({ onOpenBooking }) => {
         uz: "Biotitan implantlar, navigatsion jarrohlik shablonlari asosida og'riqsiz va asoratsiz tish tiklash amaliyoti.",
         ru: "Биосовместимые титановые импланты, навигационные хирургические шаблоны, бережная имплантация без разрезов десны.",
         en: "Computer-guided titanium implants, atraumatic surgical protocols, and immediate restorations.",
+      },
+    },
+    {
+      year: {
+        uz: "Ortopediya & Terapiya",
+        ru: "Ортопедия и Терапия",
+        en: "Orthopedics & Therapy",
+      },
+      title: {
+        uz: "Sirkon Koronkalar, Vinirlar va Og'riqsiz Terapiya",
+        ru: "Циркониевые коронки, виниры и бережная терапия",
+        en: "Zirconia Crowns, Veneers & Pain-Free Therapy",
+      },
+      desc: {
+        uz: "CAD/CAM frezerlash texnologiyalari, E-max press-keramika, nano-kompozit restavratsiya va ildiz kanallarini (endodontiya) zamonaviy davolash bo'yicha maxsus malaka.",
+        ru: "Цифровое моделирование CAD/CAM, виниры E-max, микро-пломбирование нано-композитами и протоколы эндодонтического лечения каналов.",
+        en: "Mastery in CAD/CAM zirconia milling, E-max press ceramic veneers, and modern endodontic root canal treatments.",
       },
     },
     {
@@ -184,12 +184,12 @@ const About = ({ onOpenBooking }) => {
             ? `Д-р МухаммадАли Давронов — DM Stomatology`
             : `Dr. MuhammadAli Davronov — DM Stomatology`}
         </h1>
-        <p className="text-sm sm:text-base text-slate-600">
+        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
           {lang === "uz"
-            ? "DM Stomatologiya klinikasida shaxsiy qabul: Implantologiya, ortopediya va terapiya sohasida zamonaviy og'riqsiz yechimlar."
+            ? "DM Stomatologiya klinikasida har bir bemorga samimiy g'amxo'rlik va shaxsiy e'tibor: mustahkam biotitan implantlar, nafis sirkon qoplamalar va 100% og'riqsiz muolajalar bilan sog'lom jilmayishingizni tiklaymiz."
             : lang === "ru"
-            ? "Персональный приём в клинике DM Stomatology: дентальная имплантация, ортопедия и лечение без боли."
-            : "Dedicated clinical practice at DM Stomatology: dental implantology, orthopedics, and pain-free therapy."}
+            ? "В клинике DM Stomatology каждый пациент в надёжных руках: персональный подход, долговечные титановые импланты, ювелирные циркониевые коронки и бережное лечение без боли."
+            : "Dedicated personal practice at DM Stomatology: restoring lifelong dental health and confidence through biocompatible titanium implants, precision zirconia crowns, and gentle pain-free care."}
         </p>
       </header>
 

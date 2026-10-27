@@ -416,19 +416,14 @@ export const buildHomePageSchema = (lang = "uz") => {
         "telephone": DOCTOR_INFO.phoneRaw,
         "email": DOCTOR_INFO.email,
         "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": DOCTOR_INFO.education[lang] || DOCTOR_INFO.education.uz,
-          "url": "https://adti.uz",
-        },
         "hasCredential": {
           "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "degree",
-          "educationalLevel": "Higher Medical Education",
+          "credentialCategory": "license",
+          "name": DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz,
           "recognizedBy": {
-            "@type": "EducationalOrganization",
-            "name": "Andijon davlat tibbiyot instituti",
-            "url": "https://adti.uz",
+            "@type": "MedicalOrganization",
+            "name": DOCTOR_INFO.clinicName,
+            "url": DOCTOR_INFO.siteUrl,
           },
         },
         "knowsAbout": [
