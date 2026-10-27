@@ -16,7 +16,7 @@ export const SERVICES_CATALOG = [
     image: assets.treatment_crowns,
     specialtyKey: "orthopedia",
     badge: {
-      uz: "ORTOPEDIYA · TSIRKON",
+      uz: "ORTOPEDIYA · SIRKON",
       ru: "ОРТОПЕДИЯ · ЦИРКОНИЙ",
       en: "ORTHOPEDICS · ZIRCONIA",
     },
@@ -41,12 +41,12 @@ export const SERVICES_CATALOG = [
       en: "Orthopedics & Prosthodontics",
     },
     title: {
-      uz: "Tsirkon va Keramika Koronkalar — Mustahkam Tabiiy Qoplamalar",
+      uz: "Sirkon va Keramika Koronkalar — Mustahkam Tabiiy Qoplamalar",
       ru: "Циркониевые и Керамические Коронки",
       en: "Zirconia & Ceramic Dental Crowns",
     },
     shortDesc: {
-      uz: "Yemirilgan yoki singan tishlarni tabiiy tish emalidan aslo ajratib bo'lmaydigan, metallsiz va o'ta mustahkam monolit tsirkoniy qoplamalar bilan tiklash.",
+      uz: "Yemirilgan yoki singan tishlarni tabiiy tish emalidan aslo ajratib bo'lmaydigan, metallsiz va o'ta mustahkam monolit sirkoniy qoplamalar bilan tiklash.",
       ru: "Восстановление разрушенных зубов коронками из монолитного диоксида циркония: идеальное прилегание, натуральный блеск и никакой тёмной каймы.",
       en: "Restore broken or heavily filled teeth with metal-free monolithic zirconia and ceramic crowns that match natural translucency flawlessly.",
     },
@@ -55,7 +55,7 @@ export const SERVICES_CATALOG = [
     highlights: {
       uz: [
         "Metallsiz asos: milk chetida hech qachon qora yoki ko'kish chiziq paydo bo'lmaydi",
-        "Monolit tsirkoniy kuchi — qattiq taomlarni bemalol chaynash imkoniyati",
+        "Monolit sirkoniy kuchi — qattiq taomlarni bemalol chaynash imkoniyati",
         "Yorug'likni tabiiy tishdek o'tkazadi va tabassumingizga jonli jilo beradi",
         "Mikron darajasidagi jipslashish — tish ostiga ovqat qoldiqlari kirmaydi",
       ],
@@ -73,7 +73,7 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "tsirkon qoplama andijon, tsirkon tish narxi, tish qoplatish andijon, keramika koronka, monolit tsirkoniy, tabiiy tish emali, ortopediya andijon, dr muhammadali tsirkon",
+      uz: "sirkon qoplama andijon, sirkon tish narxi, tish qoplatish andijon, keramika koronka, monolit sirkoniy, tabiiy tish emali, ortopediya andijon, dr muhammadali sirkon",
       ru: "циркониевые коронки андижан, диоксид циркония цена, коронки на зубы андижан, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
       en: "zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, broken tooth restoration andijan, dental clinic andijan",
     },

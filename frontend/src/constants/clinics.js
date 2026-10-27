@@ -22,17 +22,17 @@ export const CLINICS = [
       en: "Andijan",
     },
     address: {
-      uz: "Andijon shahri, Navoiy shoh ko'chasi, 91-uy",
+      uz: "Andijon shahri, Prospekt Navoiy shoh ko'chasi, 91-uy",
       ru: "г. Андижан, проспект Навои, дом 91",
       en: "91 Navoi Avenue, Andijan, Uzbekistan",
     },
     shortAddress: {
-      uz: "Andijon sh., Navoiy shox 91-uy",
+      uz: "Andijon sh., Prospekt Navoiy shox 91-uy",
       ru: "г. Андижан, пр-т Навои, 91",
       en: "91 Navoi Ave, Andijan",
     },
     landmark: {
-      uz: "Navoiy shoh ko'chasi 91-uy (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya)",
+      uz: "Prospekt Navoiy shoh ko'chasi 91-uy (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya)",
       ru: "Проспект Навои, 91 (ориентир: рядом с пиццерией SARIQ BOLA, DM Stomatology)",
       en: "91 Navoi Avenue (landmark: next to SARIQ BOLA pizza, DM Stomatology)",
     },
@@ -52,8 +52,8 @@ export const CLINICS = [
     secondaryPhone: "+998 97 676 01 01",
     secondaryPhoneDisplay: "+998 97 676 01 01",
     secondaryPhoneRaw: "+998976760101",
-    telegram: "https://t.me/dm_muxammadali",
-    telegramHandle: "@dm_muxammadali",
+    telegram: "https://t.me/+998976760101",
+    telegramHandle: "+998 97 676 01 01",
     instagram: "https://www.instagram.com/dm.muxammadali/",
     instagramHandle: "@dm.muxammadali",
     coordinates: {

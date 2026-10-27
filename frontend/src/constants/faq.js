@@ -7,7 +7,7 @@ export const FAQ_ITEMS = [
       en: "What are Dr. MuhammadAli Davronov's primary dental specialties?",
     },
     a: {
-      uz: "Dr. MuhammadAli Davronov 5 yillik faol klinik amaliyotga ega bo'lib, uchta asosiy yo'nalishga ixtisoslashgan: 1) Ortopediya (Tsirkon koronkalar, E-max vinirlar, ko'priklar va estetik protezlash); 2) Terapiya (100% og'riqsiz karies va asab davolash, badiiy restavratsiya, ildiz kanallarini zich plombalash); 3) Implantologiya (Yuqori darajadagi biotitan implantlar, 3D navigatsion implantatsiya va jarrohlik).",
+      uz: "Dr. MuhammadAli Davronov 5 yillik faol klinik amaliyotga ega bo'lib, uchta asosiy yo'nalishga ixtisoslashgan: 1) Ortopediya (Sirkon koronkalar, E-max vinirlar, ko'priklar va estetik protezlash); 2) Terapiya (100% og'riqsiz karies va asab davolash, badiiy restavratsiya, ildiz kanallarini zich plombalash); 3) Implantologiya (Yuqori darajadagi biotitan implantlar, 3D navigatsion implantatsiya va jarrohlik).",
       ru: "Доктор МухаммадАли Давронов имеет 5 лет успешной клинической практики и специализируется по трём ключевым направлениям: 1) Ортопедия (циркониевые коронки, виниры E-max, мостовидные протезы); 2) Терапия (безболезненное лечение кариеса и пульпита, художественная реставрация, эндодонтия); 3) Имплантология (биосовместимые титановые импланты, 3D навигация).",
       en: "Dr. MuhammadAli Davronov has 5 years of active clinical experience and focuses on three core pillars: 1) Orthopedics (Zirconia crowns, E-max veneers, bridges, and advanced prosthetics); 2) Therapy (100% painless cavity care, artistic composite restorations, root canal treatments); 3) Implantology (Biocompatible titanium implants and 3D guided surgery).",
     },
@@ -28,12 +28,12 @@ export const FAQ_ITEMS = [
   {
     id: "orthopedic-crowns-quality",
     q: {
-      uz: "Tsirkon va keramika koronkalarning xizmat muddati qancha va qanday afzalligi bor?",
+      uz: "Sirkon va keramika koronkalarning xizmat muddati qancha va qanday afzalligi bor?",
       ru: "Сколько служат циркониевые и керамические коронки и в чём их преимущество?",
       en: "How long do zirconia and ceramic crowns last and what are their advantages?",
     },
     a: {
-      uz: "Tsirkoniy oksidi va E-max press-keramika o'ta mustahkam, yorug'likni tabiiy tish kabi o'tkazadi va milklarni qoraytirmaydi. Zamonaviy CAD/CAM frezerlash orqali tayyorlanuvchi qoplamalar 15-20 yildan ortiq, to'g'ri gigiyenada esa butun umr xizmat qiladi.",
+      uz: "Sirkoniy oksidi va E-max press-keramika o'ta mustahkam, yorug'likni tabiiy tish kabi o'tkazadi va milklarni qoraytirmaydi. Zamonaviy CAD/CAM frezerlash orqali tayyorlanuvchi qoplamalar 15-20 yildan ortiq, to'g'ri gigiyenada esa butun umr xizmat qiladi.",
       ru: "Диоксид циркония и керамика E-max обладают ювелирной точностью, биосовместимостью и естественной прозрачностью. Они не темнеют у десны, выдерживают максимальные жевательные нагрузки и служат более 15-20 лет.",
       en: "Zirconia and E-max press-ceramics offer incredible biocompatibility and lifelike translucency without dark gum lines. Fabricated via digital CAD/CAM milling, they routinely last 15-20+ years.",
     },
@@ -46,7 +46,7 @@ export const FAQ_ITEMS = [
       en: "Where is Dr. MuhammadAli Davronov's clinic located?",
     },
     a: {
-      uz: "Dr. MuhammadAli Davronov shaxsiy qabuli Andijon shahri, Navoiy shoh ko'chasi, 91-uyda (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya) o'tkaziladi. Bemorlar uchun bepul avtoturargoh mavjud. Siz Yandex Xarita (https://yandex.uz/maps/-/CXBjRG4Q) yoki Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z) orqali to'g'ridan-to'g'ri marshrut chizishingiz mumkin.",
+      uz: "Dr. MuhammadAli Davronov shaxsiy qabuli Andijon shahri, Prospekt Navoiy shoh ko'chasi, 91-uyda (mo'ljal: SARIQ BOLA pizza yonida, DM Stomatologiya) o'tkaziladi. Bemorlar uchun bepul avtoturargoh mavjud. Siz Yandex Xarita (https://yandex.uz/maps/-/CXBjRG4Q) yoki Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z) orqali to'g'ridan-to'g'ri marshrut chizishingiz mumkin.",
       ru: "Персональный приём проходит в клинике DM Stomatology по адресу: г. Андижан, проспект Навои, 91 (ориентир: рядом с пиццерией SARIQ BOLA). Имеется парковка. Маршрут можно проложить в Яндекс Картах (https://yandex.uz/maps/-/CXBjRG4Q) или в Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z).",
       en: "Dr. MuhammadAli Davronov practices at DM Stomatology, 91 Navoi Avenue, Andijan (landmark: next to SARIQ BOLA pizza). Free parking is available. You can navigate directly via Yandex Maps (https://yandex.uz/maps/-/CXBjRG4Q) or Google Maps (https://share.google/BCXsYyZgbu8x3mQ4Z).",
     },
@@ -80,12 +80,12 @@ export const FAQ_ITEMS = [
   {
     id: "zirconia-vs-metal",
     q: {
-      uz: "Nega oddiy metall-keramika o'rniga tsirkoniy qoplamalari tavsiya etiladi?",
+      uz: "Nega oddiy metall-keramika o'rniga sirkoniy qoplamalari tavsiya etiladi?",
       ru: "Почему циркониевые коронки лучше обычной металлокерамики?",
       en: "Why are monolithic zirconia crowns superior to metal-ceramic crowns?",
     },
     a: {
-      uz: "Tsirkoniy 100% metallsiz, biomos keluvchi materialdir. Metall-keramikadan farqli o'laroq, u milk chetida qoraygan chiziq hosil qilmaydi, tish go'shtini bezovta qilmaydi, yorug'likni tabiiy tishdek o'tkazadi va 15-20+ yildan ortiq mustahkam xizmat qiladi.",
+      uz: "Sirkoniy 100% metallsiz, biomos keluvchi materialdir. Metall-keramikadan farqli o'laroq, u milk chetida qoraygan chiziq hosil qilmaydi, tish go'shtini bezovta qilmaydi, yorug'likni tabiiy tishdek o'tkazadi va 15-20+ yildan ortiq mustahkam xizmat qiladi.",
       ru: "Диоксид циркония — это 100% биосовместимый и безметалловый материал. В отличие от металлокерамики, десна вокруг него не темнеет и не синеет, коронка обладает естественной полупрозрачностью и выдерживает нагрузки более 15-20 лет.",
       en: "Monolithic zirconia is 100% metal-free and biocompatible. Unlike metal-fused crowns, it eliminates dark gum lines, matches natural tooth translucency, and reliably lasts 15-20+ years.",
     },

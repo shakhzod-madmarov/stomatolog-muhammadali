@@ -30,7 +30,7 @@ export const Interactive3DCostCalculator = () => {
       id: "crowns",
       bookingServiceId: "crowns",
       specialty: { uz: "Ortopediya", ru: "Ортопедия", en: "Orthopedics" },
-      title: { uz: "Tsirkon Koronkalar", ru: "Циркониевые Коронки", en: "Zirconia Crowns" },
+      title: { uz: "Sirkon Koronkalar", ru: "Циркониевые Коронки", en: "Zirconia Crowns" },
       unitLabel: { uz: "ta tish", ru: "зуб(а)", en: "tooth/teeth" },
       min: 1,
       max: 16,
@@ -38,7 +38,7 @@ export const Interactive3DCostCalculator = () => {
       durationPerUnit: { uz: "3-5 kun", ru: "3-5 дней", en: "3-5 days" },
       visits: { uz: "2 qabul", ru: "2 визита", en: "2 visits" },
       warranty: { uz: "15+ yillik chidamlilik", ru: "Служба 15+ лет", en: "15+ years durability" },
-      tech: { uz: "Monolit Tsirkon & CAD/CAM", ru: "Монолитный Цирконий и CAD/CAM", en: "Monolithic Zirconia & CAD/CAM" },
+      tech: { uz: "Monolit Sirkon & CAD/CAM", ru: "Монолитный Цирконий и CAD/CAM", en: "Monolithic Zirconia & CAD/CAM" },
     },
     veneers: {
       id: "veneers",

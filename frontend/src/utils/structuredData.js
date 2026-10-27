@@ -436,7 +436,7 @@ export const buildHomePageSchema = (lang = "uz") => {
           "Ortopediya",
           "Ортопедия",
           "Zirconia Crowns",
-          "Tsirkon koronkalar",
+          "Sirkon koronkalar",
           "Циркониевые коронки",
           "Ceramic Veneers",
           "E-max vinirlar",

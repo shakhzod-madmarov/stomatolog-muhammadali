@@ -73,7 +73,7 @@ const TEXT = {
     phonePlaceholder: "+998 97 676 01 01",
     dobFormat: "kun-oy-yil",
     dobPlaceholder: "kun-oy-yil",
-    notePlaceholder: "Ortopediya, tsirkon koronka, vinir, terapiya yoki implantologiya bo'yicha...",
+    notePlaceholder: "Ortopediya, sirkon koronka, vinir, terapiya yoki implantologiya bo'yicha...",
     submit: "Qabulga Yozilishni Tasdiqlash",
     submitting: "Yuborilmoqda...",
     needName: "Iltimos, ism va familiyangizni kiriting",

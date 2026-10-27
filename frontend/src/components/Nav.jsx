@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import { useLanguage, useLocalizedPath } from "../context/LanguageContext";
 import { LANGS } from "../utils/language";
-import { IconPhone } from "./MedicalIcons";
+import { IconPhone, IconTelegram } from "./MedicalIcons";
 import { useModalA11y } from "../hooks/useModalA11y";
 import { getA11yLabels } from "../constants/a11yLabels";
 import { DOCTOR_INFO } from "../constants/doctor";
@@ -96,8 +96,8 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             ))}
           </nav>
 
-          {/* Action Hub (Phone + Language + Colgate Red Booking Button) */}
-          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {/* Action Hub (Phone + Telegram + Language + Colgate Red Booking Button) */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             {/* Direct Phone Call */}
             <a
               href={DOCTOR_INFO.phoneHref}
@@ -109,6 +109,19 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
               <span className="hidden 2xl:inline font-mono tracking-tight">
                 {DOCTOR_INFO.phoneDisplay}
               </span>
+            </a>
+
+            {/* Telegram Direct Link */}
+            <a
+              href={DOCTOR_INFO.telegramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 h-9 px-2.5 sm:px-3 rounded-full text-xs font-bold text-sky-600 bg-sky-50 border border-sky-200 hover:bg-sky-100 hover:border-sky-300 transition-all duration-200 shadow-2xs group"
+              aria-label="Telegram"
+              title={`Telegram: ${DOCTOR_INFO.phoneDisplay}`}
+            >
+              <IconTelegram className="w-4 h-4 text-sky-500 group-hover:scale-110 transition-transform" />
+              <span className="hidden xl:inline text-sky-700 font-semibold">Telegram</span>
             </a>
 
             {/* Language Switcher */}
@@ -209,13 +222,23 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
           </nav>
         </div>
 
-        <div className="pt-6 border-t border-slate-100 flex flex-col gap-3">
+        <div className="pt-6 border-t border-slate-100 flex flex-col gap-2.5">
           <a
             href={DOCTOR_INFO.phoneHref}
             className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-bold text-slate-800 bg-slate-100 hover:bg-red-50 hover:text-primary border border-slate-200 transition-colors"
           >
             <IconPhone className="w-3.5 h-3.5 text-primary" />
             <span>{DOCTOR_INFO.phoneDisplay}</span>
+          </a>
+
+          <a
+            href={DOCTOR_INFO.telegramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 transition-colors"
+          >
+            <IconTelegram className="w-4 h-4 text-sky-500" />
+            <span>Telegram: {DOCTOR_INFO.phoneDisplay}</span>
           </a>
 
           <button

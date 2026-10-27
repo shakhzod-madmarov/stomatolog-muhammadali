@@ -92,7 +92,7 @@ export const DigitalDentistryFeatures = () => {
         },
         {
           tag: "Aniqlik",
-          title: "CAD/CAM Tsirkon va E-max",
+          title: "CAD/CAM Sirkon va E-max",
           desc: "Mikron darajasidagi robotlashtirilgan frezerlash: qoplamalar va vinirlar tishga ideal jipslashadi.",
         },
       ],

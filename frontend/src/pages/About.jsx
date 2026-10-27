@@ -46,7 +46,7 @@ const About = ({ onOpenBooking }) => {
         en: "Orthopedics & Therapy",
       },
       title: {
-        uz: "Tsirkon Koronkalar, Vinirlar va Og'riqsiz Terapiya",
+        uz: "Sirkon Koronkalar, Vinirlar va Og'riqsiz Terapiya",
         ru: "Циркониевые коронки, виниры и бережная терапия",
         en: "Zirconia Crowns, Veneers & Pain-Free Therapy",
       },
@@ -85,7 +85,7 @@ const About = ({ onOpenBooking }) => {
         en: `Dental Specialist — Orthopedics, Therapy, Implantology (${years} Years Practice)`,
       },
       desc: {
-        uz: "Andijon shahri, Navoiy shoh ko'chasi 91-uyda joylashgan DM Stomatologiya klinikasida 3,500+ dan ortiq bemorlarga individual, professional va og'riqsiz xizmat ko'rsatish.",
+        uz: "Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uyda joylashgan DM Stomatologiya klinikasida 3,500+ dan ortiq bemorlarga individual, professional va og'riqsiz xizmat ko'rsatish.",
         ru: "Приём более 3 500 пациентов в клинике DM Stomatology (Андижан, пр-т Навои, 91): ортопедия, терапия и имплантация.",
         en: "Personal clinical care for over 3,500 patients at DM Stomatology clinic (91 Navoi Avenue, Andijan).",
       },
@@ -122,7 +122,7 @@ const About = ({ onOpenBooking }) => {
     {
       icon: <DentalDigitalScannerIcon className="w-6 h-6 text-primary" />,
       title: {
-        uz: "Tsirkon va CAD/CAM Aniqligi",
+        uz: "Sirkon va CAD/CAM Aniqligi",
         ru: "Цирконий и Точность CAD/CAM",
         en: "Zirconia & CAD/CAM Precision",
       },
@@ -186,10 +186,10 @@ const About = ({ onOpenBooking }) => {
         </h1>
         <p className="text-sm sm:text-base text-slate-600">
           {lang === "uz"
-            ? "Andijon davlat tibbiyot instituti bitiruvchisi. 5 yillik faol klinik tajriba. Ortopediya, terapiya va implantologiya sohasida zamonaviy og'riqsiz yechimlar."
+            ? "DM Stomatologiya klinikasida shaxsiy qabul: Ortopediya, terapiya va implantologiya sohasida zamonaviy og'riqsiz yechimlar."
             : lang === "ru"
-            ? "Выпускник Андижанского государственного медицинского института. 5 лет успешной практики: ортопедия, лечение без боли и дентальная имплантация."
-            : "Graduate of Andijan State Medical Institute. 5 years of clinical practice in orthopedics, pain-free therapy, and dental implantology."}
+            ? "Персональный приём в клинике DM Stomatology: ортопедия, лечение без боли и надёжная дентальная имплантация."
+            : "Dedicated clinical practice at DM Stomatology: orthopedics, pain-free therapy, and modern dental implantology."}
         </p>
       </header>
 
@@ -211,10 +211,10 @@ const About = ({ onOpenBooking }) => {
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             {lang === "uz"
-              ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. Andijon davlat tibbiyot institutida olgan fundamental bilimlarim va 5 yillik klinik amaliyotim davomida men har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib oldim. DM Stomatologiya klinikasida biz keraksiz muolajalarni tavsiya qilmaymiz: sog'lom tish to'qimasini maksimal darajada asrab qolamiz, yo'qotilgan tishlarni esa mustahkam tsirkon qoplamalar va biotitan implantlar bilan ishonchli tiklaymiz."
+              ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. DM Stomatologiya klinikasida 5 yillik klinik amaliyotim davomida har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib olganman. Klinikamizda biz keraksiz muolajalarni tavsiya qilmaymiz: sog'lom tish to'qimasini maksimal darajada asrab qolamiz, yo'qotilgan tishlarni esa mustahkam sirkon qoplamalar va biotitan implantlar bilan ishonchli tiklaymiz."
               : lang === "ru"
-              ? "Стоматология — это искусство возвращения уверенности и здоровья улыбки. Благодаря образованию в Андижанском государственном медицинском институте и 5 годам практики я руководствуюсь главным правилом: бережное отношение к пациенту и сохранение каждого родного зуба. В клинике DM Stomatology мы используем проверенные титановые импланты, монолитный цирконий и современную анестезию."
-              : "Dentistry is the art of restoring health, natural beauty, and daily confidence. With rigorous training at the Andijan State Medical Institute and 5 years of active practice, my commitment is to preserve your natural teeth wherever possible and deliver long-lasting, aesthetic restorations through precision zirconia crowns and biocompatible implants."}
+              ? "Стоматология — это искусство возвращения уверенности и здоровья улыбки. В клинике DM Stomatology за 5 лет практики я руководствуюсь главным правилом: бережное отношение к пациенту и сохранение каждого родного зуба. Мы используем проверенные титановые импланты, монолитный цирконий и современную анестезию."
+              : "Dentistry is the art of restoring health, natural beauty, and daily confidence. At DM Stomatology, my commitment is to preserve your natural teeth wherever possible and deliver long-lasting, aesthetic restorations through precision zirconia crowns and biocompatible implants."}
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">

@@ -19,7 +19,11 @@ const ServiceDetail = () => {
   const { openBooking } = useBooking();
 
   const service =
-    SERVICES_CATALOG.find((s) => s.id === activeServiceId) || SERVICES_CATALOG[0];
+    SERVICES_CATALOG.find(
+      (s) =>
+        s.id === activeServiceId ||
+        (activeServiceId === "sirkon-keramika-koronka" && s.id === "tsirkon-keramika-koronka")
+    ) || SERVICES_CATALOG[0];
 
   const steps = {
     uz: [
@@ -36,7 +40,7 @@ const ServiceDetail = () => {
       {
         num: "03",
         title: "Raqamli Aniqlikdagi Asosiy Muolaja",
-        desc: "Biotitan implantlar, tsirkon koronkalar, vinirlar yoki nano-kompozit restavratsiya yordamida mukammal tiklash.",
+        desc: "Biotitan implantlar, sirkon koronkalar, vinirlar yoki nano-kompozit restavratsiya yordamida mukammal tiklash.",
       },
       {
         num: "04",

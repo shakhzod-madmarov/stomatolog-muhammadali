@@ -20,7 +20,7 @@ const STICKERS_DATA = [
       en: "5-Year Clinical Warranty",
     },
     subtitle: {
-      uz: "Biotitan implant va tsirkonlarga",
+      uz: "Biotitan implant va sirkonlarga",
       ru: "На титановые импланты и цирконий",
       en: "On titanium implants & zirconia",
     },

@@ -540,7 +540,7 @@ function buildFallbackBookingResult({ date, time, name, phone, dob, note, bookin
   );
   const telegramUrl = botUsername && linkToken
     ? `https://t.me/${botUsername}?start=${encodeURIComponent(linkToken)}`
-    : `https://t.me/dm_muxammadali?text=${telegramMessage}`;
+    : `https://t.me/+998976760101?text=${telegramMessage}`;
 
   return {
     ok: true,

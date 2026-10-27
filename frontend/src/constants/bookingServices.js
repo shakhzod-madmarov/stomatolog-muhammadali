@@ -24,7 +24,7 @@ export const BOOKING_SERVICES = [
   {
     id: "crowns",
     name: {
-      uz: "Ortopediya: Tsirkon va Keramika Koronkalar",
+      uz: "Ortopediya: Sirkon va Keramika Koronkalar",
       ru: "Ортопедия: Циркониевые и Керамические Коронки",
       en: "Orthopedics: Zirconia & Ceramic Crowns",
     },
@@ -92,6 +92,7 @@ export const BOOKING_SERVICES = [
 export const normalizeBookingServiceId = (id) => {
   if (!id) return "consultation";
   const map = {
+    "sirkon-keramika-koronka": "crowns",
     "tsirkon-keramika-koronka": "crowns",
     crowns: "crowns",
     "dental-implant": "implant",

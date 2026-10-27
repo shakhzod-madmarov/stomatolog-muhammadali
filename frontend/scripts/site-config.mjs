@@ -36,7 +36,7 @@ export const ROUTES = [
     image: {
       src: "src/assets/clinic_room.webp",
       title: "Stomatologik Xizmatlar — Dr. MuhammadAli Davronov",
-      caption: "Ortopediya, terapiya, dental implantatsiya, tsirkon koronkalar, vinirlar va og'riqsiz davolash.",
+      caption: "Ortopediya, terapiya, dental implantatsiya, sirkon koronkalar, vinirlar va og'riqsiz davolash.",
     },
   },
   {
@@ -46,7 +46,7 @@ export const ROUTES = [
     image: {
       src: "src/assets/dr_muhammadali.png",
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba",
-      caption: "Dr. MuhammadAli Davronov — Andijon davlat tibbiyot instituti bitiruvchisi, ortopediya, terapiya va implantologiya mutaxassisi.",
+      caption: "Dr. MuhammadAli Davronov — ortopediya, terapiya va implantologiya mutaxassisi (DM Stomatologiya).",
     },
   },
   {
@@ -90,8 +90,8 @@ export const ROUTES = [
     priority: "0.8",
     image: {
       src: "src/assets/treatment_crowns.webp",
-      title: "Tsirkon va Keramika Koronkalar — Dr. MuhammadAli Davronov",
-      caption: "CAD/CAM frezerlash orqali yuqori mustahkamlikdagi va tabiiy shaffoflikdagi ortopedik qoplamalar",
+      title: "Sirkon va Keramika Koronkalar — Dr. MuhammadAli Davronov",
+      caption: "CAD/CAM frezerlash orqali yuqori mustahkamlikdagi va tabiiy shaffoflikdagi sirkon qoplamalar",
     },
   },
   {

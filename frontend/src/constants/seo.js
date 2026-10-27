@@ -11,8 +11,8 @@ export const PAGE_SEO = {
   home: {
     uz: {
       title: "Dr. MuhammadAli Davronov — Vrach Stomatolog | Ortopediya, Terapiya, Implantologiya | DM Stomatologiya",
-      description: `Dr. MuhammadAli Davronov — ${years} yillik tajribaga ega shifokor-stomatolog. Andijon davlat tibbiyot instituti bitiruvchisi. Ortopediya (tsirkon, vinirlar), terapiya (og'riqsiz davolash), dental implantologiya. DM Stomatologiya, Andijon (Navoiy shox 91). Tel: +998 97 676 01 01.`,
-      keywords: "dr muhammadali davronov, stomatolog muhammadali, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, ortopediya andijon, tish davolash andijon, ogriqsiz tish davolash, tsirkon koronkalar andijon, vinirlar andijon, implantologiya andijon, dental implant, navoiy shoh 91",
+      description: `Dr. MuhammadAli Davronov — ${years} yillik tajribaga ega shifokor-stomatolog. Ortopediya (sirkon, vinirlar), terapiya (og'riqsiz davolash), dental implantologiya. DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy. Tel: +998 97 676 01 01.`,
+      keywords: "dr muhammadali davronov, stomatolog muhammadali, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, ortopediya andijon, tish davolash andijon, ogriqsiz tish davolash, sirkon koronkalar andijon, vinirlar andijon, implantologiya andijon, dental implant, navoiy shoh 91",
     },
     ru: {
       title: "Д-р МухаммадАли Давронов — Врач-Стоматолог | Ортопедия, Терапия, Имплантология | DM Stomatology",
@@ -29,8 +29,8 @@ export const PAGE_SEO = {
     uz: {
       title: "Stomatologik Xizmatlar — Dr. MuhammadAli Davronov | DM Stomatologiya",
       description:
-        "Ortopediya (tsirkon koronkalar, vinirlar, protezlar), terapiya (og'riqsiz davolash, endodontiya) va dental implantologiya. Dr. MuhammadAli Davronov shaxsiy qabuli.",
-      keywords: "stomatologiya xizmatlari andijon, tsirkon qoplama narxi, tish qoplatish andijon, tish implantatsiya narxi, tish oqartirish airflow, tish ildiz kanali davolash, tish protezi andijon",
+        "Ortopediya (sirkon koronkalar, vinirlar, protezlar), terapiya (og'riqsiz davolash, endodontiya) va dental implantologiya. Dr. MuhammadAli Davronov shaxsiy qabuli.",
+      keywords: "stomatologiya xizmatlari andijon, sirkon qoplama narxi, tish qoplatish andijon, tish implantatsiya narxi, tish oqartirish airflow, tish ildiz kanali davolash, tish protezi andijon",
     },
     ru: {
       title: "Стоматологические Услуги — Д-р МухаммадАли Давронов | DM Stomatology",
@@ -48,8 +48,8 @@ export const PAGE_SEO = {
   about: {
     uz: {
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba | DM Stomatologiya",
-      description: `Dr. MuhammadAli Davronov: Andijon davlat tibbiyot instituti bitiruvchisi, ${years} yillik tajribali shifokor-stomatolog. Ortopediya, terapiya va implantologiya. DM Stomatologiya, Andijon.`,
-      keywords: "dr muhammadali davronov biografiya, adti stomatologiya, tajribali tish shifokori andijon, stomatolog diplom, dm stomatologiya shifokori",
+      description: `Dr. MuhammadAli Davronov: ${years} yillik tajribali shifokor-stomatolog. Ortopediya, terapiya va implantologiya. DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy.`,
+      keywords: "dr muhammadali davronov biografiya, tajribali tish shifokori andijon, sirkon tishlar, dm stomatologiya shifokori",
     },
     ru: {
       title: "О Докторе МухаммадАли Давронове — Врач-Стоматолог, Ортопед, Имплантолог",
