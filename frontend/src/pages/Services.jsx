@@ -19,9 +19,9 @@ const Services = ({ onOpenBooking }) => {
 
   const categories = [
     { id: "all", label: { uz: "Barcha Xizmatlar", ru: "Все Услуги", en: "All Services" } },
+    { id: "implantology", label: { uz: "Dental Implantologiya", ru: "Имплантология", en: "Implantology" } },
     { id: "orthopedia", label: { uz: "Ortopediya & Protezlash", ru: "Ортопедия & Протезы", en: "Orthopedics" } },
     { id: "therapy", label: { uz: "Terapiya & Oqartirish", ru: "Терапия & Лечение", en: "Therapy" } },
-    { id: "implantology", label: { uz: "Dental Implantologiya", ru: "Имплантология", en: "Implantology" } },
     { id: "digital", label: { uz: "Raqamli & 3D", ru: "Цифровые & 3D", en: "Digital 3D" } },
   ];
 

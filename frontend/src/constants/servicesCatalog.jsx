@@ -11,74 +11,6 @@ import { assets } from "../assets/assets";
 
 export const SERVICES_CATALOG = [
   {
-    id: "tsirkon-keramika-koronka",
-    icon: <DentalVeneerCrown className="w-7 h-7 text-primary" />,
-    image: assets.treatment_crowns,
-    specialtyKey: "orthopedia",
-    badge: {
-      uz: "ORTOPEDIYA · SIRKON",
-      ru: "ОРТОПЕДИЯ · ЦИРКОНИЙ",
-      en: "ORTHOPEDICS · ZIRCONIA",
-    },
-    techTag: {
-      uz: "Metallsiz & Tabiiy",
-      ru: "Без металла и естественно",
-      en: "All-Ceramic & Biocompatible",
-    },
-    featurePill: {
-      uz: "Tabiiy Tishdan Ajralmaydi",
-      ru: "Неотличимо от родного зуба",
-      en: "Indistinguishable from Enamel",
-    },
-    badgeTheme: {
-      badgeBg: "bg-red-50 text-primary border-red-200",
-      warrantyBg: "bg-emerald-50 text-emerald-800 border-emerald-200",
-      accentGlow: "hover:shadow-red-500/10",
-    },
-    category: {
-      uz: "Ortopediya & Protezlash",
-      ru: "Ортопедия и Протезирование",
-      en: "Orthopedics & Prosthodontics",
-    },
-    title: {
-      uz: "Sirkon va Keramika Koronkalar — Mustahkam Tabiiy Qoplamalar",
-      ru: "Циркониевые и Керамические Коронки",
-      en: "Zirconia & Ceramic Dental Crowns",
-    },
-    shortDesc: {
-      uz: "Yemirilgan yoki singan tishlarni tabiiy tish emalidan aslo ajratib bo'lmaydigan, metallsiz va o'ta mustahkam monolit sirkoniy qoplamalar bilan tiklash.",
-      ru: "Восстановление разрушенных зубов коронками из монолитного диоксида циркония: идеальное прилегание, натуральный блеск и никакой тёмной каймы.",
-      en: "Restore broken or heavily filled teeth with metal-free monolithic zirconia and ceramic crowns that match natural translucency flawlessly.",
-    },
-    duration: { uz: "2-3 qabul", ru: "2-3 визита", en: "2-3 visits" },
-    warranty: { uz: "15+ yillik chidamlilik", ru: "Более 15 лет службы", en: "15+ years durability" },
-    highlights: {
-      uz: [
-        "Metallsiz asos: milk chetida hech qachon qora yoki ko'kish chiziq paydo bo'lmaydi",
-        "Monolit sirkoniy kuchi — qattiq taomlarni bemalol chaynash imkoniyati",
-        "Yorug'likni tabiiy tishdek o'tkazadi va tabassumingizga jonli jilo beradi",
-        "Mikron darajasidagi jipslashish — tish ostiga ovqat qoldiqlari kirmaydi",
-      ],
-      ru: [
-        "100% без металла: десна сохраняет здоровый розовый оттенок навсегда",
-        "Сверхпрочный монолитный цирконий выдерживает любые нагрузки",
-        "Естественное преломление света — никто не отличит коронку от своего зуба",
-        "Герметичная микропосадка предотвращает развитие вторичного кариеса",
-      ],
-      en: [
-        "100% metal-free: prevents unsightly gray or dark lines at the gumline",
-        "Exceptional fracture resistance of solid zirconia for confident chewing",
-        "Natural light-transmission and shade grading tailored to adjacent teeth",
-        "Airtight marginal fit guarding against plaque accumulation and decay",
-      ],
-    },
-    keywords: {
-      uz: "sirkon qoplama andijon, sirkon tish narxi, tish qoplatish andijon, keramika koronka, monolit sirkoniy, tabiiy tish emali, ortopediya andijon, dr muhammadali sirkon",
-      ru: "циркониевые коронки андижан, диоксид циркония цена, коронки на зубы андижан, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
-      en: "zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, broken tooth restoration andijan, dental clinic andijan",
-    },
-  },
-  {
     id: "dental-implant",
     icon: <DentalImplantFixture className="w-7 h-7 text-primary" />,
     image: assets.treatment_implant,
@@ -144,6 +76,74 @@ export const SERVICES_CATALOG = [
       uz: "dental implantatsiya andijon, tish implant narxi, sun'iy tish ildizi, biotitan implant, bir kunda tish qo'yish, implantolog andijon, dr muhammadali implantatsiya",
       ru: "имплантация зубов андижан, зубные импланты цена, титановые импланты, имплантация за один день, хирург имплантолог андижан, восстановить зуб без обточки",
       en: "dental implants andijan, tooth implant specialist, biocompatible titanium implant, immediate load implant, oral surgery andijan, permanent tooth replacement",
+    },
+  },
+  {
+    id: "tsirkon-keramika-koronka",
+    icon: <DentalVeneerCrown className="w-7 h-7 text-primary" />,
+    image: assets.treatment_crowns,
+    specialtyKey: "orthopedia",
+    badge: {
+      uz: "ORTOPEDIYA · SIRKON",
+      ru: "ОРТОПЕДИЯ · ЦИРКОНИЙ",
+      en: "ORTHOPEDICS · ZIRCONIA",
+    },
+    techTag: {
+      uz: "Metallsiz & Tabiiy",
+      ru: "Без металла и естественно",
+      en: "All-Ceramic & Biocompatible",
+    },
+    featurePill: {
+      uz: "Tabiiy Tishdan Ajralmaydi",
+      ru: "Неотличимо от родного зуба",
+      en: "Indistinguishable from Enamel",
+    },
+    badgeTheme: {
+      badgeBg: "bg-red-50 text-primary border-red-200",
+      warrantyBg: "bg-emerald-50 text-emerald-800 border-emerald-200",
+      accentGlow: "hover:shadow-red-500/10",
+    },
+    category: {
+      uz: "Ortopediya & Protezlash",
+      ru: "Ортопедия и Протезирование",
+      en: "Orthopedics & Prosthodontics",
+    },
+    title: {
+      uz: "Sirkon va Keramika Koronkalar — Mustahkam Tabiiy Qoplamalar",
+      ru: "Циркониевые и Керамические Коронки",
+      en: "Zirconia & Ceramic Dental Crowns",
+    },
+    shortDesc: {
+      uz: "Yemirilgan yoki singan tishlarni tabiiy tish emalidan aslo ajratib bo'lmaydigan, metallsiz va o'ta mustahkam monolit sirkoniy qoplamalar bilan tiklash.",
+      ru: "Восстановление разрушенных зубов коронками из монолитного диоксида циркония: идеальное прилегание, натуральный блеск и никакой тёмной каймы.",
+      en: "Restore broken or heavily filled teeth with metal-free monolithic zirconia and ceramic crowns that match natural translucency flawlessly.",
+    },
+    duration: { uz: "2-3 qabul", ru: "2-3 визита", en: "2-3 visits" },
+    warranty: { uz: "15+ yillik chidamlilik", ru: "Более 15 лет службы", en: "15+ years durability" },
+    highlights: {
+      uz: [
+        "Metallsiz asos: milk chetida hech qachon qora yoki ko'kish chiziq paydo bo'lmaydi",
+        "Monolit sirkoniy kuchi — qattiq taomlarni bemalol chaynash imkoniyati",
+        "Yorug'likni tabiiy tishdek o'tkazadi va tabassumingizga jonli jilo beradi",
+        "Mikron darajasidagi jipslashish — tish ostiga ovqat qoldiqlari kirmaydi",
+      ],
+      ru: [
+        "100% без металла: десна сохраняет здоровый розовый оттенок навсегда",
+        "Сверхпрочный монолитный цирконий выдерживает любые нагрузки",
+        "Естественное преломление света — никто не отличит коронку от своего зуба",
+        "Герметичная микропосадка предотвращает развитие вторичного кариеса",
+      ],
+      en: [
+        "100% metal-free: prevents unsightly gray or dark lines at the gumline",
+        "Exceptional fracture resistance of solid zirconia for confident chewing",
+        "Natural light-transmission and shade grading tailored to adjacent teeth",
+        "Airtight marginal fit guarding against plaque accumulation and decay",
+      ],
+    },
+    keywords: {
+      uz: "sirkon qoplama andijon, sirkon tish narxi, tish qoplatish andijon, keramika koronka, monolit sirkoniy, tabiiy tish emali, ortopediya andijon, dr muhammadali sirkon",
+      ru: "циркониевые коронки андижан, диоксид циркония цена, коронки на зубы андижан, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
+      en: "zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, broken tooth restoration andijan, dental clinic andijan",
     },
   },
   {

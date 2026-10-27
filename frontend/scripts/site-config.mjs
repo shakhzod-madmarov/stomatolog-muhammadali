@@ -26,7 +26,7 @@ export const ROUTES = [
     image: {
       src: "public/dr_muhammadali_og.png",
       title: "Dr. MuhammadAli Davronov — DM Stomatologiya (5 Yillik Tajriba)",
-      caption: "Dr. MuhammadAli Davronov shaxsiy qabuli. Ortopediya, Terapiya va Implantologiya (DM Stomatologiya, Andijon, Navoiy shox 91).",
+      caption: "Dr. MuhammadAli Davronov shaxsiy qabuli. Implantologiya, Ortopediya va Terapiya (DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy).",
     },
   },
   {
@@ -36,7 +36,7 @@ export const ROUTES = [
     image: {
       src: "src/assets/clinic_room.webp",
       title: "Stomatologik Xizmatlar — Dr. MuhammadAli Davronov",
-      caption: "Ortopediya, terapiya, dental implantatsiya, sirkon koronkalar, vinirlar va og'riqsiz davolash.",
+      caption: "Dental implantatsiya, ortopediya, terapiya, sirkon koronkalar, vinirlar va og'riqsiz davolash.",
     },
   },
   {
@@ -46,7 +46,7 @@ export const ROUTES = [
     image: {
       src: "src/assets/dr_muhammadali.png",
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba",
-      caption: "Dr. MuhammadAli Davronov — ortopediya, terapiya va implantologiya mutaxassisi (DM Stomatologiya).",
+      caption: "Dr. MuhammadAli Davronov — implantologiya, ortopediya va terapiya mutaxassisi (DM Stomatologiya).",
     },
   },
   {

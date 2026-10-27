@@ -12,15 +12,15 @@ export const DOCTOR_INFO = {
     en: "Dental Specialist · Orthopedics, Therapy & Implantology",
   },
   titles: {
-    uz: "Shifokor-Stomatolog · Ortopediya, Terapiya va Implantologiya",
-    ru: "Врач-Стоматолог · Ортопедия, Терапия и Имплантология",
-    en: "Dental Specialist · Orthopedics, Therapy & Implantology",
+    uz: "Shifokor-Stomatolog · Implantologiya, Ortopediya va Terapiya",
+    ru: "Врач-Стоматолог · Имплантология, Ортопедия и Терапия",
+    en: "Dental Specialist · Implantology, Orthopedics & Therapy",
   },
-  specialtiesText: "Ortopediya · Terapiya · Implantologiya · Sirkon & Vinirlar · Og'riqsiz Davolash",
+  specialtiesText: "Implantologiya · Ortopediya · Terapiya · Sirkon & Vinirlar · Og'riqsiz Davolash",
   specialtiesTextLang: {
-    uz: "Ortopediya (Sirkon & E-max) · Terapiya (Og'riqsiz davolash) · Implantologiya · Estetik Vinirlar · Badiiy Restavratsiya",
-    ru: "Ортопедия (Цирконий и E-max) · Терапия (Лечение без боли) · Имплантология · Эстетические Виниры · Художественная Реставрация",
-    en: "Orthopedics (Zirconia & E-max) · Therapy (Painless Care) · Implantology · Aesthetic Veneers · Artistic Restoration",
+    uz: "Implantologiya (Biotitan) · Ortopediya (Sirkon & E-max) · Terapiya (Og'riqsiz davolash) · Estetik Vinirlar",
+    ru: "Имплантология (Биотитан) · Ортопедия (Цирконий и E-max) · Терапия (Лечение без боли) · Эстетические Виниры",
+    en: "Implantology (Biotitanium) · Orthopedics (Zirconia & E-max) · Therapy (Painless Care) · Aesthetic Veneers",
   },
   education: {
     uz: "DM Stomatologiya shifokor-stomatologi",
@@ -28,9 +28,9 @@ export const DOCTOR_INFO = {
     en: "Dental Specialist at DM Stomatology",
   },
   educationFull: {
-    uz: "DM Stomatologiya klinikasida shaxsiy qabul: Ortopediya, Terapiya va Implantologiya",
-    ru: "Персональный приём в клинике DM Stomatology: ортопедия, терапия и имплантология",
-    en: "Personal clinical care at DM Stomatology: orthopedics, therapy, and implantology",
+    uz: "DM Stomatologiya klinikasida shaxsiy qabul: Implantologiya, Ortopediya va Terapiya",
+    ru: "Персональный приём в клинике DM Stomatology: имплантология, ортопедия и терапия",
+    en: "Personal clinical care at DM Stomatology: implantology, orthopedics, and therapy",
   },
   careerStartYear: 2021, // 5+ years of clinical experience in 2026
   experienceYears: 5,

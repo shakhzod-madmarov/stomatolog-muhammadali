@@ -10,39 +10,39 @@ export const getPageSeo = (pageKey, lang = "uz") =>
 export const PAGE_SEO = {
   home: {
     uz: {
-      title: "Dr. MuhammadAli Davronov — Vrach Stomatolog | Ortopediya, Terapiya, Implantologiya | DM Stomatologiya",
-      description: `Dr. MuhammadAli Davronov — ${years} yillik tajribaga ega shifokor-stomatolog. Ortopediya (sirkon, vinirlar), terapiya (og'riqsiz davolash), dental implantologiya. DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy. Tel: +998 97 676 01 01.`,
-      keywords: "dr muhammadali davronov, stomatolog muhammadali, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, ortopediya andijon, tish davolash andijon, ogriqsiz tish davolash, sirkon koronkalar andijon, vinirlar andijon, implantologiya andijon, dental implant, navoiy shoh 91",
+      title: "Dr. MuhammadAli Davronov — Vrach Stomatolog | Implantologiya, Ortopediya, Terapiya | DM Stomatologiya",
+      description: `Dr. MuhammadAli Davronov — ${years} yillik tajribaga ega shifokor-stomatolog. Dental implantologiya (biotitan implantlar), ortopediya (sirkon, vinirlar), terapiya (og'riqsiz davolash). DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy. Tel: +998 97 676 01 01.`,
+      keywords: "implantologiya andijon, dental implant, dr muhammadali davronov, stomatolog muhammadali, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, ortopediya andijon, tish davolash andijon, ogriqsiz tish davolash, sirkon koronkalar andijon, vinirlar andijon, navoiy shoh 91",
     },
     ru: {
-      title: "Д-р МухаммадАли Давронов — Врач-Стоматолог | Ортопедия, Терапия, Имплантология | DM Stomatology",
-      description: `Врач-стоматолог Д-р МухаммадАли Давронов — ${years} лет успешной клинической практики. Выпускник АГМИ. Ортопедия (коронки, виниры), лечение зубов без боли, имплантация. Андижан, проспект Навои, 91. Тел: +998 97 676 01 01.`,
-      keywords: "доктор мухаммадали давронов, стоматолог мухаммадали, стоматолог андижан, стоматология андижан, dm stomatology, ортопедия андижан, лечение зубов без боли, циркониевые коронки андижан, виниры e-max, имплантация зубов андижан, зубной врач андижан, проспект навои 91",
+      title: "Д-р МухаммадАли Давронов — Врач-Стоматолог | Имплантология, Ортопедия, Терапия | DM Stomatology",
+      description: `Врач-стоматолог Д-р МухаммадАли Давронов — ${years} лет успешной клинической практики. Дентальная имплантация, ортопедия (коронки, виниры), лечение зубов без боли. Андижан, проспект Навои, 91. Тел: +998 97 676 01 01.`,
+      keywords: "имплантация зубов андижан, доктор мухаммадали давронов, стоматолог мухаммадали, стоматолог андижан, стоматология андижан, dm stomatology, ортопедия андижан, лечение зубов без боли, циркониевые коронки андижан, виниры e-max, зубной врач андижан, проспект навои 91",
     },
     en: {
-      title: "Dr. MuhammadAli Davronov — Dental Specialist | Orthopedics, Therapy & Implantology | DM Stomatology",
-      description: `Dr. MuhammadAli Davronov — Dental specialist with ${years} years of clinical excellence. Graduate of ASMI. Orthopedics, pain-free therapy, dental implants, zirconia crowns and veneers. Andijan, 91 Navoi Ave. Tel: +998 97 676 01 01.`,
-      keywords: "dr muhammadali davronov, dentist andijan, dental clinic andijan, dm stomatology, orthopedics andijan, painless dentistry, zirconia crowns andijan, dental veneers, dental implants andijan, english speaking dentist uzbekistan",
+      title: "Dr. MuhammadAli Davronov — Dental Specialist | Implantology, Orthopedics & Therapy | DM Stomatology",
+      description: `Dr. MuhammadAli Davronov — Dental specialist with ${years} years of clinical excellence. Dental implants, orthopedics, pain-free therapy, zirconia crowns and veneers. Andijan, 91 Navoi Ave. Tel: +998 97 676 01 01.`,
+      keywords: "dental implants andijan, dr muhammadali davronov, dentist andijan, dental clinic andijan, dm stomatology, orthopedics andijan, painless dentistry, zirconia crowns andijan, dental veneers, english speaking dentist uzbekistan",
     },
   },
   services: {
     uz: {
       title: "Stomatologik Xizmatlar — Dr. MuhammadAli Davronov | DM Stomatologiya",
       description:
-        "Ortopediya (sirkon koronkalar, vinirlar, protezlar), terapiya (og'riqsiz davolash, endodontiya) va dental implantologiya. Dr. MuhammadAli Davronov shaxsiy qabuli.",
-      keywords: "stomatologiya xizmatlari andijon, sirkon qoplama narxi, tish qoplatish andijon, tish implantatsiya narxi, tish oqartirish airflow, tish ildiz kanali davolash, tish protezi andijon",
+        "Dental implantologiya (biotitan implantlar), ortopediya (sirkon koronkalar, vinirlar, protezlar) va terapiya (og'riqsiz davolash). Dr. MuhammadAli Davronov shaxsiy qabuli.",
+      keywords: "tish implantatsiya narxi, dental implantatsiya andijon, stomatologiya xizmatlari andijon, sirkon qoplama narxi, tish qoplatish andijon, tish oqartirish airflow, tish ildiz kanali davolash, tish protezi andijon",
     },
     ru: {
       title: "Стоматологические Услуги — Д-р МухаммадАли Давронов | DM Stomatology",
       description:
-        "Ортопедия (циркониевые коронки, виниры, протезы), терапия (лечение без боли, эндодонтия) и дентальная имплантация. Персональный приём в Андижане.",
-      keywords: "услуги стоматологии андижан, циркониевые коронки цена, виниры андижан, установка импланта андижан, лечение каналов зуба, чистка airflow андижан, зубные протезы",
+        "Дентальная имплантация, ортопедия (циркониевые коронки, виниры, протезы) и терапия (лечение без боли, эндодонтия). Персональный приём в Андижане.",
+      keywords: "установка импланта андижан, имплантация зубов андижан, услуги стоматологии андижан, циркониевые коронки цена, виниры андижан, лечение каналов зуба, чистка airflow андижан, зубные протезы",
     },
     en: {
       title: "Dental Treatments & Services — Dr. MuhammadAli Davronov | DM Stomatology",
       description:
-        "Orthopedics (zirconia crowns, veneers, dentures), therapy (pain-free fillings, endodontics), and dental implants by Dr. MuhammadAli Davronov.",
-      keywords: "dental services andijan, zirconia crown cost, dental implants procedure, e-max veneers andijan, painless cavity filling, teeth whitening airflow, prosthodontics",
+        "Dental implants, orthopedics (zirconia crowns, veneers, dentures), and pain-free therapy by Dr. MuhammadAli Davronov.",
+      keywords: "dental implants procedure, dental services andijan, zirconia crown cost, e-max veneers andijan, painless cavity filling, teeth whitening airflow, prosthodontics",
     },
   },
   about: {

@@ -80,9 +80,9 @@ const About = ({ onOpenBooking }) => {
         en: "2021 – Present",
       },
       title: {
-        uz: `Shifokor-Stomatolog — Ortopediya, Terapiya, Implantologiya (${years} Yillik Tajriba)`,
-        ru: `Врач-Стоматолог — Ортопедия, Терапия, Имплантология (${years} Лет Опыта)`,
-        en: `Dental Specialist — Orthopedics, Therapy, Implantology (${years} Years Practice)`,
+        uz: `Shifokor-Stomatolog — Implantologiya, Ortopediya, Terapiya (${years} Yillik Tajriba)`,
+        ru: `Врач-Стоматолог — Имплантология, Ортопедия, Терапия (${years} Лет Опыта)`,
+        en: `Dental Specialist — Implantology, Orthopedics, Therapy (${years} Years Practice)`,
       },
       desc: {
         uz: "Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uyda joylashgan DM Stomatologiya klinikasida 3,500+ dan ortiq bemorlarga individual, professional va og'riqsiz xizmat ko'rsatish.",
@@ -186,10 +186,10 @@ const About = ({ onOpenBooking }) => {
         </h1>
         <p className="text-sm sm:text-base text-slate-600">
           {lang === "uz"
-            ? "DM Stomatologiya klinikasida shaxsiy qabul: Ortopediya, terapiya va implantologiya sohasida zamonaviy og'riqsiz yechimlar."
+            ? "DM Stomatologiya klinikasida shaxsiy qabul: Implantologiya, ortopediya va terapiya sohasida zamonaviy og'riqsiz yechimlar."
             : lang === "ru"
-            ? "Персональный приём в клинике DM Stomatology: ортопедия, лечение без боли и надёжная дентальная имплантация."
-            : "Dedicated clinical practice at DM Stomatology: orthopedics, pain-free therapy, and modern dental implantology."}
+            ? "Персональный приём в клинике DM Stomatology: дентальная имплантация, ортопедия и лечение без боли."
+            : "Dedicated clinical practice at DM Stomatology: dental implantology, orthopedics, and pain-free therapy."}
         </p>
       </header>
 
