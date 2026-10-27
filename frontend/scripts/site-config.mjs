@@ -26,7 +26,7 @@ export const ROUTES = [
     image: {
       src: "public/dr_muhammadali_og.png",
       title: "Dr. MuhammadAli Davronov — DM Stomatologiya (5 Yillik Tajriba)",
-      caption: "Dr. MuhammadAli Davronov shaxsiy qabuli. Implantologiya, Ortopediya va Terapiya (DM Stomatologiya, Andijon shahri, Prospekt Navoiy shoh ko'chasi 91-uy).",
+      caption: "Dr. MuhammadAli Davronov shaxsiy qabuli. Implantologiya, Ortopediya va Terapiya (DM Stomatologiya, Andijon shahri, Prospekt, Navoiy shoh ko'chasi 91-uy).",
     },
   },
   {

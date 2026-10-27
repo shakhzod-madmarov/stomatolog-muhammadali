@@ -11,7 +11,7 @@ export const ClinicLocationMap = () => {
     uz: {
       badge: "KLINIKA VA QABUL MANZILI",
       title: "DM Stomatologiya — Dr. MuhammadAli Davronov",
-      subtitle: "Dr. MuhammadAli Davronov bemorlarni Andijon shahrida Prospekt Navoiy shoh ko'chasida joylashgan zamonaviy DM Stomatologiya klinikasida shaxsan qabul qiladi.",
+      subtitle: "Dr. MuhammadAli Davronov bemorlarni Andijon shahrida Prospekt, Navoiy shoh ko'chasida joylashgan zamonaviy DM Stomatologiya klinikasida shaxsan qabul qiladi.",
       addressTitle: "Manzil:",
       landmarkTitle: "Mo'ljal:",
       hoursTitle: "Qabul vaqti:",

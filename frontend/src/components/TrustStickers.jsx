@@ -92,11 +92,11 @@ const STICKERS_DATA = [
       en: "DM Stomatology",
     },
     subtitle: {
-      uz: "Prospekt Navoiy shoh ko'chasi 91-uy",
-      ru: "Андижан, проспект Навои, 91",
+      uz: "Prospekt, Navoiy shoh ko'chasi 91-uy",
+      ru: "Андижан, проспект, Навои, 91",
       en: "91 Navoi Avenue, Andijan",
     },
-    stampText: "ANDIJON · PROSPEKT NAVOIY 91",
+    stampText: "ANDIJON · PROSPEKT, NAVOIY 91",
     sealColor: "from-primary/10 to-red-600/5",
   },
 ];
