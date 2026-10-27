@@ -7,6 +7,7 @@ import Seo from "../components/Seo";
 import { buildDoctorProfileSchema } from "../utils/structuredData";
 import ClinicLocationMap from "../components/ClinicLocationMap";
 import Doctor3DCard from "../components/Doctor3DCard";
+import WorkingRoomShowcase from "../components/WorkingRoomShowcase";
 import {
   IconShieldCheck,
   IconGentleComfort,
@@ -195,6 +196,9 @@ const About = ({ onOpenBooking }) => {
 
       {/* Doctor 3D Card Component */}
       <Doctor3DCard />
+
+      {/* Dr. MuhammadAli's Working Room & Door #1 Showcase */}
+      <WorkingRoomShowcase />
 
       {/* Professional Philosophy & Bio */}
       <section aria-labelledby="philosophy-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">

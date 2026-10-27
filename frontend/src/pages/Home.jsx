@@ -7,6 +7,7 @@ import Seo from "../components/Seo";
 import InlineBookingSection from "../components/InlineBookingSection";
 import ClinicLocationMap from "../components/ClinicLocationMap";
 import FaqAccordion from "../components/FaqAccordion";
+import WorkingRoomShowcase from "../components/WorkingRoomShowcase";
 import { buildHomePageSchema } from "../utils/structuredData";
 import {
   IconPhone,
@@ -424,7 +425,7 @@ const AboutDoctorSection = () => {
     uz: {
       badge: "SHIFOKOR HAQIDA",
       title: "Dr. MuhammadAli Davronov",
-      subtitle: "DM Stomatologiya · Implantologiya, Ortopediya va Terapiya",
+      subtitle: "DM Stomatologiya, 1-xona · Implantologiya, Ortopediya va Terapiya",
       p1: "Klinikamizda har bir bemorni shaxsan qabul qilaman va davolash rejasini individual tarzda tuzaman. Zamonaviy stomatologik uskunalar, xalqaro sterilizatsiya va professional ko'rik yordamida har bir muolaja yuqori aniqlikda, sifatli va to'liq og'riqsiz amalga oshiriladi.",
       p2: "DM Stomatologiyada biz faqat 3 ta asosiy yo'nalishga chuqur ixtisoslashganmiz: zamonaviy Dental Implantologiya, Ortopediya (estetik sirkon koronkalar va vinirlar) hamda Terapiya (tishlarni og'riqsiz davolash va restavratsiya).",
       feat1Title: "Shaxsiy Qabul",
@@ -438,7 +439,7 @@ const AboutDoctorSection = () => {
     ru: {
       badge: "О ВРАЧЕ",
       title: "Д-р МухаммадАли Давронов",
-      subtitle: "DM Stomatology · Имплантология, Ортопедия и Терапия",
+      subtitle: "DM Stomatology, кабинет №1 · Имплантология, Ортопедия и Терапия",
       p1: "В нашей клинике я лично веду приём каждого пациента и составляю индивидуальный план лечения. Современное оборудование, точный осмотр и строгие стандарты стерилизации позволяют выполнять лечение зубов с максимальной точностью и без боли.",
       p2: "В DM Stomatology мы сфокусированы на 3 ключевых направлениях: надёжная Дентальная Имплантация, Ортопедия (циркониевые коронки и виниры) и Терапия (лечение и реставрация зубов без боли).",
       feat1Title: "Личный Приём",
@@ -452,7 +453,7 @@ const AboutDoctorSection = () => {
     en: {
       badge: "ABOUT THE DOCTOR",
       title: "Dr. MuhammadAli Davronov",
-      subtitle: "DM Stomatology · Implantology, Orthopedics & Therapy",
+      subtitle: "DM Stomatology, Room #1 · Implantology, Orthopedics & Therapy",
       p1: "At DM Stomatology, I personally welcome each patient and develop tailored treatment plans. Utilizing advanced dental technology, thorough clinical evaluation, and rigorous sterilization protocols, every treatment is delivered with uncompromising precision and total comfort.",
       p2: "Our clinical focus is dedicated to 3 core dental specialties: Dental Implantology, Orthopedics (aesthetic zirconia crowns and veneers), and Therapy (gentle, pain-free restorative care).",
       feat1Title: "Personal Doctor Care",
@@ -594,6 +595,13 @@ const Home = ({ onOpenBooking }) => {
 
       {/* 3. About Dr. MuhammadAli Davronov & Personal Philosophy */}
       <AboutDoctorSection />
+
+      {/* 3b. Dr. MuhammadAli's Private Working Room (Room #1) */}
+      <section className="w-full pb-12 sm:pb-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <WorkingRoomShowcase />
+        </div>
+      </section>
 
       {/* 4. Direct Online Booking Section */}
       <InlineBookingSection />

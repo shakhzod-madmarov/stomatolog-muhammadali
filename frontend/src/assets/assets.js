@@ -11,6 +11,7 @@ import treatmentVeneers from "./treatment_veneers.webp";
 import treatmentWhitening from "./treatment_whitening.webp";
 import treatmentSurgery from "./treatment_surgery.webp";
 import clinicRoom from "./clinic_room.webp";
+import clinicDoor from "./clinic_door.webp";
 import heroTooth from "./hero_3d_tooth.webp";
 import heroSmile from "./hero_smile.webp";
 
@@ -29,6 +30,7 @@ export const assets = {
   treatment_whitening: treatmentWhitening,
   treatment_surgery: treatmentSurgery,
   clinic_room: clinicRoom,
+  clinic_door: clinicDoor,
   hero_3d_tooth: heroTooth,
   hero_smile: heroSmile,
 };
