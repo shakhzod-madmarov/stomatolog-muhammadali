@@ -164,14 +164,14 @@ export const CertificatesShowcase = ({ className = "" }) => {
                   <h3 className="font-serif font-bold text-base sm:text-lg text-slate-900 leading-snug">
                     {cert.title[lang] || cert.title.uz}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {cert.description[lang] || cert.description.uz}
                   </p>
 
                   {/* Highlights Bullet Points */}
                   <ul className="space-y-1.5 pt-2 border-t border-slate-100">
                     {(cert.highlights[lang] || cert.highlights.uz).map((h, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                      <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
                         <span className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                           <IconShieldCheck className="w-3 h-3" />
                         </span>
@@ -182,7 +182,7 @@ export const CertificatesShowcase = ({ className = "" }) => {
                 </div>
 
                 {/* Metadata Footer */}
-                <div className="pt-3 border-t border-slate-100 space-y-1.5 text-[11px] text-slate-500">
+                <div className="pt-3 border-t border-slate-100 space-y-2 text-xs text-slate-600">
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-slate-600">{labels.speakerLabel}</span>
                     <span className="text-slate-800 font-medium">{cert.speakers[lang] || cert.speakers.uz}</span>
@@ -197,7 +197,7 @@ export const CertificatesShowcase = ({ className = "" }) => {
                 <button
                   type="button"
                   onClick={() => setSelectedCert(cert)}
-                  className="w-full mt-2 py-2.5 px-4 rounded-xl text-xs font-bold text-primary bg-primary/5 hover:bg-primary/10 border border-primary/20 transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full mt-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-primary bg-primary/5 hover:bg-primary/10 border border-primary/20 transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

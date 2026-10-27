@@ -68,7 +68,7 @@ const Booking = () => {
               : "Book Online Appointment with Dr. MuhammadAli Davronov"}
           </h1>
 
-          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
             {lang === "uz"
               ? "Dr. MuhammadAli Davronov qabuliga qulay vaqtni tanlang. Dental implantologiya, ortopediya va terapiya bo'yicha DM Stomatologiyada to'liq og'riqsiz, samimiy shaxsiy qabul."
               : lang === "ru"
@@ -76,7 +76,7 @@ const Booking = () => {
               : "Choose a convenient time for your consultation with Dr. MuhammadAli Davronov at DM Stomatology. Dental implants, orthopedics, and therapy with dedicated gentle care."}
           </p>
 
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-semibold text-slate-700 pt-1">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-slate-700 pt-1">
             <span className="flex items-center gap-1.5">
               <DentalDigitalScannerIcon className="w-4 h-4 text-primary" />
               <span>{DOCTOR_INFO.titles[lang] || DOCTOR_INFO.titles.uz}</span>
@@ -88,7 +88,7 @@ const Booking = () => {
           </div>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-xs space-y-2 shrink-0 text-center sm:text-left shadow-2xs w-full md:w-auto">
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-sm space-y-2 shrink-0 text-center sm:text-left shadow-2xs w-full md:w-auto">
           <p className="font-bold text-slate-900">{hours.full}</p>
           <p className="text-slate-500">{hours.sunday}</p>
           <a

@@ -134,12 +134,12 @@ export const Doctor3DCard = () => {
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
               {labels.heading}
             </h2>
-            <p className="text-sm font-bold text-primary mt-0.5">
+            <p className="text-sm sm:text-base font-bold text-primary mt-1">
               {labels.subheading}
             </p>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 flex items-center gap-3">
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-sm text-slate-700 flex items-center gap-3.5">
             <span className="w-8 h-8 rounded-xl bg-red-50 text-primary border border-red-100 flex items-center justify-center shrink-0">
               <IconGraduationCap className="w-4 h-4 text-primary" />
             </span>
@@ -147,7 +147,7 @@ export const Doctor3DCard = () => {
               <span className="font-bold text-slate-900 block">
                 {labels.education}
               </span>
-              <span className="text-[11px] text-slate-500">
+              <span className="text-xs sm:text-sm text-slate-500">
                 {lang === "ru"
                   ? "Специализированная подготовка по челюстно-лицевой хирургии и 5 лет клинической практики"
                   : lang === "en"
@@ -159,7 +159,7 @@ export const Doctor3DCard = () => {
 
           <ul className="space-y-2.5 my-1">
             {labels.highlights.map((hl, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <li key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700 leading-snug">
                 <span className="w-5 h-5 rounded-full bg-red-50 text-primary border border-red-200 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
                   ✓
                 </span>
@@ -170,13 +170,13 @@ export const Doctor3DCard = () => {
 
           <div className="p-4 rounded-2xl bg-red-50/50 border border-red-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
             <div>
-              <span className="text-[11px] font-bold text-slate-500 block uppercase tracking-wider">
+              <span className="text-xs sm:text-sm font-bold text-slate-500 block uppercase tracking-wider">
                 {labels.callDirect}
               </span>
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1">
                 <a
                   href={DOCTOR_INFO.phoneHref}
-                  className="font-mono text-sm sm:text-base font-bold text-primary hover:underline whitespace-nowrap"
+                  className="font-mono text-base sm:text-lg font-bold text-primary hover:underline whitespace-nowrap"
                 >
                   {DOCTOR_INFO.phoneDisplay}
                 </a>

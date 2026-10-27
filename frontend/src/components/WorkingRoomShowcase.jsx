@@ -178,7 +178,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                 {labels.doctorTag}
               </span>
             </div>
-            <div className="space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+            <div className="space-y-2 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-2.5">
               <div className="flex items-center gap-2">
                 <IconLocationPin className="w-3.5 h-3.5 text-primary shrink-0" />
                 <span className="line-clamp-1">{labels.addressLine}</span>
@@ -218,7 +218,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
 
             {/* Room Features & Description */}
             <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between bg-white border-t border-slate-100">
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
                 {labels.roomDesc}
               </p>
 
@@ -230,10 +230,10 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                       {idx === 1 && <DentalToothMolar className="w-4 h-4 text-primary" />}
                       {idx === 2 && <IconShieldCheck className="w-4 h-4 text-primary" />}
                     </div>
-                    <h4 className="text-xs font-bold text-slate-900">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">
                       {feat.title}
                     </h4>
-                    <p className="text-[11px] text-slate-500 mt-1 leading-snug">
+                    <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-snug">
                       {feat.desc}
                     </p>
                   </div>
@@ -277,7 +277,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                   <IconLocationPin className="w-4 h-4 text-primary shrink-0" />
                   <span>{labels.locationPill}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   {labels.doorDesc}
                 </p>
               </div>

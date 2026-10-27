@@ -92,7 +92,7 @@ const HeroSection = ({ onOpenBooking }) => {
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
-              <span className="text-xs font-bold text-primary tracking-wide">
+              <span className="text-xs sm:text-sm font-bold text-primary tracking-wide">
                 {t.badge}
               </span>
             </div>
@@ -108,7 +108,7 @@ const HeroSection = ({ onOpenBooking }) => {
             </p>
 
             {/* Bio paragraph: Concise, warm, personal */}
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mb-8">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mb-8">
               {t.bio}
             </p>
 
@@ -117,7 +117,7 @@ const HeroSection = ({ onOpenBooking }) => {
               <button
                 type="button"
                 onClick={onOpenBooking}
-                className="px-8 py-3.5 rounded-full font-bold text-sm text-white bg-primary hover:bg-primary-hover active:scale-95 shadow-colgate hover:shadow-colgate-lg transition-all text-center flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full font-bold text-base text-white bg-primary hover:bg-primary-hover active:scale-95 shadow-colgate hover:shadow-colgate-lg transition-all text-center flex items-center justify-center gap-2"
               >
                 <span>{t.ctaBook}</span>
                 <span>→</span>
@@ -125,7 +125,7 @@ const HeroSection = ({ onOpenBooking }) => {
 
               <a
                 href={DOCTOR_INFO.phoneHref}
-                className="px-6 py-3.5 rounded-full font-bold text-sm text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 hover:border-primary hover:text-primary transition-all text-center flex items-center justify-center gap-2 shadow-2xs"
+                className="px-6 py-4 rounded-full font-bold text-base text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 hover:border-primary hover:text-primary transition-all text-center flex items-center justify-center gap-2 shadow-2xs"
               >
                 <IconPhone className="w-4 h-4 text-primary" />
                 <span className="font-mono">{DOCTOR_INFO.phoneDisplay}</span>
