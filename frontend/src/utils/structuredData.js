@@ -148,6 +148,35 @@ export const buildDoctorProfileSchema = (lang = "uz", breadcrumbs = []) => {
         "name": DOCTOR_INFO.education[lang] || DOCTOR_INFO.education.uz,
       },
       "medicalSpecialty": ["Dentistry", "Prosthodontics", "Implantology", "RestorativeDentistry"],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "DIO Implant — Digital Implantology & Complete Clinical Cases",
+          "credentialCategory": "Certificate",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "DIO Implant"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Dentium Implant System — Basic Course for Implantation",
+          "credentialCategory": "Certificate",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Dentium Uzbekistan"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Moissanite Dental — One-Stage Implant Masterclass",
+          "credentialCategory": "Certificate",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Moissanite Dental"
+          }
+        }
+      ],
       "knowsAbout": [
         "Orthopedics",
         "Therapy",

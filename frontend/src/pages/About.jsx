@@ -8,6 +8,7 @@ import { buildDoctorProfileSchema } from "../utils/structuredData";
 import ClinicLocationMap from "../components/ClinicLocationMap";
 import Doctor3DCard from "../components/Doctor3DCard";
 import WorkingRoomShowcase from "../components/WorkingRoomShowcase";
+import CertificatesShowcase from "../components/CertificatesShowcase";
 import {
   IconShieldCheck,
   IconGentleComfort,
@@ -42,19 +43,53 @@ const About = ({ onOpenBooking }) => {
     },
     {
       year: {
-        uz: "Implantologiya",
-        ru: "Имплантология",
-        en: "Implantology",
+        uz: "2023 · Dentium",
+        ru: "2023 · Dentium",
+        en: "2023 · Dentium",
       },
       title: {
-        uz: "Biotitan Dental Implantologiya va Jarrohlik",
-        ru: "Дентальная имплантация и хирургия",
-        en: "Dental Implants & Oral Surgery",
+        uz: "Dentium Implant System — Jarrohlik Kursi (KOL Dr. Yusupov U.)",
+        ru: "Dentium Implant System — Хирургический курс (KOL Dr. Yusupov U.)",
+        en: "Dentium Implant System — Surgical Certification (KOL Dr. Yusupov U.)",
       },
       desc: {
-        uz: "Biotitan implantlar, navigatsion jarrohlik shablonlari asosida og'riqsiz va asoratsiz tish tiklash amaliyoti.",
-        ru: "Биосовместимые титановые импланты, навигационные хирургические шаблоны, бережная имплантация без разрезов десны.",
-        en: "Computer-guided titanium implants, atraumatic surgical protocols, and immediate restorations.",
+        uz: "Janubiy Koreyaning yetakchi Dentium biotitan implantatlarini suyakka to'g'ri o'rnatish, yuqori osteointegratsiya va xavfsiz jarrohlik bo'yicha rasmiy sertifikat.",
+        ru: "Официальный сертификат по протоколам остеоинтеграции и хирургической установке премиальных южнокорейских имплантов Dentium.",
+        en: "Official surgical certification in osseointegration, primary stability, and safe surgical placement of South Korea's Dentium Implant System.",
+      },
+    },
+    {
+      year: {
+        uz: "2024 · One-Stage",
+        ru: "2024 · One-Stage",
+        en: "2024 · One-Stage",
+      },
+      title: {
+        uz: "One-Stage Implant — Bir Bosqichli Tezkor Implantatsiya (Dr. E. Mustafaev)",
+        ru: "One-Stage Implant — Одномоментная имплантация (Dr. E. Mustafaev)",
+        en: "One-Stage Implant — Immediate Placement Masterclass (Dr. E. Mustafaev)",
+      },
+      desc: {
+        uz: "Moissanite Dental 8 soatlik intensiv amaliy kursi: tish olingan zahoti o'sha joyga yangi implantat o'rnatish va darhol estetik tish qo'yish mahorati.",
+        ru: "Интенсивный 8-часовой практический курс Moissanite Dental: установка импланта в лунку удалённого зуба с немедленной нагрузкой за 1 визит.",
+        en: "Moissanite Dental 8-hour hands-on masterclass: immediate post-extraction socket implant placement and same-day provisionalization.",
+      },
+    },
+    {
+      year: {
+        uz: "DIO Implant",
+        ru: "DIO Implant",
+        en: "DIO Implant",
+      },
+      title: {
+        uz: "DIO Implant — 3D Raqamli Navigatsion Implantologiya (Andijon)",
+        ru: "DIO Implant — Цифровая навигационная имплантология (Андижан)",
+        en: "DIO Implant — 3D Digital Guided Implantology (Andijan)",
+      },
+      desc: {
+        uz: "Dr. O'tkirbek Vohidov va Dr. Faridun Axtamov seminarida 3D navigatsion shablonlar yordamida to'liq tishsizlik bo'yicha murakkab klinik keyslarni muvaffaqiyatli tiklash.",
+        ru: "Клинический семинар др. Уткирбека Вахидова и др. Фаридуна Ахтамова: 3D шаблоны и комплексные решения при полной адентии на системе DIO Implant.",
+        en: "Clinical mastery seminar with Dr. Utkirbek Vakhidov and Dr. Faridun Akhtamov: computer-guided 3D surgical templates and full-arch solutions on DIO Implant.",
       },
     },
     {
@@ -199,6 +234,9 @@ const About = ({ onOpenBooking }) => {
 
       {/* Dr. MuhammadAli's Working Room & Door #1 Showcase */}
       <WorkingRoomShowcase />
+
+      {/* Dr. MuhammadAli's Official Certificates Showcase */}
+      <CertificatesShowcase />
 
       {/* Professional Philosophy & Bio */}
       <section aria-labelledby="philosophy-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">

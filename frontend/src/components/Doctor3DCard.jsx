@@ -21,10 +21,11 @@ export const Doctor3DCard = () => {
       experience: "5 Yillik Klinik Tajriba",
       education: "DM Stomatologiya shifokor-stomatologi",
       highlights: [
-        "Dental Implantologiya: Biotitan implantlar va navigatsion jarrohlik",
-        "Ortopediya: Sirkon koronkalar, E-max press-vinirlar va estetik protezlash",
-        "Terapiya: 100% og'riqsiz karies va ildiz kanallarini davolash (endodontiya)",
-        "DM Stomatologiya klinikasida (1-xona) zamonaviy xalqaro standartlar asosida shaxsiy qabul",
+        "Dental Implantologiya: Dentium va DIO Implant tizimlari bo'yicha xalqaro sertifikatlangan amaliyot",
+        "Bir bosqichli (One-Stage) tezkor implantatsiya: tish olingan kuni o'sha zahoti yangi tish qo'yish",
+        "Ortopediya: Estetik sirkon koronkalar, E-max press-vinirlar va aniq protezlash",
+        "Terapiya: 100% og'riqsiz karies va ildiz kanallarini (endodontiya) asoratsiz davolash",
+        "DM Stomatologiya klinikasida (1-xona) zamonaviy xalqaro xavfsizlik protokollari asosida shaxsiy qabul",
       ],
       callDirect: "Dr. MuhammadAli bilan to'g'ridan-to'g'ri bog'lanish:",
     },
@@ -35,7 +36,8 @@ export const Doctor3DCard = () => {
       experience: "5 Лет Клинической Практики",
       education: "Врач-стоматолог клиники DM Stomatology",
       highlights: [
-        "Имплантология: Биосовместимые титановые импланты и навигационная хирургия",
+        "Имплантология: Сертифицированный хирург южнокорейских систем Dentium и DIO Implant",
+        "Одномоментная имплантация (One-Stage): установка импланта сразу в день удаления зуба",
         "Ортопедия: Циркониевые коронки, эстетические виниры E-max и точное протезирование",
         "Терапия: 100% безболезненное лечение кариеса и корневых каналов без страха",
         "Персональный приём в клинике DM Stomatology (кабинет №1) по международным стандартам",
@@ -49,9 +51,10 @@ export const Doctor3DCard = () => {
       experience: "5 Years Clinical Excellence",
       education: "Dental specialist at DM Stomatology",
       highlights: [
-        "Dental Implantology: Biocompatible titanium implants and precision guided surgery",
-        "Orthopedics: Zirconia crowns, E-max veneers, and precision prosthetics",
-        "Therapy: 100% painless cavity treatment and root canal therapy",
+        "Dental Implantology: Certified clinical specialist on Dentium & DIO Implant systems",
+        "One-Stage Immediate Implants: Same-day post-extraction implant placement and restoration",
+        "Orthopedics: Zirconia crowns, E-max veneers, and precision aesthetic prosthetics",
+        "Therapy: 100% painless cavity treatment and modern endodontic therapy",
         "Private clinical practice at DM Stomatology (Room #1) adhering to international standards",
       ],
       callDirect: "Direct contact with Dr. MuhammadAli:",
@@ -85,7 +88,11 @@ export const Doctor3DCard = () => {
                 Dr. MuhammadAli Davronov
               </span>
               <span className="text-[11px] text-zinc-300">
-                Ortopediya · Terapiya · Implantologiya
+                {lang === "ru"
+                  ? "Имплантология · Ортопедия · Терапия"
+                  : lang === "en"
+                  ? "Implantology · Orthopedics · Therapy"
+                  : "Implantologiya · Ortopediya · Terapiya"}
               </span>
             </div>
 
@@ -94,7 +101,7 @@ export const Doctor3DCard = () => {
               <span className="w-3.5 h-3.5 rounded-full bg-emerald-500 text-white text-[8px] font-black flex items-center justify-center">
                 ✓
               </span>
-              <span>5 Yillik Tajriba</span>
+              <span>{labels.experience}</span>
             </div>
           </div>
         </div>
@@ -109,6 +116,16 @@ export const Doctor3DCard = () => {
               <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200 flex items-center gap-1.5">
                 <IconShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 {labels.experience}
+              </span>
+              <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200 flex items-center gap-1.5">
+                <IconShieldCheck className="w-3.5 h-3.5 text-amber-600" />
+                <span>
+                  {lang === "ru"
+                    ? "3 Сертификата: Dentium · DIO · One-Stage"
+                    : lang === "en"
+                    ? "3 Certifications: Dentium · DIO · One-Stage"
+                    : "3 ta Sertifikat: Dentium · DIO · One-Stage"}
+                </span>
               </span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">

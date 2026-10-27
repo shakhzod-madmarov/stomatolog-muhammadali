@@ -14,6 +14,9 @@ import clinicRoom from "./clinic_room.webp";
 import clinicDoor from "./clinic_door.webp";
 import heroTooth from "./hero_3d_tooth.webp";
 import heroSmile from "./hero_smile.webp";
+import certOneStage from "./cert_one_stage.webp";
+import certDentium from "./cert_dentium.webp";
+import certDioImplant from "./cert_dio_implant.webp";
 
 export const assets = {
   logo,
@@ -33,4 +36,7 @@ export const assets = {
   clinic_door: clinicDoor,
   hero_3d_tooth: heroTooth,
   hero_smile: heroSmile,
+  cert_one_stage: certOneStage,
+  cert_dentium: certDentium,
+  cert_dio_implant: certDioImplant,
 };
