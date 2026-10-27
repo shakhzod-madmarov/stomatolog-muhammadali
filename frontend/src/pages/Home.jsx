@@ -130,6 +130,17 @@ const HeroSection = ({ onOpenBooking }) => {
                 <IconPhone className="w-4 h-4 text-primary" />
                 <span className="font-mono">{DOCTOR_INFO.phoneDisplay}</span>
               </a>
+
+              <a
+                href={DOCTOR_INFO.telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 rounded-full font-bold text-sm text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 hover:border-sky-300 transition-all text-center flex items-center justify-center gap-2 shadow-2xs active:scale-95"
+                aria-label="Telegram"
+              >
+                <IconTelegram className="w-4 h-4 text-sky-500" />
+                <span>Telegram</span>
+              </a>
             </div>
 
             {/* 3 Simple Key Facts */}

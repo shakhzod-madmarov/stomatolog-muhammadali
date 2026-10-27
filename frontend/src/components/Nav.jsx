@@ -98,30 +98,38 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
 
           {/* Action Hub (Phone + Telegram + Language + Colgate Red Booking Button) */}
           <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-            {/* Direct Phone Call */}
+            {/* Compact Direct Contacts: Phone with Telegram under it */}
+            <div className="hidden min-[460px]:flex flex-col items-end justify-center leading-tight py-0.5">
+              <a
+                href={DOCTOR_INFO.phoneHref}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-primary transition-colors font-mono tracking-tight group"
+                aria-label={a11y.callClinic}
+                title={`${DOCTOR_INFO.phoneDisplay} (Dr. MuhammadAli Davronov)`}
+              >
+                <IconPhone className="w-3 h-3 text-primary group-hover:scale-110 transition-transform shrink-0" />
+                <span>{DOCTOR_INFO.phoneDisplay}</span>
+              </a>
+
+              <a
+                href={DOCTOR_INFO.telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-600 hover:text-sky-700 hover:underline transition-colors mt-0.5 group"
+                aria-label="Telegram"
+                title={`Telegram: ${DOCTOR_INFO.phoneDisplay}`}
+              >
+                <IconTelegram className="w-3 h-3 text-sky-500 group-hover:scale-110 transition-transform shrink-0" />
+                <span>Telegram</span>
+              </a>
+            </div>
+
+            {/* Mobile Call Icon for small screens (<460px) */}
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="hidden min-[400px]:inline-flex items-center justify-center gap-2 h-9 px-3 rounded-full text-xs font-bold text-slate-700 bg-slate-100 border border-slate-200 hover:bg-red-50 hover:text-primary hover:border-red-200 transition-all duration-200 group shadow-2xs"
+              className="min-[460px]:hidden inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-primary border border-slate-200"
               aria-label={a11y.callClinic}
-              title={`${DOCTOR_INFO.phoneDisplay} (Dr. MuhammadAli Davronov)`}
             >
-              <IconPhone className="w-3.5 h-3.5 shrink-0 group-hover:scale-110 transition-transform text-primary" />
-              <span className="hidden 2xl:inline font-mono tracking-tight">
-                {DOCTOR_INFO.phoneDisplay}
-              </span>
-            </a>
-
-            {/* Telegram Direct Link */}
-            <a
-              href={DOCTOR_INFO.telegramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 h-9 px-2.5 sm:px-3 rounded-full text-xs font-bold text-sky-600 bg-sky-50 border border-sky-200 hover:bg-sky-100 hover:border-sky-300 transition-all duration-200 shadow-2xs group"
-              aria-label="Telegram"
-              title={`Telegram: ${DOCTOR_INFO.phoneDisplay}`}
-            >
-              <IconTelegram className="w-4 h-4 text-sky-500 group-hover:scale-110 transition-transform" />
-              <span className="hidden xl:inline text-sky-700 font-semibold">Telegram</span>
+              <IconPhone className="w-4 h-4 text-primary" />
             </a>
 
             {/* Language Switcher */}
