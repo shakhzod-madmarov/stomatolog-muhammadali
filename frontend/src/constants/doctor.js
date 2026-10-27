@@ -1,4 +1,4 @@
-import { assets } from "../assets/assets";
+import { assets } from "../assets/assets.js";
 
 /**
  * Single source of truth for Dr. MuhammadAli Davronov's credentials, career facts, and clinic hours.

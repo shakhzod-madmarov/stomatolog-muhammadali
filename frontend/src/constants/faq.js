@@ -103,4 +103,17 @@ export const FAQ_ITEMS = [
       en: "Dr. MuhammadAli personally conducts a thorough clinical examination and crafts a bespoke, transparent treatment roadmap.",
     },
   },
+  {
+    id: "doctor-qualifications-credentials",
+    q: {
+      uz: "Dr. MuhammadAli Davronovning ma'lumoti va implantologiya bo'yicha qanday sertifikatlari bor?",
+      ru: "Какое образование и сертификаты по имплантации имеет доктор МухаммадАли Давронов?",
+      en: "What educational credentials and implantology certifications does Dr. MuhammadAli hold?",
+    },
+    a: {
+      uz: "Dr. MuhammadAli Davronov Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinaturasini tamomlagan. Shuningdek, Janubiy Koreyaning rasmiy Dentium Implant System, DIO Implant (3D raqamli navigatsion jarrohlik) hamda Moissanite Dental One-Stage (bir bosqichli tezkor implantatsiya) tizimlari bo'yicha xalqaro sertifikatlarga ega.",
+      ru: "Доктор МухаммадАли Давронов окончил клиническую ординатуру по челюстно-лицевой хирургии (ЧЛХ) в Андижанском государственном медицинском институте. Имеет официальные международные сертификаты по южнокорейским системам Dentium, DIO Implant (цифровая 3D навигация) и Moissanite Dental One-Stage (одномоментная имплантация).",
+      en: "Dr. MuhammadAli Davronov completed his Clinical Residency in Oral & Maxillofacial Surgery (OMFS) at Andijan State Medical Institute. He holds certified surgical credentials from South Korea's Dentium Implant System, DIO Implant (3D guided surgery), and Moissanite Dental (One-Stage immediate placement protocol).",
+    },
+  },
 ];

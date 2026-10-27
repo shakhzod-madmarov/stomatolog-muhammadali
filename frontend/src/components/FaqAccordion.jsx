@@ -14,17 +14,17 @@ export const FaqAccordion = () => {
     uz: {
       badge: "KO'P SO'RALADIGAN SAVOLLAR",
       title: "Bemorlar Uchun Muhim Savol-Javoblar",
-      subtitle: "Ortopediya, 100% og'riqsiz terapiya, implantatsiya va qabul tartibi bo'yicha eng muhim ma'lumotlar.",
+      subtitle: "Dental implantatsiya, ortopediya, 100% og'riqsiz terapiya va qabul tartibi bo'yicha eng muhim ma'lumotlar.",
     },
     ru: {
       badge: "ЧАСТЫЕ ВОПРОСЫ",
       title: "Ответы на главные вопросы пациентов",
-      subtitle: "Всё об ортопедии, терапии без боли, дентальной имплантации и порядке записи на приём.",
+      subtitle: "Всё о дентальной имплантации, ортопедии, терапии без боли и порядке записи на приём.",
     },
     en: {
       badge: "FREQUENTLY ASKED QUESTIONS",
       title: "Everything You Need to Know",
-      subtitle: "Key answers regarding orthopedics, pain-free therapy, implants, and appointment booking.",
+      subtitle: "Key answers regarding dental implants, orthopedics, pain-free therapy, and appointment booking.",
     },
   }[lang] || labels.uz;
 

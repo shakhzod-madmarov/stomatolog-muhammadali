@@ -15,42 +15,29 @@ import {
   getClinicTodayStr,
 } from "../lib/medinsonBooking";
 import { formatUzPhone, isUzPhoneComplete } from "../utils/phone";
-import { sanitizePatientName, sanitizeNote, checkRateLimit, isBotSubmission, normalizeDobInput } from "../utils/security";
+import { sanitizePatientName, sanitizeNote, checkRateLimit, isBotSubmission } from "../utils/security";
 import { BOOKING_SERVICES, normalizeBookingServiceId } from "../constants/bookingServices";
-
-const pad2 = (n) => String(n).padStart(2, "0");
-
-const WEEKDAY_SHORT = {
-  uz: ["Ya", "Du", "Se", "Ch", "Pa", "Ju", "Sh"],
-  ru: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-  en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-};
-
-const parseYmd = (s) => {
-  const [y, m, d] = String(s || "").split("-").map(Number);
-  if (!y || !m || !d) return null;
-  return new Date(y, m - 1, d);
-};
+import {
+  parseDateParts,
+  formatKunOyYil,
+  formatKunOyShort,
+  formatLocalizedDob,
+  WEEKDAYS_SHORT,
+} from "../utils/date";
 
 const formatDayParts = (ymd, lang) => {
-  const date = parseYmd(ymd);
-  if (!date) return { weekday: "", dayMonth: ymd, isToday: false };
-  const wds = WEEKDAY_SHORT[lang] || WEEKDAY_SHORT.uz;
+  const parts = parseDateParts(ymd);
+  if (!parts) return { weekday: "", dayNumber: "", monthShort: "", dayMonth: ymd, isToday: false };
+  const wds = WEEKDAYS_SHORT[lang] || WEEKDAYS_SHORT.uz;
   const clinicToday = getClinicTodayStr();
+  const safeLang = ["uz", "ru", "en"].includes(lang) ? lang : "uz";
   return {
-    weekday: wds[date.getDay()],
-    dayMonth: `${pad2(date.getDate())}.${pad2(date.getMonth() + 1)}`,
+    weekday: wds[parts.date.getDay()],
+    dayNumber: parts.day,
+    monthShort: formatKunOyShort(ymd, safeLang),
+    dayMonth: `${String(parts.day).padStart(2, "0")}.${String(parts.month).padStart(2, "0")}`,
     isToday: ymd === clinicToday,
   };
-};
-
-const formatDmy = (ymd) => {
-  if (!ymd) return "";
-  const s = String(ymd).trim();
-  if (/^\d{1,2}\.\d{1,2}\.\d{4}$/.test(s)) return s;
-  const [y, m, d] = s.split("-");
-  if (y && m && d && y.length === 4) return `${d}.${m}.${y}`;
-  return s;
 };
 
 const formatDobInput = (value) => {
@@ -72,6 +59,7 @@ const TEXT = {
     kicker: "Dr. MuhammadAli Davronov · DM Stomatologiya",
     heading: "O'zingizga Qulay Vaqtni Tanlang",
     sub: "Kutish va navbatlarsiz: qulay vaqtni tanlang, qabulda shaxsan Dr. MuhammadAli Davronov sizni kutib oladi.",
+    patientDetailsLegend: "Bemor ma'lumotlari",
     defaultDaysLabel: "Dushanba - Shanba (08:30 – 18:30)",
     serviceLabel: "Xizmat yo'nalishi",
     dayGroupLabel: "1-qadam: Qabul kunini tanlang",
@@ -120,6 +108,7 @@ const TEXT = {
     kicker: "Д-р МухаммадАли Давронов · DM Stomatology",
     heading: "Выберите удобный день и время приёма",
     sub: "Без очередей и ожидания: выберите свободное время для спокойной личной консультации с доктором.",
+    patientDetailsLegend: "Данные пациента",
     defaultDaysLabel: "Понедельник - Суббота (08:30 – 18:30)",
     serviceLabel: "Направление лечения",
     dayGroupLabel: "Шаг 1: Выберите день приёма",
@@ -168,6 +157,7 @@ const TEXT = {
     kicker: "Dr. MuhammadAli Davronov · DM Stomatology",
     heading: "Choose Your Preferred Appointment Time",
     sub: "Zero waiting time: select your convenient slot for personalized, attentive consultation directly with the doctor.",
+    patientDetailsLegend: "Patient details",
     defaultDaysLabel: "Monday - Saturday (08:30 – 18:30)",
     serviceLabel: "Specialty / Treatment",
     dayGroupLabel: "Step 1: Choose appointment date",
@@ -450,13 +440,13 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               {dob ? (
                 <div>
                   <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryDob}:</span>
-                  <span className="font-mono font-bold text-slate-900">{formatDmy(dob)}</span>
+                  <span className="font-semibold text-slate-900 text-xs sm:text-sm">{formatLocalizedDob(dob, lang)}</span>
                 </div>
               ) : null}
               <div>
                 <span className="text-slate-500 block text-[11px] uppercase tracking-wider">{t.summaryWhen}:</span>
-                <span className="font-bold text-primary font-mono">
-                  {formatDmy(selectedDate)} — {selectedTime}
+                <span className="font-bold text-primary text-xs sm:text-sm">
+                  {formatKunOyYil(selectedDate, lang, { includeWeekday: true, includeYear: true })} — <span className="font-mono">{selectedTime}</span>
                 </span>
               </div>
               <div className={dob ? "sm:col-span-2" : ""}>
@@ -587,7 +577,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 {days.map((day) => {
                   const isSelected = day.date === selectedDate;
                   const isClosed = day.isClosed;
-                  const { weekday, dayMonth, isToday } = formatDayParts(day.date, lang);
+                  const { weekday, dayNumber, monthShort, isToday } = formatDayParts(day.date, lang);
 
                   return (
                     <button
@@ -600,7 +590,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         setSelectedDate(day.date);
                         setSelectedTime("");
                       }}
-                      className={`shrink-0 snap-start flex flex-col items-center justify-center min-w-[70px] sm:min-w-[82px] min-h-[52px] sm:min-h-[58px] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-2xl text-center border transition-all duration-200 ${
+                      className={`shrink-0 snap-start flex flex-col items-center justify-center min-w-[70px] sm:min-w-[82px] min-h-[56px] sm:min-h-[62px] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-2xl text-center border transition-all duration-200 cursor-pointer ${
                         isSelected
                           ? "bg-primary text-white border-primary shadow-md scale-[1.02]"
                           : isClosed
@@ -615,8 +605,15 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                       >
                         {isToday ? t.todayLabel : weekday}
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold font-mono mt-0.5">
-                        {dayMonth}
+                      <span className="text-sm sm:text-base font-extrabold font-mono mt-0.5 leading-tight">
+                        {dayNumber}
+                      </span>
+                      <span
+                        className={`text-[10px] sm:text-[11px] font-semibold leading-tight ${
+                          isSelected ? "text-white/80" : "text-slate-500"
+                        }`}
+                      >
+                        {monthShort}
                       </span>
                     </button>
                   );
@@ -628,7 +625,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
             <fieldset className="mb-6 sm:mb-7 border-none p-0 m-0">
               <div className="flex items-center justify-between mb-3 gap-2">
                 <legend className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                  {t.timeGroupLabel} {selectedDate && `(${formatDmy(selectedDate)})`}
+                  {t.timeGroupLabel} {selectedDate && `· ${formatKunOyYil(selectedDate, lang, { includeWeekday: true, includeYear: true })}`}
                 </legend>
                 {selectedTime && (
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
@@ -673,7 +670,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
             {/* Step 3: Patient Inputs & DOB */}
             <fieldset className="mb-5 sm:mb-6 border-none p-0 m-0">
-              <legend className="sr-only">Bemor ma'lumotlari</legend>
+              <legend className="sr-only">{t.patientDetailsLegend}</legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
                 {/* Full Name */}
                 <div>
@@ -803,8 +800,8 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                   <span className="text-slate-600">{t.selectedSlotLabel}</span>
-                  <span className="font-bold text-primary font-mono">
-                    {formatDmy(selectedDate)} — {selectedTime}
+                  <span className="font-bold text-primary">
+                    {formatKunOyYil(selectedDate, lang, { includeWeekday: true, includeYear: true })} — <span className="font-mono">{selectedTime}</span>
                   </span>
                 </div>
                 <span className="text-[11px] text-slate-500 font-medium">
@@ -835,8 +832,8 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 <>
                   <span>{t.submit}</span>
                   {selectedTime && (
-                    <span className="opacity-90 font-mono text-xs sm:text-sm">
-                      ({formatDmy(selectedDate)} {selectedTime})
+                    <span className="opacity-90 font-medium text-xs sm:text-sm">
+                      ({formatKunOyShort(selectedDate, lang)}, {selectedTime})
                     </span>
                   )}
                 </>
