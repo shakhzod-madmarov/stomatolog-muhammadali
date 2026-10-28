@@ -16,6 +16,15 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+User-agent: YandexMobileBot
+Allow: /
+
+User-agent: YandexDirect
+Allow: /
+
+User-agent: YandexMetrika
+Allow: /
+
 # OpenAI / ChatGPT / SearchGPT
 User-agent: GPTBot
 Allow: /
