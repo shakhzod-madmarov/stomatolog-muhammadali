@@ -54,7 +54,7 @@ const Contact = () => {
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
           {lang === "uz" ? "Aloqa va Qabulga Yozilish" : lang === "ru" ? "Контакты и Запись на Приём" : "Contact & Appointments"}
         </h1>
-        <p className="text-sm sm:text-base text-slate-600">
+        <p className="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
           {lang === "uz"
             ? "Dr. MuhammadAli Davronov qabuliga telefon (+998 97 676 01 01), Instagram (@dm.muxammadali) yoki onlayn jadval orqali navbatsiz yozilishingiz mumkin."
             : lang === "ru"
@@ -64,7 +64,7 @@ const Contact = () => {
         <div className="pt-2">
           <Link
             to={to("/booking")}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover hover:scale-102 active:scale-98 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-colgate transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover hover:scale-102 active:scale-98 text-white text-sm sm:text-base font-bold shadow-md hover:shadow-colgate transition-all"
           >
             <span>{lang === "uz" ? "Onlayn Jadvaldan Vaqt Tanlash" : lang === "ru" ? "Онлайн Расписание и Запись" : "Book Online via Schedule"}</span>
             <span>→</span>
@@ -84,17 +84,17 @@ const Contact = () => {
               <IconPhone className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 {lang === "uz" ? "Asosiy Telefon" : lang === "ru" ? "Основной Телефон" : "Primary Phone"}
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                 {hours.full}
               </p>
             </div>
           </div>
           <a
             href={DOCTOR_INFO.phoneHref}
-            className="inline-block text-base font-bold font-mono text-primary hover:underline"
+            className="inline-block text-base sm:text-lg font-bold font-mono text-primary hover:underline"
           >
             {DOCTOR_INFO.phoneDisplay}
           </a>
@@ -107,10 +107,10 @@ const Contact = () => {
               <IconLocationPin className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 {lang === "uz" ? "Klinika Manzili" : lang === "ru" ? "Адрес Клиники" : "Clinic Location"}
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                 {lang === "uz"
                   ? "Andijon shahri, Prospekt, Navoiy shoh ko'chasi 91-uy (mo'ljal: SARIQ BOLA pizza yonida)"
                   : lang === "ru"
@@ -124,7 +124,7 @@ const Contact = () => {
               href={DOCTOR_INFO.yandexMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-xs font-bold text-primary hover:underline"
+              className="inline-block text-sm font-bold text-primary hover:underline"
             >
               {lang === "uz" ? "Yandex Xaritada ochish ↗" : lang === "ru" ? "Открыть в Яндекс Картах ↗" : "Open in Yandex Maps ↗"}
             </a>
@@ -146,10 +146,10 @@ const Contact = () => {
               <IconTelegram className="w-6 h-6 text-sky-500" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 Telegram
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                 {lang === "uz" ? "24/7 tezkor xabarlar" : lang === "ru" ? "Быстрые ответы 24/7" : "Fast messaging 24/7"}
               </p>
             </div>
@@ -171,10 +171,10 @@ const Contact = () => {
               <IconInstagram className="w-6 h-6 text-pink-400" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 Instagram
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                 {lang === "uz" ? "Klinik ishlar va videolar" : lang === "ru" ? "Работы и видео приёма" : "Cases & Clinical Videos"}
               </p>
             </div>

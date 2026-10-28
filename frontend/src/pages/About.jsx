@@ -26,19 +26,19 @@ const About = ({ onOpenBooking }) => {
   const timeline = [
     {
       year: {
-        uz: "Klinik Ordinatura",
-        ru: "Клиническая Ординатура",
-        en: "Clinical Residency",
+        uz: "Klinik Ordinator",
+        ru: "Клинический Ординатор",
+        en: "Clinical Resident",
       },
       title: {
-        uz: "Andijon Davlat Tibbiyot Instituti — Yuz-Jag' Jarrohligi",
-        ru: "Андижанский Государственный Медицинский Институт — Челюстно-лицевая хирургия (ЧЛХ)",
-        en: "Andijan State Medical Institute — Oral & Maxillofacial Surgery",
+        uz: "Andijon Davlat Tibbiyot Instituti — Yuz-Jag' Jarrohligi Klinik Ordinatori",
+        ru: "Андижанский Государственный Медицинский Институт — Клинический ординатор ЧЛХ",
+        en: "Andijan State Medical Institute — Clinical Resident in Oral & Maxillofacial Surgery",
       },
       desc: {
-        uz: "Andijon davlat tibbiyot institutida Yuz-jag' jarrohligi bo'yicha klinik ordinatura: jag' suyaklari anatomiyasi, murakkab jarrohlik va suyak tiklash protokollari bo'yicha chuqur klinik tayyorgarlik.",
-        ru: "Клиническая ординатура по специальности «Челюстно-лицевая хирургия» в АГМИ: стационарная хирургическая школа, углублённая анатомия челюстей и хирургическая точность.",
-        en: "Postgraduate Clinical Residency in Oral & Maxillofacial Surgery at ASMI: advanced jaw anatomy, complex oral surgery, and bone reconstructive protocols.",
+        uz: "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori: jag' suyaklari anatomiyasi, murakkab jarrohlik va suyak tiklash protokollari bo'yicha chuqur klinik tayyorgarlik.",
+        ru: "Клинический ординатор по челюстно-лицевой хирургии в АГМИ: стационарная хирургическая школа, углублённая анатомия челюстей и хирургическая точность.",
+        en: "Clinical Resident in Oral & Maxillofacial Surgery at ASMI: advanced jaw anatomy, complex oral surgery, and bone reconstructive protocols.",
       },
     },
     {
@@ -220,12 +220,12 @@ const About = ({ onOpenBooking }) => {
             ? `Д-р МухаммадАли Давронов — DM Stomatology`
             : `Dr. MuhammadAli Davronov — DM Stomatology`}
         </h1>
-        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg lg:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
           {lang === "uz"
-            ? "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinaturasini tamomlagan. DM Stomatologiya klinikasida mustahkam biotitan implantlar, nafis sirkon qoplamalar va 100% og'riqsiz muolajalar bilan sog'lom jilmayishingizni tiklaymiz."
+            ? "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori. DM Stomatologiya klinikasida mustahkam biotitan implantlar, nafis sirkon qoplamalar va 100% og'riqsiz muolajalar bilan sog'lom jilmayishingizni tiklaymiz."
             : lang === "ru"
-            ? "Клиническая ординатура по челюстно-лицевой хирургии (ЧЛХ) в Андижанском государственном медицинском институте. В клинике DM Stomatology проводит приём по имплантации, ортопедии и терапии без боли."
-            : "Clinical Residency in Oral & Maxillofacial Surgery at Andijan State Medical Institute. Dedicated practice at DM Stomatology restoring smiles with biocompatible implants, zirconia crowns, and pain-free care."}
+            ? "Клинический ординатор по челюстно-лицевой хирургии (ЧЛХ) в Андижанском государственном медицинском институте. В клинике DM Stomatology проводит приём по имплантации, ортопедии и терапии без боли."
+            : "Clinical Resident in Oral & Maxillofacial Surgery at Andijan State Medical Institute. Dedicated practice at DM Stomatology restoring smiles with biocompatible implants, zirconia crowns, and pain-free care."}
         </p>
       </header>
 
@@ -241,21 +241,21 @@ const About = ({ onOpenBooking }) => {
       {/* Professional Philosophy & Bio */}
       <section aria-labelledby="philosophy-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
         <div className="lg:col-span-12 space-y-4">
-          <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider inline-block">
+          <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider inline-block">
             {lang === "ru" ? "ФИЛОСОФИЯ ЛЕЧЕНИЯ" : lang === "en" ? "CLINICAL PHILOSOPHY" : "DAVOLASH FALSAFASI"}
           </span>
-          <h2 id="philosophy-heading" className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
+          <h2 id="philosophy-heading" className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
             {lang === "uz"
               ? "Har Bir Bemorga Shaxsiy E'tibor va Sifatli Natija"
               : lang === "ru"
               ? "Индивидуальный подход и бескомпромиссное качество"
               : "Dedicated Personal Care and Clinical Excellence"}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             {lang === "uz"
-              ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. Andijon davlat tibbiyot institutida Yuz-jag' jarrohligi bo'yicha olgan klinik ordinatura tayyorgarligim har bir implantatsiya va jarrohlik muolajasini yuqori anatomik aniqlikda, asoratsiz va 100% xavfsiz bajarishimga poydevor bo'ldi. DM Stomatologiya klinikasida 5 yillik amaliyotim davomida har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib olganman: tabiiy tish to'qimasini maksimal asraymiz, yo'qotilgan tishlarni esa mustahkam sirkon qoplamalar va xalqaro biotitan implantlar bilan ishonchli tiklaymiz."
+              ? "Stomatologiya — bu shunchaki tish davolash emas, balki insonning hayot sifatini, ishonchini va salomatligini tiklash san'atidir. Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori sifatida olgan chuqur jarrohlik tayyorgarligim har bir implantatsiya va jarrohlik muolajasini yuqori anatomik aniqlikda, asoratsiz va 100% xavfsiz bajarishimga poydevor bo'ldi. DM Stomatologiya klinikasida 5 yillik amaliyotim davomida har bir bemorga o'z oila a'zomdek munosabatda bo'lishni asosiy tamoyil qilib olganman: tabiiy tish to'qimasini maksimal asraymiz, yo'qotilgan tishlarni esa mustahkam sirkon qoplamalar va xalqaro biotitan implantlar bilan ishonchli tiklaymiz."
               : lang === "ru"
-              ? "Стоматология — это искусство возвращения уверенности и здоровья улыбки. Базовая хирургическая школа ординатуры по челюстно-лицевой хирургии в АГМИ дала мне фундаментальные знания анатомии и позволяет проводить любую имплантацию с максимальной безопасностью и без риска осложнений. В клинике DM Stomatology за 5 лет практики я руководствуюсь главным правилом: бережное отношение к пациенту, сохранение каждого родного зуба и проверенные международные протоколы."
+              ? "Стоматология — это искусство возвращения уверенности и здоровья улыбки. Как клинический ординатор по челюстно-лицевой хирургии в АГМИ, опираясь на фундаментальные знания анатомии челюстей и позволяет проводить любую имплантацию с максимальной безопасностью и без риска осложнений. В клинике DM Stomatology за 5 лет практики я руководствуюсь главным правилом: бережное отношение к пациенту, сохранение каждого родного зуба и проверенные международные протоколы."
               : "Dentistry is the art of restoring health, natural beauty, and daily confidence. At DM Stomatology, my commitment is to preserve your natural teeth wherever possible and deliver long-lasting, aesthetic restorations through precision zirconia crowns and biocompatible implants."}
           </p>
 
@@ -263,13 +263,13 @@ const About = ({ onOpenBooking }) => {
             <button
               type="button"
               onClick={onOpenBooking}
-              className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all text-center"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-sm sm:text-base text-white bg-primary hover:bg-primary-hover shadow-md hover:shadow-colgate active:scale-98 transition-all text-center"
             >
               {lang === "ru" ? "Записаться на консультацию" : lang === "en" ? "Book a Consultation" : "Konsultatsiyaga yozilish"}
             </button>
             <a
               href={DOCTOR_INFO.phoneHref}
-              className="w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors text-center"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 shadow-2xs transition-colors text-center"
             >
               {DOCTOR_INFO.phoneDisplay}
             </a>
@@ -279,7 +279,7 @@ const About = ({ onOpenBooking }) => {
 
       {/* Clinical Values & Standards */}
       <section aria-labelledby="standards-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-sm">
-        <h2 id="standards-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
+        <h2 id="standards-heading" className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Стандарты лечения Д-ра МухаммадАли Давронова" : lang === "en" ? "Dr. MuhammadAli Davronov's Clinical Standards" : "Dr. MuhammadAli Davronovning Davolash Standartlari"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -297,10 +297,10 @@ const About = ({ onOpenBooking }) => {
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mb-4 shadow-2xs group-hover:bg-primary group-hover:text-white transition-all">
                     {val.icon}
                   </div>
-                  <h3 className="font-bold text-sm sm:text-base text-slate-900 mb-2">
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-2">
                     {val.title[lang]}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     {val.desc[lang]}
                   </p>
                 </div>
@@ -313,20 +313,20 @@ const About = ({ onOpenBooking }) => {
 
       {/* Career Timeline */}
       <section aria-labelledby="timeline-heading" className="p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm">
-        <h2 id="timeline-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
+        <h2 id="timeline-heading" className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
           {lang === "ru" ? "Профессиональный путь" : lang === "en" ? "Career & Experience Timeline" : "Shifokorning Professional Yo'li"}
         </h2>
         <div className="space-y-6 max-w-3xl mx-auto">
           {timeline.map((item, idx) => (
             <div key={idx} className="flex flex-col sm:flex-row gap-2.5 sm:gap-6 items-start">
-              <span className="inline-block sm:w-32 shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-full text-center border border-primary/20 self-start">
+              <span className="inline-block sm:w-36 shrink-0 text-xs sm:text-sm font-mono font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-full text-center border border-primary/20 self-start">
                 {item.year[lang]}
               </span>
               <div className="pb-5 sm:pb-6 border-b border-slate-200 flex-1 w-full">
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1">
                   {item.title[lang]}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                   {item.desc[lang]}
                 </p>
               </div>

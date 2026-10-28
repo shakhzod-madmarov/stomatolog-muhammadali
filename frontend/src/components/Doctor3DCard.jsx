@@ -19,9 +19,9 @@ export const Doctor3DCard = () => {
       heading: "Dr. MuhammadAli Davronov",
       subheading: "Shifokor-Stomatolog · Implantolog, Ortoped & Terapevt (DM Stomatologiya, 1-xona, Andijon)",
       experience: "5 Yillik Klinik Tajriba",
-      education: "Andijon davlat tibbiyot instituti — Yuz-jag' jarrohligi klinik ordinaturasi",
+      education: "Andijon davlat tibbiyot instituti — Yuz-jag' jarrohligi klinik ordinatori",
       highlights: [
-        "Yuz-jag' jarrohligi ordinaturasi maktabi: har qanday murakkablikdagi anatomik xavfsiz dental implantologiya",
+        "Yuz-jag' jarrohligi klinik ordinatori tajribasi: har qanday murakkablikdagi anatomik xavfsiz dental implantologiya",
         "Dental Implantologiya: Dentium va DIO Implant tizimlari bo'yicha xalqaro sertifikatlangan amaliyot",
         "Bir bosqichli (One-Stage) tezkor implantatsiya: tish olingan kuni o'sha zahoti yangi tish qo'yish",
         "Ortopediya: Estetik sirkon koronkalar, E-max press-vinirlar va aniq protezlash",
@@ -35,7 +35,7 @@ export const Doctor3DCard = () => {
       heading: "Д-р МухаммадАли Давронов",
       subheading: "Врач-Стоматолог · Имплантолог, Ортопед и Терапевт (DM Stomatology, кабинет №1, Андижан)",
       experience: "5 Лет Клинической Практики",
-      education: "АГМИ — Клиническая ординатура по челюстно-лицевой хирургии (ЧЛХ)",
+      education: "АГМИ — Клинический ординатор по челюстно-лицевой хирургии (ЧЛХ)",
       highlights: [
         "Школа ординатуры ЧЛХ: анатомическая безопасность и ювелирная хирургическая имплантация",
         "Имплантология: Сертифицированный хирург южнокорейских систем Dentium и DIO Implant",
@@ -51,7 +51,7 @@ export const Doctor3DCard = () => {
       heading: "Dr. MuhammadAli Davronov",
       subheading: "Dental Specialist · Implantology, Orthopedics & Therapy (DM Stomatology, Room #1, Andijan)",
       experience: "5 Years Clinical Excellence",
-      education: "ASMI — Clinical Residency in Oral & Maxillofacial Surgery",
+      education: "ASMI — Clinical Resident in Oral & Maxillofacial Surgery",
       highlights: [
         "Oral & Maxillofacial Surgery residency mastery: safe anatomical protocols for all surgical implant cases",
         "Dental Implantology: Certified clinical specialist on Dentium & DIO Implant systems",
@@ -87,10 +87,10 @@ export const Doctor3DCard = () => {
                   DM Stomatologiya
                 </span>
               </div>
-              <span className="text-base sm:text-lg font-bold text-white font-serif">
+              <span className="text-lg sm:text-xl font-bold text-white font-serif">
                 Dr. MuhammadAli Davronov
               </span>
-              <span className="text-[11px] text-zinc-300">
+              <span className="text-xs sm:text-sm text-zinc-200">
                 {lang === "ru"
                   ? "Имплантология · Ортопедия · Терапия"
                   : lang === "en"
@@ -131,10 +131,10 @@ export const Doctor3DCard = () => {
                 </span>
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
               {labels.heading}
             </h2>
-            <p className="text-sm sm:text-base font-bold text-primary mt-1">
+            <p className="text-base sm:text-lg font-bold text-primary mt-1.5">
               {labels.subheading}
             </p>
           </div>
@@ -144,22 +144,22 @@ export const Doctor3DCard = () => {
               <IconGraduationCap className="w-4 h-4 text-primary" />
             </span>
             <div>
-              <span className="font-bold text-slate-900 block">
+              <span className="text-base sm:text-lg font-bold text-slate-900 block">
                 {labels.education}
               </span>
-              <span className="text-xs sm:text-sm text-slate-500">
+              <span className="text-sm sm:text-base text-slate-600">
                 {lang === "ru"
                   ? "Специализированная подготовка по челюстно-лицевой хирургии и 5 лет клинической практики"
                   : lang === "en"
-                  ? "Specialized residency in Oral & Maxillofacial Surgery with 5 years clinical excellence"
-                  : "Yuz-jag' jarrohligi bo'yicha maxsus ordinatura tayyorgarligi va 5 yillik klinik tajriba"}
+                  ? "Clinical Resident in Oral & Maxillofacial Surgery with 5 years clinical excellence"
+                  : "Yuz-jag' jarrohligi klinik ordinatori va 5 yillik klinik tajriba"}
               </span>
             </div>
           </div>
 
           <ul className="space-y-2.5 my-1">
             {labels.highlights.map((hl, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700 leading-snug">
+              <li key={i} className="flex items-start gap-2.5 text-base sm:text-lg text-slate-700 leading-normal">
                 <span className="w-5 h-5 rounded-full bg-red-50 text-primary border border-red-200 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
                   ✓
                 </span>

@@ -49,7 +49,7 @@ const Services = ({ onOpenBooking }) => {
       />
 
       {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="text-xs sm:text-sm font-semibold text-slate-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" className="text-sm sm:text-base font-semibold text-slate-500 flex items-center gap-2">
         <Link to={to("/")} className="hover:text-primary transition-colors">
           {lang === "ru" ? "Главная" : lang === "en" ? "Home" : "Bosh sahifa"}
         </Link>
@@ -61,7 +61,7 @@ const Services = ({ onOpenBooking }) => {
 
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 shadow-xs">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 shadow-xs">
           <IconShieldCheck className="w-3.5 h-3.5 text-primary" />
           <span>{getServicesTag(lang)}</span>
         </span>
@@ -72,7 +72,7 @@ const Services = ({ onOpenBooking }) => {
             ? "Клинические Услуги Д-ра МухаммадАли Давронова"
             : "Clinical Treatments & Care by Dr. MuhammadAli Davronov"}
         </h1>
-        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg lg:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
           {lang === "uz"
             ? "Mustahkam biotitan implantlar, estetik sirkon qoplamalar va 100% og'riqsiz davolash. Tishlaringizning tabiiy go'zalligi va chaynash qulayligini 5 yillik tajriba hamda zargarlik aniqligida qayta tiklaymiz."
             : lang === "ru"
@@ -96,7 +96,7 @@ const Services = ({ onOpenBooking }) => {
               role="tab"
               aria-selected={isSelected}
               onClick={() => setActiveCategory(c.id)}
-              className={`shrink-0 whitespace-nowrap min-h-[40px] px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap min-h-[44px] px-4 sm:px-5 py-2.5 rounded-full text-sm sm:text-base font-bold transition-all cursor-pointer ${
                 isSelected
                   ? "bg-primary text-white shadow-md scale-102"
                   : "bg-white text-slate-700 border border-slate-200 hover:text-primary hover:bg-slate-50 shadow-2xs"
@@ -134,25 +134,20 @@ const Services = ({ onOpenBooking }) => {
                     decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/90 text-primary border border-slate-200 backdrop-blur-xs shadow-xs">
-                      {service.featurePill[lang]}
-                    </span>
                   </div>
-                </div>
 
-                <span className="text-[11px] font-bold text-primary uppercase tracking-wider block mb-1">
+                <span className="text-xs sm:text-sm font-bold text-primary uppercase tracking-wider block mb-1.5">
                   {service.category[lang]}
                 </span>
-                <h3 className="text-lg font-bold text-slate-900 hover:text-primary transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 hover:text-primary transition-colors leading-snug">
                   {service.title[lang]}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 mt-2.5 line-clamp-3 leading-relaxed">
                   {service.shortDesc[lang]}
                 </p>
 
                 {/* Highlights */}
-                <ul className="mt-4 space-y-1.5 text-xs text-slate-700">
+                <ul className="mt-4 space-y-2 text-sm sm:text-base text-slate-700">
                   {service.highlights[lang]?.slice(0, 2).map((hl, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-primary font-bold">✓</span>
@@ -165,14 +160,14 @@ const Services = ({ onOpenBooking }) => {
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                 <Link
                   to={to(`/services/${service.id}`)}
-                  className="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
+                  className="text-sm sm:text-base font-bold text-slate-600 hover:text-primary transition-colors"
                 >
                   {lang === "ru" ? "Подробнее →" : lang === "en" ? "Learn more →" : "Batafsil →"}
                 </Link>
                 <button
                   type="button"
                   onClick={() => onOpenBooking(service.id)}
-                  className="px-4 py-2 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-sm hover:shadow-colgate active:scale-98 transition-all"
+                  className="px-5 py-2.5 rounded-full text-sm sm:text-base font-bold text-white bg-primary hover:bg-primary-hover shadow-sm hover:shadow-colgate active:scale-98 transition-all"
                 >
                   {lang === "ru" ? "Записаться" : lang === "en" ? "Book Visit" : "Qabulga yozilish"}
                 </button>

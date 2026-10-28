@@ -641,7 +641,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 ring-1 ring-primary/20">
                     1
                   </span>
-                  <label htmlFor="booking-service-select" className="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
+                  <label htmlFor="booking-service-select" className="text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
                     {t.step1Service}
                   </label>
                 </div>
@@ -687,7 +687,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 ring-1 ring-primary/20">
                     2
                   </span>
-                  <legend className="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
+                  <legend className="text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
                     {t.step2Date}
                   </legend>
                 </div>
@@ -847,7 +847,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 ring-1 ring-primary/20">
                     3
                   </span>
-                  <legend className="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
+                  <legend className="text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
                     {t.step3Time}
                   </legend>
                 </div>
@@ -905,7 +905,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 ring-1 ring-primary/20">
                   4
                 </span>
-                <legend className="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
+                <legend className="text-base sm:text-lg font-bold uppercase tracking-wider text-slate-900">
                   {t.step4Patient}
                 </legend>
               </div>
@@ -913,7 +913,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
                 {/* Full Name */}
                 <div>
-                  <label htmlFor="booking-full-name" className="block text-xs sm:text-sm font-bold text-slate-800 mb-2 uppercase tracking-wide">
+                  <label htmlFor="booking-full-name" className="block text-sm sm:text-base font-bold text-slate-800 mb-2 uppercase tracking-wide">
                     {t.nameLabel}
                   </label>
                   <input
@@ -932,7 +932,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
 
                 {/* Phone Number */}
                 <div>
-                  <label htmlFor="booking-phone-input" className="block text-xs sm:text-sm font-bold text-slate-800 mb-2 uppercase tracking-wide">
+                  <label htmlFor="booking-phone-input" className="block text-sm sm:text-base font-bold text-slate-800 mb-2 uppercase tracking-wide">
                     {t.phoneLabel}
                   </label>
                   <input
@@ -952,7 +952,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 {/* Date of Birth (REQUIRED) */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <label htmlFor="booking-dob-input" className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wide">
+                    <label htmlFor="booking-dob-input" className="block text-sm sm:text-base font-bold text-slate-800 uppercase tracking-wide">
                       {t.dobLabel}
                     </label>
                     {dob && (
@@ -1009,14 +1009,14 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                       </button>
                     </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-500 mt-1.5 leading-normal">
+                  <p className="text-sm text-slate-500 mt-1.5 leading-normal">
                     {t.dobHint}
                   </p>
                 </div>
 
                 {/* Note & Reason (ONLY OPTIONAL FIELD) */}
                 <div>
-                  <label htmlFor="booking-note-textarea" className="block text-xs sm:text-sm font-bold text-slate-800 mb-2 uppercase tracking-wide">
+                  <label htmlFor="booking-note-textarea" className="block text-sm sm:text-base font-bold text-slate-800 mb-2 uppercase tracking-wide">
                     {t.noteLabel}
                   </label>
                   <input
@@ -1028,7 +1028,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                     placeholder={t.notePlaceholder}
                     className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-slate-50/70 hover:bg-slate-50 focus:bg-white border border-slate-200 text-base font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-2xs transition-all"
                   />
-                  <p className="text-xs sm:text-sm text-slate-500 mt-1.5 leading-normal">
+                  <p className="text-sm text-slate-500 mt-1.5 leading-normal">
                     {t.noteHint}
                   </p>
                 </div>

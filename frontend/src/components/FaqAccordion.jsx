@@ -35,10 +35,10 @@ export const FaqAccordion = () => {
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 shadow-xs mb-3 uppercase">
             {labels.badge}
           </span>
-          <h2 id="faq-section-heading" className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+          <h2 id="faq-section-heading" className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
             {labels.title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 mt-2">
+          <p className="text-base sm:text-lg text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed">
             {labels.subtitle}
           </p>
         </div>
@@ -57,15 +57,15 @@ export const FaqAccordion = () => {
                   id={buttonId}
                   type="button"
                   onClick={() => toggleItem(idx)}
-                  className="w-full px-5 sm:px-6 py-4 sm:py-4.5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary group cursor-pointer"
+                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary group cursor-pointer"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                 >
-                  <span className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-primary transition-colors pr-2">
+                  <span className="font-bold text-base sm:text-lg lg:text-xl text-slate-900 group-hover:text-primary transition-colors pr-2 leading-snug">
                     {item.q[lang] || item.q.uz}
                   </span>
                   <span
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 font-bold text-sm ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 font-bold text-sm sm:text-base ${
                       isOpen
                         ? "bg-primary text-white shadow-xs rotate-180"
                         : "bg-slate-100 text-slate-600 border border-slate-200"
@@ -81,7 +81,7 @@ export const FaqAccordion = () => {
                     id={panelId}
                     role="region"
                     aria-labelledby={buttonId}
-                    className="px-5 sm:px-6 pb-5 pt-2 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200"
+                    className="px-6 pb-6 pt-3 text-base sm:text-lg text-slate-700 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200"
                   >
                     {item.a[lang] || item.a.uz}
                   </div>

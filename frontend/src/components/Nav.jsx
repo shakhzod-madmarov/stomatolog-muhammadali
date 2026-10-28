@@ -84,7 +84,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
                 to={to(link.path)}
                 end={link.path === "/"}
                 className={({ isActive }) =>
-                  `relative px-3.5 py-2 text-[14px] font-bold transition-colors duration-150 rounded-lg ${
+                  `relative px-3.5 py-2 text-[15px] xl:text-base font-bold transition-colors duration-150 rounded-lg ${
                     isActive
                       ? "text-primary bg-red-50/80 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary after:rounded-full"
                       : "text-slate-700 hover:text-primary hover:bg-slate-50"
@@ -102,7 +102,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             <div className="hidden min-[460px]:flex flex-col items-end justify-center leading-tight py-0.5">
               <a
                 href={DOCTOR_INFO.phoneHref}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-primary transition-colors font-mono tracking-tight group"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-800 hover:text-primary transition-colors font-mono tracking-tight group"
                 aria-label={a11y.callClinic}
                 title={`${DOCTOR_INFO.phoneDisplay} (Dr. MuhammadAli Davronov)`}
               >
@@ -114,7 +114,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
                 href={DOCTOR_INFO.telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-600 hover:text-sky-700 hover:underline transition-colors mt-0.5 group"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-sky-600 hover:text-sky-700 hover:underline transition-colors mt-0.5 group"
                 aria-label="Telegram"
                 title={`Telegram: ${DOCTOR_INFO.phoneDisplay}`}
               >
@@ -139,7 +139,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
                   key={code}
                   type="button"
                   onClick={() => changeLanguage(code)}
-                  className={`px-2 py-1 text-[11px] font-bold rounded-full transition-all ${
+                  className={`px-2 py-1 text-xs font-bold rounded-full transition-all ${
                     lang === code
                       ? "bg-primary text-white shadow-xs"
                       : "text-slate-600 hover:text-slate-900"
@@ -155,7 +155,7 @@ const Nav = ({ onOpenBooking, topOffset = 0 }) => {
             <button
               type="button"
               onClick={handleBookingClick}
-              className="hidden sm:inline-flex items-center justify-center px-5 h-9 rounded-full text-xs sm:text-[13px] font-bold text-white bg-primary hover:bg-primary-hover shadow-colgate hover:shadow-colgate-lg transition-all duration-200 active:scale-95 shrink-0"
+              className="hidden sm:inline-flex items-center justify-center px-5 h-10 rounded-full text-sm font-bold text-white bg-primary hover:bg-primary-hover shadow-colgate hover:shadow-colgate-lg transition-all duration-200 active:scale-95 shrink-0"
             >
               {bookingBtnLabel}
             </button>

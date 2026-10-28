@@ -158,7 +158,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
             >
               {labels.heading}
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
               {labels.subheading}
             </p>
           </div>
@@ -167,10 +167,10 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
           <div className="lg:col-span-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs flex flex-col justify-between gap-3">
             <div className="flex items-start justify-between gap-2">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-primary block">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary block">
                   {labels.clinicBrand}
                 </span>
-                <span className="text-sm font-bold text-slate-900 block mt-0.5">
+                <span className="text-base font-bold text-slate-900 block mt-0.5">
                   {labels.roomNumberBadge}
                 </span>
               </div>
@@ -228,7 +228,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                       {idx === 1 && <DentalToothMolar className="w-4 h-4 text-primary" />}
                       {idx === 2 && <IconShieldCheck className="w-4 h-4 text-primary" />}
                     </div>
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+                    <h4 className="text-sm sm:text-base font-bold text-slate-900">
                       {feat.title}
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-snug">

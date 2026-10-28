@@ -146,22 +146,22 @@ const HeroSection = ({ onOpenBooking }) => {
             {/* 3 Simple Key Facts */}
             <div className="grid grid-cols-3 gap-4 sm:gap-6 w-full max-w-lg pt-6 border-t border-slate-200/80">
               <div>
-                <span className="text-2xl sm:text-3xl font-bold font-serif text-primary block">
+                <span className="text-3xl sm:text-4xl font-bold font-serif text-primary block">
                   {t.stat1Val}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat1Lbl}</span>
+                <span className="text-sm sm:text-base text-slate-600 font-medium">{t.stat1Lbl}</span>
               </div>
               <div>
-                <span className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 block">
+                <span className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 block">
                   {t.stat2Val}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat2Lbl}</span>
+                <span className="text-sm sm:text-base text-slate-600 font-medium">{t.stat2Lbl}</span>
               </div>
               <div>
-                <span className="text-2xl sm:text-3xl font-bold font-serif text-primary block">
+                <span className="text-3xl sm:text-4xl font-bold font-serif text-primary block">
                   {t.stat3Val}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">{t.stat3Lbl}</span>
+                <span className="text-sm sm:text-base text-slate-600 font-medium">{t.stat3Lbl}</span>
               </div>
             </div>
           </div>
@@ -190,14 +190,14 @@ const HeroSection = ({ onOpenBooking }) => {
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                         {t.cardPill}
                       </span>
                     </div>
-                    <strong className="font-serif font-bold text-sm sm:text-base text-slate-900 leading-tight truncate mt-0.5 block">
+                    <strong className="font-serif font-bold text-base sm:text-lg text-slate-900 leading-tight truncate mt-0.5 block">
                       {DOCTOR_INFO.name}
                     </strong>
-                    <p className="text-[11px] font-semibold text-primary truncate">
+                    <p className="text-xs sm:text-sm font-semibold text-primary truncate">
                       {t.cardRole}
                     </p>
                   </div>
@@ -352,14 +352,14 @@ const CoreSpecialtiesSection = ({ onOpenBooking }) => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
               {labels.title}
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-xl">
+            <p className="text-base sm:text-lg text-slate-700 mt-2 max-w-xl leading-relaxed">
               {labels.subtitle}
             </p>
           </div>
 
           <Link
             to={to("/services")}
-            className="text-xs sm:text-sm font-bold text-primary hover:text-primary-hover flex items-center gap-1 transition-colors self-start md:self-auto"
+            className="text-sm sm:text-base font-bold text-primary hover:text-primary-hover flex items-center gap-1 transition-colors self-start md:self-auto"
           >
             {labels.viewAll}
           </Link>
@@ -382,38 +382,33 @@ const CoreSpecialtiesSection = ({ onOpenBooking }) => {
                     decoding="async"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-2.5 left-2.5">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 text-primary border border-red-100 shadow-xs">
-                      {svc.pill}
-                    </span>
                   </div>
-                </div>
 
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="w-8 h-8 rounded-xl bg-red-50 text-primary flex items-center justify-center shrink-0">
                     {svc.icon}
                   </span>
-                  <h3 className="text-lg font-serif font-bold text-slate-900">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900">
                     {svc.title}
                   </h3>
                 </div>
-                <p className="text-xs font-semibold text-primary mb-2">
+                <p className="text-sm sm:text-base font-semibold text-primary mb-2">
                   {svc.subtitle}
                 </p>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   {svc.desc}
                 </p>
               </div>
 
               <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-medium text-slate-500 inline-flex items-center gap-1.5">
+                <span className="text-sm font-medium text-slate-600 inline-flex items-center gap-1.5">
                   <IconClock className="w-3.5 h-3.5 text-primary" />
                   <span>{svc.duration}</span>
                 </span>
                 <button
                   type="button"
                   onClick={() => onOpenBooking(svc.id)}
-                  className="px-4 py-2 rounded-full text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-2xs hover:shadow-colgate transition-all"
+                  className="px-5 py-2.5 rounded-full text-sm sm:text-base font-bold text-white bg-primary hover:bg-primary-hover shadow-2xs hover:shadow-colgate transition-all"
                 >
                   {labels.bookBtn}
                 </button>
@@ -437,12 +432,12 @@ const AboutDoctorSection = () => {
       badge: "SHIFOKOR HAQIDA",
       title: "Dr. MuhammadAli Davronov",
       subtitle: "DM Stomatologiya, 1-xona · Implantologiya, Ortopediya va Terapiya",
-      p1: "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinaturasida olgan chuqur jarrohlik bilimlarim asosida har bir bemorni shaxsan qabul qilaman. Zamonaviy uskunalar, xalqaro sterilizatsiya va individual yondashuv yordamida barcha muolajalar yuqori aniqlikda va to'liq og'riqsiz o'tadi.",
+      p1: "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori sifatida chuqur jarrohlik bilimlarim asosida har bir bemorni shaxsan qabul qilaman. Zamonaviy uskunalar, xalqaro sterilizatsiya va individual yondashuv yordamida barcha muolajalar yuqori aniqlikda va to'liq og'riqsiz o'tadi.",
       p2: "DM Stomatologiyada biz faqat 3 ta asosiy yo'nalishga chuqur ixtisoslashganmiz: zamonaviy Dental Implantologiya, Ortopediya (estetik sirkon koronkalar va vinirlar) hamda Terapiya (tishlarni og'riqsiz davolash va restavratsiya).",
       feat1Title: "Shaxsiy Qabul",
       feat1Desc: "Har bir bemor bilan shaxsan o'zim ishlayman, muolajaning har bir bosqichi qat'iy nazoratim ostida o'tadi.",
-      feat2Title: "Yuz-Jag' Jarrohligi Ordinaturasi",
-      feat2Desc: "Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinaturasi hamda xalqaro Dentium va DIO implant sertifikatlari.",
+      feat2Title: "Yuz-Jag' Jarrohligi Klinik Ordinatori",
+      feat2Desc: "Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinatori hamda xalqaro Dentium va DIO implant sertifikatlari egasi.",
       feat3Title: "100% Og'riqsiz Muolaja",
       feat3Desc: "Yumshoq zamonaviy anesteziya va ehtiyotkorona yondashuv — muolaja davomida hech qanday og'riq sezmaysiz.",
       callTitle: "To'g'ridan-to'g'ri bog'lanish:",
@@ -451,12 +446,12 @@ const AboutDoctorSection = () => {
       badge: "О ВРАЧЕ",
       title: "Д-р МухаммадАли Давронов",
       subtitle: "DM Stomatology, кабинет №1 · Имплантология, Ортопедия и Терапия",
-      p1: "Опираясь на глубокую хирургическую подготовку в клинической ординатуре по челюстно-лицевой хирургии (АГМИ), я лично веду приём каждого пациента. Международные протоколы и современная анестезия гарантируют безупречную точность и лечение без боли.",
+      p1: "Как клинический ординатор по челюстно-лицевой хирургии (АГМИ), опираясь на фундаментальную хирургическую подготовку, я лично веду приём каждого пациента. Международные протоколы и современная анестезия гарантируют безупречную точность и лечение без боли.",
       p2: "В DM Stomatology мы сфокусированы на 3 ключевых направлениях: надёжная Дентальная Имплантация, Ортопедия (циркониевые коронки и виниры) и Терапия (лечение и реставрация зубов без боли).",
       feat1Title: "Личный Приём",
       feat1Desc: "Я лично провожу каждый этап лечения, без передачи пациентов ассистентам.",
-      feat2Title: "Ординатура по ЧЛХ (АГМИ)",
-      feat2Desc: "Клиническая ординатура по челюстно-лицевой хирургии в АГМИ и международная сертификация по имплантации (Dentium, DIO).",
+      feat2Title: "Клинический Ординатор ЧЛХ (АГМИ)",
+      feat2Desc: "Клинический ординатор по челюстно-лицевой хирургии в АГМИ и международная сертификация по имплантации (Dentium, DIO).",
       feat3Title: "Лечение Без Боли",
       feat3Desc: "Эффективная бережная анестезия гарантирует абсолютный комфорт на протяжении всего визита.",
       callTitle: "Прямая связь с доктором:",
@@ -469,8 +464,8 @@ const AboutDoctorSection = () => {
       p2: "Our clinical focus is dedicated to 3 core dental specialties: Dental Implantology, Orthopedics (aesthetic zirconia crowns and veneers), and Therapy (gentle, pain-free restorative care).",
       feat1Title: "Personal Doctor Care",
       feat1Desc: "Every stage of your treatment is carried out directly by Dr. MuhammadAli himself.",
-      feat2Title: "Oral & Maxillofacial Residency",
-      feat2Desc: "Clinical residency in Oral & Maxillofacial Surgery at ASMI with verified international implant certifications.",
+      feat2Title: "Oral & Maxillofacial Clinical Resident",
+      feat2Desc: "Clinical resident in Oral & Maxillofacial Surgery at ASMI with verified international implant certifications.",
       feat3Title: "100% Pain-Free Care",
       feat3Desc: "Gentle local anesthesia and attentive handling ensure a completely stress-free experience.",
       callTitle: "Direct contact with Dr. MuhammadAli:",
@@ -490,25 +485,25 @@ const AboutDoctorSection = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
                 {labels.title}
               </h2>
-              <p className="text-sm font-bold text-primary">
+              <p className="text-base sm:text-lg font-bold text-primary">
                 {labels.subtitle}
               </p>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
                 {labels.p1}
               </p>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
                 {labels.p2}
               </p>
 
               {/* Direct Contact Bar */}
               <div className="pt-4 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
                     {labels.callTitle}
                   </span>
                   <a
                     href={DOCTOR_INFO.phoneHref}
-                    className="font-mono text-base font-bold text-primary hover:underline"
+                    className="font-mono text-lg font-bold text-primary hover:underline"
                   >
                     {DOCTOR_INFO.phoneDisplay}
                   </a>
@@ -544,10 +539,10 @@ const AboutDoctorSection = () => {
                   <IconShieldCheck className="w-5 h-5" />
                 </span>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900">
                     {labels.feat1Title}
                   </h3>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <p className="text-sm sm:text-base text-slate-600 mt-1 leading-normal">
                     {labels.feat1Desc}
                   </p>
                 </div>
@@ -558,10 +553,10 @@ const AboutDoctorSection = () => {
                   <IconGraduationCap className="w-5 h-5" />
                 </span>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900">
                     {labels.feat2Title}
                   </h3>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <p className="text-sm sm:text-base text-slate-600 mt-1 leading-normal">
                     {labels.feat2Desc}
                   </p>
                 </div>
@@ -572,10 +567,10 @@ const AboutDoctorSection = () => {
                   <DentalToothMolar className="w-5 h-5 text-primary" />
                 </span>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900">
                     {labels.feat3Title}
                   </h3>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <p className="text-sm sm:text-base text-slate-600 mt-1 leading-normal">
                     {labels.feat3Desc}
                   </p>
                 </div>

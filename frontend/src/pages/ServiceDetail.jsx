@@ -154,31 +154,31 @@ const ServiceDetail = () => {
             {service.title[lang]}
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             {service.shortDesc[lang]}
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2">
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
-              <span className="text-slate-500 block text-[10.5px] sm:text-[11px]">
+              <span className="text-slate-500 block text-xs sm:text-sm text-slate-500 font-semibold">
                 {lang === "ru" ? "Длительность" : lang === "en" ? "Duration" : "Vaqt / Muddat"}
               </span>
-              <span className="font-bold text-slate-900 mt-0.5 block">{service.duration[lang]}</span>
+              <span className="text-sm sm:text-base font-bold text-slate-900 mt-0.5 block">{service.duration[lang]}</span>
             </div>
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs shadow-2xs">
-              <span className="text-slate-500 block text-[10.5px] sm:text-[11px]">
+              <span className="text-slate-500 block text-xs sm:text-sm text-slate-500 font-semibold">
                 {lang === "ru" ? "Гарантия" : lang === "en" ? "Warranty" : "Kafolat"}
               </span>
-              <span className="font-bold text-emerald-600 mt-0.5 block">{service.warranty[lang]}</span>
+              <span className="text-sm sm:text-base font-bold text-emerald-600 mt-0.5 block">{service.warranty[lang]}</span>
             </div>
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs col-span-2 sm:col-span-1 shadow-2xs">
-              <span className="text-slate-500 block text-[10.5px] sm:text-[11px]">
+              <span className="text-slate-500 block text-xs sm:text-sm text-slate-500 font-semibold">
                 {lang === "ru" ? "Лечащий врач" : lang === "en" ? "Attending Doctor" : "Davolovchi Shifokor"}
               </span>
-              <span className="font-bold text-primary mt-0.5 block">Dr. MuhammadAli Davronov</span>
+              <span className="text-sm sm:text-base font-bold text-primary mt-0.5 block">Dr. MuhammadAli Davronov</span>
             </div>
           </div>
-          <p className="text-[11px] text-slate-600 font-medium pt-1 flex items-center gap-1.5">
+          <p className="text-xs sm:text-sm text-slate-600 font-medium pt-1 flex items-center gap-1.5">
             <IconLocationPin className="w-3.5 h-3.5 text-primary shrink-0" />
             <span>
               {lang === "ru" ? "Приём: г. Андижан, клиника DM Stomatology (проспект, Навои, дом 91)" : lang === "en" ? "Practice: 91 Navoi Avenue, Andijan (DM Stomatology, Room #1)" : "Qabul manzili: Andijon sh., DM Stomatologiya (Prospekt, Navoiy shoh ko'chasi 91-uy)"}

@@ -170,24 +170,24 @@ export const TrustStickers = ({ className = "" }) => {
                   <div className="w-10 h-10 rounded-xl bg-red-50/80 border border-red-100 flex items-center justify-center shadow-2xs group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
                     {sticker.icon}
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-bold font-mono tracking-wider text-primary bg-primary/5 border border-primary/15 px-2.5 py-1 rounded-full uppercase">
+                  <span className="text-xs sm:text-sm font-bold font-mono tracking-wider text-primary bg-primary/5 border border-primary/15 px-2.5 py-1 rounded-full uppercase">
                     {metricText}
                   </span>
                 </div>
 
-                <h4 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-primary transition-colors tracking-tight line-clamp-1">
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-primary transition-colors tracking-tight line-clamp-1">
                   {sticker.title[lang] || sticker.title.uz}
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed line-clamp-3">
+                <p className="text-sm sm:text-base text-slate-600 mt-1.5 leading-relaxed line-clamp-3">
                   {sticker.subtitle[lang] || sticker.subtitle.uz}
                 </p>
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
-                <span className="text-[11px] text-slate-500 font-medium">
+                <span className="text-xs sm:text-sm text-slate-500 font-medium">
                   {sticker.verified[lang] || sticker.verified.uz}
                 </span>
-                <span className="text-emerald-700 font-bold text-[11px] flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
+                <span className="text-emerald-700 font-bold text-xs sm:text-sm flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
                   <span>✓</span>
                   <span>{labels.verified}</span>
                 </span>

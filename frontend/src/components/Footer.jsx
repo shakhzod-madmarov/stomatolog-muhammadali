@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Col 1: Brand & Doctor Profile */}
           <div className="flex flex-col gap-4">
             <Logo className="h-10 w-auto" isWhite={true} />
-            <p className="text-sm text-slate-400 leading-relaxed mt-2">
+            <p className="text-base text-slate-300 leading-relaxed mt-2">
               {lang === "ru"
                 ? "Д-р МухаммадАли Давронов — 5 лет успешной практики. Дентальная имплантация, ортопедия (цирконий, виниры) и лечение зубов без боли. Андижан, клиника DM Stomatology, проспект, Навои, 91."
                 : lang === "en"
@@ -81,11 +81,11 @@ const Footer = () => {
 
           {/* Col 2: Navigation Links */}
           <div>
-            <h3 className="text-white text-base font-bold tracking-tight mb-4 flex items-center gap-2">
+            <h3 className="text-white text-lg font-bold tracking-tight mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#C8102E]"></span>
               {labels.quickLinks[lang]}
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-base">
               {navLinks.map((item) => (
                 <li key={item.path}>
                   <Link
@@ -102,11 +102,11 @@ const Footer = () => {
 
           {/* Col 3: Popular Services */}
           <div>
-            <h3 className="text-white text-base font-bold tracking-tight mb-4 flex items-center gap-2">
+            <h3 className="text-white text-lg font-bold tracking-tight mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#C8102E]"></span>
               {labels.services[lang]}
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-base">
               {SERVICES_CATALOG.slice(0, 6).map((service) => (
                 <li key={service.id}>
                   <Link

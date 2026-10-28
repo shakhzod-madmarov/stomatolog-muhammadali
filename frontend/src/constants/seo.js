@@ -7,17 +7,17 @@ export const PAGE_SEO = {
   home: {
     uz: {
       title: "Dr. MuhammadAli Davronov — Implantolog, Ortoped | Andijon",
-      description: "Dr. MuhammadAli Davronov — ADTI yuz-jag' jarrohligi ordinaturasi, 5 yillik tajriba. Dental implantatsiya, sirkon va og'riqsiz davolash. Tel: +998 97 676 01 01.",
-      keywords: "implantologiya andijon, dental implant, dr muhammadali davronov, yuz jag jarrohligi ordinatura, stomatolog muhammadali, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, ortopediya andijon, tish davolash andijon, ogriqsiz tish davolash, sirkon koronkalar andijon, vinirlar andijon, prospekt, navoiy 91",
+      description: "Dr. MuhammadAli Davronov — ADTI yuz-jag' jarrohligi klinik ordinatori, 5 yillik tajriba. Dental implantatsiya, sirkon va og'riqsiz davolash. Tel: +998 97 676 01 01.",
+      keywords: "implantologiya andijon, dental implant, dr muhammadali davronov, yuz jag jarrohligi ordinatori, stomatolog muhammadali, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, ortopediya andijon, tish davolash andijon, ogriqsiz tish davolash, sirkon koronkalar andijon, vinirlar andijon, prospekt, navoiy 91",
     },
     ru: {
       title: "Д-р МухаммадАли Давронов — Имплантолог, Ортопед | Андижан",
-      description: "Д-р МухаммадАли Давронов — ординатура по ЧЛХ в АГМИ, 5 лет опыта. Дентальная имплантация, цирконий и лечение без боли. Андижан. Тел: +998 97 676 01 01.",
+      description: "Д-р МухаммадАли Давронов — клинический ординатор по ЧЛХ в АГМИ, 5 лет опыта. Дентальная имплантация, цирконий и лечение без боли. Андижан. Тел: +998 97 676 01 01.",
       keywords: "имплантация зубов андижан, доктор мухаммадали давронов, стоматолог мухаммадали, стоматолог андижан, стоматология андижан, dm stomatology, ортопедия андижан, лечение зубов без боли, циркониевые коронки андижан, виниры e-max, зубной врач андижан, проспект, навои 91",
     },
     en: {
       title: "Dr. MuhammadAli Davronov — Dental Implantologist | Andijan",
-      description: "Dr. MuhammadAli Davronov — Maxillofacial Surgery residency at ASMI, 5 yrs practice. Dental implants, zirconia crowns & painless care. Tel: +998 97 676 01 01.",
+      description: "Dr. MuhammadAli Davronov — Clinical resident in Oral & Maxillofacial Surgery at ASMI, 5 yrs practice. Dental implants, zirconia crowns & painless care. Tel: +998 97 676 01 01.",
       keywords: "dental implants andijan, dr muhammadali davronov, dentist andijan, dental clinic andijan, dm stomatology, orthopedics andijan, painless dentistry, zirconia crowns andijan, dental veneers, english speaking dentist uzbekistan",
     },
   },
@@ -41,17 +41,17 @@ export const PAGE_SEO = {
   about: {
     uz: {
       title: "Dr. MuhammadAli Davronov Haqida — Yuz-Jag' Jarrohi | Andijon",
-      description: "Dr. MuhammadAli Davronov: ADTI yuz-jag' jarrohligi klinik ordinaturasi, 5 yillik amaliyot. Implantologiya, ortopediya va terapiya. Prospekt, Navoiy 91, Andijon.",
-      keywords: "dr muhammadali davronov, yuz jag jarrohligi ordinatura, stomatolog andijon, dental implantologiya, dm stomatologiya shifokori",
+      description: "Dr. MuhammadAli Davronov: ADTI yuz-jag' jarrohligi klinik ordinatori, 5 yillik amaliyot. Implantologiya, ortopediya va terapiya. Prospekt, Navoiy 91, Andijon.",
+      keywords: "dr muhammadali davronov, yuz jag jarrohligi ordinatori, stomatolog andijon, dental implantologiya, dm stomatologiya shifokori",
     },
     ru: {
       title: "О Докторе МухаммадАли Давронове — Хирург ЧЛХ, Имплантолог",
-      description: "Д-р МухаммадАли Давронов: ординатура по челюстно-лицевой хирургии в АГМИ, 5 лет опыта. Имплантация, ортопедия и бережное лечение зубов. Андижан, пр-т Навои, 91.",
+      description: "Д-р МухаммадАли Давронов: клинический ординатор по челюстно-лицевой хирургии в АГМИ, 5 лет опыта. Имплантация, ортопедия и бережное лечение зубов. Андижан, пр-т Навои, 91.",
       keywords: "доктор мухаммадали давронов, челюстно лицевой хирург андижан, ординатура члх агми, врач имплантолог андижан, dm stomatology",
     },
     en: {
       title: "About Dr. MuhammadAli Davronov — Oral Surgeon & Dentist",
-      description: "Dr. MuhammadAli Davronov: Clinical Residency in Oral & Maxillofacial Surgery at ASMI, 5 years practice. Dental implants & orthopedics in Andijan, Navoi 91.",
+      description: "Dr. MuhammadAli Davronov: Clinical Resident in Oral & Maxillofacial Surgery at ASMI, 5 years practice. Dental implants & orthopedics in Andijan, Navoi 91.",
       keywords: "about dr muhammadali davronov, oral and maxillofacial surgery asmi, residency dentist andijan, certified implantologist andijan",
     },
   },
