@@ -194,8 +194,8 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
         {/* Visual Grid: Room Interior (Col 7) & Room Door (Col 5) with balanced heights */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch relative z-10">
           {/* Main Working Room Photo Card */}
-          <div className="lg:col-span-7 flex flex-col rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm group">
-            <div className="relative overflow-hidden h-[240px] sm:h-[300px] lg:h-[320px] bg-slate-900">
+          <div className="lg:col-span-7 flex flex-col rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm group">
+            <div className="relative overflow-hidden h-[240px] sm:h-[300px] lg:h-[320px] bg-slate-100">
               <img
                 src={assets.clinic_room}
                 alt={labels.roomTitle}
@@ -204,28 +204,26 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                 height={724}
                 className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-4 sm:p-5">
-                <div>
-                  <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-primary text-white shadow-xs mb-1.5">
-                    {labels.roomBadge}
-                  </span>
-                  <h3 className="text-white font-serif font-bold text-base sm:text-xl">
-                    {labels.roomTitle}
-                  </h3>
-                </div>
-              </div>
             </div>
 
             {/* Room Features & Description */}
-            <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between bg-white border-t border-slate-100">
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
-                {labels.roomDesc}
-              </p>
+            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between bg-white border-t border-slate-100">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 mb-2">
+                  {labels.roomBadge}
+                </span>
+                <h3 className="text-slate-900 font-serif font-bold text-xl sm:text-2xl tracking-tight mb-2">
+                  {labels.roomTitle}
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  {labels.roomDesc}
+                </p>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {labels.features.map((feat, idx) => (
-                  <div key={idx} className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 hover:border-primary/40 transition-colors">
-                    <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
+                  <div key={idx} className="p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 hover:border-primary/40 transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2.5">
                       {idx === 0 && <IconGentleComfort className="w-4 h-4" />}
                       {idx === 1 && <DentalToothMolar className="w-4 h-4 text-primary" />}
                       {idx === 2 && <IconShieldCheck className="w-4 h-4 text-primary" />}
@@ -233,7 +231,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                     <h4 className="text-xs sm:text-sm font-bold text-slate-900">
                       {feat.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-snug">
+                    <p className="text-xs text-slate-500 mt-1 leading-snug">
                       {feat.desc}
                     </p>
                   </div>
@@ -243,8 +241,8 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
           </div>
 
           {/* Door & Entrance Identification Card */}
-          <div className="lg:col-span-5 flex flex-col rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm group">
-            <div className="relative overflow-hidden h-[240px] sm:h-[300px] lg:h-[320px] bg-slate-900">
+          <div className="lg:col-span-5 flex flex-col rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm group">
+            <div className="relative overflow-hidden h-[240px] sm:h-[300px] lg:h-[320px] bg-slate-100">
               <img
                 src={assets.clinic_door}
                 alt="1-Xona: Davronov Muhammad-Ali Stomatolog eshigi"
@@ -253,49 +251,51 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
                 height={1024}
                 className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent flex items-end p-4 sm:p-5">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-slate-950 shadow-xs mb-1.5 font-mono">
-                    <span>№ 1</span>
-                    <span>·</span>
-                    <span>{labels.doorBadge}</span>
-                  </div>
-                  <h4 className="text-white font-mono font-bold text-sm sm:text-base tracking-wide">
-                    {labels.doorTitle}
-                  </h4>
-                  <p className="text-amber-200 text-xs font-semibold">
-                    {labels.doorRole}
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Door Description and Action Buttons */}
-            <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between bg-white border-t border-slate-100">
-              <div className="space-y-2.5">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-primary">
-                  <IconLocationPin className="w-4 h-4 text-primary shrink-0" />
-                  <span>{labels.locationPill}</span>
+            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between bg-white border-t border-slate-100">
+              <div className="space-y-3 mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-800 border border-amber-300 font-mono">
+                    <span>№ 1</span>
+                    <span>·</span>
+                    <span>{labels.doorBadge}</span>
+                  </span>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-primary">
+                    <IconLocationPin className="w-4 h-4 text-primary shrink-0" />
+                    <span>{labels.locationPill}</span>
+                  </div>
                 </div>
+
+                <div>
+                  <h3 className="text-slate-900 font-serif font-bold text-xl sm:text-2xl tracking-tight">
+                    {labels.doorTitle}
+                  </h3>
+                  <p className="text-primary text-xs sm:text-sm font-bold mt-0.5">
+                    {labels.doorRole}
+                  </p>
+                </div>
+
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   {labels.doorDesc}
                 </p>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 mt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-sm active:scale-98 transition-all text-center cursor-pointer"
+                  className="flex-1 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-sm active:scale-98 transition-all text-center cursor-pointer"
                 >
                   {labels.ctaBook}
                 </button>
                 <a
                   href={DOCTOR_INFO.phoneHref}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl font-mono font-bold text-xs text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-center transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-mono font-bold text-xs sm:text-sm text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-center transition-colors"
                 >
-                  <IconPhone className="w-3.5 h-3.5 text-primary" />
+                  <IconPhone className="w-4 h-4 text-primary" />
                   <span>{DOCTOR_INFO.phoneDisplay}</span>
                 </a>
               </div>
