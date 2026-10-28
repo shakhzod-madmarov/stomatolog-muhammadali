@@ -180,9 +180,9 @@ export const CERTIFICATES = [
       en: "Andijan",
     },
     date: {
-      uz: "1-Fevral",
-      ru: "1 февраля",
-      en: "February 1",
+      uz: "1-Fevral 2026",
+      ru: "1 февраля 2026",
+      en: "February 1, 2026",
     },
     badge: {
       uz: "Raqamli 3D Navigatsiya",

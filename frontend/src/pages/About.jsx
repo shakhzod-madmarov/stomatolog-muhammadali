@@ -77,9 +77,9 @@ const About = ({ onOpenBooking }) => {
     },
     {
       year: {
-        uz: "DIO Implant",
-        ru: "DIO Implant",
-        en: "DIO Implant",
+        uz: "2026 · DIO",
+        ru: "2026 · DIO",
+        en: "2026 · DIO",
       },
       title: {
         uz: "DIO Implant — 3D Raqamli Navigatsion Implantologiya (Andijon)",
