@@ -367,6 +367,29 @@ export const buildHomePageSchema = (lang = "uz") => {
           PRIMARY_CLINIC.maps.google,
           `https://www.google.com/maps/place/?q=place_id:${PRIMARY_CLINIC.maps.googlePlaceId}`,
           PRIMARY_CLINIC.maps.yandex,
+          PRIMARY_CLINIC.maps.yandexFull,
+          "https://yandex.ru/maps/org/stomatologiya/214793392317/",
+          PRIMARY_CLINIC.maps.yandexRoute,
+        ],
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "yandex_org_id",
+            "name": "Yandex Business Organization ID",
+            "value": PRIMARY_CLINIC.maps.yandexOrgId,
+          },
+          {
+            "@type": "PropertyValue",
+            "propertyID": "google_kgmid",
+            "name": "Google Knowledge Graph Entity ID",
+            "value": DOCTOR_INFO.googleKgmid,
+          },
+          {
+            "@type": "PropertyValue",
+            "propertyID": "google_place_id",
+            "name": "Google Maps Place ID",
+            "value": PRIMARY_CLINIC.maps.googlePlaceId,
+          },
         ],
         "isAcceptingNewPatients": true,
         "currenciesAccepted": "UZS",
@@ -430,6 +453,8 @@ export const buildHomePageSchema = (lang = "uz") => {
           `https://www.google.com/maps/place/?q=place_id:${PRIMARY_CLINIC.maps.googlePlaceId}`,
           PRIMARY_CLINIC.maps.yandex,
           PRIMARY_CLINIC.maps.yandexFull,
+          PRIMARY_CLINIC.maps.yandexRu,
+          PRIMARY_CLINIC.maps.yandexReviews,
         ],
       },
       {
@@ -543,6 +568,8 @@ export const buildHomePageSchema = (lang = "uz") => {
           `https://www.google.com/maps/place/?q=place_id:${PRIMARY_CLINIC.maps.googlePlaceId}`,
           PRIMARY_CLINIC.maps.yandex,
           PRIMARY_CLINIC.maps.yandexFull,
+          PRIMARY_CLINIC.maps.yandexRu,
+          PRIMARY_CLINIC.maps.yandexReviews,
         ],
       },
       {

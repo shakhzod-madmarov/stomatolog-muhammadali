@@ -107,6 +107,10 @@ const Seo = ({
     if (googlebotMeta) {
       googlebotMeta.setAttribute("content", noindex ? ROBOTS_NOINDEX : GOOGLEBOT_INDEXABLE);
     }
+    const yandexMeta = document.querySelector('meta[name="yandex"]');
+    if (yandexMeta) {
+      yandexMeta.setAttribute("content", noindex ? ROBOTS_NOINDEX : ROBOTS_INDEXABLE);
+    }
 
     const ogLocale = lang === "ru" ? "ru_RU" : lang === "en" ? "en_US" : "uz_UZ";
     const localeMeta = document.querySelector('meta[property="og:locale"]');

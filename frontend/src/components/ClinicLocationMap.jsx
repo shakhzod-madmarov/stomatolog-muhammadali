@@ -151,10 +151,10 @@ export const ClinicLocationMap = () => {
               {/* Floating Quick Action Button on Top of the Map */}
               <div className="absolute top-3 right-3 z-10 pointer-events-auto">
                 <a
-                  href={PRIMARY_CLINIC.maps.yandex}
+                  href={PRIMARY_CLINIC.maps.yandexRoute || PRIMARY_CLINIC.maps.yandex}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold bg-white/95 backdrop-blur-md text-primary hover:bg-primary hover:text-white border border-slate-200 shadow-md transition-all active:scale-95"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/95 backdrop-blur-md text-primary hover:bg-primary hover:text-white border border-slate-200 shadow-md transition-all active:scale-95"
                 >
                   <IconLocationPin className="w-3.5 h-3.5" />
                   <span>{labels.directionsBtn}</span>
