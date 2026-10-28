@@ -11,26 +11,31 @@ import { DmToothEmblem } from "./Logo";
 const STICKERS_DATA = [
   {
     id: "warranty",
-    badgeNumber: "5",
-    badgeUnit: "Yil",
+    metric: "5 YIL KAFOLAT",
+    metricRu: "5 ЛЕТ ГАРАНТИИ",
+    metricEn: "5-YEAR WARRANTY",
     icon: <IconTrophyWarranty className="w-5 h-5 text-primary" />,
     title: {
       uz: "5 Yillik Rasmiy Kafolat",
-      ru: "5 Лет Гарантии",
+      ru: "5 Лет Клинической Гарантии",
       en: "5-Year Clinical Warranty",
     },
     subtitle: {
-      uz: "Biotitan implant va sirkonlarga",
-      ru: "На титановые импланты и цирконий",
-      en: "On titanium implants & zirconia",
+      uz: "Biotitan implant va monolit sirkon karkaslarga rasmiy kafolat sertifikati",
+      ru: "Официальный гарантийный сертификат на титановые импланты и цирконий",
+      en: "Official clinical warranty on titanium implants and zirconia restorations",
     },
-    stampText: "KAFOLAT · 5 YIL",
-    sealColor: "from-red-500/10 to-primary/5",
+    verified: {
+      uz: "Sertifikatlangan amaliyot",
+      ru: "Сертифицированная практика",
+      en: "Certified clinical practice",
+    },
   },
   {
     id: "painless",
-    badgeNumber: "100%",
-    badgeUnit: "Qulay",
+    metric: "100% OG'RIQSIZ",
+    metricRu: "100% БЕЗ БОЛИ",
+    metricEn: "100% PAIN-FREE",
     icon: <IconGentleComfort className="w-5 h-5 text-primary" />,
     title: {
       uz: "100% Og'riqsiz Davolash",
@@ -38,17 +43,21 @@ const STICKERS_DATA = [
       en: "100% Pain-Free Care",
     },
     subtitle: {
-      uz: "2 bosqichli yumshoq anesteziya",
-      ru: "Двухэтапное бережное обезболивание",
-      en: "Two-stage gentle topical anesthesia",
+      uz: "2 bosqichli mikro-gel anesteziya bilan xotirjam va qulay muolaja",
+      ru: "Двухэтапная бережная гель-анестезия для спокойного лечения без страха",
+      en: "Two-stage gentle topical anesthesia ensuring zero fear and discomfort",
     },
-    stampText: "OG'RIQSIZ · ZERO PAIN",
-    sealColor: "from-emerald-500/10 to-emerald-500/5",
+    verified: {
+      uz: "Yumshoq anesteziya",
+      ru: "Мягкая анестезия",
+      en: "Gentle anesthesia",
+    },
   },
   {
     id: "doctor_care",
-    badgeNumber: "1:1",
-    badgeUnit: "Shaxsiy",
+    metric: "1:1 SHAXSIY QABUL",
+    metricRu: "1:1 ЛИЧНЫЙ ПРИЁМ",
+    metricEn: "1:1 PERSONAL CARE",
     icon: <IconShieldCheck className="w-5 h-5 text-primary" />,
     title: {
       uz: "Shaxsiy Shifokor Qabuli",
@@ -56,105 +65,136 @@ const STICKERS_DATA = [
       en: "Personal Doctor Care",
     },
     subtitle: {
-      uz: "Dr. MuhammadAli bilan yakkama-yakka",
-      ru: "Индивидуальный приём у д-ра МухаммадАли",
-      en: "One-on-one with Dr. MuhammadAli",
+      uz: "Har bir bemorni Dr. MuhammadAli Davronov shaxsan 1-xonada qabul qiladi",
+      ru: "Д-р МухаммадАли Давронов лично принимает каждого пациента в каб. №1",
+      en: "Dr. MuhammadAli Davronov personally consults and treats each patient",
     },
-    stampText: "SHAXSIY · E'TIBOR",
-    sealColor: "from-sky-500/10 to-sky-500/5",
+    verified: {
+      uz: "Kutish va navbatsiz",
+      ru: "Без очередей и ожидания",
+      en: "Zero waiting time",
+    },
   },
   {
     id: "scanner",
-    badgeNumber: "3D",
-    badgeUnit: "CAD/CAM",
+    metric: "3D CAD/CAM",
+    metricRu: "3D CAD/CAM",
+    metricEn: "3D CAD/CAM",
     icon: <DentalDigitalScannerIcon className="w-5 h-5 text-primary" />,
     title: {
       uz: "3D Raqamli Skanerlash",
       ru: "3D Цифровое Сканирование",
-      en: "3D Optical Scanning",
+      en: "3D Digital Scanning",
     },
     subtitle: {
-      uz: "Noqulay gips qoliplarisiz",
-      ru: "Без слепков и дискомфорта",
-      en: "No gag reflex putty molds",
+      uz: "Noqulay gips qoliplarisiz, 1 daqiqada og'iz bo'shlig'i aniq 3D modeli",
+      ru: "Без неприятных слепочных масс — точная 3D модель челюсти за 1 минуту",
+      en: "Putty-free optical scanning generating precise 3D anatomy in minutes",
     },
-    stampText: "RAQAMLI · DIGITAL",
-    sealColor: "from-amber-500/10 to-amber-500/5",
+    verified: {
+      uz: "Raqamli aniqlik",
+      ru: "Цифровая точность",
+      en: "Digital precision",
+    },
   },
   {
     id: "clinic",
-    badgeNumber: "DM",
-    badgeUnit: "Andijon",
+    metric: "DM STOMATOLOGIYA",
+    metricRu: "DM STOMATOLOGY",
+    metricEn: "DM STOMATOLOGY",
     icon: <DmToothEmblem className="w-5 h-5" glow={false} />,
     title: {
-      uz: "DM Stomatologiya",
-      ru: "DM Stomatology",
-      en: "DM Stomatology",
+      uz: "Andijon Markaziy Klinika",
+      ru: "Центральная Клиника",
+      en: "Central Clinic Location",
     },
     subtitle: {
-      uz: "Prospekt, Navoiy shoh ko'chasi 91-uy",
-      ru: "Андижан, проспект, Навои, 91",
-      en: "91 Navoi Avenue, Andijan",
+      uz: "Andijon sh., Prospekt, Navoiy shoh ko'chasi 91-uy (1-xona, qulay lokatsiya)",
+      ru: "г. Андижан, проспект, Навои, 91 (кабинет №1, удобный подъезд)",
+      en: "91 Navoi Avenue, Andijan (Room #1, convenient central access)",
     },
-    stampText: "ANDIJON · PROSPEKT, NAVOIY 91",
-    sealColor: "from-primary/10 to-red-600/5",
+    verified: {
+      uz: "Rasmiy litsenziya",
+      ru: "Официальная лицензия",
+      en: "Licensed clinic",
+    },
   },
 ];
 
 export const TrustStickers = ({ className = "" }) => {
   const { lang } = useLanguage();
 
+  const labels = {
+    uz: {
+      badge: "KLINIK STANDARTLAR VA KAFOLATLAR",
+      heading: "Dr. MuhammadAli Davronovning Rasmiy Davolash Kafolatlari",
+      verified: "Tasdiqlangan",
+    },
+    ru: {
+      badge: "КЛИНИЧЕСКИЕ СТАНДАРТЫ И ГАРАНТИИ",
+      heading: "Официальные Клинические Стандарты Д-ра МухаммадАли Давронова",
+      verified: "Подтверждено",
+    },
+    en: {
+      badge: "CLINICAL STANDARDS & GUARANTEES",
+      heading: "Official Treatment Assurances by Dr. MuhammadAli Davronov",
+      verified: "Verified",
+    },
+  }[lang] || labels.uz;
+
   return (
     <section
-      aria-label={
-        lang === "ru"
-          ? "Клинические стандарты и гарантии"
-          : lang === "en"
-          ? "Clinical standards and guarantees"
-          : "Klinik standartlar va kafolatlar"
-      }
+      aria-label={labels.heading}
       className={`w-full ${className}`}
     >
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
-        {STICKERS_DATA.map((sticker, idx) => (
-          <div
-            key={sticker.id}
-            className={`group relative p-3 sm:p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-primary/40 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden ${
-              idx === STICKERS_DATA.length - 1 ? "col-span-2 sm:col-span-1 lg:col-span-1" : "col-span-1"
-            }`}
-          >
-            {/* Soft decorative background tint */}
+      <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-primary bg-primary/10 border border-primary/20 shadow-xs mb-2">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          {labels.badge}
+        </span>
+        <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 tracking-tight">
+          {labels.heading}
+        </h3>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
+        {STICKERS_DATA.map((sticker) => {
+          const metricText = lang === "ru" ? sticker.metricRu : lang === "en" ? sticker.metricEn : sticker.metric;
+          return (
             <div
-              className={`absolute -right-6 -bottom-6 w-20 h-20 rounded-full bg-gradient-to-br ${sticker.sealColor} pointer-events-none blur-xl group-hover:scale-150 transition-transform duration-500`}
-            />
+              key={sticker.id}
+              className="group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 hover:border-primary/50 shadow-xs hover:shadow-card transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-50/80 border border-red-100 flex items-center justify-center shadow-2xs group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                    {sticker.icon}
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] font-bold font-mono tracking-wider text-primary bg-primary/5 border border-primary/15 px-2.5 py-1 rounded-full uppercase">
+                    {metricText}
+                  </span>
+                </div>
 
-            {/* Sticker Top Header: Stamp Badge + Icon */}
-            <div className="flex items-center justify-between mb-2.5 relative z-10">
-              <span className="w-8 h-8 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center shadow-2xs group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                {sticker.icon}
-              </span>
-              <span className="text-[9px] font-black tracking-widest text-primary/70 uppercase px-2 py-0.5 rounded-full bg-red-50/80 border border-red-100/60 font-mono">
-                {sticker.badgeNumber}
-              </span>
-            </div>
+                <h4 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-primary transition-colors tracking-tight line-clamp-1">
+                  {sticker.title[lang] || sticker.title.uz}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed line-clamp-3">
+                  {sticker.subtitle[lang] || sticker.subtitle.uz}
+                </p>
+              </div>
 
-            {/* Sticker Content */}
-            <div className="relative z-10">
-              <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-primary transition-colors line-clamp-1">
-                {sticker.title[lang]}
-              </h4>
-              <p className="text-[11px] text-slate-500 mt-0.5 line-clamp-2 leading-tight">
-                {sticker.subtitle[lang]}
-              </p>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                <span className="text-[11px] text-slate-500 font-medium">
+                  {sticker.verified[lang] || sticker.verified.uz}
+                </span>
+                <span className="text-emerald-700 font-bold text-[11px] flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
+                  <span>✓</span>
+                  <span>{labels.verified}</span>
+                </span>
+              </div>
             </div>
-
-            {/* Verified micro-stamp */}
-            <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[9px] font-semibold text-slate-400 group-hover:text-primary transition-colors relative z-10">
-              <span className="tracking-wide uppercase font-mono">{sticker.stampText}</span>
-              <span className="text-primary font-bold">✓</span>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

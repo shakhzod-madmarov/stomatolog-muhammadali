@@ -38,17 +38,28 @@ const WEEKDAYS_CARD = {
 
 const formatDayParts = (ymd, lang) => {
   const parts = parseDateParts(ymd);
-  if (!parts) return { weekday: "", dayNumber: "", monthName: "", dayMonth: ymd, isToday: false };
+  if (!parts) return { weekday: "", dayNumber: "", monthName: "", dayMonth: ymd, isToday: false, isTomorrow: false };
   const safeLang = ["uz", "ru", "en"].includes(lang) ? lang : "uz";
   const wds = WEEKDAYS_CARD[safeLang] || WEEKDAYS_CARD.uz;
   const mShorts = MONTHS_SHORT[safeLang] || MONTHS_SHORT.uz;
   const clinicToday = getClinicTodayStr();
+
+  const todayParts = parseDateParts(clinicToday);
+  let isTomorrow = false;
+  if (todayParts && parts) {
+    const d1 = new Date(todayParts.year, todayParts.month - 1, todayParts.day);
+    const d2 = new Date(parts.year, parts.month - 1, parts.day);
+    const diffDays = Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+    isTomorrow = diffDays === 1;
+  }
+
   return {
     weekday: wds[parts.date.getDay()],
     dayNumber: parts.day,
     monthName: mShorts[parts.month - 1] || "",
     dayMonth: `${String(parts.day).padStart(2, "0")}.${String(parts.month).padStart(2, "0")}`,
     isToday: ymd === clinicToday,
+    isTomorrow,
   };
 };
 
@@ -80,15 +91,19 @@ const TEXT = {
     doctorRoomBadge: "Dr. MuhammadAli · DM Stomatologiya, 1-xona",
     nameLabel: "Ism va familiya *",
     phoneLabel: "Telefon raqami *",
-    dobLabel: "Tug'ilgan sana (ixtiyoriy)",
-    dobHint: "Tibbiy kartangizni tezkor topishga yordam beradi",
-    noteHint: "Shifokor ko'rigi uchun oldindan ma'lumot",
+    dobLabel: "Tug'ilgan sana *",
+    dobHint: "Tibbiy kartangizni aniq ochish va to'g'ri tashxis uchun talab qilinadi",
+    noteLabel: "Shikoyat yoki izoh (ixtiyoriy)",
+    noteHint: "Shifokor ko'rigi uchun qo'shimcha izoh yoki shikoyat",
     clearDob: "Tozalash",
     scrollDaysLeft: "Oldingi kunlar",
     scrollDaysRight: "Keyingi kunlar",
     todayLabel: "Bugun",
-    openCalendarTitle: "Taqvimdan tanlash",
-    noteLabel: "Shikoyat yoki izoh (ixtiyoriy)",
+    tomorrowLabel: "Ertaga",
+    openCalendarBtn: "Taqvim",
+    openCalendarTitle: "Taqvimdan sana tanlash",
+    slotsAvailableSuffix: "ta bo'sh vaqt",
+    dayClosed: "Dam olish",
     namePlaceholder: "Masalan: Jasur Aliyev",
     phonePlaceholder: "+998 97 676 01 01",
     dobFormat: "KK.OO.YYYY",
@@ -97,7 +112,8 @@ const TEXT = {
     submitting: "Yuborilmoqda...",
     needName: "Iltimos, ism va familiyangizni kiriting",
     needPhone: "Iltimos, to'liq telefon raqamini kiriting",
-    needTime: "Iltimos, sana va vaqtni tanlang",
+    needDob: "Iltimos, tug'ilgan sanangizni to'liq kiriting (kun.oy.yil)",
+    needTime: "Iltimos, qabul sanasi va vaqtini tanlang",
     conflictError: "Bu vaqt band qilingan. Iltimos, boshqa vaqtni tanlang.",
     failed: "So'rovni yuborib bo'lmadi. Iltimos, telefon orqali bog'laning.",
     pausedNotice: "Onlayn qabul vaqtlari yangilanmoqda. To'g'ridan-to'g'ri telefon orqali ham yozilishingiz mumkin:",
@@ -131,15 +147,19 @@ const TEXT = {
     doctorRoomBadge: "Д-р МухаммадАли · DM Stomatology, каб. №1",
     nameLabel: "Имя и фамилия *",
     phoneLabel: "Номер телефона *",
-    dobLabel: "Дата рождения (необязательно)",
-    dobHint: "Помогает быстрее найти вашу медкарту",
-    noteHint: "Предварительная информация для доктора",
+    dobLabel: "Дата рождения *",
+    dobHint: "Необходимо для точного поиска и оформления медицинской карты",
+    noteLabel: "Жалоба или пожелание (необязательно)",
+    noteHint: "Дополнительное примечание для доктора к приёму",
     clearDob: "Очистить",
     scrollDaysLeft: "Предыдущие дни",
     scrollDaysRight: "Следующие дни",
     todayLabel: "Сегодня",
-    openCalendarTitle: "Выбрать из календаря",
-    noteLabel: "Жалоба или пожелание (необязательно)",
+    tomorrowLabel: "Завтра",
+    openCalendarBtn: "Календарь",
+    openCalendarTitle: "Выбрать дату из календаря",
+    slotsAvailableSuffix: "мест",
+    dayClosed: "Выходной",
     namePlaceholder: "Например: Алишер Усманов",
     phonePlaceholder: "+998 97 676 01 01",
     dobFormat: "ДД.ММ.ГГГГ",
@@ -148,7 +168,8 @@ const TEXT = {
     submitting: "Отправка...",
     needName: "Пожалуйста, введите ваше имя и фамилию",
     needPhone: "Пожалуйста, введите корректный номер телефона",
-    needTime: "Пожалуйста, выберите дату и время",
+    needDob: "Пожалуйста, введите дату рождения полностью (день.месяц.год)",
+    needTime: "Пожалуйста, выберите дату и время приёма",
     conflictError: "Это время уже занято. Пожалуйста, выберите другое время.",
     failed: "Не удалось отправить запрос. Пожалуйста, свяжитесь по телефону.",
     pausedNotice: "График онлайн-записи обновляется. Вы также можете записаться по телефону:",
@@ -182,15 +203,19 @@ const TEXT = {
     doctorRoomBadge: "Dr. MuhammadAli · DM Stomatology, Room #1",
     nameLabel: "Full Name *",
     phoneLabel: "Phone Number *",
-    dobLabel: "Date of Birth (optional)",
-    dobHint: "Helps locate your dental record quickly",
-    noteHint: "Advance note or complaint for the doctor",
+    dobLabel: "Date of Birth *",
+    dobHint: "Required for medical record verification and diagnostic care",
+    noteLabel: "Complaint or note (optional)",
+    noteHint: "Optional advance note for the doctor prior to your visit",
     clearDob: "Clear",
     scrollDaysLeft: "Previous days",
     scrollDaysRight: "Next days",
     todayLabel: "Today",
-    openCalendarTitle: "Select from calendar",
-    noteLabel: "Complaint or note (optional)",
+    tomorrowLabel: "Tomorrow",
+    openCalendarBtn: "Calendar",
+    openCalendarTitle: "Select appointment date from calendar",
+    slotsAvailableSuffix: "slots",
+    dayClosed: "Closed",
     namePlaceholder: "e.g. Jasur Aliyev",
     phonePlaceholder: "+998 97 676 01 01",
     dobFormat: "DD.MM.YYYY",
@@ -199,7 +224,8 @@ const TEXT = {
     submitting: "Submitting...",
     needName: "Please enter your full name",
     needPhone: "Please enter a valid phone number",
-    needTime: "Please select a date and time",
+    needDob: "Please enter your full date of birth (DD.MM.YYYY)",
+    needTime: "Please select a date and time slot",
     conflictError: "This slot is already booked. Please choose another time.",
     failed: "Could not submit your booking. Please reach out via phone.",
     pausedNotice: "Live availability is updating. You can also book directly via phone call:",
@@ -230,6 +256,13 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   const clinicHours = useClinicHours(lang);
 
   const dateScrollRef = useRef(null);
+  const hiddenCalendarJumpRef = useRef(null);
+  const hiddenDatePickerRef = useRef(null);
+
+  // Mouse drag-to-scroll state
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftState, setScrollLeftState] = useState(0);
 
   const [days, setDays] = useState(() => buildWorkingHoursSchedule(14, 2));
   const [selectedDate, setSelectedDate] = useState(() => {
@@ -249,8 +282,6 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
   const [note, setNote] = useState(() => bookingRequest?.note || "");
   const [honeypot, setHoneypot] = useState("");
   const [formMountTime] = useState(() => Date.now());
-
-  const hiddenDatePickerRef = useRef(null);
 
   const handleDobChange = (e) => {
     const formatted = formatDobInput(e.target.value);
@@ -274,10 +305,46 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
     }
   };
 
+  const handleCalendarJump = (e) => {
+    const pickedDate = e.target.value;
+    if (!pickedDate) return;
+
+    setDays((prev) => {
+      if (prev.some((d) => d.date === pickedDate)) return prev;
+      const newDay = {
+        date: pickedDate,
+        times: ["08:00", "09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"],
+        slots: ["08:00", "09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"],
+        isClosed: false,
+      };
+      return [...prev, newDay].sort((a, b) => a.date.localeCompare(b.date));
+    });
+
+    setSelectedDate(pickedDate);
+    setSelectedTime("");
+
+    setTimeout(() => {
+      const el = document.getElementById(`date-chip-${pickedDate}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+    }, 120);
+  };
+
+  const openCalendarJump = () => {
+    if (hiddenCalendarJumpRef.current) {
+      try {
+        hiddenCalendarJumpRef.current.showPicker?.();
+      } catch {
+        hiddenCalendarJumpRef.current.focus?.();
+      }
+    }
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookedResult, setBookedResult] = useState(null);
 
-  // Load availability
+  // Load availability from backend
   const loadSchedule = useCallback(async () => {
     try {
       const data = await fetchDentistAvailability();
@@ -323,9 +390,40 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
     setPhone(formatted);
   };
 
+  // Drag and Wheel scrolling handlers
+  const handleMouseDown = (e) => {
+    if (!dateScrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - dateScrollRef.current.offsetLeft);
+    setScrollLeftState(dateScrollRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !dateScrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - dateScrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    dateScrollRef.current.scrollLeft = scrollLeftState - walk;
+  };
+
+  const handleDateWheel = (e) => {
+    if (!dateScrollRef.current) return;
+    if (Math.abs(e.deltaY) > 0) {
+      dateScrollRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
   const scrollDays = (direction) => {
     if (dateScrollRef.current) {
-      const scrollAmount = direction === "left" ? -280 : 280;
+      const scrollAmount = direction === "left" ? -300 : 300;
       dateScrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
@@ -352,6 +450,12 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
       return;
     }
 
+    const cleanDob = String(dob || "").trim();
+    if (!cleanDob || cleanDob.length < 10) {
+      toast.error(t.needDob);
+      return;
+    }
+
     if (!selectedDate || !selectedTime) {
       toast.error(t.needTime);
       return;
@@ -368,7 +472,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
         time: selectedTime,
         name: cleanName,
         phone,
-        dob,
+        dob: cleanDob,
         note: cleanNoteText,
         reason: serviceName,
       });
@@ -576,9 +680,9 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               </div>
             </div>
 
-            {/* STEP 2: Date Picker */}
+            {/* STEP 2: Date Picker (Fluid Movable + Wheel + Drag + Calendar Jump) */}
             <fieldset className="border-none p-0 m-0">
-              <div className="flex items-center justify-between mb-3.5 gap-2">
+              <div className="flex flex-wrap items-center justify-between mb-3.5 gap-2">
                 <div className="flex items-center gap-3">
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 ring-1 ring-primary/20">
                     2
@@ -587,18 +691,44 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                     {t.step2Date}
                   </legend>
                 </div>
-                <div className="flex items-center gap-2.5">
-                  <span className="hidden sm:inline-flex items-center gap-2 text-xs sm:text-sm text-slate-600 font-medium bg-slate-100/90 px-3 py-1.5 rounded-full border border-slate-200">
-                    <IconClock className="w-4 h-4 text-slate-500" />
+                <div className="flex items-center gap-2">
+                  <span className="hidden md:inline-flex items-center gap-1.5 text-xs text-slate-500 font-medium bg-slate-100/90 px-3 py-1.5 rounded-full border border-slate-200">
+                    <IconClock className="w-3.5 h-3.5 text-slate-400" />
                     <span>{clinicHours.days}: {clinicHours.hours}</span>
                   </span>
-                  <div className="flex items-center gap-1.5">
+
+                  {/* Calendar Quick-Jump Button */}
+                  <button
+                    type="button"
+                    onClick={openCalendarJump}
+                    title={t.openCalendarTitle}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-primary hover:border-primary/30 transition-all text-xs font-bold shadow-2xs cursor-pointer active:scale-95"
+                  >
+                    <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>{t.openCalendarBtn}</span>
+                  </button>
+
+                  {/* Hidden date picker input for quick calendar jump */}
+                  <input
+                    ref={hiddenCalendarJumpRef}
+                    type="date"
+                    min={getClinicTodayStr()}
+                    onChange={handleCalendarJump}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="sr-only"
+                  />
+
+                  {/* Left / Right Scroll Arrows */}
+                  <div className="flex items-center gap-1">
                     <button
                       type="button"
                       aria-label={t.scrollDaysLeft}
                       title={t.scrollDaysLeft}
                       onClick={() => scrollDays("left")}
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-primary flex items-center justify-center transition-all text-base sm:text-lg font-bold cursor-pointer active:scale-95 shadow-2xs"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-primary flex items-center justify-center transition-all text-sm sm:text-base font-bold cursor-pointer active:scale-95 shadow-2xs"
                     >
                       ‹
                     </button>
@@ -607,7 +737,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                       aria-label={t.scrollDaysRight}
                       title={t.scrollDaysRight}
                       onClick={() => scrollDays("right")}
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-primary flex items-center justify-center transition-all text-base sm:text-lg font-bold cursor-pointer active:scale-95 shadow-2xs"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-primary flex items-center justify-center transition-all text-sm sm:text-base font-bold cursor-pointer active:scale-95 shadow-2xs"
                     >
                       ›
                     </button>
@@ -615,20 +745,33 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                 </div>
               </div>
 
+              {/* Scrollable / Draggable Dates Track */}
               <div
                 ref={dateScrollRef}
                 role="radiogroup"
                 aria-label={t.step2Date}
-                className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto py-1 px-1 scroll-smooth snap-x snap-mandatory scroll-touch no-scrollbar"
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                onWheel={handleDateWheel}
+                className={`flex items-stretch gap-2.5 sm:gap-3 overflow-x-auto py-2 px-1 scroll-smooth snap-x snap-mandatory scroll-touch select-none cursor-grab active:cursor-grabbing ${
+                  isDragging ? "cursor-grabbing" : "cursor-grab"
+                }`}
+                style={{
+                  scrollbarWidth: "thin",
+                  scrollbarColor: "rgba(200, 16, 46, 0.25) rgba(241, 245, 249, 0.8)",
+                }}
               >
                 {days.map((day) => {
                   const isSelected = day.date === selectedDate;
                   const isClosed = day.isClosed;
-                  const { weekday, dayNumber, monthName, isToday } = formatDayParts(day.date, lang);
+                  const { weekday, dayNumber, monthName, isToday, isTomorrow } = formatDayParts(day.date, lang);
 
                   return (
                     <button
                       key={day.date}
+                      id={`date-chip-${day.date}`}
                       type="button"
                       role="radio"
                       aria-checked={isSelected}
@@ -637,35 +780,60 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                         setSelectedDate(day.date);
                         setSelectedTime("");
                       }}
-                      className={`shrink-0 snap-start flex flex-col items-center justify-center min-w-[80px] sm:min-w-[92px] min-h-[74px] sm:min-h-[82px] px-3 py-2.5 rounded-2xl text-center border transition-all duration-200 cursor-pointer ${
+                      className={`shrink-0 snap-start flex flex-col items-center justify-between min-w-[86px] sm:min-w-[96px] min-h-[92px] sm:min-h-[98px] p-2.5 sm:p-3 rounded-2xl text-center border transition-all duration-200 cursor-pointer ${
                         isSelected
                           ? "bg-gradient-to-b from-[#C8102E] to-[#A00202] text-white border-primary shadow-colgate ring-2 ring-primary/25 scale-[1.03]"
                           : isClosed
-                          ? "bg-slate-50 text-slate-300 border-slate-100 cursor-not-allowed opacity-50"
-                          : "bg-white text-slate-700 border-slate-200/90 hover:border-primary/40 hover:text-slate-900 hover:bg-slate-50/90 shadow-2xs"
+                          ? "bg-slate-50 text-slate-400 border-slate-200/60 cursor-not-allowed opacity-60"
+                          : "bg-white text-slate-700 border-slate-200/90 hover:border-primary/50 hover:text-slate-900 hover:bg-red-50/20 shadow-2xs"
                       }`}
                     >
+                      {/* Top: Weekday or Badge */}
                       <span
-                        className={`text-xs sm:text-sm font-bold uppercase tracking-wider ${
-                          isSelected ? "text-white/95" : isToday ? "text-primary font-black" : "text-slate-500"
+                        className={`text-xs font-bold uppercase tracking-wider flex items-center gap-1 ${
+                          isSelected
+                            ? "text-white"
+                            : isToday
+                            ? "text-primary font-black"
+                            : "text-slate-500"
                         }`}
                       >
-                        {isToday ? t.todayLabel : weekday}
+                        {isToday && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />}
+                        {isToday ? t.todayLabel : isTomorrow ? t.tomorrowLabel : weekday}
                       </span>
-                      <span
-                        className={`text-xl sm:text-2xl font-black font-sans mt-0.5 leading-tight ${
-                          isSelected ? "text-white font-black" : "text-slate-900"
-                        }`}
-                      >
-                        {dayNumber}
-                      </span>
-                      <span
-                        className={`text-xs sm:text-sm font-semibold leading-tight ${
-                          isSelected ? "text-white/90" : "text-slate-400"
-                        }`}
-                      >
-                        {monthName}
-                      </span>
+
+                      {/* Middle: Day Number & Month */}
+                      <div className="my-0.5">
+                        <span
+                          className={`block text-2xl sm:text-3xl font-black font-sans leading-none ${
+                            isSelected ? "text-white" : "text-slate-900"
+                          }`}
+                        >
+                          {dayNumber}
+                        </span>
+                        <span
+                          className={`block text-xs font-semibold mt-0.5 ${
+                            isSelected ? "text-white/90" : "text-slate-400"
+                          }`}
+                        >
+                          {monthName}
+                        </span>
+                      </div>
+
+                      {/* Bottom: Slots indicator pill */}
+                      <div className="w-full pt-1">
+                        <span
+                          className={`block text-[10px] font-bold uppercase tracking-tight py-0.5 px-1.5 rounded-md text-center font-mono ${
+                            isSelected
+                              ? "bg-white/20 text-white"
+                              : isClosed
+                              ? "bg-slate-200/70 text-slate-400"
+                              : "bg-emerald-50 text-emerald-700 border border-emerald-200/60"
+                          }`}
+                        >
+                          {isClosed ? t.dayClosed : `${day.times?.length || 0} ${t.slotsAvailableSuffix}`}
+                        </span>
+                      </div>
                     </button>
                   );
                 })}
@@ -731,7 +899,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
               )}
             </fieldset>
 
-            {/* STEP 4: Patient Details (2x2 Balanced Grid) */}
+            {/* STEP 4: Patient Details (2x2 Balanced Grid - DOB is REQUIRED) */}
             <fieldset className="border-none p-0 m-0">
               <div className="flex items-center gap-3 mb-3.5">
                 <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 ring-1 ring-primary/20">
@@ -781,7 +949,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   />
                 </div>
 
-                {/* Date of Birth */}
+                {/* Date of Birth (REQUIRED) */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <label htmlFor="booking-dob-input" className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wide">
@@ -802,6 +970,8 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                       id="booking-dob-input"
                       name="dob"
                       type="text"
+                      required
+                      aria-required="true"
                       inputMode="numeric"
                       autoComplete="bday"
                       maxLength={10}
@@ -844,7 +1014,7 @@ export const InlineBookingSection = ({ initialServiceId = null }) => {
                   </p>
                 </div>
 
-                {/* Note & Reason */}
+                {/* Note & Reason (ONLY OPTIONAL FIELD) */}
                 <div>
                   <label htmlFor="booking-note-textarea" className="block text-xs sm:text-sm font-bold text-slate-800 mb-2 uppercase tracking-wide">
                     {t.noteLabel}
