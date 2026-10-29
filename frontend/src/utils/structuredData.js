@@ -143,7 +143,7 @@ export const buildDoctorProfileSchema = (lang = "uz", breadcrumbs = []) => {
       "email": DOCTOR_INFO.email,
       "url": aboutUrl,
       "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
-      "alumniOf": {
+      "affiliation": {
         "@type": "EducationalOrganization",
         "name": DOCTOR_INFO.education[lang] || DOCTOR_INFO.education.uz,
         "url": "https://adti.uz"
@@ -475,9 +475,9 @@ export const buildHomePageSchema = (lang = "uz") => {
         "telephone": DOCTOR_INFO.phoneRaw,
         "email": DOCTOR_INFO.email,
         "image": `${SITE_ORIGIN}/dr_muhammadali_og.png`,
-        "alumniOf": {
+        "affiliation": {
           "@type": "EducationalOrganization",
-          "name": "Andijon davlat tibbiyot instituti",
+          "name": DOCTOR_INFO.education[lang] || DOCTOR_INFO.education.uz,
           "url": "https://adti.uz"
         },
         "hasCredential": [
