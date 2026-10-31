@@ -48,7 +48,7 @@ const Footer = () => {
                 ? "Д-р МухаммадАли Давронов — 5 лет успешной практики. Дентальная имплантация, ортопедия (цирконий, виниры) и лечение зубов без боли. Андижан, клиника DM Stomatology, проспект, Навои, 91."
                 : lang === "en"
                 ? "Dr. MuhammadAli Davronov — 5 years of dental excellence. Dental implants, orthopedics, pain-free therapy, and aesthetic smiles. DM Stomatology, 91 Navoi Avenue, Andijan."
-                : "Dr. MuhammadAli Davronov — 5 yillik tajribali shifokor-stomatolog. Dental implantologiya (biotitan), ortopediya (sirkon, vinirlar) va terapiya (og'riqsiz davolash). DM Stomatologiya, Andijon shahri, Prospekt, Navoiy shoh ko'chasi 91-uy."}
+                : "Dr. MuhammadAli Davronov — 5 yillik tajribali shifokor-stomatolog. Dental implantologiya (biotitan), ortopediya (sirkon, vinirlar) va terapiya (og'riqsiz davolash). DM Stomatologiya, Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy."}
             </p>
             <div className="flex items-center gap-3 mt-1">
               <a

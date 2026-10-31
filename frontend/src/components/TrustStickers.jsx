@@ -109,7 +109,7 @@ const STICKERS_DATA = [
       en: "Central Clinic Location",
     },
     subtitle: {
-      uz: "Andijon sh., Prospekt, Navoiy shoh ko'chasi 91-uy (1-xona, qulay lokatsiya)",
+      uz: "Andijon sh., Prospekt, Navoiy shoh ko'chasi, 91-uy (1-xona, qulay lokatsiya)",
       ru: "г. Андижан, проспект, Навои, 91 (кабинет №1, удобный подъезд)",
       en: "91 Navoi Avenue, Andijan (Room #1, convenient central access)",
     },

@@ -24,7 +24,7 @@ export const ClinicLocationMap = () => {
     ru: {
       badge: "ЛОКАЦИЯ И ПРИЁМ",
       title: "DM Stomatology — Д-р МухаммадАли Давронов",
-      subtitle: "Персональный приём проходит в г. Андижан в современной клинике DM Stomatology на проспекте Навои, 91.",
+      subtitle: "Персональный приём проходит в г. Андижан в современной клинике DM Stomatology на проспекте, Навои, 91.",
       addressTitle: "Адрес:",
       landmarkTitle: "Ориентир:",
       hoursTitle: "Часы приёма:",

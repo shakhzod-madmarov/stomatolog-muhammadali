@@ -26,7 +26,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
       clinicBrand: "DM STOMATOLOGIYA",
       roomNumberBadge: "1-Xona · Shaxsiy Qabulxona",
       doctorTag: "Dr. MuhammadAli",
-      addressLine: "Andijon sh., Prospekt, Navoiy 91 (Sariq Bola yonida)",
+      addressLine: "Andijon sh., Prospekt, Navoiy, 91 (Sariq Bola yonida)",
       workingHoursText: "Dushanba – Shanba: 08:30 – 18:30",
       roomBadge: "DAVOLASH VA KONSULTATSIYA ZONASI",
       roomTitle: "Zamonaviy Ergonomika va Yuqori Gigiyena",
@@ -53,7 +53,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
         "Klinikaga kelganingizda to'g'ridan-to'g'ri 1-xonaga kirasiz — navbatsiz va kutishlarsiz shaxsan Dr. MuhammadAli kutib oladi.",
       ctaBook: "1-xonaga Qabulga Yozilish",
       ctaCall: "Qo'ng'iroq qilish",
-      locationPill: "Andijon sh., Prospekt, Navoiy 91 · 1-xona",
+      locationPill: "Andijon sh., Prospekt, Navoiy, 91 · 1-xona",
     },
     ru: {
       badge: "КАБИНЕТ №1 · ПЕРСОНАЛЬНЫЙ ПРИЁМ",
