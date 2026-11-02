@@ -19,6 +19,10 @@ Allow: /
 User-agent: YandexMobileBot
 Allow: /
 
+User-agent: YandexFavicons
+Allow: /
+Allow: /favicon.ico
+
 User-agent: YandexDirect
 Allow: /
 
