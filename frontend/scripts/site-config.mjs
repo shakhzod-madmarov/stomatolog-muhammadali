@@ -46,7 +46,7 @@ export const ROUTES = [
     image: {
       src: "src/assets/dr_muhammadali.png",
       title: "Dr. MuhammadAli Davronov Haqida — 5 Yillik Klinik Tajriba",
-      caption: "Dr. MuhammadAli Davronov — Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinaturasi, implantologiya, ortopediya va terapiya mutaxassisi (DM Stomatologiya).",
+      caption: "Dr. MuhammadAli Davronov — Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori, dental implantologiya, ortopediya va terapiya mutaxassisi (DM Stomatologiya).",
     },
   },
   {
