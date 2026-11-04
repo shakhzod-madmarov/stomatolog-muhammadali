@@ -31,8 +31,10 @@ const Booking = () => {
   return (
     <div className="py-6 sm:py-10 space-y-10">
       <Seo
+        page="booking"
         title={seo.title}
         description={seo.description}
+        keywords={seo.keywords}
         schemaJson={bookingSchema}
       />
 

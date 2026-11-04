@@ -43,8 +43,10 @@ const Services = ({ onOpenBooking }) => {
   return (
     <div className="py-6 sm:py-10 space-y-12">
       <Seo
+        page="services"
         title={seo.title}
         description={seo.description}
+        keywords={seo.keywords}
         schemaJson={catalogSchema}
       />
 

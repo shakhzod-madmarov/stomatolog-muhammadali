@@ -30,8 +30,10 @@ const Contact = () => {
   return (
     <div className="py-6 sm:py-10 space-y-12 text-slate-900">
       <Seo
+        page="contact"
         title={seo.title}
         description={seo.description}
+        keywords={seo.keywords}
         schemaJson={contactSchema}
       />
 

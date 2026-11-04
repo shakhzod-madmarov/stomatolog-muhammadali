@@ -1,5 +1,18 @@
 export const FAQ_ITEMS = [
   {
+    id: "who-is-doctor-muhammadali",
+    q: {
+      uz: "Stomatolog MuhammadAli (Dr. MuhammadAli Davronov) kim va qayerda qabul qiladi?",
+      ru: "Кто такой стоматолог МухаммадАли (Д-р МухаммадАли Давронов) и где он ведёт приём?",
+      en: "Who is dentist Dr. MuhammadAli Davronov and where does he practice?",
+    },
+    a: {
+      uz: "Dr. MuhammadAli Davronov — 5 yillik muvaffaqiyatli amaliyotga ega shifokor-stomatolog, Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori. U Andijon shahrida Prospekt, Navoiy shoh ko'chasi, 91-uyda joylashgan 'DM Stomatologiya' klinikasida (1-xona, Sariq Bola pizza yonida) bemorlarni shaxsan qabul qiladi. Asosiy 3 ta yo'nalish mutaxassisi: Dental implantologiya (biotitan implantlar), Ortopediya (sirkon koronkalar, vinirlar) va 100% og'riqsiz Terapiya.",
+      ru: "Д-р МухаммадАли Давронов — опытный врач-стоматолог с 5-летним стажем, клинический ординатор по челюстно-лицевой хирургии (ЧЛХ) в АГМИ. Приём проходит в клинике DM Stomatology по адресу: г. Андижан, проспект, Навои, 91 (ориентир: пиццерия SARIQ BOLA, каб. №1). Специализируется строго на трёх направлениях: дентальная имплантация, ортопедия (циркониевые коронки, виниры E-max) и безболезненная терапия.",
+      en: "Dr. MuhammadAli Davronov is an accomplished dental specialist with 5 years of clinical practice and a Clinical Resident in Oral & Maxillofacial Surgery at ASMI. He practices at DM Stomatology (91 Navoi Avenue, Andijan, Room #1, next to Sariq Bola pizza), specializing in dental implants, monolithic zirconia crowns, E-max veneers, and 100% pain-free dental therapy.",
+    },
+  },
+  {
     id: "specialties-focus",
     q: {
       uz: "Dr. MuhammadAli Davronov qaysi stomatologik yo'nalishlarga ixtisoslashgan?",
