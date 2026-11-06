@@ -436,6 +436,7 @@ export const buildHomePageSchema = (lang = "uz") => {
           "Стоматология Д-ра МухаммадАли Давронова",
           "Стоматология DM Андижан",
           "Stomatolog MuhammadAli Andijon",
+          "Stomatologiya Prospekt, Navoiy 91",
           "Stomatologiya Prospekt Navoiy 91",
         ],
         "disambiguatingDescription": lang === "ru"
