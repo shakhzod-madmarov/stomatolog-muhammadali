@@ -76,6 +76,8 @@ export const CLINICS = [
       yandexRoute: "https://yandex.uz/maps/?rtext=~40.778593,72.354894&rtt=auto",
       yandexReviews: "https://yandex.uz/maps/org/stomatologiya/214793392317/reviews/",
       yandexOrgId: "214793392317",
+      yandexPersonalOrgId: "73065652747",
+      yandexPersonalOrgUrl: "https://yandex.uz/maps/org/73065652747/",
       yandexWidget: "https://yandex.uz/map-widget/v1/?ll=72.354976%2C40.778561&mode=poi&poi%5Bpoint%5D=72.354894%2C40.778593&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D214793392317&z=16.63",
     },
   },
