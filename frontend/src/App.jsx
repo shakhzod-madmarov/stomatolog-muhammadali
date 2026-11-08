@@ -34,6 +34,19 @@ const LangSync = () => {
   return null;
 };
 
+const ExternalRedirect = ({ url }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.location.replace(url);
+    }
+  }, [url]);
+  return (
+    <div className="py-20 text-center">
+      <p className="text-slate-600 font-semibold">Yo'naltirilmoqda...</p>
+    </div>
+  );
+};
+
 const AppShell = () => {
   const { openBooking } = useBooking();
   const { lang } = useLanguage();
@@ -81,6 +94,8 @@ const AppShell = () => {
               <Route key={`${code}-baho`} path={at("/baho")} element={<Review />} />,
             ];
           })}
+          <Route path="/google-review" element={<ExternalRedirect url="https://g.page/r/CbETKPLsTTxtEBM/review" />} />
+          <Route path="/yandex-review" element={<ExternalRedirect url="https://yandex.uz/maps/org/73065652747/reviews/" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

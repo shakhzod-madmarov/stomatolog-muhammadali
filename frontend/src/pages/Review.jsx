@@ -10,8 +10,8 @@ const Review = () => {
   const [selectedRating, setSelectedRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
 
-  const googleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJw2lUo44vtTgR64uD1Pj44tE";
-  const yandexReviewUrl = "https://yandex.uz/maps/org/stomatologiya/214793392317/reviews/";
+  const googleReviewUrl = "https://g.page/r/CbETKPLsTTxtEBM/review";
+  const yandexReviewUrl = "https://yandex.uz/maps/org/73065652747/reviews/";
 
   const content = {
     uz: {
