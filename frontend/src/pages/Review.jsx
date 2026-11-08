@@ -352,6 +352,96 @@ const Review = () => {
           </button>
         </div>
       </div>
+
+      {/* Business Card (Tashrif Qog'ozi) Section */}
+      <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl border border-slate-700">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-sky-500/20 text-sky-300 rounded-full border border-sky-500/30">
+              Vizitka (90 × 50 mm • 600 DPI)
+            </span>
+            <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              💳 Shifokor Tashrif Qog'ozi (Business Card)
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
+              Veb-saytga o'tuvchi QR kod, ijtimoiy tarmoqlar (Telegram, Instagram, Tel) va 3 asosiy xizmatlar ustuni bilan chop etishga tayyor 2 tomonlama vizitka.
+            </p>
+          </div>
+          <a
+            href="/qr/business_card_double_sided.pdf"
+            download="vizitka_dr_muhammadali_double_sided.pdf"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-primary hover:bg-red-700 text-white font-bold rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 text-xs sm:text-sm whitespace-nowrap"
+          >
+            📄 2 Tomonlama PDF Yuklash
+          </a>
+        </div>
+
+        {/* Visual Preview Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+          {/* Front Preview */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-sky-400">Old Tomoni (Dark Luxury)</span>
+              <a href="/qr/business_card_front_dark.pdf" download className="text-xs text-slate-400 hover:text-white underline">
+                PDF
+              </a>
+            </div>
+            <img
+              src="/qr/business_card_front_dark.png"
+              alt="Vizitka Old Tomoni"
+              className="w-full rounded-xl border border-slate-700 shadow-md hover:scale-[1.01] transition-transform"
+            />
+          </div>
+
+          {/* Back Preview */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-emerald-400">Orqa Tomoni (Xizmatlar & Ish tartibi)</span>
+              <a href="/qr/business_card_back_services.pdf" download className="text-xs text-slate-400 hover:text-white underline">
+                PDF
+              </a>
+            </div>
+            <img
+              src="/qr/business_card_back_services.png"
+              alt="Vizitka Orqa Tomoni"
+              className="w-full rounded-xl border border-slate-700 shadow-md hover:scale-[1.01] transition-transform"
+            />
+          </div>
+        </div>
+
+        {/* Direct Download Badges */}
+        <div className="flex flex-wrap items-center gap-3 pt-2 text-xs">
+          <span className="text-slate-400">Alohida fayllar:</span>
+          <a
+            href="/qr/business_card_front_dark.png"
+            download="vizitka_old_dark.png"
+            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+          >
+            🖼️ Oldi (Dark PNG)
+          </a>
+          <a
+            href="/qr/business_card_front_light.png"
+            download="vizitka_old_light.png"
+            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+          >
+            🖼️ Oldi (Light PNG)
+          </a>
+          <a
+            href="/qr/business_card_back_services.png"
+            download="vizitka_orqa_xizmatlar.png"
+            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+          >
+            🖼️ Orqasi (Xizmatlar PNG)
+          </a>
+          <a
+            href="/qr/website_qr.png"
+            download="website_qr_stomatolog_muhammadali.png"
+            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+          >
+            🌐 Veb-sayt QR (PNG)
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
