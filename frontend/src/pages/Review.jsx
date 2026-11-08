@@ -368,8 +368,8 @@ const Review = () => {
             </p>
           </div>
           <a
-            href="/qr/business_card_double_sided.pdf"
-            download="vizitka_dr_muhammadali_double_sided.pdf"
+            href="/qr/business_card_classic_black_double_sided.pdf"
+            download="vizitka_classic_black_dr_muhammadali.pdf"
             className="inline-flex items-center gap-2 px-5 py-3 bg-primary hover:bg-red-700 text-white font-bold rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 text-xs sm:text-sm whitespace-nowrap"
           >
             📄 2 Tomonlama PDF Yuklash
@@ -381,13 +381,13 @@ const Review = () => {
           {/* Front Preview */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-sky-400">Old Tomoni (Dark Luxury)</span>
-              <a href="/qr/business_card_front_dark.pdf" download className="text-xs text-slate-400 hover:text-white underline">
+              <span className="text-xs font-bold text-sky-400">Old Tomoni (Classic Black & Red)</span>
+              <a href="/qr/business_card_classic_black_front.pdf" download className="text-xs text-slate-400 hover:text-white underline">
                 PDF
               </a>
             </div>
             <img
-              src="/qr/business_card_front_dark.png"
+              src="/qr/business_card_classic_black_front.png"
               alt="Vizitka Old Tomoni"
               className="w-full rounded-xl border border-slate-700 shadow-md hover:scale-[1.01] transition-transform"
             />
@@ -396,13 +396,13 @@ const Review = () => {
           {/* Back Preview */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-emerald-400">Orqa Tomoni (Xizmatlar & Ish tartibi)</span>
-              <a href="/qr/business_card_back_services.pdf" download className="text-xs text-slate-400 hover:text-white underline">
+              <span className="text-xs font-bold text-emerald-400">Orqa Tomoni (Minimalist Aloqa & QR)</span>
+              <a href="/qr/business_card_classic_black_back.pdf" download className="text-xs text-slate-400 hover:text-white underline">
                 PDF
               </a>
             </div>
             <img
-              src="/qr/business_card_back_services.png"
+              src="/qr/business_card_classic_black_back.png"
               alt="Vizitka Orqa Tomoni"
               className="w-full rounded-xl border border-slate-700 shadow-md hover:scale-[1.01] transition-transform"
             />
@@ -411,27 +411,34 @@ const Review = () => {
 
         {/* Direct Download Badges */}
         <div className="flex flex-wrap items-center gap-3 pt-2 text-xs">
-          <span className="text-slate-400">Alohida fayllar:</span>
+          <span className="text-slate-400">Yuklab olish:</span>
           <a
-            href="/qr/business_card_front_dark.png"
-            download="vizitka_old_dark.png"
-            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+            href="/qr/business_card_classic_black_double_sided.pdf"
+            download="vizitka_classic_black_chop_uchun.pdf"
+            className="px-3 py-1.5 bg-primary hover:bg-red-700 rounded-lg text-white font-bold transition-colors"
           >
-            🖼️ Oldi (Dark PNG)
+            📄 Qora Vizitka PDF (2 Tomonlama)
           </a>
           <a
-            href="/qr/business_card_front_light.png"
-            download="vizitka_old_light.png"
-            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+            href="/qr/business_card_classic_white_double_sided.pdf"
+            download="vizitka_classic_white_chop_uchun.pdf"
+            className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-900 font-bold transition-colors"
           >
-            🖼️ Oldi (Light PNG)
+            📄 Oq Vizitka PDF (2 Tomonlama)
           </a>
           <a
-            href="/qr/business_card_back_services.png"
-            download="vizitka_orqa_xizmatlar.png"
+            href="/qr/business_card_classic_black_front.png"
+            download="vizitka_qora_old.png"
             className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
           >
-            🖼️ Orqasi (Xizmatlar PNG)
+            🖼️ Qora Old (PNG)
+          </a>
+          <a
+            href="/qr/business_card_classic_black_back.png"
+            download="vizitka_qora_orqa.png"
+            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-200 border border-slate-600 transition-colors"
+          >
+            🖼️ Qora Orqa (PNG)
           </a>
           <a
             href="/qr/website_qr.png"
