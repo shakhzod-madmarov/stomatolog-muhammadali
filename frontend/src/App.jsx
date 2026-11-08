@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
+import Review from "./pages/Review";
 import NotFound from "./pages/NotFound";
 import FloatingActionHub from "./components/FloatingActionHub";
 import { useBooking } from "./context/BookingContext";
@@ -76,6 +77,8 @@ const AppShell = () => {
               <Route key={`${code}-booking`} path={at("/booking")} element={<Booking />} />,
               <Route key={`${code}-qabul`} path={at("/qabul")} element={<Booking />} />,
               <Route key={`${code}-contact`} path={at("/contact")} element={<Contact />} />,
+              <Route key={`${code}-review`} path={at("/review")} element={<Review />} />,
+              <Route key={`${code}-baho`} path={at("/baho")} element={<Review />} />,
             ];
           })}
           <Route path="*" element={<NotFound />} />

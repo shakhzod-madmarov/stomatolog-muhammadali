@@ -34,6 +34,7 @@ const Footer = () => {
     { path: "/about", label: { uz: "Shifokor Haqida", ru: "О Враче", en: "About Doctor" } },
     { path: "/booking", label: { uz: "Onlayn Qabul", ru: "Онлайн Запись", en: "Online Booking" } },
     { path: "/contact", label: { uz: "Manzil va Xarita", ru: "Контакты и Карта", en: "Contact & Map" } },
+    { path: "/baho", label: { uz: "⭐️ Baholash & QR Stend", ru: "⭐️ Оставить Отзыв & QR", en: "⭐️ Reviews & QR Stand" } },
   ];
 
   return (

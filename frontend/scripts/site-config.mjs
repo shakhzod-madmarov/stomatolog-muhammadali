@@ -65,6 +65,16 @@ export const ROUTES = [
     priority: "0.8",
   },
   {
+    path: "/baho",
+    changefreq: "weekly",
+    priority: "0.85",
+  },
+  {
+    path: "/review",
+    changefreq: "weekly",
+    priority: "0.85",
+  },
+  {
     path: "/services/digital-dentistry",
     changefreq: "monthly",
     priority: "0.85",
