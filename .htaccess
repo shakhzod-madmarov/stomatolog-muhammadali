@@ -35,7 +35,7 @@ Options -Indexes
 
   # Review Shortlink Direct Redirects
   RewriteRule ^google-review/?$ https://g.page/r/CbETKPLsTTxtEBM/review [L,R=302]
-  RewriteRule ^yandex-review/?$ https://yandex.uz/maps/org/73065652747/reviews/ [L,R=302]
+  RewriteRule ^yandex-review/?$ https://yandex.uz/maps/org/stomatologiya/214793392317/reviews/ [L,R=302]
 
   # If a pre-rendered index.html exists in a matching subdirectory, serve it
   RewriteCond %{REQUEST_FILENAME} -d
@@ -123,5 +123,5 @@ ErrorDocument 404 /404.html
   Header always set X-Permitted-Cross-Domain-Policies "none"
 
   # Content Security Policy (CSP)
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://dentist-medinson-license.uz https://*.medinson-license.uz https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://dentist-medinson-license.uz https://*.medinson-license.uz; frame-src 'self' https://yandex.uz https://*.yandex.uz https://yandex.ru https://*.yandex.ru https://www.google.com https://*.google.com; base-uri 'self'; form-action 'self';"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://dentist-medinson-license.uz https://*.medinson-license.uz https://fonts.googleapis.com https://www.googletagmanager.com https://mc.yandex.ru https://mc.yandex.uz; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://dentist-medinson-license.uz https://*.medinson-license.uz https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://mc.yandex.ru https://mc.yandex.uz; frame-src 'self' https://yandex.uz https://*.yandex.uz https://yandex.ru https://*.yandex.ru https://www.google.com https://*.google.com; base-uri 'self'; form-action 'self';"
 </IfModule>
