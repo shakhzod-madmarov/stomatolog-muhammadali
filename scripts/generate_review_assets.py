@@ -206,7 +206,7 @@ def create_vertical_card(width=1748, height=2480, scale=1.0, yandex_target_url=Y
     cam_x2 = right_x + int(120 * scale)
     draw_camera_icon(draw, (cam_x2, cam_y), cam_size, fill="#1E293B")
     draw.text((cam_x2 + int(28 * scale), cam_y), "Kamerani QR kodga qarating", font=font_scan, fill="#1E293B", anchor="lm")
-    draw.text((right_x + qr_box_w / 2, qr_top + int(855 * scale)), "Dr. MuhammadAli profiliga o'tadi", font=font_scan_ru, fill="#64748B", anchor="mm")
+    draw.text((right_x + qr_box_w / 2, qr_top + int(855 * scale)), "Yandex & Shaxsiy sahifada baholash", font=font_scan_ru, fill="#64748B", anchor="mm")
     
     for i in range(5):
         cx = right_x + qr_box_w / 2 + (i - 2) * int(44 * scale)
@@ -348,46 +348,66 @@ def create_horizontal_card(width=2480, height=1748, yandex_target_url=YANDEX_DOC
     
     return card.convert("RGB")
 
+def safe_save(img, path, *args, **kwargs):
+    """Safely saves an image/pdf, handling file locking if open in a viewer like WPS Office."""
+    try:
+        img.save(path, *args, **kwargs)
+        print(f"[OK] Saved {os.path.basename(path)}")
+        return path
+    except PermissionError:
+        base, ext = os.path.splitext(path)
+        alt_path = f"{base}_print{ext}"
+        try:
+            img.save(alt_path, *args, **kwargs)
+            print(f"[NOTE] {os.path.basename(path)} was locked by a viewer (e.g. WPS). Saved to {os.path.basename(alt_path)}")
+            return alt_path
+        except Exception as e:
+            print(f"[ERROR] Could not save {path}: {e}")
+            return None
+
 print("Rendering high-res review cards with verified URLs...")
 
 # 1. Standalone Google Review QR (with verified short link)
 qr_g = generate_qr(GOOGLE_REVIEW_URL, size=1200, badge_type="google")
-qr_g.save(os.path.join(PUBLIC_QR_DIR, "google_review_qr.png"))
-qr_g.save(os.path.join(ARTIFACTS_DIR, "google_review_qr.png"))
+safe_save(qr_g, os.path.join(PUBLIC_QR_DIR, "google_review_qr.png"))
+safe_save(qr_g, os.path.join(ARTIFACTS_DIR, "google_review_qr.png"))
 
 # 2. Standalone Yandex Doctor Personal Review QR (Uses Smart Redirect)
 qr_y = generate_qr(YANDEX_SMART_REDIRECT_URL, size=1200, badge_type="yandex")
-qr_y.save(os.path.join(PUBLIC_QR_DIR, "yandex_review_qr.png"))
-qr_y.save(os.path.join(ARTIFACTS_DIR, "yandex_review_qr.png"))
+safe_save(qr_y, os.path.join(PUBLIC_QR_DIR, "yandex_review_qr.png"))
+safe_save(qr_y, os.path.join(ARTIFACTS_DIR, "yandex_review_qr.png"))
 
 # 2b. Standalone Yandex Smart Redirect QR (stomatolog-muhammadali.uz/yandex-review)
 qr_y_smart = generate_qr(YANDEX_SMART_REDIRECT_URL, size=1200, badge_type="yandex")
-qr_y_smart.save(os.path.join(PUBLIC_QR_DIR, "yandex_review_smart_qr.png"))
-qr_y_smart.save(os.path.join(ARTIFACTS_DIR, "yandex_review_smart_qr.png"))
+safe_save(qr_y_smart, os.path.join(PUBLIC_QR_DIR, "yandex_review_smart_qr.png"))
+safe_save(qr_y_smart, os.path.join(ARTIFACTS_DIR, "yandex_review_smart_qr.png"))
 print("[OK] Individual QR codes generated.")
 
 # 3. A5 Vertical Table Stand
 card_a5 = create_vertical_card(width=1748, height=2480, scale=1.0, yandex_target_url=YANDEX_SMART_REDIRECT_URL)
-card_a5.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a5.png"), dpi=(300, 300))
-card_a5.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a5.pdf"), "PDF", resolution=300.0)
-card_a5.save(os.path.join(ARTIFACTS_DIR, "review_stand_a5.png"), dpi=(300, 300))
-card_a5.save(os.path.join(ARTIFACTS_DIR, "review_stand_a5.pdf"), "PDF", resolution=300.0)
+safe_save(card_a5, os.path.join(PUBLIC_QR_DIR, "review_stand_a5.png"), dpi=(300, 300))
+safe_save(card_a5, os.path.join(PUBLIC_QR_DIR, "review_stand_a5.pdf"), "PDF", resolution=300.0)
+safe_save(card_a5, os.path.join(ARTIFACTS_DIR, "review_stand_a5.png"), dpi=(300, 300))
+safe_save(card_a5, os.path.join(ARTIFACTS_DIR, "review_stand_a5.pdf"), "PDF", resolution=300.0)
 print("[OK] A5 Vertical Stand updated.")
 
 # 4. A4 Vertical Poster
 card_a4 = create_vertical_card(width=2480, height=3508, scale=1.418, yandex_target_url=YANDEX_SMART_REDIRECT_URL)
-card_a4.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a4.png"), dpi=(300, 300))
-card_a4.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a4.pdf"), "PDF", resolution=300.0)
-card_a4.save(os.path.join(ARTIFACTS_DIR, "review_stand_a4.png"), dpi=(300, 300))
-card_a4.save(os.path.join(ARTIFACTS_DIR, "review_stand_a4.pdf"), "PDF", resolution=300.0)
+safe_save(card_a4, os.path.join(PUBLIC_QR_DIR, "review_stand_a4.png"), dpi=(300, 300))
+safe_save(card_a4, os.path.join(PUBLIC_QR_DIR, "review_stand_a4.pdf"), "PDF", resolution=300.0)
+safe_save(card_a4, os.path.join(ARTIFACTS_DIR, "review_stand_a4.png"), dpi=(300, 300))
+safe_save(card_a4, os.path.join(ARTIFACTS_DIR, "review_stand_a4.pdf"), "PDF", resolution=300.0)
+# Also create review_stand_a4_print.pdf so user can open freshly updated file even if WPS locked the other
+safe_save(card_a4, os.path.join(PUBLIC_QR_DIR, "review_stand_a4_print.pdf"), "PDF", resolution=300.0)
+safe_save(card_a4, os.path.join(ARTIFACTS_DIR, "review_stand_a4_print.pdf"), "PDF", resolution=300.0)
 print("[OK] A4 Vertical Poster updated.")
 
 # 5. Horizontal Landscape Stand
 card_h = create_horizontal_card(width=2480, height=1748, yandex_target_url=YANDEX_SMART_REDIRECT_URL)
-card_h.save(os.path.join(PUBLIC_QR_DIR, "review_stand_horizontal.png"), dpi=(300, 300))
-card_h.save(os.path.join(PUBLIC_QR_DIR, "review_stand_horizontal.pdf"), "PDF", resolution=300.0)
-card_h.save(os.path.join(ARTIFACTS_DIR, "review_stand_horizontal.png"), dpi=(300, 300))
-card_h.save(os.path.join(ARTIFACTS_DIR, "review_stand_horizontal.pdf"), "PDF", resolution=300.0)
+safe_save(card_h, os.path.join(PUBLIC_QR_DIR, "review_stand_horizontal.png"), dpi=(300, 300))
+safe_save(card_h, os.path.join(PUBLIC_QR_DIR, "review_stand_horizontal.pdf"), "PDF", resolution=300.0)
+safe_save(card_h, os.path.join(ARTIFACTS_DIR, "review_stand_horizontal.png"), dpi=(300, 300))
+safe_save(card_h, os.path.join(ARTIFACTS_DIR, "review_stand_horizontal.pdf"), "PDF", resolution=300.0)
 print("[OK] Horizontal Landscape Stand updated.")
 
 print("\nALL VERIFIED REVIEW ASSETS READY!")

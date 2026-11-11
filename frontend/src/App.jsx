@@ -95,7 +95,7 @@ const AppShell = () => {
             ];
           })}
           <Route path="/google-review" element={<ExternalRedirect url="https://g.page/r/CbETKPLsTTxtEBM/review" />} />
-          <Route path="/yandex-review" element={<ExternalRedirect url="https://yandex.uz/maps/org/stomatologiya/214793392317/reviews/" />} />
+          <Route path="/yandex-review" element={<Review />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -298,7 +298,7 @@ const Review = () => {
             </div>
             <div className="flex flex-col gap-2 pt-2">
               <a
-                href="/qr/review_stand_a4.pdf"
+                href="/qr/review_stand_a4_print.pdf"
                 download="review_stand_a4_dr_muhammadali.pdf"
                 className="w-full text-center px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition-colors"
               >
