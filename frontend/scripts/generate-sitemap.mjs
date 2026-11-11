@@ -55,6 +55,7 @@ const urlFor = (routePath, lang) =>
 const urlBlocks = [];
 
 for (const route of ROUTES) {
+  if (route.sitemap === false) continue;
   const imageBlock = route.image
     ? (() => {
         const imageLoc = resolveImageUrl(route.image.src);

@@ -10,59 +10,60 @@ import {
 } from "./MedicalIcons";
 import { DmToothEmblem } from "./Logo";
 
+const DOCTOR_3D_LABELS_MAP = {
+  uz: {
+    badge: "SHIFOKOR HAQIDA",
+    heading: "Dr. MuhammadAli Davronov",
+    subheading: "Shifokor-Stomatolog · Implantolog, Ortoped & Terapevt (DM Stomatologiya, 1-xona, Andijon)",
+    experience: "5 Yillik Klinik Tajriba",
+    education: "Andijon davlat tibbiyot instituti — Yuz-jag' jarrohligi klinik ordinatori",
+    highlights: [
+      "Yuz-jag' jarrohligi klinik ordinatori tajribasi: har qanday murakkablikdagi anatomik xavfsiz dental implantologiya",
+      "Dental Implantologiya: Dentium va DIO Implant tizimlari bo'yicha xalqaro sertifikatlangan amaliyot",
+      "Bir bosqichli (One-Stage) tezkor implantatsiya: tish olingan kuni o'sha zahoti yangi tish qo'yish",
+      "Ortopediya: Estetik sirkon koronkalar, E-max press-vinirlar va aniq protezlash",
+      "Terapiya: 100% og'riqsiz karies va ildiz kanallarini (endodontiya) asoratsiz davolash",
+      "DM Stomatologiya klinikasida (1-xona) zamonaviy xalqaro xavfsizlik protokollari asosida shaxsiy qabul",
+    ],
+    callDirect: "Dr. MuhammadAli bilan to'g'ridan-to'g'ri bog'lanish:",
+  },
+  ru: {
+    badge: "О СПЕЦИАЛИСТЕ",
+    heading: "Д-р МухаммадАли Давронов",
+    subheading: "Врач-Стоматолог · Имплантолог, Ортопед и Терапевт (DM Stomatology, кабинет №1, Андижан)",
+    experience: "5 Лет Клинической Практики",
+    education: "АГМИ — Клинический ординатор по челюстно-лицевой хирургии (ЧЛХ)",
+    highlights: [
+      "Школа ординатуры ЧЛХ: анатомическая безопасность и ювелирная хирургическая имплантация",
+      "Имплантология: Сертифицированный хирург южнокорейских систем Dentium и DIO Implant",
+      "Одномоментная имплантация (One-Stage): установка импланта сразу в день удаления зуба",
+      "Ортопедия: Циркониевые коронки, эстетические виниры E-max и точное протезирование",
+      "Терапия: 100% безболезненное лечение кариеса и корневых каналов без страха",
+      "Персональный приём в клинике DM Stomatology (кабинет №1) по международным стандартам",
+    ],
+    callDirect: "Связаться с доктором МухаммадАли:",
+  },
+  en: {
+    badge: "DOCTOR PROFILE",
+    heading: "Dr. MuhammadAli Davronov",
+    subheading: "Dental Specialist · Implantology, Orthopedics & Therapy (DM Stomatology, Room #1, Andijan)",
+    experience: "5 Years Clinical Excellence",
+    education: "ASMI — Clinical Resident in Oral & Maxillofacial Surgery",
+    highlights: [
+      "Oral & Maxillofacial Surgery residency mastery: safe anatomical protocols for all surgical implant cases",
+      "Dental Implantology: Certified clinical specialist on Dentium & DIO Implant systems",
+      "One-Stage Immediate Implants: Same-day post-extraction implant placement and restoration",
+      "Orthopedics: Zirconia crowns, E-max veneers, and precision aesthetic prosthetics",
+      "Therapy: 100% painless cavity treatment and modern endodontic therapy",
+      "Private clinical practice at DM Stomatology (Room #1) adhering to international standards",
+    ],
+    callDirect: "Direct contact with Dr. MuhammadAli:",
+  },
+};
+
 export const Doctor3DCard = () => {
   const { lang } = useLanguage();
-
-  const labels = {
-    uz: {
-      badge: "SHIFOKOR HAQIDA",
-      heading: "Dr. MuhammadAli Davronov",
-      subheading: "Shifokor-Stomatolog · Implantolog, Ortoped & Terapevt (DM Stomatologiya, 1-xona, Andijon)",
-      experience: "5 Yillik Klinik Tajriba",
-      education: "Andijon davlat tibbiyot instituti — Yuz-jag' jarrohligi klinik ordinatori",
-      highlights: [
-        "Yuz-jag' jarrohligi klinik ordinatori tajribasi: har qanday murakkablikdagi anatomik xavfsiz dental implantologiya",
-        "Dental Implantologiya: Dentium va DIO Implant tizimlari bo'yicha xalqaro sertifikatlangan amaliyot",
-        "Bir bosqichli (One-Stage) tezkor implantatsiya: tish olingan kuni o'sha zahoti yangi tish qo'yish",
-        "Ortopediya: Estetik sirkon koronkalar, E-max press-vinirlar va aniq protezlash",
-        "Terapiya: 100% og'riqsiz karies va ildiz kanallarini (endodontiya) asoratsiz davolash",
-        "DM Stomatologiya klinikasida (1-xona) zamonaviy xalqaro xavfsizlik protokollari asosida shaxsiy qabul",
-      ],
-      callDirect: "Dr. MuhammadAli bilan to'g'ridan-to'g'ri bog'lanish:",
-    },
-    ru: {
-      badge: "О СПЕЦИАЛИСТЕ",
-      heading: "Д-р МухаммадАли Давронов",
-      subheading: "Врач-Стоматолог · Имплантолог, Ортопед и Терапевт (DM Stomatology, кабинет №1, Андижан)",
-      experience: "5 Лет Клинической Практики",
-      education: "АГМИ — Клинический ординатор по челюстно-лицевой хирургии (ЧЛХ)",
-      highlights: [
-        "Школа ординатуры ЧЛХ: анатомическая безопасность и ювелирная хирургическая имплантация",
-        "Имплантология: Сертифицированный хирург южнокорейских систем Dentium и DIO Implant",
-        "Одномоментная имплантация (One-Stage): установка импланта сразу в день удаления зуба",
-        "Ортопедия: Циркониевые коронки, эстетические виниры E-max и точное протезирование",
-        "Терапия: 100% безболезненное лечение кариеса и корневых каналов без страха",
-        "Персональный приём в клинике DM Stomatology (кабинет №1) по международным стандартам",
-      ],
-      callDirect: "Связаться с доктором МухаммадАли:",
-    },
-    en: {
-      badge: "DOCTOR PROFILE",
-      heading: "Dr. MuhammadAli Davronov",
-      subheading: "Dental Specialist · Implantology, Orthopedics & Therapy (DM Stomatology, Room #1, Andijan)",
-      experience: "5 Years Clinical Excellence",
-      education: "ASMI — Clinical Resident in Oral & Maxillofacial Surgery",
-      highlights: [
-        "Oral & Maxillofacial Surgery residency mastery: safe anatomical protocols for all surgical implant cases",
-        "Dental Implantology: Certified clinical specialist on Dentium & DIO Implant systems",
-        "One-Stage Immediate Implants: Same-day post-extraction implant placement and restoration",
-        "Orthopedics: Zirconia crowns, E-max veneers, and precision aesthetic prosthetics",
-        "Therapy: 100% painless cavity treatment and modern endodontic therapy",
-        "Private clinical practice at DM Stomatology (Room #1) adhering to international standards",
-      ],
-      callDirect: "Direct contact with Dr. MuhammadAli:",
-    },
-  }[lang] || labels.uz;
+  const labels = DOCTOR_3D_LABELS_MAP[lang] || DOCTOR_3D_LABELS_MAP.uz;
 
   return (
     <div className="w-full p-4 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-lg relative overflow-hidden text-slate-900">

@@ -4,12 +4,67 @@ import { useBooking } from "../context/BookingContext";
 import Interactive3DTilt from "./Interactive3DTilt";
 import { IconInfoCircle } from "./MedicalIcons";
 
+const CALC_LABELS_MAP = {
+  uz: {
+    badge: "MUOLAJA TAFSILOTLARI",
+    title: "Ortopediya, Terapiya va Implantologiya Rejasini Baholang",
+    subtitle: "Kerakli yo'nalishni tanlang, tishlar sonini belgilang va tashriflar soni hamda muolaja davomiyligini oldindan bilib oling.",
+    step1: "1. Mutaxassislik bo'yicha xizmatni tanlang:",
+    step2: "2. Tishlar sonini belgilang:",
+    resultTitle: "Rejalashtirilgan muolaja parametrlari:",
+    specialtyLabel: "Yo'nalish:",
+    visits: "Klinikaga tashrif:",
+    duration: "Kreslodagi vaqt:",
+    warranty: "Rasmiy kafolat:",
+    tech: "Qo'llaniladigan texnologiya:",
+    bookBtn: "Ushbu muolajaga onlayn qabulga yozilish →",
+    individualNote: "Har bir insonning tish tuzilishi individual. Aniq reja Dr. MuhammadAli Davronov shaxsiy 3D ko'rigida tuziladi.",
+    decrease: "Miqdorni kamaytirish",
+    increase: "Miqdorni oshirish",
+  },
+  ru: {
+    badge: "ПАРАМЕТРЫ ЛЕЧЕНИЯ",
+    title: "Расчёт времени и параметров ортопедии, терапии и имплантации",
+    subtitle: "Выберите направление лечения и количество зубов, чтобы заранее оценить длительность процедур и количество визитов.",
+    step1: "1. Выберите услугу:",
+    step2: "2. Укажите количество зубов:",
+    resultTitle: "Параметры плана лечения:",
+    specialtyLabel: "Специализация:",
+    visits: "Визиты в клинику:",
+    duration: "Время в кресле:",
+    warranty: "Официальная гарантия:",
+    tech: "Используемые технологии:",
+    bookBtn: "Записаться на этот приём онлайн →",
+    individualNote: "Анатомия каждого пациента уникальна. Точный план формируется на личном 3D-осмотре у доктора МухаммадАли Давронова.",
+    decrease: "Уменьшить количество",
+    increase: "Увеличить количество",
+  },
+  en: {
+    badge: "TREATMENT TIMELINE",
+    title: "Plan Your Orthopedics, Therapy & Implant Care",
+    subtitle: "Select your desired treatment and tooth count to preview chair time and visits before your personal consultation.",
+    step1: "1. Select specialty treatment:",
+    step2: "2. Specify number of teeth:",
+    resultTitle: "Planned clinical parameters:",
+    specialtyLabel: "Specialty:",
+    visits: "Clinic visits:",
+    duration: "Chair time:",
+    warranty: "Official warranty:",
+    tech: "Clinical protocol:",
+    bookBtn: "Book This Treatment Online →",
+    individualNote: "Every smile is anatomically unique. Finalized treatment plans are confirmed during in-person 3D digital consultation.",
+    decrease: "Decrease quantity",
+    increase: "Increase quantity",
+  },
+};
+
 export const Interactive3DCostCalculator = () => {
   const { lang } = useLanguage();
   const { openBooking } = useBooking();
 
   const [selectedServiceId, setSelectedServiceId] = useState("implant");
   const [quantity, setQuantity] = useState(1);
+  const labels = CALC_LABELS_MAP[lang] || CALC_LABELS_MAP.uz;
 
   const servicesData = {
     implant: {
@@ -104,60 +159,6 @@ export const Interactive3DCostCalculator = () => {
     setSelectedServiceId(id);
     setQuantity(servicesData[id].defaultQty);
   };
-
-  const labels = {
-    uz: {
-      badge: "MUOLAJA TAFSILOTLARI",
-      title: "Ortopediya, Terapiya va Implantologiya Rejasini Baholang",
-      subtitle: "Kerakli yo'nalishni tanlang, tishlar sonini belgilang va tashriflar soni hamda muolaja davomiyligini oldindan bilib oling.",
-      step1: "1. Mutaxassislik bo'yicha xizmatni tanlang:",
-      step2: "2. Tishlar sonini belgilang:",
-      resultTitle: "Rejalashtirilgan muolaja parametrlari:",
-      specialtyLabel: "Yo'nalish:",
-      visits: "Klinikaga tashrif:",
-      duration: "Kreslodagi vaqt:",
-      warranty: "Rasmiy kafolat:",
-      tech: "Qo'llaniladigan texnologiya:",
-      bookBtn: "Ushbu muolajaga onlayn qabulga yozilish →",
-      individualNote: "Har bir insonning tish tuzilishi individual. Aniq reja Dr. MuhammadAli Davronov shaxsiy 3D ko'rigida tuziladi.",
-      decrease: "Miqdorni kamaytirish",
-      increase: "Miqdorni oshirish",
-    },
-    ru: {
-      badge: "ПАРАМЕТРЫ ЛЕЧЕНИЯ",
-      title: "Расчёт времени и параметров ортопедии, терапии и имплантации",
-      subtitle: "Выберите направление лечения и количество зубов, чтобы заранее оценить длительность процедур и количество визитов.",
-      step1: "1. Выберите услугу:",
-      step2: "2. Укажите количество зубов:",
-      resultTitle: "Параметры плана лечения:",
-      specialtyLabel: "Специализация:",
-      visits: "Визиты в клинику:",
-      duration: "Время в кресле:",
-      warranty: "Официальная гарантия:",
-      tech: "Используемые технологии:",
-      bookBtn: "Записаться на этот приём онлайн →",
-      individualNote: "Анатомия каждого пациента уникальна. Точный план формируется на личном 3D-осмотре у доктора МухаммадАли Давронова.",
-      decrease: "Уменьшить количество",
-      increase: "Увеличить количество",
-    },
-    en: {
-      badge: "TREATMENT TIMELINE",
-      title: "Plan Your Orthopedics, Therapy & Implant Care",
-      subtitle: "Select your desired treatment and tooth count to preview chair time and visits before your personal consultation.",
-      step1: "1. Select specialty treatment:",
-      step2: "2. Specify number of teeth:",
-      resultTitle: "Planned clinical parameters:",
-      specialtyLabel: "Specialty:",
-      visits: "Clinic visits:",
-      duration: "Chair time:",
-      warranty: "Official warranty:",
-      tech: "Clinical protocol:",
-      bookBtn: "Book This Treatment Online →",
-      individualNote: "Every smile is anatomically unique. Finalized treatment plans are confirmed during in-person 3D digital consultation.",
-      decrease: "Decrease quantity",
-      increase: "Increase quantity",
-    },
-  }[lang] || labels.uz;
 
   return (
     <section aria-labelledby="cost-calc-heading" className="w-full py-12 sm:py-16 lg:py-20 bg-slate-50 border-t border-slate-200/80">

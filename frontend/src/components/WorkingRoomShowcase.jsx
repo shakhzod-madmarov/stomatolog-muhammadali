@@ -12,126 +12,128 @@ import {
   IconPhone,
 } from "./MedicalIcons";
 
+const ROOM_LABELS_MAP = {
+  uz: {
+    badge: "1-XONA · SHAXSIY QABULXONA",
+    liveStatus: "Qabul Ochiq · Navbatsiz",
+    heading: "Dr. MuhammadAli Davronovning Ish Xonasi",
+    subheading:
+      "DM Stomatologiya klinikasidagi 1-xona — har bir bemorni shaxsan qabul qilish, 100% og'riqsiz davolash va xalqaro sterilizatsiya standartlarini ta'minlash uchun maxsus jihozlangan qulay davolash muhiti.",
+    clinicBrand: "DM STOMATOLOGIYA",
+    roomNumberBadge: "1-Xona · Shaxsiy Qabulxona",
+    doctorTag: "Dr. MuhammadAli",
+    addressLine: "Andijon sh., Prospekt, Navoiy, 91 (Sariq Bola yonida)",
+    workingHoursText: "Dushanba – Shanba: 08:30 – 18:30",
+    roomBadge: "DAVOLASH VA KONSULTATSIYA ZONASI",
+    roomTitle: "Zamonaviy Ergonomika va Yuqori Gigiyena",
+    roomDesc:
+      "Yumshoq anesteziya ostida davolash uchun qulay kreslo, tushunarli tahlil uchun anatomik ko'rgazma hamda xalqaro sterilizatsiya standartlari.",
+    features: [
+      {
+        title: "Ergonomik Kreslo",
+        desc: "Muolaja davomida bo'yin va belga ortiqcha bosimsiz maksimal qulaylik",
+      },
+      {
+        title: "Shaxsiy Konsultatsiya",
+        desc: "Davolash boshlanishidan oldin barcha savollarni ekranda birga ko'rish",
+      },
+      {
+        title: "100% Sterilizatsiya",
+        desc: "Xalqaro xavfsizlik protokollari asosida 4 bosqichli tozalangan asboblar",
+      },
+    ],
+    doorBadge: "1-XONA ESHIGI",
+    doorTitle: "DAVRONOV MUHAMMAD-ALI",
+    doorRole: "Shifokor-Stomatolog (DM Stomatology)",
+    doorDesc:
+      "Klinikaga kelganingizda to'g'ridan-to'g'ri 1-xonaga kirasiz — navbatsiz va kutishlarsiz shaxsan Dr. MuhammadAli kutib oladi.",
+    ctaBook: "1-xonaga Qabulga Yozilish",
+    ctaCall: "Qo'ng'iroq qilish",
+    locationPill: "Andijon sh., Prospekt, Navoiy, 91 · 1-xona",
+  },
+  ru: {
+    badge: "КАБИНЕТ №1 · ПЕРСОНАЛЬНЫЙ ПРИЁМ",
+    liveStatus: "Приём Открыт · Без Очередей",
+    heading: "Рабочий Кабинет Д-ра МухаммадАли Давронова",
+    subheading:
+      "Кабинет №1 в клинике DM Stomatology — современное, стерильное и комфортное пространство, где доктор лично встречает каждого пациента, проводит осмотр и бережное лечение.",
+    clinicBrand: "DM STOMATOLOGY",
+    roomNumberBadge: "Кабинет №1 · Персональный приём",
+    doctorTag: "Д-р МухаммадАли",
+    addressLine: "г. Андижан, проспект, Навои, 91 (рядом с Sariq Bola)",
+    workingHoursText: "Понедельник – Суббота: 08:30 – 18:30",
+    roomBadge: "ЗОНА ЛЕЧЕНИЯ И КОНСУЛЬТАЦИИ",
+    roomTitle: "Современная Эргономика и Идеальная Чистота",
+    roomDesc:
+      "Эргономичное мягкое кресло для комфортного лечения без боли, стол для доверительной консультации и строгие стандарты антисептики.",
+    features: [
+      {
+        title: "Эргономичное Кресло",
+        desc: "Максимальный комфорт для шеи и спины на протяжении всего приёма",
+      },
+      {
+        title: "Стол Консультаций",
+        desc: "Подробный разбор плана лечения и стоимости до первого касания",
+      },
+      {
+        title: "100% Стерильность",
+        desc: "Многоступенчатая обработка инструментов по международным протоколам",
+      },
+    ],
+    doorBadge: "ДВЕРЬ КАБИНЕТА №1",
+    doorTitle: "DAVRONOV MUHAMMAD-ALI",
+    doorRole: "Врач-Стоматолог (DM Stomatology)",
+    doorDesc:
+      "При визите в клинику вы сразу проходите в кабинет №1 — без очередей и задержек доктор лично примет вас в назначенное время.",
+    ctaBook: "Записаться в Кабинет №1",
+    ctaCall: "Позвонить",
+    locationPill: "г. Андижан, проспект, Навои, 91 · Кабинет №1",
+  },
+  en: {
+    badge: "ROOM #1 · PRIVATE CLINICAL SUITE",
+    liveStatus: "Practice Open · Zero Waiting",
+    heading: "Dr. MuhammadAli Davronov's Clinical Suite",
+    subheading:
+      "Room #1 at DM Stomatology — a modern, sterile, and patient-centered clinical environment where Dr. MuhammadAli welcomes you personally for thorough consultations and gentle care.",
+    clinicBrand: "DM STOMATOLOGY",
+    roomNumberBadge: "Room #1 · Private Suite",
+    doctorTag: "Dr. MuhammadAli",
+    addressLine: "91 Navoi Avenue, Andijan (next to Sariq Bola)",
+    workingHoursText: "Monday – Saturday: 08:30 – 18:30",
+    roomBadge: "TREATMENT & CONSULTATION AREA",
+    roomTitle: "Modern Ergonomics & Clinical Purity",
+    roomDesc:
+      "Comfort-contoured patient chair for pain-free treatments, private consultation desk, and hospital-grade sterilization protocols.",
+    features: [
+      {
+        title: "Ergonomic Patient Chair",
+        desc: "Total ergonomic support for maximum comfort during all procedures",
+      },
+      {
+        title: "Private Consultation Desk",
+        desc: "Transparent discussion of your treatment roadmap before we begin",
+      },
+      {
+        title: "100% Sterilization Safety",
+        desc: "Multi-stage instrument sterilization adhering to international safety protocols",
+      },
+    ],
+    doorBadge: "ROOM #1 ENTRANCE",
+    doorTitle: "DAVRONOV MUHAMMAD-ALI",
+    doorRole: "Dental Specialist (DM Stomatology)",
+    doorDesc:
+      "Upon your arrival, head straight to Room #1 — no waiting or queues, Dr. MuhammadAli welcomes you directly at your booked slot.",
+    ctaBook: "Book Visit to Room #1",
+    ctaCall: "Call Directly",
+    locationPill: "91 Navoi Avenue, Andijan · Room #1",
+  },
+};
+
 export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
   const { lang } = useLanguage();
-  const { onOpenBooking } = useBooking();
+  const { openBooking } = useBooking();
 
-  const labels = {
-    uz: {
-      badge: "1-XONA · SHAXSIY QABULXONA",
-      liveStatus: "Qabul Ochiq · Navbatsiz",
-      heading: "Dr. MuhammadAli Davronovning Ish Xonasi",
-      subheading:
-        "DM Stomatologiya klinikasidagi 1-xona — har bir bemorni shaxsan qabul qilish, 100% og'riqsiz davolash va xalqaro sterilizatsiya standartlarini ta'minlash uchun maxsus jihozlangan qulay davolash muhiti.",
-      clinicBrand: "DM STOMATOLOGIYA",
-      roomNumberBadge: "1-Xona · Shaxsiy Qabulxona",
-      doctorTag: "Dr. MuhammadAli",
-      addressLine: "Andijon sh., Prospekt, Navoiy, 91 (Sariq Bola yonida)",
-      workingHoursText: "Dushanba – Shanba: 08:30 – 18:30",
-      roomBadge: "DAVOLASH VA KONSULTATSIYA ZONASI",
-      roomTitle: "Zamonaviy Ergonomika va Yuqori Gigiyena",
-      roomDesc:
-        "Yumshoq anesteziya ostida davolash uchun qulay kreslo, tushunarli tahlil uchun anatomik ko'rgazma hamda xalqaro sterilizatsiya standartlari.",
-      features: [
-        {
-          title: "Ergonomik Kreslo",
-          desc: "Muolaja davomida bo'yin va belga ortiqcha bosimsiz maksimal qulaylik",
-        },
-        {
-          title: "Shaxsiy Konsultatsiya",
-          desc: "Davolash boshlanishidan oldin barcha savollarni ekranda birga ko'rish",
-        },
-        {
-          title: "100% Sterilizatsiya",
-          desc: "Xalqaro xavfsizlik protokollari asosida 4 bosqichli tozalangan asboblar",
-        },
-      ],
-      doorBadge: "1-XONA ESHIGI",
-      doorTitle: "DAVRONOV MUHAMMAD-ALI",
-      doorRole: "Shifokor-Stomatolog (DM Stomatology)",
-      doorDesc:
-        "Klinikaga kelganingizda to'g'ridan-to'g'ri 1-xonaga kirasiz — navbatsiz va kutishlarsiz shaxsan Dr. MuhammadAli kutib oladi.",
-      ctaBook: "1-xonaga Qabulga Yozilish",
-      ctaCall: "Qo'ng'iroq qilish",
-      locationPill: "Andijon sh., Prospekt, Navoiy, 91 · 1-xona",
-    },
-    ru: {
-      badge: "КАБИНЕТ №1 · ПЕРСОНАЛЬНЫЙ ПРИЁМ",
-      liveStatus: "Приём Открыт · Без Очередей",
-      heading: "Рабочий Кабинет Д-ра МухаммадАли Давронова",
-      subheading:
-        "Кабинет №1 в клинике DM Stomatology — современное, стерильное и комфортное пространство, где доктор лично встречает каждого пациента, проводит осмотр и бережное лечение.",
-      clinicBrand: "DM STOMATOLOGY",
-      roomNumberBadge: "Кабинет №1 · Персональный приём",
-      doctorTag: "Д-р МухаммадАли",
-      addressLine: "г. Андижан, проспект, Навои, 91 (рядом с Sariq Bola)",
-      workingHoursText: "Понедельник – Суббота: 08:30 – 18:30",
-      roomBadge: "ЗОНА ЛЕЧЕНИЯ И КОНСУЛЬТАЦИИ",
-      roomTitle: "Современная Эргономика и Идеальная Чистота",
-      roomDesc:
-        "Эргономичное мягкое кресло для комфортного лечения без боли, стол для доверительной консультации и строгие стандарты антисептики.",
-      features: [
-        {
-          title: "Эргономичное Кресло",
-          desc: "Максимальный комфорт для шеи и спины на протяжении всего приёма",
-        },
-        {
-          title: "Стол Консультаций",
-          desc: "Подробный разбор плана лечения и стоимости до первого касания",
-        },
-        {
-          title: "100% Стерильность",
-          desc: "Многоступенчатая обработка инструментов по международным протоколам",
-        },
-      ],
-      doorBadge: "ДВЕРЬ КАБИНЕТА №1",
-      doorTitle: "DAVRONOV MUHAMMAD-ALI",
-      doorRole: "Врач-Стоматолог (DM Stomatology)",
-      doorDesc:
-        "При визите в клинику вы сразу проходите в кабинет №1 — без очередей и задержек доктор лично примет вас в назначенное время.",
-      ctaBook: "Записаться в Кабинет №1",
-      ctaCall: "Позвонить",
-      locationPill: "г. Андижан, проспект, Навои, 91 · Кабинет №1",
-    },
-    en: {
-      badge: "ROOM #1 · PRIVATE CLINICAL SUITE",
-      liveStatus: "Practice Open · Zero Waiting",
-      heading: "Dr. MuhammadAli Davronov's Clinical Suite",
-      subheading:
-        "Room #1 at DM Stomatology — a modern, sterile, and patient-centered clinical environment where Dr. MuhammadAli welcomes you personally for thorough consultations and gentle care.",
-      clinicBrand: "DM STOMATOLOGY",
-      roomNumberBadge: "Room #1 · Private Suite",
-      doctorTag: "Dr. MuhammadAli",
-      addressLine: "91 Navoi Avenue, Andijan (next to Sariq Bola)",
-      workingHoursText: "Monday – Saturday: 08:30 – 18:30",
-      roomBadge: "TREATMENT & CONSULTATION AREA",
-      roomTitle: "Modern Ergonomics & Clinical Purity",
-      roomDesc:
-        "Comfort-contoured patient chair for pain-free treatments, private consultation desk, and hospital-grade sterilization protocols.",
-      features: [
-        {
-          title: "Ergonomic Patient Chair",
-          desc: "Total ergonomic support for maximum comfort during all procedures",
-        },
-        {
-          title: "Private Consultation Desk",
-          desc: "Transparent discussion of your treatment roadmap before we begin",
-        },
-        {
-          title: "100% Sterilization Safety",
-          desc: "Multi-stage instrument sterilization adhering to international safety protocols",
-        },
-      ],
-      doorBadge: "ROOM #1 ENTRANCE",
-      doorTitle: "DAVRONOV MUHAMMAD-ALI",
-      doorRole: "Dental Specialist (DM Stomatology)",
-      doorDesc:
-        "Upon your arrival, head straight to Room #1 — no waiting or queues, Dr. MuhammadAli welcomes you directly at your booked slot.",
-      ctaBook: "Book Visit to Room #1",
-      ctaCall: "Call Directly",
-      locationPill: "91 Navoi Avenue, Andijan · Room #1",
-    },
-  }[lang] || labels.uz;
+  const labels = ROOM_LABELS_MAP[lang] || ROOM_LABELS_MAP.uz;
 
   return (
     <section aria-labelledby="working-room-heading" className={`w-full ${className}`}>
@@ -286,7 +288,7 @@ export const WorkingRoomShowcase = ({ _compact = false, className = "" }) => {
               <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
                 <button
                   type="button"
-                  onClick={onOpenBooking}
+                  onClick={openBooking}
                   className="flex-1 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-primary hover:bg-primary-hover shadow-sm active:scale-98 transition-all text-center cursor-pointer"
                 >
                   {labels.ctaBook}

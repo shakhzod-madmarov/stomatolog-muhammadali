@@ -22,6 +22,9 @@ Allow: /
 User-agent: YandexFavicons
 Allow: /
 Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /favicon-120x120.png
+Allow: /favicon-48x48.png
 
 User-agent: YandexDirect
 Allow: /

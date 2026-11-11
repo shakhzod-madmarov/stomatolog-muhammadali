@@ -86,8 +86,6 @@ export const DOCTOR_INFO = {
   instagramHandle: "@dm.muxammadali",
   socialProfiles: [
     "https://www.instagram.com/dm.muxammadali/",
-    "https://www.instagram.com/davronov_muhammadali_/",
-    "https://www.instagram.com/dr_muhammadali",
     "https://t.me/+998976760101",
     "https://t.me/dm_stomatology",
   ],

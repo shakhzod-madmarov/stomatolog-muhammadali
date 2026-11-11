@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage, useLocalizedPath } from "../context/LanguageContext";
 import Seo from "../components/Seo";
 import InlineBookingSection from "../components/InlineBookingSection";
@@ -18,6 +18,7 @@ import TrustStickers from "../components/TrustStickers";
 const Booking = () => {
   const { lang } = useLanguage();
   const to = useLocalizedPath();
+  const { pathname } = useLocation();
   const years = getYearsOfExperience();
   const seo = PAGE_SEO.booking[lang] || PAGE_SEO.booking.uz;
   const hours = useClinicHours(lang);
@@ -27,15 +28,18 @@ const Booking = () => {
     { name: lang === "ru" ? "Запись на приём" : lang === "en" ? "Appointment Booking" : "Qabulga yozilish", path: "/booking" },
   ];
   const bookingSchema = buildBookingPageSchema ? buildBookingPageSchema(lang, breadcrumbs) : null;
+  const isLegacyQabulRoute = pathname.includes("/qabul");
 
   return (
     <div className="py-6 sm:py-10 space-y-10">
       <Seo
         page="booking"
+        path="/booking"
         title={seo.title}
         description={seo.description}
         keywords={seo.keywords}
         schemaJson={bookingSchema}
+        noindex={isLegacyQabulRoute}
       />
 
       {/* Breadcrumbs */}

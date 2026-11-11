@@ -153,6 +153,10 @@ for (const route of routes) {
   if (seo.noindex || route === NOT_FOUND_ROUTE) {
     pageHtml = setNoindex(pageHtml);
   }
+  if (route === NOT_FOUND_ROUTE) {
+    pageHtml = setCanonical(pageHtml, null);
+    pageHtml = injectAlternates(pageHtml, null);
+  }
   if (seo.schemaJson) {
     pageHtml = injectSchema(pageHtml, seo.schemaJson);
   }

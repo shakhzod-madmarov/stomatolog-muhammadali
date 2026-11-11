@@ -121,26 +121,27 @@ const STICKERS_DATA = [
   },
 ];
 
+const TRUST_LABELS_MAP = {
+  uz: {
+    badge: "KLINIK STANDARTLAR VA KAFOLATLAR",
+    heading: "Dr. MuhammadAli Davronovning Rasmiy Davolash Kafolatlari",
+    verified: "Tasdiqlangan",
+  },
+  ru: {
+    badge: "КЛИНИЧЕСКИЕ СТАНДАРТЫ И ГАРАНТИИ",
+    heading: "Официальные Клинические Стандарты Д-ра МухаммадАли Давронова",
+    verified: "Подтверждено",
+  },
+  en: {
+    badge: "CLINICAL STANDARDS & GUARANTEES",
+    heading: "Official Treatment Assurances by Dr. MuhammadAli Davronov",
+    verified: "Verified",
+  },
+};
+
 export const TrustStickers = ({ className = "" }) => {
   const { lang } = useLanguage();
-
-  const labels = {
-    uz: {
-      badge: "KLINIK STANDARTLAR VA KAFOLATLAR",
-      heading: "Dr. MuhammadAli Davronovning Rasmiy Davolash Kafolatlari",
-      verified: "Tasdiqlangan",
-    },
-    ru: {
-      badge: "КЛИНИЧЕСКИЕ СТАНДАРТЫ И ГАРАНТИИ",
-      heading: "Официальные Клинические Стандарты Д-ра МухаммадАли Давронова",
-      verified: "Подтверждено",
-    },
-    en: {
-      badge: "CLINICAL STANDARDS & GUARANTEES",
-      heading: "Official Treatment Assurances by Dr. MuhammadAli Davronov",
-      verified: "Verified",
-    },
-  }[lang] || labels.uz;
+  const labels = TRUST_LABELS_MAP[lang] || TRUST_LABELS_MAP.uz;
 
   return (
     <section

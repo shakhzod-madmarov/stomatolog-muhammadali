@@ -103,4 +103,21 @@ export const PAGE_SEO = {
       description: "The page you are looking for does not exist. Please return to the homepage.",
     },
   },
+  review: {
+    uz: {
+      title: "Baho va Sharh Qoldirish — Dr. MuhammadAli Davronov | DM",
+      description: "Dr. MuhammadAli Davronov qabuli bo'yicha o'z fikringiz va 5★ bahongizni Google va Yandex xaritalarda qoldiring. DM Stomatologiya, Andijon.",
+      keywords: "stomatolog muhammadali sharhlar, dr muhammadali baholash, stomatolog andijon otzyv, yandex sharh stomatolog, google review stomatolog andijon",
+    },
+    ru: {
+      title: "Оставить Отзыв и Оценку — Д-р МухаммадАли Давронов | DM",
+      description: "Поделитесь впечатлением о приёме у Д-ра МухаммадАли Давронова и поставьте 5★ в Google и Яндекс Картах. Клиника DM Stomatology, Андижан.",
+      keywords: "отзывы стоматолог мухаммадали давронов, доктор мухаммадали андижан отзывы, оставить отзыв стоматология андижан, яндекс карты стоматолог давронов",
+    },
+    en: {
+      title: "Leave a Review & Rating — Dr. MuhammadAli Davronov | DM",
+      description: "Share your feedback and rate Dr. MuhammadAli Davronov on Google and Yandex Maps. DM Stomatology clinic in Andijan, Uzbekistan.",
+      keywords: "dr muhammadali davronov reviews, dentist andijan review, google maps dentist review andijan, yandex maps dentist rating",
+    },
+  },
 };

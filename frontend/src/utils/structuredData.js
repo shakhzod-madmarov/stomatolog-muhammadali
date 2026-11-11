@@ -501,14 +501,6 @@ export const buildHomePageSchema = (lang = "uz") => {
           "https://schema.org/Prosthodontics",
           "https://schema.org/OralSurgery",
         ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "bestRating": "5",
-          "worstRating": "1",
-          "ratingCount": "96",
-          "reviewCount": "96",
-        },
         "areaServed": {
           "@type": "AdministrativeArea",
           "name": "Andijon viloyati",

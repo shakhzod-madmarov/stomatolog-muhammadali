@@ -1,98 +1,101 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage, useLocalizedPath } from "../context/LanguageContext";
-import { DOCTOR_INFO } from "../constants/doctor";
 import Seo from "../components/Seo";
+
+const REVIEW_CONTENT_MAP = {
+  uz: {
+    badge: "Bemorlar fikri va baholash",
+    title: "Qabulimizdan mamnunmisiz?",
+    subtitle: "Dr. MuhammadAli Davronov qabuli bo'yicha o'z fikringiz va 5★ bahongizni qoldiring. Bu boshqa bemorlarga to'g'ri tanlov qilishda yordam beradi!",
+    doctorRole: "Yuz-jag' jarrohi • Implantolog • Ortoped (5 yillik tajriba)",
+    selectRating: "Bahoingizni tanlang:",
+    ratingExcellent: "A'lo darajada! Rahmat!",
+    googleBtn: "Google Xaritalarda baholash (5★)",
+    googleSub: "Google Maps orqali to'g'ridan-to'g'ri sharh oynasi ochiladi",
+    yandexBtn: "Yandex Xaritalarda baholash (5★)",
+    yandexSub: "Яндекс Карты orqali sharhlar bo'limi ochiladi",
+    deskStandTitle: "Klinika stoli uchun tayyor QR stendlar (Chop etishga tayyor)",
+    deskStandDesc: "Qabulxona (resepshn) yoki stomatologiya xonasi stollariga qo'yish uchun A4 va A5 formatdagi tayyor PDF/PNG fayllar:",
+    downloadA5Pdf: "A5 Stol Stendi (PDF)",
+    downloadA4Pdf: "A4 Devor Posteri (PDF)",
+    downloadHorizontalPdf: "Gorizontal Stend (PDF)",
+    downloadA5Png: "A5 Rasm (PNG)",
+    downloadA4Png: "A4 Rasm (PNG)",
+    downloadHorizontalPng: "Gorizontal Rasm (PNG)",
+    printNow: "Hozir chop etish (Print)",
+    address: "Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy (Sariq Bola pizza yonida)",
+    phone: "+998 97 676 01 01",
+  },
+  ru: {
+    badge: "Отзывы и оценка пациентов",
+    title: "Как прошёл ваш приём?",
+    subtitle: "Оцените приём у доктора МухаммадАли Давронова и поставьте 5★. Ваш отзыв помогает другим пациентам найти квалифицированную помощь в Андижане!",
+    doctorRole: "Челюстно-лицевой хирург • Имплантолог • Ортопед (5 лет опыта)",
+    selectRating: "Выберите вашу оценку:",
+    ratingExcellent: "Отлично! Спасибо за доверие!",
+    googleBtn: "Оценить в Google Maps (5★)",
+    googleSub: "Откроется окно оценки Google Карт для отправки отзыва",
+    yandexBtn: "Оценить в Яндекс Картах (5★)",
+    yandexSub: "Откроется раздел отзывов организации на Яндекс Картах",
+    deskStandTitle: "Готовые QR-стенды для клиники (Готовы к печати)",
+    deskStandDesc: "Для стола ресепшн или кабинета врача в форматах A4 и A5 (PDF/PNG высокого разрешения):",
+    downloadA5Pdf: "A5 Настольный стенд (PDF)",
+    downloadA4Pdf: "A4 Настенный постер (PDF)",
+    downloadHorizontalPdf: "Горизонтальный стенд (PDF)",
+    downloadA5Png: "A5 Изображение (PNG)",
+    downloadA4Png: "A4 Изображение (PNG)",
+    downloadHorizontalPng: "Горизонтальное фото (PNG)",
+    printNow: "Распечатать сейчас",
+    address: "г. Андижан, проспект, Навои, 91 (рядом с пиццерией SARIQ BOLA)",
+    phone: "+998 97 676 01 01",
+  },
+  en: {
+    badge: "Patient Reviews & Feedback",
+    title: "How was your appointment?",
+    subtitle: "Share your experience and leave a 5★ review for Dr. MuhammadAli Davronov. Your honest feedback helps other patients make informed decisions!",
+    doctorRole: "Oral & Maxillofacial Surgeon • Implantologist • Prosthodontist",
+    selectRating: "Select your rating:",
+    ratingExcellent: "Excellent! Thank you!",
+    googleBtn: "Rate on Google Maps (5★)",
+    googleSub: "Direct review prompt in Google Maps",
+    yandexBtn: "Rate on Yandex Maps (5★)",
+    yandexSub: "Direct review section in Yandex Maps",
+    deskStandTitle: "Printable Clinic Table Stands & Posters",
+    deskStandDesc: "High-resolution print-ready PDF & PNG files for reception desk and doctor tables:",
+    downloadA5Pdf: "A5 Table Tent (PDF)",
+    downloadA4Pdf: "A4 Wall Poster (PDF)",
+    downloadHorizontalPdf: "Landscape Stand (PDF)",
+    downloadA5Png: "A5 Image (PNG)",
+    downloadA4Png: "A4 Image (PNG)",
+    downloadHorizontalPng: "Landscape Image (PNG)",
+    printNow: "Print Now",
+    address: "Andijan, Prospekt, Navoi Avenue, 91 (Next to Sariq Bola pizza)",
+    phone: "+998 97 676 01 01",
+  },
+};
 
 const Review = () => {
   const { lang } = useLanguage();
   const to = useLocalizedPath();
+  const { pathname } = useLocation();
   const [selectedRating, setSelectedRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
 
   const googleReviewUrl = "https://g.page/r/CbETKPLsTTxtEBM/review";
-  const yandexReviewUrl = "https://yandex.uz/maps/org/73065652747/reviews/";
+  const yandexReviewUrl = "https://stomatolog-muhammadali.uz/yandex-review";
 
-  const content = {
-    uz: {
-      badge: "Bemorlar fikri va baholash",
-      title: "Qabulimizdan mamnunmisiz?",
-      subtitle: "Dr. MuhammadAli Davronov qabuli bo'yicha o'z fikringiz va 5★ bahongizni qoldiring. Bu boshqa bemorlarga to'g'ri tanlov qilishda yordam beradi!",
-      doctorRole: "Yuz-jag' jarrohi • Implantolog • Ortoped (5 yillik tajriba)",
-      selectRating: "Bahoingizni tanlang:",
-      ratingExcellent: "A'lo darajada! Rahmat!",
-      googleBtn: "Google Xaritalarda baholash (5★)",
-      googleSub: "Google Maps orqali to'g'ridan-to'g'ri sharh oynasi ochiladi",
-      yandexBtn: "Yandex Xaritalarda baholash (5★)",
-      yandexSub: "Яндекс Карты orqali sharhlar bo'limi ochiladi",
-      deskStandTitle: "Klinika stoli uchun tayyor QR stendlar (Chop etishga tayyor)",
-      deskStandDesc: "Qabulxona (resepshn) yoki stomatologiya xonasi stollariga qo'yish uchun A4 va A5 formatdagi tayyor PDF/PNG fayllar:",
-      downloadA5Pdf: "A5 Stol Stendi (PDF)",
-      downloadA4Pdf: "A4 Devor Posteri (PDF)",
-      downloadHorizontalPdf: "Gorizontal Stend (PDF)",
-      downloadA5Png: "A5 Rasm (PNG)",
-      downloadA4Png: "A4 Rasm (PNG)",
-      downloadHorizontalPng: "Gorizontal Rasm (PNG)",
-      printNow: "Hozir chop etish (Print)",
-      address: "Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy (Sariq Bola pizza yonida)",
-      phone: "+998 97 676 01 01",
-    },
-    ru: {
-      badge: "Отзывы и оценка пациентов",
-      title: "Как прошёл ваш приём?",
-      subtitle: "Оцените приём у доктора МухаммадАли Давронова и поставьте 5★. Ваш отзыв помогает другим пациентам найти квалифицированную помощь в Андижане!",
-      doctorRole: "Челюстно-лицевой хирург • Имплантолог • Ортопед (5 лет опыта)",
-      selectRating: "Выберите вашу оценку:",
-      ratingExcellent: "Отлично! Спасибо за доверие!",
-      googleBtn: "Оценить в Google Maps (5★)",
-      googleSub: "Откроется окно оценки Google Карт для отправки отзыва",
-      yandexBtn: "Оценить в Яндекс Картах (5★)",
-      yandexSub: "Откроется раздел отзывов организации на Яндекс Картах",
-      deskStandTitle: "Готовые QR-стенды для клиники (Готовы к печати)",
-      deskStandDesc: "Для стола ресепшн или кабинета врача в форматах A4 и A5 (PDF/PNG высокого разрешения):",
-      downloadA5Pdf: "A5 Настольный стенд (PDF)",
-      downloadA4Pdf: "A4 Настенный постер (PDF)",
-      downloadHorizontalPdf: "Горизонтальный стенд (PDF)",
-      downloadA5Png: "A5 Изображение (PNG)",
-      downloadA4Png: "A4 Изображение (PNG)",
-      downloadHorizontalPng: "Горизонтальное фото (PNG)",
-      printNow: "Распечатать сейчас",
-      address: "г. Андижан, проспект, Навои, 91 (рядом с пиццерией SARIQ BOLA)",
-      phone: "+998 97 676 01 01",
-    },
-    en: {
-      badge: "Patient Reviews & Feedback",
-      title: "How was your appointment?",
-      subtitle: "Share your experience and leave a 5★ review for Dr. MuhammadAli Davronov. Your honest feedback helps other patients make informed decisions!",
-      doctorRole: "Oral & Maxillofacial Surgeon • Implantologist • Prosthodontist",
-      selectRating: "Select your rating:",
-      ratingExcellent: "Excellent! Thank you!",
-      googleBtn: "Rate on Google Maps (5★)",
-      googleSub: "Direct review prompt in Google Maps",
-      yandexBtn: "Rate on Yandex Maps (5★)",
-      yandexSub: "Direct review section in Yandex Maps",
-      deskStandTitle: "Printable Clinic Table Stands & Posters",
-      deskStandDesc: "High-resolution print-ready PDF & PNG files for reception desk and doctor tables:",
-      downloadA5Pdf: "A5 Table Tent (PDF)",
-      downloadA4Pdf: "A4 Wall Poster (PDF)",
-      downloadHorizontalPdf: "Landscape Stand (PDF)",
-      downloadA5Png: "A5 Image (PNG)",
-      downloadA4Png: "A4 Image (PNG)",
-      downloadHorizontalPng: "Landscape Image (PNG)",
-      printNow: "Print Now",
-      address: "Andijan, Prospekt, Navoi Avenue, 91 (Next to Sariq Bola pizza)",
-      phone: "+998 97 676 01 01",
-    },
-  }[lang] || content.uz;
+  const content = REVIEW_CONTENT_MAP[lang] || REVIEW_CONTENT_MAP.uz;
+  const isLegacyBahoRoute = pathname.includes("/baho");
 
   const currentStars = hoverRating || selectedRating;
 
   return (
     <div className="py-8 sm:py-12 space-y-10 text-slate-900 max-w-4xl mx-auto">
       <Seo
-        page="contact"
-        title={lang === "ru" ? "Оставить отзыв — Доктор МухаммадАли Давронов" : "Baho va Sharh qoldirish — Dr. MuhammadAli Davronov"}
-        description={content.subtitle}
+        page="review"
+        path="/review"
+        noindex={isLegacyBahoRoute}
       />
 
       {/* Header Breadcrumbs */}

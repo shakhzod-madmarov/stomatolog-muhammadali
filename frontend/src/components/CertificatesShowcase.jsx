@@ -7,9 +7,63 @@ import {
   DentalImplantFixture,
 } from "./MedicalIcons";
 
+const CERTIFICATES_LABELS_MAP = {
+  uz: {
+    badge: "XALQARO SERTIFIKATLAR VA MALAKA",
+    heading: "Dr. MuhammadAli Davronovning Rasmiy Sertifikatlari",
+    subheading:
+      "Jahon andozalaridagi yetakchi implant tizimlari (Dentium, DIO Implant, One-Stage) bo'yicha muntazam malaka oshirish va rasmiy sertifikatlangan amaliyot.",
+    zoomBtn: "Sertifikatni to'liq ko'rish",
+    verified: "Haqiqiyligi tasdiqlangan",
+    close: "Yopish",
+    next: "Keyingi",
+    prev: "Oldingi",
+    speakerLabel: "Spiker / Trener:",
+    dateLabel: "Sana:",
+    issuerLabel: "Tashkilot:",
+    ctaBook: "Implantatsiya Konsultatsiyasiga Yozilish",
+    ctaCall: "Shifokorga Qo'ng'iroq Qilish",
+    trustPill: "100% Rasmiy Sertifikatlar · Xalqaro Protokollar",
+  },
+  ru: {
+    badge: "МЕЖДУНАРОДНЫЕ СЕРТИФИКАТЫ И КВАЛИФИКАЦИЯ",
+    heading: "Официальные Сертификаты Д-ра МухаммадАли Давронова",
+    subheading:
+      "Регулярное повышение квалификации и практическая аккредитация на ведущих мировых системах имплантации (Dentium, DIO Implant, One-Stage).",
+    zoomBtn: "Посмотреть сертификат",
+    verified: "Подлинность подтверждена",
+    close: "Закрыть",
+    next: "Вперёд",
+    prev: "Назад",
+    speakerLabel: "Спикер / Тренер:",
+    dateLabel: "Дата:",
+    issuerLabel: "Организация:",
+    ctaBook: "Записаться на консультацию по имплантации",
+    ctaCall: "Позвонить доктору",
+    trustPill: "100% Подлинные Сертификаты · Международные Протоколы",
+  },
+  en: {
+    badge: "INTERNATIONAL CERTIFICATIONS & CREDENTIALS",
+    heading: "Dr. MuhammadAli Davronov's Official Certifications",
+    subheading:
+      "Continuous clinical mastery and verified surgical credentials on world-renowned implant systems (Dentium, DIO Implant, One-Stage).",
+    zoomBtn: "View Certificate Fullscreen",
+    verified: "Verified & Authenticated",
+    close: "Close",
+    next: "Next",
+    prev: "Previous",
+    speakerLabel: "Speaker / Trainer:",
+    dateLabel: "Date:",
+    issuerLabel: "Organization:",
+    ctaBook: "Book Implant Consultation",
+    ctaCall: "Call Dr. MuhammadAli",
+    trustPill: "100% Genuine Credentials · Global Protocols",
+  },
+};
+
 export const CertificatesShowcase = ({ className = "" }) => {
   const { lang } = useLanguage();
-  const { onOpenBooking } = useBooking();
+  const { openBooking } = useBooking();
   const [selectedCert, setSelectedCert] = useState(null);
 
   // Keyboard navigation for modal
@@ -33,59 +87,7 @@ export const CertificatesShowcase = ({ className = "" }) => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedCert]);
 
-  const labels = {
-    uz: {
-      badge: "XALQARO SERTIFIKATLAR VA MALAKA",
-      heading: "Dr. MuhammadAli Davronovning Rasmiy Sertifikatlari",
-      subheading:
-        "Jahon andozalaridagi yetakchi implant tizimlari (Dentium, DIO Implant, One-Stage) bo'yicha muntazam malaka oshirish va rasmiy sertifikatlangan amaliyot.",
-      zoomBtn: "Sertifikatni to'liq ko'rish",
-      verified: "Haqiqiyligi tasdiqlangan",
-      close: "Yopish",
-      next: "Keyingi",
-      prev: "Oldingi",
-      speakerLabel: "Spiker / Trener:",
-      dateLabel: "Sana:",
-      issuerLabel: "Tashkilot:",
-      ctaBook: "Implantatsiya Konsultatsiyasiga Yozilish",
-      ctaCall: "Shifokorga Qo'ng'iroq Qilish",
-      trustPill: "100% Rasmiy Sertifikatlar · Xalqaro Protokollar",
-    },
-    ru: {
-      badge: "МЕЖДУНАРОДНЫЕ СЕРТИФИКАТЫ И КВАЛИФИКАЦИЯ",
-      heading: "Официальные Сертификаты Д-ра МухаммадАли Давронова",
-      subheading:
-        "Регулярное повышение квалификации и практическая аккредитация на ведущих мировых системах имплантации (Dentium, DIO Implant, One-Stage).",
-      zoomBtn: "Посмотреть сертификат",
-      verified: "Подлинность подтверждена",
-      close: "Закрыть",
-      next: "Вперёд",
-      prev: "Назад",
-      speakerLabel: "Спикер / Тренер:",
-      dateLabel: "Дата:",
-      issuerLabel: "Организация:",
-      ctaBook: "Записаться на консультацию по имплантации",
-      ctaCall: "Позвонить доктору",
-      trustPill: "100% Подлинные Сертификаты · Международные Протоколы",
-    },
-    en: {
-      badge: "INTERNATIONAL CERTIFICATIONS & CREDENTIALS",
-      heading: "Dr. MuhammadAli Davronov's Official Certifications",
-      subheading:
-        "Continuous clinical mastery and verified surgical credentials on world-renowned implant systems (Dentium, DIO Implant, One-Stage).",
-      zoomBtn: "View Certificate Fullscreen",
-      verified: "Verified & Authenticated",
-      close: "Close",
-      next: "Next",
-      prev: "Previous",
-      speakerLabel: "Speaker / Trainer:",
-      dateLabel: "Date:",
-      issuerLabel: "Organization:",
-      ctaBook: "Book Implant Consultation",
-      ctaCall: "Call Dr. MuhammadAli",
-      trustPill: "100% Genuine Credentials · Global Protocols",
-    },
-  }[lang] || labels.uz;
+  const labels = CERTIFICATES_LABELS_MAP[lang] || CERTIFICATES_LABELS_MAP.uz;
 
   return (
     <section
@@ -229,7 +231,7 @@ export const CertificatesShowcase = ({ className = "" }) => {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
             <button
               type="button"
-              onClick={onOpenBooking}
+              onClick={openBooking}
               className="px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-primary hover:bg-primary-hover shadow-sm active:scale-98 transition-all text-center cursor-pointer"
             >
               {labels.ctaBook}
@@ -348,7 +350,7 @@ export const CertificatesShowcase = ({ className = "" }) => {
                     type="button"
                     onClick={() => {
                       setSelectedCert(null);
-                      onOpenBooking();
+                      openBooking();
                     }}
                     className="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-primary hover:bg-primary-hover shadow-sm active:scale-98 transition-all cursor-pointer"
                   >

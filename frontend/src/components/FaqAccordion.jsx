@@ -2,6 +2,24 @@ import React, { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { FAQ_ITEMS } from "../constants/faq";
 
+const FAQ_LABELS_MAP = {
+  uz: {
+    badge: "KO'P SO'RALADIGAN SAVOLLAR",
+    title: "Bemorlar Uchun Muhim Savol-Javoblar",
+    subtitle: "Dental implantatsiya, ortopediya, 100% og'riqsiz terapiya va qabul tartibi bo'yicha eng muhim ma'lumotlar.",
+  },
+  ru: {
+    badge: "ЧАСТЫЕ ВОПРОСЫ",
+    title: "Ответы на главные вопросы пациентов",
+    subtitle: "Всё о дентальной имплантации, ортопедии, терапии без боли и порядке записи на приём.",
+  },
+  en: {
+    badge: "FREQUENTLY ASKED QUESTIONS",
+    title: "Everything You Need to Know",
+    subtitle: "Key answers regarding dental implants, orthopedics, pain-free therapy, and appointment booking.",
+  },
+};
+
 export const FaqAccordion = () => {
   const { lang } = useLanguage();
   const [openIndex, setOpenIndex] = useState(0);
@@ -10,23 +28,7 @@ export const FaqAccordion = () => {
     setOpenIndex(openIndex === idx ? -1 : idx);
   };
 
-  const labels = {
-    uz: {
-      badge: "KO'P SO'RALADIGAN SAVOLLAR",
-      title: "Bemorlar Uchun Muhim Savol-Javoblar",
-      subtitle: "Dental implantatsiya, ortopediya, 100% og'riqsiz terapiya va qabul tartibi bo'yicha eng muhim ma'lumotlar.",
-    },
-    ru: {
-      badge: "ЧАСТЫЕ ВОПРОСЫ",
-      title: "Ответы на главные вопросы пациентов",
-      subtitle: "Всё о дентальной имплантации, ортопедии, терапии без боли и порядке записи на приём.",
-    },
-    en: {
-      badge: "FREQUENTLY ASKED QUESTIONS",
-      title: "Everything You Need to Know",
-      subtitle: "Key answers regarding dental implants, orthopedics, pain-free therapy, and appointment booking.",
-    },
-  }[lang] || labels.uz;
+  const labels = FAQ_LABELS_MAP[lang] || FAQ_LABELS_MAP.uz;
 
   return (
     <section aria-labelledby="faq-section-heading" className="w-full py-12 sm:py-16 bg-slate-50 border-t border-slate-200/80">
@@ -76,16 +78,20 @@ export const FaqAccordion = () => {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div
-                    id={panelId}
-                    role="region"
-                    aria-labelledby={buttonId}
-                    className="px-6 pb-6 pt-3 text-base sm:text-lg text-slate-700 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200"
-                  >
-                    {item.a[lang] || item.a.uz}
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 pt-3 text-base sm:text-lg text-slate-700 leading-relaxed border-t border-slate-100">
+                      {item.a[lang] || item.a.uz}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

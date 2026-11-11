@@ -39,10 +39,7 @@ const renderFeatureIcon = (idx, className = "w-6 h-6") => {
   }
 };
 
-export const DigitalDentistryFeatures = () => {
-  const { lang } = useLanguage();
-
-  const content = {
+const DIGITAL_FEATURES_MAP = {
     uz: {
       badge: "ZAMONAVIY USULLAR",
       title: "Nega Qabulimda 3D Texnologiyalardan Foydalanaman?",
@@ -214,7 +211,11 @@ export const DigitalDentistryFeatures = () => {
       cardAuthor: "Dr. MuhammadAli Davronov",
       cardBadge: "DM Stomatology ✓",
     },
-  }[lang] || content.uz;
+};
+
+export const DigitalDentistryFeatures = () => {
+  const { lang } = useLanguage();
+  const content = DIGITAL_FEATURES_MAP[lang] || DIGITAL_FEATURES_MAP.uz;
 
   return (
     <section aria-labelledby="features-heading" className="w-full py-14 sm:py-20 relative overflow-hidden bg-slate-50 border-y border-slate-200/80">

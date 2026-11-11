@@ -11,6 +11,75 @@ import InlineBookingSection from "../components/InlineBookingSection";
 import TrustStickers from "../components/TrustStickers";
 
 
+const SERVICE_STEPS_MAP = {
+  uz: [
+    {
+      num: "01",
+      title: "Batafsil Ko'rik va Konsultatsiya",
+      desc: "Dr. MuhammadAli Davronov tishlar holatini to'liq ko'rikdan o'tkazadi va individual davolash rejasini tuzadi.",
+    },
+    {
+      num: "02",
+      title: "2 Bosqichli 100% Og'riqsiz Anesteziya",
+      desc: "Avval milk yuzasi anestetik gel bilan muzlatiladi, so'ngra zamonaviy og'riqsiz inyeksiya qilinadi.",
+    },
+    {
+      num: "03",
+      title: "Raqamli Aniqlikdagi Asosiy Muolaja",
+      desc: "Biotitan implantlar, sirkon koronkalar, vinirlar yoki nano-kompozit restavratsiya yordamida mukammal tiklash.",
+    },
+    {
+      num: "04",
+      title: "Mukammal Estetika va Rasmiy Kafolat",
+      desc: "Chaynash balansi tekshiriladi, sayqallanadi va Dr. MuhammadAli Davronov tomonidan shaxsiy rasmiy kafolat taqdim etiladi.",
+    },
+  ],
+  ru: [
+    {
+      num: "01",
+      title: "Детальный Осмотр и Консультация",
+      desc: "Д-р МухаммадАли Давронов проводит подробный клинический осмотр зубов и составляет точный план лечения.",
+    },
+    {
+      num: "02",
+      title: "Двухэтапная Анестезия Без Боли",
+      desc: "Десна обезболивается гелем, после чего аккуратно вводится современный европейский анестетик.",
+    },
+    {
+      num: "03",
+      title: "Высокоточное Лечение и Реставрация",
+      desc: "Установка титановых имплантов, циркониевых коронок, виниров или нанокомпозитное лечение без боли.",
+    },
+    {
+      num: "04",
+      title: "Контроль Прикуса и Официальная Гарантия",
+      desc: "Финальная полировка, проверка окклюзии и выдача личной официальной гарантии Д-ра МухаммадАли Давронова.",
+    },
+  ],
+  en: [
+    {
+      num: "01",
+      title: "Thorough Consultation & Examination",
+      desc: "Dr. MuhammadAli Davronov carries out a detailed clinical evaluation and designs your personalized treatment plan.",
+    },
+    {
+      num: "02",
+      title: "Two-Stage Gentle Anesthesia",
+      desc: "Topical numbing gel is applied prior to computer-controlled local anesthesia for zero pain.",
+    },
+    {
+      num: "03",
+      title: "Precision Restorative Procedure",
+      desc: "Guided placement of biocompatible titanium implants, zirconia crowns, veneers, or nano-composite restorations.",
+    },
+    {
+      num: "04",
+      title: "Bite Calibration & Clinical Warranty",
+      desc: "Final occlusion verification, high-gloss polish, and official personal warranty issued by Dr. MuhammadAli Davronov.",
+    },
+  ],
+};
+
 const ServiceDetail = () => {
   const { serviceId, slug } = useParams();
   const activeServiceId = serviceId || slug;
@@ -25,74 +94,7 @@ const ServiceDetail = () => {
         (activeServiceId === "sirkon-keramika-koronka" && s.id === "tsirkon-keramika-koronka")
     ) || SERVICES_CATALOG[0];
 
-  const steps = {
-    uz: [
-      {
-        num: "01",
-        title: "Batafsil Ko'rik va Konsultatsiya",
-        desc: "Dr. MuhammadAli Davronov tishlar holatini to'liq ko'rikdan o'tkazadi va individual davolash rejasini tuzadi.",
-      },
-      {
-        num: "02",
-        title: "2 Bosqichli 100% Og'riqsiz Anesteziya",
-        desc: "Avval milk yuzasi anestetik gel bilan muzlatiladi, so'ngra zamonaviy og'riqsiz inyeksiya qilinadi.",
-      },
-      {
-        num: "03",
-        title: "Raqamli Aniqlikdagi Asosiy Muolaja",
-        desc: "Biotitan implantlar, sirkon koronkalar, vinirlar yoki nano-kompozit restavratsiya yordamida mukammal tiklash.",
-      },
-      {
-        num: "04",
-        title: "Mukammal Estetika va Rasmiy Kafolat",
-        desc: "Chaynash balansi tekshiriladi, sayqallanadi va Dr. MuhammadAli Davronov tomonidan shaxsiy rasmiy kafolat taqdim etiladi.",
-      },
-    ],
-    ru: [
-      {
-        num: "01",
-        title: "Детальный Осмотр и Консультация",
-        desc: "Д-р МухаммадАли Давронов проводит подробный клинический осмотр зубов и составляет точный план лечения.",
-      },
-      {
-        num: "02",
-        title: "Двухэтапная Анестезия Без Боли",
-        desc: "Десна обезболивается гелем, после чего аккуратно вводится современный европейский анестетик.",
-      },
-      {
-        num: "03",
-        title: "Высокоточное Лечение и Реставрация",
-        desc: "Установка титановых имплантов, циркониевых коронок, виниров или нанокомпозитное лечение без боли.",
-      },
-      {
-        num: "04",
-        title: "Контроль Прикуса и Официальная Гарантия",
-        desc: "Финальная полировка, проверка окклюзии и выдача личной официальной гарантии Д-ра МухаммадАли Давронова.",
-      },
-    ],
-    en: [
-      {
-        num: "01",
-        title: "Thorough Consultation & Examination",
-        desc: "Dr. MuhammadAli Davronov carries out a detailed clinical evaluation and designs your personalized treatment plan.",
-      },
-      {
-        num: "02",
-        title: "Two-Stage Gentle Anesthesia",
-        desc: "Topical numbing gel is applied prior to computer-controlled local anesthesia for zero pain.",
-      },
-      {
-        num: "03",
-        title: "Precision Restorative Procedure",
-        desc: "Guided placement of biocompatible titanium implants, zirconia crowns, veneers, or nano-composite restorations.",
-      },
-      {
-        num: "04",
-        title: "Bite Calibration & Clinical Warranty",
-        desc: "Final occlusion verification, high-gloss polish, and official personal warranty issued by Dr. MuhammadAli Davronov.",
-      },
-    ],
-  }[lang] || steps.uz;
+  const steps = SERVICE_STEPS_MAP[lang] || SERVICE_STEPS_MAP.uz;
 
   const seoSuffix = {
     uz: "Dr. MuhammadAli Davronov | DM Stomatologiya",

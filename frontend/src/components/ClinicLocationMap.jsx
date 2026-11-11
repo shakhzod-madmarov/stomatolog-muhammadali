@@ -4,50 +4,51 @@ import { PRIMARY_CLINIC } from "../constants/clinics";
 import { DOCTOR_INFO, OPENING_HOURS } from "../constants/doctor";
 import { IconLocationPin, IconClock, IconPhone } from "./MedicalIcons";
 
+const CLINIC_LABELS_MAP = {
+  uz: {
+    badge: "KLINIKA VA QABUL MANZILI",
+    title: "DM Stomatologiya — Dr. MuhammadAli Davronov",
+    subtitle: "Dr. MuhammadAli Davronov bemorlarni Andijon shahrida Prospekt, Navoiy shoh ko'chasida joylashgan zamonaviy DM Stomatologiya klinikasida shaxsan qabul qiladi.",
+    addressTitle: "Manzil:",
+    landmarkTitle: "Mo'ljal:",
+    hoursTitle: "Qabul vaqti:",
+    openGoogle: "Google Maps orqali ochish ↗",
+    openYandex: "Yandex Xaritada ochish ↗",
+    callUs: "Qo'ng'iroq qilish",
+    telegram: "Telegram orqali yozish",
+    directionsBtn: "Marshrut chizish (Yandex) ↗",
+  },
+  ru: {
+    badge: "ЛОКАЦИЯ И ПРИЁМ",
+    title: "DM Stomatology — Д-р МухаммадАли Давронов",
+    subtitle: "Персональный приём проходит в г. Андижан в современной клинике DM Stomatology на проспекте, Навои, 91.",
+    addressTitle: "Адрес:",
+    landmarkTitle: "Ориентир:",
+    hoursTitle: "Часы приёма:",
+    openGoogle: "Открыть в Google Maps ↗",
+    openYandex: "Открыть в Яндекс Картах ↗",
+    callUs: "Позвонить",
+    telegram: "Написать в Telegram",
+    directionsBtn: "Маршрут в Яндекс Картах ↗",
+  },
+  en: {
+    badge: "PRACTICE LOCATION",
+    title: "DM Stomatology — Dr. MuhammadAli Davronov",
+    subtitle: "Dr. MuhammadAli Davronov personally receives patients in Andijan at DM Stomatology, 91 Navoi Avenue.",
+    addressTitle: "Address:",
+    landmarkTitle: "Landmark:",
+    hoursTitle: "Working Hours:",
+    openGoogle: "Open in Google Maps ↗",
+    openYandex: "Open in Yandex Maps ↗",
+    callUs: "Call Hotline",
+    telegram: "Message on Telegram",
+    directionsBtn: "Directions on Yandex Maps ↗",
+  },
+};
+
 export const ClinicLocationMap = () => {
   const { lang } = useLanguage();
-
-  const labels = {
-    uz: {
-      badge: "KLINIKA VA QABUL MANZILI",
-      title: "DM Stomatologiya — Dr. MuhammadAli Davronov",
-      subtitle: "Dr. MuhammadAli Davronov bemorlarni Andijon shahrida Prospekt, Navoiy shoh ko'chasida joylashgan zamonaviy DM Stomatologiya klinikasida shaxsan qabul qiladi.",
-      addressTitle: "Manzil:",
-      landmarkTitle: "Mo'ljal:",
-      hoursTitle: "Qabul vaqti:",
-      openGoogle: "Google Maps orqali ochish ↗",
-      openYandex: "Yandex Xaritada ochish ↗",
-      callUs: "Qo'ng'iroq qilish",
-      telegram: "Telegram orqali yozish",
-      directionsBtn: "Marshrut chizish (Yandex) ↗",
-    },
-    ru: {
-      badge: "ЛОКАЦИЯ И ПРИЁМ",
-      title: "DM Stomatology — Д-р МухаммадАли Давронов",
-      subtitle: "Персональный приём проходит в г. Андижан в современной клинике DM Stomatology на проспекте, Навои, 91.",
-      addressTitle: "Адрес:",
-      landmarkTitle: "Ориентир:",
-      hoursTitle: "Часы приёма:",
-      openGoogle: "Открыть в Google Maps ↗",
-      openYandex: "Открыть в Яндекс Картах ↗",
-      callUs: "Позвонить",
-      telegram: "Написать в Telegram",
-      directionsBtn: "Маршрут в Яндекс Картах ↗",
-    },
-    en: {
-      badge: "PRACTICE LOCATION",
-      title: "DM Stomatology — Dr. MuhammadAli Davronov",
-      subtitle: "Dr. MuhammadAli Davronov personally receives patients in Andijan at DM Stomatology, 91 Navoi Avenue.",
-      addressTitle: "Address:",
-      landmarkTitle: "Landmark:",
-      hoursTitle: "Working Hours:",
-      openGoogle: "Open in Google Maps ↗",
-      openYandex: "Open in Yandex Maps ↗",
-      callUs: "Call Hotline",
-      telegram: "Message on Telegram",
-      directionsBtn: "Directions on Yandex Maps ↗",
-    },
-  }[lang] || labels.uz;
+  const labels = CLINIC_LABELS_MAP[lang] || CLINIC_LABELS_MAP.uz;
 
   return (
     <section aria-labelledby="clinic-location-heading" className="w-full py-12 sm:py-16 bg-white">

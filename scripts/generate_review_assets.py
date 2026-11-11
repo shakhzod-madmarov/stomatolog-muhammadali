@@ -355,8 +355,8 @@ qr_g = generate_qr(GOOGLE_REVIEW_URL, size=1200, badge_type="google")
 qr_g.save(os.path.join(PUBLIC_QR_DIR, "google_review_qr.png"))
 qr_g.save(os.path.join(ARTIFACTS_DIR, "google_review_qr.png"))
 
-# 2. Standalone Yandex Doctor Personal Review QR (ID: 73065652747)
-qr_y = generate_qr(YANDEX_DOCTOR_PERSONAL_URL, size=1200, badge_type="yandex")
+# 2. Standalone Yandex Doctor Personal Review QR (Uses Smart Redirect)
+qr_y = generate_qr(YANDEX_SMART_REDIRECT_URL, size=1200, badge_type="yandex")
 qr_y.save(os.path.join(PUBLIC_QR_DIR, "yandex_review_qr.png"))
 qr_y.save(os.path.join(ARTIFACTS_DIR, "yandex_review_qr.png"))
 
@@ -367,7 +367,7 @@ qr_y_smart.save(os.path.join(ARTIFACTS_DIR, "yandex_review_smart_qr.png"))
 print("[OK] Individual QR codes generated.")
 
 # 3. A5 Vertical Table Stand
-card_a5 = create_vertical_card(width=1748, height=2480, scale=1.0, yandex_target_url=YANDEX_DOCTOR_PERSONAL_URL)
+card_a5 = create_vertical_card(width=1748, height=2480, scale=1.0, yandex_target_url=YANDEX_SMART_REDIRECT_URL)
 card_a5.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a5.png"), dpi=(300, 300))
 card_a5.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a5.pdf"), "PDF", resolution=300.0)
 card_a5.save(os.path.join(ARTIFACTS_DIR, "review_stand_a5.png"), dpi=(300, 300))
@@ -375,7 +375,7 @@ card_a5.save(os.path.join(ARTIFACTS_DIR, "review_stand_a5.pdf"), "PDF", resoluti
 print("[OK] A5 Vertical Stand updated.")
 
 # 4. A4 Vertical Poster
-card_a4 = create_vertical_card(width=2480, height=3508, scale=1.418, yandex_target_url=YANDEX_DOCTOR_PERSONAL_URL)
+card_a4 = create_vertical_card(width=2480, height=3508, scale=1.418, yandex_target_url=YANDEX_SMART_REDIRECT_URL)
 card_a4.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a4.png"), dpi=(300, 300))
 card_a4.save(os.path.join(PUBLIC_QR_DIR, "review_stand_a4.pdf"), "PDF", resolution=300.0)
 card_a4.save(os.path.join(ARTIFACTS_DIR, "review_stand_a4.png"), dpi=(300, 300))
@@ -383,7 +383,7 @@ card_a4.save(os.path.join(ARTIFACTS_DIR, "review_stand_a4.pdf"), "PDF", resoluti
 print("[OK] A4 Vertical Poster updated.")
 
 # 5. Horizontal Landscape Stand
-card_h = create_horizontal_card(width=2480, height=1748, yandex_target_url=YANDEX_DOCTOR_PERSONAL_URL)
+card_h = create_horizontal_card(width=2480, height=1748, yandex_target_url=YANDEX_SMART_REDIRECT_URL)
 card_h.save(os.path.join(PUBLIC_QR_DIR, "review_stand_horizontal.png"), dpi=(300, 300))
 card_h.save(os.path.join(PUBLIC_QR_DIR, "review_stand_horizontal.pdf"), "PDF", resolution=300.0)
 card_h.save(os.path.join(ARTIFACTS_DIR, "review_stand_horizontal.png"), dpi=(300, 300))

@@ -12,7 +12,6 @@ import { buildHomePageSchema } from "../utils/structuredData";
 import {
   IconPhone,
   IconShieldCheck,
-  IconClock,
   IconGraduationCap,
   IconTelegram,
   IconInstagram,
@@ -217,11 +216,7 @@ const HeroSection = ({ onOpenBooking }) => {
 /* ═══════════════════════════════════════════════════════════════════
    3 CORE SPECIALTIES SECTION (SIMPLE & DIRECT)
    ═══════════════════════════════════════════════════════════════════ */
-const CoreSpecialtiesSection = ({ onOpenBooking }) => {
-  const { lang } = useLanguage();
-  const to = useLocalizedPath();
-
-  const labels = {
+const CORE_SPECIALTIES_LABELS_MAP = {
     uz: {
       badge: "ASOSIY 3 YO'NALISH",
       title: "Dr. MuhammadAli Davronov Xizmatlari",
@@ -339,7 +334,12 @@ const CoreSpecialtiesSection = ({ onOpenBooking }) => {
         },
       ],
     },
-  }[lang] || labels.uz;
+};
+
+const CoreSpecialtiesSection = ({ onOpenBooking }) => {
+  const { lang } = useLanguage();
+  const to = useLocalizedPath();
+  const labels = CORE_SPECIALTIES_LABELS_MAP[lang] || CORE_SPECIALTIES_LABELS_MAP.uz;
 
   return (
     <section className="w-full py-12 sm:py-16 bg-slate-50/70 border-y border-slate-200/70">
@@ -369,10 +369,14 @@ const CoreSpecialtiesSection = ({ onOpenBooking }) => {
           {labels.services.map((svc) => (
             <article
               key={svc.id}
-              className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-4 relative">
+                <Link
+                  to={to(`/services/${svc.id}`)}
+                  className="block rounded-2xl overflow-hidden aspect-[16/10] mb-4 relative"
+                  aria-label={svc.title}
+                >
                   <img
                     src={svc.image}
                     alt={svc.title}
@@ -380,35 +384,42 @@ const CoreSpecialtiesSection = ({ onOpenBooking }) => {
                     height="375"
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  </div>
+                </Link>
 
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="w-8 h-8 rounded-xl bg-red-50 text-primary flex items-center justify-center shrink-0">
                     {svc.icon}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900">
-                    {svc.title}
-                  </h3>
+                  <Link
+                    to={to(`/services/${svc.id}`)}
+                    className="hover:text-primary transition-colors focus:outline-none focus-visible:underline"
+                  >
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 group-hover:text-primary transition-colors">
+                      {svc.title}
+                    </h3>
+                  </Link>
                 </div>
                 <p className="text-sm sm:text-base font-semibold text-primary mb-2">
                   {svc.subtitle}
                 </p>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-3">
                   {svc.desc}
                 </p>
               </div>
 
               <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-sm font-medium text-slate-600 inline-flex items-center gap-1.5">
-                  <IconClock className="w-3.5 h-3.5 text-primary" />
-                  <span>{svc.duration}</span>
-                </span>
+                <Link
+                  to={to(`/services/${svc.id}`)}
+                  className="text-xs sm:text-sm font-bold text-primary hover:text-primary-hover inline-flex items-center gap-1 transition-colors"
+                >
+                  <span>{lang === "ru" ? "Подробнее →" : lang === "en" ? "Details →" : "Batafsil →"}</span>
+                </Link>
                 <button
                   type="button"
                   onClick={() => onOpenBooking(svc.id)}
-                  className="px-5 py-2.5 rounded-full text-sm sm:text-base font-bold text-white bg-primary hover:bg-primary-hover shadow-2xs hover:shadow-colgate transition-all"
+                  className="px-5 py-2.5 rounded-full text-sm sm:text-base font-bold text-white bg-primary hover:bg-primary-hover shadow-2xs hover:shadow-colgate transition-all cursor-pointer"
                 >
                   {labels.bookBtn}
                 </button>
@@ -424,53 +435,58 @@ const CoreSpecialtiesSection = ({ onOpenBooking }) => {
 /* ═══════════════════════════════════════════════════════════════════
    ABOUT THE DENTIST SECTION (PERSONAL & DEDICATED)
    ═══════════════════════════════════════════════════════════════════ */
+const ABOUT_DOCTOR_LABELS_MAP = {
+  uz: {
+    badge: "SHIFOKOR HAQIDA",
+    title: "Dr. MuhammadAli Davronov",
+    subtitle: "DM Stomatologiya, 1-xona · Implantologiya, Ortopediya va Terapiya",
+    p1: "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori sifatida chuqur jarrohlik bilimlarim asosida har bir bemorni shaxsan qabul qilaman. Zamonaviy uskunalar, xalqaro sterilizatsiya va individual yondashuv yordamida barcha muolajalar yuqori aniqlikda va to'liq og'riqsiz o'tadi.",
+    p2: "DM Stomatologiyada biz faqat 3 ta asosiy yo'nalishga chuqur ixtisoslashganmiz: zamonaviy Dental Implantologiya, Ortopediya (estetik sirkon koronkalar va vinirlar) hamda Terapiya (tishlarni og'riqsiz davolash va restavratsiya).",
+    feat1Title: "Shaxsiy Qabul",
+    feat1Desc: "Har bir bemor bilan shaxsan o'zim ishlayman, muolajaning har bir bosqichi qat'iy nazoratim ostida o'tadi.",
+    feat2Title: "Yuz-Jag' Jarrohligi Klinik Ordinatori",
+    feat2Desc: "Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinatori hamda xalqaro Dentium va DIO implant sertifikatlari egasi.",
+    feat3Title: "100% Og'riqsiz Muolaja",
+    feat3Desc: "Yumshoq zamonaviy anesteziya va ehtiyotkorona yondashuv — muolaja davomida hech qanday og'riq sezmaysiz.",
+    callTitle: "To'g'ridan-to'g'ri bog'lanish:",
+    aboutLink: "Shifokor malakasi va diplomlari haqida to'liq →",
+  },
+  ru: {
+    badge: "О ВРАЧЕ",
+    title: "Д-р МухаммадАли Давронов",
+    subtitle: "DM Stomatology, кабинет №1 · Имплантология, Ортопедия и Терапия",
+    p1: "Как клинический ординатор по челюстно-лицевой хирургии (АГМИ), опираясь на фундаментальную хирургическую подготовку, я лично веду приём каждого пациента. Международные протоколы и современная анестезия гарантируют безупречную точность и лечение без боли.",
+    p2: "В DM Stomatology мы сфокусированы на 3 ключевых направлениях: надёжная Дентальная Имплантация, Ортопедия (циркониевые коронки и виниры) и Терапия (лечение и реставрация зубов без боли).",
+    feat1Title: "Личный Приём",
+    feat1Desc: "Я лично провожу каждый этап лечения, без передачи пациентов ассистентам.",
+    feat2Title: "Клинический Ординатор ЧЛХ (АГМИ)",
+    feat2Desc: "Клинический ординатор по челюстно-лицевой хирургии в АГМИ и международная сертификация по имплантации (Dentium, DIO).",
+    feat3Title: "Лечение Без Боли",
+    feat3Desc: "Эффективная бережная анестезия гарантирует абсолютный комфорт на протяжении всего визита.",
+    callTitle: "Прямая связь с доктором:",
+    aboutLink: "Подробнее о квалификации и дипломах врача →",
+  },
+  en: {
+    badge: "ABOUT THE DOCTOR",
+    title: "Dr. MuhammadAli Davronov",
+    subtitle: "DM Stomatology, Room #1 · Implantology, Orthopedics & Therapy",
+    p1: "At DM Stomatology, I personally welcome each patient and develop tailored treatment plans. Utilizing advanced dental technology, thorough clinical evaluation, and rigorous sterilization protocols, every treatment is delivered with uncompromising precision and total comfort.",
+    p2: "Our clinical focus is dedicated to 3 core dental specialties: Dental Implantology, Orthopedics (aesthetic zirconia crowns and veneers), and Therapy (gentle, pain-free restorative care).",
+    feat1Title: "Personal Doctor Care",
+    feat1Desc: "Every stage of your treatment is carried out directly by Dr. MuhammadAli himself.",
+    feat2Title: "Oral & Maxillofacial Clinical Resident",
+    feat2Desc: "Clinical resident in Oral & Maxillofacial Surgery at ASMI with verified international implant certifications.",
+    feat3Title: "100% Pain-Free Care",
+    feat3Desc: "Gentle local anesthesia and attentive handling ensure a completely stress-free experience.",
+    callTitle: "Direct contact with Dr. MuhammadAli:",
+    aboutLink: "Learn more about credentials & experience →",
+  },
+};
+
 const AboutDoctorSection = () => {
   const { lang } = useLanguage();
-
-  const labels = {
-    uz: {
-      badge: "SHIFOKOR HAQIDA",
-      title: "Dr. MuhammadAli Davronov",
-      subtitle: "DM Stomatologiya, 1-xona · Implantologiya, Ortopediya va Terapiya",
-      p1: "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori sifatida chuqur jarrohlik bilimlarim asosida har bir bemorni shaxsan qabul qilaman. Zamonaviy uskunalar, xalqaro sterilizatsiya va individual yondashuv yordamida barcha muolajalar yuqori aniqlikda va to'liq og'riqsiz o'tadi.",
-      p2: "DM Stomatologiyada biz faqat 3 ta asosiy yo'nalishga chuqur ixtisoslashganmiz: zamonaviy Dental Implantologiya, Ortopediya (estetik sirkon koronkalar va vinirlar) hamda Terapiya (tishlarni og'riqsiz davolash va restavratsiya).",
-      feat1Title: "Shaxsiy Qabul",
-      feat1Desc: "Har bir bemor bilan shaxsan o'zim ishlayman, muolajaning har bir bosqichi qat'iy nazoratim ostida o'tadi.",
-      feat2Title: "Yuz-Jag' Jarrohligi Klinik Ordinatori",
-      feat2Desc: "Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinatori hamda xalqaro Dentium va DIO implant sertifikatlari egasi.",
-      feat3Title: "100% Og'riqsiz Muolaja",
-      feat3Desc: "Yumshoq zamonaviy anesteziya va ehtiyotkorona yondashuv — muolaja davomida hech qanday og'riq sezmaysiz.",
-      callTitle: "To'g'ridan-to'g'ri bog'lanish:",
-    },
-    ru: {
-      badge: "О ВРАЧЕ",
-      title: "Д-р МухаммадАли Давронов",
-      subtitle: "DM Stomatology, кабинет №1 · Имплантология, Ортопедия и Терапия",
-      p1: "Как клинический ординатор по челюстно-лицевой хирургии (АГМИ), опираясь на фундаментальную хирургическую подготовку, я лично веду приём каждого пациента. Международные протоколы и современная анестезия гарантируют безупречную точность и лечение без боли.",
-      p2: "В DM Stomatology мы сфокусированы на 3 ключевых направлениях: надёжная Дентальная Имплантация, Ортопедия (циркониевые коронки и виниры) и Терапия (лечение и реставрация зубов без боли).",
-      feat1Title: "Личный Приём",
-      feat1Desc: "Я лично провожу каждый этап лечения, без передачи пациентов ассистентам.",
-      feat2Title: "Клинический Ординатор ЧЛХ (АГМИ)",
-      feat2Desc: "Клинический ординатор по челюстно-лицевой хирургии в АГМИ и международная сертификация по имплантации (Dentium, DIO).",
-      feat3Title: "Лечение Без Боли",
-      feat3Desc: "Эффективная бережная анестезия гарантирует абсолютный комфорт на протяжении всего визита.",
-      callTitle: "Прямая связь с доктором:",
-    },
-    en: {
-      badge: "ABOUT THE DOCTOR",
-      title: "Dr. MuhammadAli Davronov",
-      subtitle: "DM Stomatology, Room #1 · Implantology, Orthopedics & Therapy",
-      p1: "At DM Stomatology, I personally welcome each patient and develop tailored treatment plans. Utilizing advanced dental technology, thorough clinical evaluation, and rigorous sterilization protocols, every treatment is delivered with uncompromising precision and total comfort.",
-      p2: "Our clinical focus is dedicated to 3 core dental specialties: Dental Implantology, Orthopedics (aesthetic zirconia crowns and veneers), and Therapy (gentle, pain-free restorative care).",
-      feat1Title: "Personal Doctor Care",
-      feat1Desc: "Every stage of your treatment is carried out directly by Dr. MuhammadAli himself.",
-      feat2Title: "Oral & Maxillofacial Clinical Resident",
-      feat2Desc: "Clinical resident in Oral & Maxillofacial Surgery at ASMI with verified international implant certifications.",
-      feat3Title: "100% Pain-Free Care",
-      feat3Desc: "Gentle local anesthesia and attentive handling ensure a completely stress-free experience.",
-      callTitle: "Direct contact with Dr. MuhammadAli:",
-    },
-  }[lang] || labels.uz;
+  const to = useLocalizedPath();
+  const labels = ABOUT_DOCTOR_LABELS_MAP[lang] || ABOUT_DOCTOR_LABELS_MAP.uz;
 
   return (
     <section className="w-full py-12 sm:py-16 bg-white">
@@ -529,6 +545,15 @@ const AboutDoctorSection = () => {
                     <IconInstagram className="w-4 h-4 text-white" />
                   </a>
                 </div>
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  to={to("/about")}
+                  className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-primary hover:text-primary-hover transition-colors"
+                >
+                  <span>{labels.aboutLink}</span>
+                </Link>
               </div>
             </div>
 
