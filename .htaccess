@@ -35,7 +35,7 @@ Options -Indexes
 
   # Review Shortlink Direct Redirects
   RewriteRule ^google-review/?$ https://g.page/r/CbETKPLsTTxtEBM/review [L,R=302]
-  RewriteRule ^yandex-review/?$ https://yandex.uz/maps/org/stomatologiya/214793392317/reviews/ [L,R=302]
+  # /yandex-review/ serves the branded Doctor Review Gateway (/yandex-review/index.html)
 
   # If a pre-rendered index.html exists in a matching subdirectory, serve it
   RewriteCond %{REQUEST_FILENAME} -d
