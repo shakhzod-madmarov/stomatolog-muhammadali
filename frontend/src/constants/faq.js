@@ -168,4 +168,43 @@ export const FAQ_ITEMS = [
       en: "Yes, DM Stomatology is a completely independent private dental practice led by Dr. MuhammadAli Davronov in central Andijan (91 Navoi Avenue, Room #1). Operating independently, it guarantees personalized one-on-one specialist care, digital equipment, and official treatment warranties.",
     },
   },
+  {
+    id: "tish-implant-narxi-va-turlari-andijon",
+    q: {
+      uz: "Andijonda dental implant narxi qanday belgilanadi va qaysi tizimlar o'rnatiladi?",
+      ru: "Как формируется цена на имплантацию зубов в Андижане и какие системы применяются?",
+      en: "How are dental implant costs determined in Andijan and what systems are used?",
+    },
+    a: {
+      uz: "DM Stomatologiya klinikasida Janubiy Koreyaning jahon miqyosida tan olingan premium Dentium va DIO Implant biotitan tizimlari qo'llaniladi. Narx suyak holati, 3D tomografiya ko'rsatkichlari va tanlangan implantatsiyaning turiga (standart yoki bir bosqichli One-Stage) qarab birlamchi bepul ko'rikda aniq va shaffof belgilanadi. Barcha implantlarga ishlab chiqaruvchi tomonidan umrbod rasmiy kafolat beriladi.",
+      ru: "В клинике DM Stomatology устанавливаются сертифицированные южнокорейские титановые импланты Dentium и DIO Implant. Окончательная стоимость формируется прозрачно на бесплатном первичном осмотре с учётом объёма костной ткани и протокола (классическая или одномоментная имплантация). На все импланты действует официальная пожизненная гарантия производителя.",
+      en: "DM Stomatology utilizes internationally certified South Korean titanium systems: Dentium and DIO Implant. Pricing is transparently detailed during the initial complimentary consultation based on 3D diagnostics, bone volume, and surgical technique (standard or immediate One-Stage). All implant fixtures carry a lifetime manufacturer warranty.",
+    },
+  },
+  {
+    id: "aql-tishi-va-jarrohlik-andijon",
+    q: {
+      uz: "Andijonda aql tishini (vosmoy tish) og'riqsiz oldirish va jarrohlik qanday amalga oshiriladi?",
+      ru: "Как проводится безболезненное удаление зуба мудрости (восьмёрки) и хирургия в Андижане?",
+      en: "How is painless wisdom tooth extraction and oral surgery performed in Andijan?",
+    },
+    a: {
+      uz: "ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov hatto eng murakkab, milk ostida yotgan (retensiyalangan) aql tishlarini ham 100% og'riqsiz, atraumatik va tez olib tashlaydi. Zamonaviy mikro-anesteziya va suyakni asrovchi jarrohlik vositalari tufayli muolaja paytida bemor hech qanday noqulaylik sezmaydi va operatsiyadan keyingi bitish tez kechadi.",
+      ru: "Клинический ординатор ЧЛХ АГМИ Д-р МухаммадАли Давронов проводит атравматичное удаление даже сложных ретинированных и дистопированных зубов мудрости без боли. Двухэтапная анестезия и бережный хирургический протокол исключают болевые ощущения и обеспечивают быстрое заживление лунки без отёков.",
+      en: "ASMI Oral & Maxillofacial Surgery Resident Dr. MuhammadAli Davronov performs atraumatic, pain-free extraction of complex impacted wisdom teeth. Modern micro-anesthesia and minimally invasive surgical tools guarantee zero pain during treatment and rapid, comfortable postoperative tissue healing.",
+    },
+  },
+  {
+    id: "sirkon-yoki-metall-keramika-tanlash",
+    q: {
+      uz: "Nega tish qoplatishda metall-keramika emas, monolit sirkon koronkalar tavsiya etiladi?",
+      ru: "Почему для протезирования зубов выбирают монолитный цирконий вместо металлокерамики?",
+      en: "Why choose monolithic zirconia crowns over traditional metal-ceramic crowns?",
+    },
+    a: {
+      uz: "Monolit sirkoniy (ZrO2) 100% metallsiz, o'ta mustahkam va tabiiy tish emalidek yarim-shaffof materialdir. Eskirgan metall-keramika vaqt o'tishi bilan milkni qoraytirib qo'yishi va sinishi mumkin. CAD/CAM raqamli frezerlash orqali tayyorlangan sirkon qoplamalar esa tishga mikron aniqligida o'tiradi, milkni sog'lom saqlaydi va 15-20+ yildan ortiq sifatli xizmat qiladi.",
+      ru: "Диоксид циркония (ZrO2) — сверхпрочный безметалловый биоматериал с естественной прозрачностью родной эмали. Металлокерамика со временем даёт синеву у десны и подвержена сколам. Циркониевые коронки CAD/CAM идеально прилегают к уступу зуба, не раздражают слизистую и служат более 15-20 лет.",
+      en: "Monolithic zirconia (ZrO2) is a 100% biocompatible, metal-free material replicating natural enamel translucency. Traditional metal-fused crowns frequently cause grayish gum lines and chipping, whereas digital CAD/CAM zirconia provides airtight margins, gum health, and 15-20+ years of durability.",
+    },
+  },
 ];
