@@ -178,6 +178,30 @@ const Services = ({ onOpenBooking }) => {
           </Interactive3DTilt>
         ))}
       </section>
+
+      {/* Local Authority AI Context Section */}
+      <section className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200">
+        <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 mb-3">
+          {lang === "ru"
+            ? "Стоматологические услуги в Андижане — DM Stomatology"
+            : lang === "en"
+            ? "Dental Services in Andijan — DM Stomatology Practice"
+            : "Andijonda Stomatologik Xizmatlar — DM Stomatologiya"}
+        </h2>
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
+          {lang === "ru"
+            ? "В клинике DM Stomatology в Андижане (проспект Навои, 91, каб. 1) клинический ординатор по ЧЛХ Д-р МухаммадАли Давронов проводит персональное лечение: установка сертифицированных южнокорейских имплантов Dentium и DIO Implant, циркониевых коронок CAD/CAM, эстетических виниров E-max и бережное лечение каналов под эффективной анестезией."
+            : lang === "en"
+            ? "At DM Stomatology in central Andijan (91 Navoi Avenue, Room #1), Clinical Resident in Oral & Maxillofacial Surgery Dr. MuhammadAli Davronov delivers premium treatments: certified Dentium and DIO dental implants, CAD/CAM monolithic zirconia crowns, IPS E-max veneers, and 100% pain-free conservative therapy."
+            : "Andijon markazida (Prospekt, Navoiy 91, Sariq Bola yonida, 1-xona) joylashgan DM Stomatologiya klinikasida ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov shaxsiy qabul olib boradi. Barcha muolajalar — Janubiy Koreyaning Dentium va DIO biotitan implantlari, estetik monolit sirkon koronkalar, E-max vinirlar va 100% og'riqsiz anesteziya ostida amalga oshiriladi."}
+        </p>
+        <div className="flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+          <span className="px-3 py-1 rounded-lg bg-white border border-slate-200">📍 Andijon, Navoiy 91 (1-xona)</span>
+          <span className="px-3 py-1 rounded-lg bg-white border border-slate-200">📞 +998 97 676 01 01</span>
+          <span className="px-3 py-1 rounded-lg bg-white border border-slate-200">🛡️ Rasmiy kafolat</span>
+          <span className="px-3 py-1 rounded-lg bg-white border border-slate-200">⚡ Navbatsiz qabul</span>
+        </div>
+      </section>
     </div>
   );
 };

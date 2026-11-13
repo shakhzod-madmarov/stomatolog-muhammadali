@@ -518,6 +518,39 @@ export const buildHomePageSchema = (lang = "uz") => {
             "name": "Andijon viloyati",
           },
         ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": lang === "ru" ? "Услуги стоматологии в Андижане" : lang === "en" ? "Dental Services in Andijan" : "Andijonda Stomatologiya Xizmatlari",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": lang === "ru" ? "Дентальная имплантация зубов в Андижане" : lang === "en" ? "Dental Implantation in Andijan" : "Andijonda Dental Implantatsiya (Dentium, DIO Biotitan)",
+                "description": lang === "ru" ? "Установка титановых имплантов с 3D навигацией без боли в Андижане." : lang === "en" ? "Guided 3D biocompatible titanium dental implant surgery in Andijan." : "3D navigatsion jarrohlik shabloni asosida og'riqsiz biotitan implantlar o'rnatish.",
+                "procedureType": "https://schema.org/SurgicalProcedure",
+              },
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": lang === "ru" ? "Циркониевые коронки и виниры E-max в Андижане" : lang === "en" ? "Zirconia Crowns & E-max Veneers in Andijan" : "Andijonda Sirkon Koronkalar va E-max Vinirlar",
+                "description": lang === "ru" ? "Высокоточные циркониевые коронки CAD/CAM и керамические виниры в Андижане." : lang === "en" ? "High-strength monolithic zirconia crowns and aesthetic veneers in Andijan." : "CAD/CAM kompyuter modellashtirilgan sirkon qoplamalar va estetik vinirlar.",
+                "procedureType": "https://schema.org/NoninvasiveProcedure",
+              },
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": lang === "ru" ? "Лечение зубов без боли (Терапия) в Андижане" : lang === "en" ? "100% Pain-Free Dental Therapy in Andijan" : "Andijonda 100% Og'riqsiz Tish Davolash (Terapiya)",
+                "description": lang === "ru" ? "Бережное лечение кариеса и пульпита под двухэтапной анестезией в Андижане." : lang === "en" ? "Painless cavity filling and gentle endodontic care in Andijan." : "2 bosqichli yumshoq anesteziya ostida karies va ildiz kanallarini tozalash.",
+                "procedureType": "https://schema.org/NoninvasiveProcedure",
+              },
+            },
+          ],
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": PRIMARY_CLINIC.address[lang] || PRIMARY_CLINIC.address.uz,
