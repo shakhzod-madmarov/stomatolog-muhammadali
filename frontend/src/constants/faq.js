@@ -142,4 +142,30 @@ export const FAQ_ITEMS = [
       en: "When choosing a dental clinic in Andijan, specialist surgical training, sterilization protocols, and digital equipment are paramount. At DM Stomatology, Clinical Resident in Oral & Maxillofacial Surgery Dr. MuhammadAli Davronov personally provides comprehensive care: biocompatible dental implants, precision zirconia crowns, aesthetic veneers, and 100% pain-free restorative therapy. Address: 91 Navoi Avenue, Andijan (Room #1). Phone: +998 97 676 01 01.",
     },
   },
+  {
+    id: "andijonda-yuz-jag-jarrohi-implantolog",
+    q: {
+      uz: "Andijonda yuz-jag' jarrohi va dental implantolog qabuliga qayerda yozilish mumkin?",
+      ru: "Где в Андижане принимает челюстно-лицевой хирург и дентальный имплантолог?",
+      en: "Where to find an Oral & Maxillofacial Surgeon and Dental Implantologist in Andijan?",
+    },
+    a: {
+      uz: "Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov Andijon shahri markazidagi DM Stomatologiya klinikasida shaxsiy qabul olib boradi. U jag' anatomiyasini mukammal bilgan holda suyak plastikasi, sinus lifting hamda Janubiy Koreyaning Dentium va DIO 3D navigatsion biotitan implantlarini xavfsiz va og'riqsiz o'rnatadi. Manzil: Prospekt, Navoiy shoh ko'chasi, 91-uy (1-xona). Tel: +998 97 676 01 01.",
+      ru: "Клинический ординатор по челюстно-лицевой хирургии АГМИ Д-р МухаммадАли Давронов ведёт приём в клинике DM Stomatology в центре Андижана. Благодаря глубоким хирургическим знаниям анатомии челюстей, доктор проводит синус-лифтинг, костную пластику и установку премиальных титановых имплантов Dentium и DIO с 3D навигацией без боли. Адрес: проспект Навои, 91 (каб. 1). Тел: +998 97 676 01 01.",
+      en: "Clinical Resident in Oral & Maxillofacial Surgery Dr. MuhammadAli Davronov practices at DM Stomatology in central Andijan. With specialized surgical mastery in jaw anatomy, he provides sinus lifts, bone grafting, and computer-guided 3D biocompatible titanium implants (Dentium, DIO). Address: 91 Navoi Ave (Room #1). Phone: +998 97 676 01 01.",
+    },
+  },
+  {
+    id: "andijon-mustaqil-klinika-dm",
+    q: {
+      uz: "DM Stomatologiya boshqa klinikalardan mustaqil alohida xususiy klinakami?",
+      ru: "Является ли DM Stomatology отдельной самостоятельной частной клиникой?",
+      en: "Is DM Stomatology an independent standalone private dental practice?",
+    },
+    a: {
+      uz: "Ha, DM Stomatologiya — Andijon shahrida (Prospekt, Navoiy 91, 1-xona) joylashgan, Dr. MuhammadAli Davronov rahbarligidagi to'liq mustaqil xususiy stomatologiya klinikasi va shaxsiy amaliyotidir. Klinika boshqa umumiy poliklinikalar yoki agregatorlardan mustaqil bo'lib, har bir bemorga shifokor tomonidan shaxsiy, kafolatlangan va individual tibbiy xizmat ko'rsatiladi.",
+      ru: "Да, DM Stomatology — это полностью самостоятельная частная стоматологическая клиника и практика под руководством Д-ра МухаммадАли Давронова в Андижане (проспект Навои, 91, каб. №1). Клиника независима от других учреждений, обеспечивая персональное внимание врача, современные технологии и официальную гарантию.",
+      en: "Yes, DM Stomatology is a completely independent private dental practice led by Dr. MuhammadAli Davronov in central Andijan (91 Navoi Avenue, Room #1). Operating independently, it guarantees personalized one-on-one specialist care, digital equipment, and official treatment warranties.",
+    },
+  },
 ];

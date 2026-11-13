@@ -6,19 +6,19 @@ export const getPageSeo = (pageKey, lang = "uz") =>
 export const PAGE_SEO = {
   home: {
     uz: {
-      title: "Dr. MuhammadAli Davronov — Andijonda Stomatologiya | Implantolog, Ortoped",
-      description: "Dr. MuhammadAli Davronov — Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinatori, 5 yillik tajriba. DM Stomatologiya: dental implantatsiya, sirkon koronkalar va og'riqsiz davolash. Tel: +998 97 676 01 01.",
-      keywords: "andijonda stomatologiya, andijon stomatologiya klinikalari, andijondagi stomatologiya, stomatolog muhammadali, stomatolog muhammad ali, muhammadali stomatolog, dr muhammadali, dr muhammadali davronov, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, implantologiya andijon, dental implant, yuz jag jarrohligi ordinatori, ortopediya andijon, sirkon koronkalar andijon, vinirlar andijon, tish davolash andijon, ogriqsiz tish davolash, prospekt, navoiy 91",
+      title: "DM Stomatologiya — Dr. MuhammadAli Davronov | Andijonda Zamonaviy Stomatologiya Klinikasi",
+      description: "DM Stomatologiya — Andijonda Dr. MuhammadAli Davronov (ADTI Yuz-jag' jarrohligi klinik ordinatori, 5 yillik tajriba) shaxsiy klinikasi: dental implantologiya, sirkon koronkalar, vinirlar va 100% og'riqsiz davolash. Manzil: Navoiy 91, 1-xona (Sariq Bola pizza yonida). Tel: +998 97 676 01 01.",
+      keywords: "andijonda stomatologiya, andijon stomatologiya klinikalari, andijondagi stomatologiya, stomatolog andijon, dm stomatologiya, dr muhammadali davronov, stomatolog muhammadali, yaxshi stomatolog andijon, tish davolash andijon, implantologiya andijon, dental implant andijon, yuz jag jarrohi andijon, sirkon koronkalar andijon, vinirlar andijon, navoiy 91 sariq bola pizza",
     },
     ru: {
-      title: "Д-р МухаммадАли Давронов — Стоматология в Андижане | Имплантолог, Ортопед",
-      description: "Д-р МухаммадАли Давронов — ординатор по ЧЛХ в АГМИ, 5 лет опыта. DM Stomatology: дентальная имплантация, коронки из циркония и бережное лечение зубов в Андижане. Тел: +998 97 676 01 01.",
-      keywords: "стоматология в андижане, стоматология андижан, стоматологические клиники андижана, лечение зубов в андижане, стоматолог мухаммадали, доктор мухаммадали, стоматолог мухаммадали давронов, мухаммадали давронов стоматолог, стоматолог андижан, имплантация зубов андижан, dm stomatology, ортопедия андижан, лечение зубов без боли, циркониевые коронки андижан, виниры e-max, зубной врач андижан, проспект, навои 91",
+      title: "DM Stomatology — Д-р МухаммадАли Давронов | Современная Стоматология в Андижане",
+      description: "DM Stomatology — современная стоматологическая клиника в Андижане под руководством Д-ра МухаммадАли Давронова (ординатор ЧЛХ АГМИ, 5 лет опыта). Дентальная имплантация, циркониевые коронки, виниры и лечение без боли. Проспект Навои, 91 (каб. 1). Тел: +998 97 676 01 01.",
+      keywords: "стоматология в андижане, стоматологические клиники андижана, стоматология андижан, dm stomatology, стоматолог мухаммадали давронов, доктор мухаммадали, стоматолог андижан, имплантация зубов андижан, челюстно лицевой хирург андижан, циркониевые коронки андижан, лечение зубов андижан, проспект навои 91",
     },
     en: {
-      title: "Dr. MuhammadAli Davronov — Dentistry in Andijan | Dental Implantologist",
-      description: "Dr. MuhammadAli Davronov — Clinical resident in Oral & Maxillofacial Surgery at ASMI, 5 yrs practice. DM Stomatology: dental implants, zirconia crowns & painless care. Tel: +998 97 676 01 01.",
-      keywords: "dentistry in andijan, dental clinics andijan, stomatolog muhammadali, dentist muhammadali, dr muhammadali davronov, dental implants andijan, dentist andijan, best dentist andijan, dm stomatology, orthopedics andijan, painless dentistry, zirconia crowns andijan, dental veneers, english speaking dentist uzbekistan",
+      title: "DM Stomatology — Dr. MuhammadAli Davronov | Modern Dental Clinic in Andijan",
+      description: "DM Stomatology — premier dental clinic in Andijan led by Dr. MuhammadAli Davronov (ASMI Oral & Maxillofacial Surgery resident, 5 yrs practice). Dental implants, zirconia crowns, veneers, and 100% pain-free dentistry. 91 Navoi Ave (Room #1). Phone: +998 97 676 01 01.",
+      keywords: "dentistry in andijan, dental clinics andijan, dm stomatology, dr muhammadali davronov, dentist muhammadali, dental implants andijan, oral surgeon andijan, zirconia crowns andijan, painless dental care andijan, navoi 91 andijan",
     },
   },
   services: {

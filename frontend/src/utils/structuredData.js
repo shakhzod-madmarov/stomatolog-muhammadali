@@ -427,9 +427,10 @@ export const buildHomePageSchema = (lang = "uz") => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
+        "@type": ["Dentist", "MedicalClinic", "LocalBusiness", "MedicalBusiness"],
         "@id": `${SITE_ORIGIN}/#dentist`,
-        "name": `${DOCTOR_INFO.name} — ${PRIMARY_CLINIC.name[lang] || PRIMARY_CLINIC.name.uz}`,
+        "name": `DM Stomatologiya — ${DOCTOR_INFO.name}`,
+        "legalName": "DM Stomatologiya",
         "alternateName": [
           "DM Stomatologiya",
           "DM Stomatology",
@@ -445,11 +446,18 @@ export const buildHomePageSchema = (lang = "uz") => {
           "Stomatologiya Prospekt, Navoiy 91",
           "Stomatologiya Prospekt Navoiy 91",
         ],
+        "founder": {
+          "@id": `${SITE_ORIGIN}/#doctor`,
+        },
+        "medicalDirector": {
+          "@id": `${SITE_ORIGIN}/#doctor`,
+        },
+        "parentOrganization": null,
         "disambiguatingDescription": lang === "ru"
-          ? "Стоматологическая клиника DM Stomatology под руководством Д-ра МухаммадАли Давронова в Андижане (проспект, Навои, 91, рядом с Sariq Bola pizza). Специализация: имплантация, циркониевые коронки, виниры и лечение без боли."
+          ? "Независимая стоматологическая клиника DM Stomatology под руководством Д-ра МухаммадАли Давронова в Андижане (проспект Навои, 91, каб. 1, рядом с Sariq Bola pizza). Специализация: имплантация, ЧЛХ, циркониевые коронки, виниры и лечение без боли."
           : lang === "en"
-          ? "DM Stomatology dental practice led by Dr. MuhammadAli Davronov in Andijan, Uzbekistan (91 Navoi Avenue, next to Sariq Bola pizza). Core focus: dental implants, zirconia crowns, veneers, and pain-free dentistry."
-          : "Dr. MuhammadAli Davronov rahbarligidagi zamonaviy DM Stomatologiya klinikasi (Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy, Sariq Bola pizza yonida, 1-xona). Asosiy yo'nalishlar: dental implantologiya, sirkon koronkalar, vinirlar va og'riqsiz davolash.",
+          ? "Independent DM Stomatology dental practice led by Dr. MuhammadAli Davronov in Andijan, Uzbekistan (91 Navoi Avenue, next to Sariq Bola pizza, Room #1). Core focus: dental implants, oral surgery, zirconia crowns, veneers, and pain-free dentistry."
+          : "Mustaqil zamonaviy DM Stomatologiya klinikasi — Dr. MuhammadAli Davronov shaxsiy qabuli (Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy, Sariq Bola pizza yonida, 1-xona). Asosiy yo'nalishlar: dental implantologiya, yuz-jag' jarrohligi, sirkon koronkalar, vinirlar va og'riqsiz davolash.",
         "description": DOCTOR_INFO.specialtiesTextLang[lang] || DOCTOR_INFO.specialtiesTextLang.uz,
         "url": `${SITE_ORIGIN}/`,
         "telephone": DOCTOR_INFO.phoneRaw,
@@ -549,8 +557,67 @@ export const buildHomePageSchema = (lang = "uz") => {
                 "procedureType": "https://schema.org/NoninvasiveProcedure",
               },
             },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": lang === "ru" ? "Консультация челюстно-лицевого хирурга и костная пластика в Андижане" : lang === "en" ? "Oral & Maxillofacial Surgery Consultation & Bone Grafting in Andijan" : "Andijonda Yuz-Jag' Jarrohligi Konsultatsiyasi va Suyak Plastikasi",
+                "description": lang === "ru" ? "Хирургическая оценка анатомии челюстей, синус-лифтинг и направленная костная регенерация ординатором ЧЛХ АГМИ." : lang === "en" ? "Surgical assessment of jaw anatomy, sinus floor elevation, and bone regeneration by ASMI OMFS clinical resident." : "Jag' suyaklari anatomiyasini baholash, sinus lifting va suyak to'qimasini tiklash bo'yicha ADTI Yuz-jag' jarrohligi klinik ordinatori konsultatsiyasi.",
+                "procedureType": "https://schema.org/SurgicalProcedure",
+              },
+            },
           ],
         },
+        "knowsAbout": [
+          "Andijonda stomatologiya",
+          "Andijon stomatologiya klinikalari",
+          "Andijondagi stomatologiya",
+          "Andijonda tish davolash",
+          "Andijonda implantatsiya",
+          "Dental implantologiya Andijon",
+          "Yuz-jag' jarrohligi Andijon",
+          "Sirkon koronkalar Andijon",
+          "E-max vinirlar Andijon",
+          "Og'riqsiz tish davolash",
+          "DM Stomatologiya",
+          "Dr. MuhammadAli Davronov",
+          "Stomatolog MuhammadAli",
+          "Стоматология в Андижане",
+          "Стоматологические клиники Андижана",
+          "Стоматолог Андижан",
+          "Имплантация зубов Андижан",
+          "Челюстно-лицевой хирург Андижан",
+          "Циркониевые коронки Андижан",
+          "Dental Clinic in Andijan",
+          "Dentist in Andijan",
+        ],
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Free Wi-Fi",
+            "value": true,
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Air Conditioning",
+            "value": true,
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Wheelchair Accessible",
+            "value": true,
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Private Surgical Room",
+            "value": true,
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Autoclave Class B Sterilization",
+            "value": true,
+          },
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": PRIMARY_CLINIC.address[lang] || PRIMARY_CLINIC.address.uz,

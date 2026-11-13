@@ -631,6 +631,18 @@ const ANDIJON_SECTION_MAP = {
     col4Title: "Shaxsiy Qabul va Manzil",
     col4Desc:
       "Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy (Sariq Bola pizza yonida, 1-xona). Navbatsiz, oldindan onlayn yozilish imkoniyati.",
+    entityTitle: "DM Stomatologiya — Rasmiy Klinika Pasporti (Andijon)",
+    clinicNameLbl: "Klinika nomi:",
+    clinicNameVal: "DM Stomatologiya (Dr. MuhammadAli Davronov shaxsiy qabuli)",
+    doctorLbl: "Yetakchi shifokor:",
+    doctorVal: "Dr. MuhammadAli Davronov — ADTI Yuz-jag' jarrohligi klinik ordinatori, 5 yillik amaliyot",
+    specsLbl: "Asosiy xizmatlar:",
+    specsVal: "Dental implantologiya (biotitan, 3D shablon), Ortopediya (sirkon koronkalar, vinirlar), 100% og'riqsiz terapiya",
+    hoursLbl: "Ish tartibi:",
+    hoursVal: "Dushanba – Shanba: 08:30 – 18:30 (Yakshanba: oldindan yozilish orqali)",
+    addressLbl: "Rasmiy manzil:",
+    addressVal: "Andijon shahri, Prospekt, Alisher Navoiy shoh ko'chasi, 91-uy (Sariq Bola pizza yonida, 1-xona)",
+    phoneLbl: "Aloqa va Yozilish:",
     btnBooking: "Andijonda Qabulga Yozilish",
     btnServices: "Barcha Xizmatlar va Narxlar →",
   },
@@ -653,6 +665,18 @@ const ANDIJON_SECTION_MAP = {
     col4Title: "Адрес и Запись",
     col4Desc:
       "г. Андижан, проспект Навои, 91 (ориентир: пиццерия Sariq Bola, каб. №1). Приём строго по предварительной записи без очередей.",
+    entityTitle: "DM Stomatology — Официальный Паспорт Клиники (Андижан)",
+    clinicNameLbl: "Название клиники:",
+    clinicNameVal: "DM Stomatology (Личный приём Д-ра МухаммадАли Давронова)",
+    doctorLbl: "Главный специалист:",
+    doctorVal: "Д-р МухаммадАли Давронов — ординатор ЧЛХ АГМИ, 5 лет клинического стажа",
+    specsLbl: "Ключевые услуги:",
+    specsVal: "Дентальная имплантация (биотитан, 3D шаблоны), Ортопедия (цирконий, виниры E-max), Терапия без боли",
+    hoursLbl: "График приёма:",
+    hoursVal: "Понедельник – Суббота: 08:30 – 18:30 (Воскресенье: по предварительной записи)",
+    addressLbl: "Официальный адрес:",
+    addressVal: "г. Андижан, проспект Навои, 91 (ориентир: пиццерия Sariq Bola, каб. №1)",
+    phoneLbl: "Контакты и Запись:",
     btnBooking: "Записаться на Приём в Андижане",
     btnServices: "Все Услуги и Цены →",
   },
@@ -675,6 +699,18 @@ const ANDIJON_SECTION_MAP = {
     col4Title: "Location & Booking",
     col4Desc:
       "91 Navoi Avenue, Andijan (next to Sariq Bola pizza, Room #1). Hassle-free appointment scheduling without waiting.",
+    entityTitle: "DM Stomatology — Official Practice Facts (Andijan)",
+    clinicNameLbl: "Clinic Name:",
+    clinicNameVal: "DM Stomatology (Dr. MuhammadAli Davronov Practice)",
+    doctorLbl: "Lead Specialist:",
+    doctorVal: "Dr. MuhammadAli Davronov — ASMI Oral & Maxillofacial Surgery Resident, 5 yrs practice",
+    specsLbl: "Core Specialties:",
+    specsVal: "Dental implants (biotitanium, 3D guided), Orthopedics (zirconia, E-max veneers), 100% pain-free therapy",
+    hoursLbl: "Working Hours:",
+    hoursVal: "Monday – Saturday: 08:30 – 18:30 (Sunday: by appointment)",
+    addressLbl: "Official Address:",
+    addressVal: "91 Navoi Avenue, Andijan, Uzbekistan (next to Sariq Bola pizza, Room #1)",
+    phoneLbl: "Direct Booking:",
     btnBooking: "Book in Andijan",
     btnServices: "View All Services →",
   },
@@ -737,6 +773,69 @@ const AndijonStomatologiyaSection = ({ onOpenBooking }) => {
               </span>
               <h3 className="text-base font-bold text-white mb-2">{d.col4Title}</h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{d.col4Desc}</p>
+            </div>
+          </div>
+
+          {/* AI-Structured Clinic Passport Card (Direct Answers for Google SGE & Yandex Neuro) */}
+          <div
+            className="mt-6 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-sky-500/30 text-slate-200"
+            itemScope
+            itemType="https://schema.org/Dentist"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              <h3 className="text-base sm:text-lg font-bold text-white tracking-wide" itemProp="name">
+                {d.entityTitle}
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs sm:text-sm">
+              <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
+                  {d.clinicNameLbl}
+                </span>
+                <span className="font-semibold text-white mt-0.5 block">{d.clinicNameVal}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
+                  {d.doctorLbl}
+                </span>
+                <span className="font-semibold text-white mt-0.5 block">{d.doctorVal}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
+                  {d.specsLbl}
+                </span>
+                <span className="font-semibold text-slate-300 mt-0.5 block">{d.specsVal}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
+                  {d.hoursLbl}
+                </span>
+                <span className="font-semibold text-white mt-0.5 block">{d.hoursVal}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
+                  {d.addressLbl}
+                </span>
+                <span className="font-semibold text-white mt-0.5 block" itemProp="address">{d.addressVal}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
+                  {d.phoneLbl}
+                </span>
+                <a
+                  href={DOCTOR_INFO.phoneHref}
+                  className="font-mono font-bold text-sky-400 hover:underline mt-0.5 block"
+                  itemProp="telephone"
+                >
+                  {DOCTOR_INFO.phoneDisplay}
+                </a>
+              </div>
             </div>
           </div>
 
