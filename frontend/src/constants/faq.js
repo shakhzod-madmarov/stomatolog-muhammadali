@@ -129,4 +129,17 @@ export const FAQ_ITEMS = [
       en: "Dr. MuhammadAli Davronov is a Clinical Resident in Oral & Maxillofacial Surgery (OMFS) at Andijan State Medical Institute. He holds certified surgical credentials from South Korea's Dentium Implant System, DIO Implant (3D guided surgery), and Moissanite Dental (One-Stage immediate placement protocol).",
     },
   },
+  {
+    id: "andijonda-stomatologiya-tanlash",
+    q: {
+      uz: "Andijonda stomatologiya qidirganda eng yaxshi klinika va shifokorni qanday tanlash mumkin?",
+      ru: "Как выбрать лучшую стоматологию в Андижане и какие услуги предоставляет DM Stomatology?",
+      en: "How to choose the best dentistry clinic in Andijan and what services does DM Stomatology offer?",
+    },
+    a: {
+      uz: "Andijonda sifatli stomatologiya tanlashda shifokorning tor mutaxassislik malakasi, xalqaro sterilizatsiya va zamonaviy uskunalar hal qiluvchi ahamiyatga ega. DM Stomatologiya klinikasida ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov shaxsiy qabul olib boradi. Asosiy xizmatlar: dental implantologiya (biotitan implantlar), ortopediya (sirkon koronkalar, vinirlar) va 100% og'riqsiz terapiya. Manzil: Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy (Sariq Bola pizza yonida, 1-xona). Tel: +998 97 676 01 01.",
+      ru: "При выборе стоматологии в Андижане ключевыми факторами являются хирургическая квалификация врача, стерильность и оборудование. В клинике DM Stomatology персональный приём ведёт клинический ординатор ЧЛХ АГМИ Д-р МухаммадАли Давронов. Услуги: дентальная имплантация титановых имплантов, циркониевые коронки, виниры E-max и бережное лечение без боли. Адрес: г. Андижан, проспект Навои, 91 (каб. 1, рядом с Sariq Bola). Тел: +998 97 676 01 01.",
+      en: "When choosing a dental clinic in Andijan, specialist surgical training, sterilization protocols, and digital equipment are paramount. At DM Stomatology, Clinical Resident in Oral & Maxillofacial Surgery Dr. MuhammadAli Davronov personally provides comprehensive care: biocompatible dental implants, precision zirconia crowns, aesthetic veneers, and 100% pain-free restorative therapy. Address: 91 Navoi Avenue, Andijan (Room #1). Phone: +998 97 676 01 01.",
+    },
+  },
 ];

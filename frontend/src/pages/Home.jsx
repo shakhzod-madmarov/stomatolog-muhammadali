@@ -609,6 +609,159 @@ const AboutDoctorSection = () => {
 };
 
 /* ═══════════════════════════════════════════════════════════════════
+   ANDIJONDA STOMATOLOGIYA — LOCAL AUTHORITY & AI OVERVIEW SECTION
+   ═══════════════════════════════════════════════════════════════════ */
+const ANDIJON_SECTION_MAP = {
+  uz: {
+    badge: "ANDIJONDA STOMATOLOGIYA",
+    title: "Andijonda Zamonaviy Stomatologiya va Yuqori Sifatli Tish Davolash",
+    subtitle:
+      "Dr. MuhammadAli Davronov rahbarligidagi DM Stomatologiya klinikasi — Andijon markazida individual va kafolatli yondashuv.",
+    intro:
+      "Andijon shahrida og'riqsiz, ishonchli va xalqaro talablarga javob beradigan stomatologiya qidiryapsizmi? DM Stomatologiyada Andijon davlat tibbiyot institutining Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov har bir bemorni shaxsan qabul qiladi. Biz klinikamizda faqat eng so'nggi raqamli texnologiyalar, sertifikatlangan biotitan implantlar va monolit sirkon materiallardan foydalanamiz.",
+    col1Title: "Dental Implantologiya",
+    col1Desc:
+      "Janubiy Koreyaning premium Dentium va DIO biotitan implantlari. 3D navigatsion shablon asosida operatsiyasiz va asoratsiz tish tiklash.",
+    col2Title: "Ortopediya va Sirkon Koronkalar",
+    col2Desc:
+      "CAD/CAM kompyuter modellashtirish orqali tayyorlanuvchi o'ta mustahkam sirkon qoplamalar va tabiiy shaffoflikka ega E-max estetik vinirlar.",
+    col3Title: "100% Og'riqsiz Terapiya",
+    col3Desc:
+      "2 bosqichli yumshoq anesteziya ostida karies, asab (pulpa) davolash va nano-kompozitlar yordamida tishning anatomik shaklini restavratsiya qilish.",
+    col4Title: "Shaxsiy Qabul va Manzil",
+    col4Desc:
+      "Andijon shahri, Prospekt, Navoiy shoh ko'chasi, 91-uy (Sariq Bola pizza yonida, 1-xona). Navbatsiz, oldindan onlayn yozilish imkoniyati.",
+    btnBooking: "Andijonda Qabulga Yozilish",
+    btnServices: "Barcha Xizmatlar va Narxlar →",
+  },
+  ru: {
+    badge: "СТОМАТОЛОГИЯ В АНДИЖАНЕ",
+    title: "Современная Стоматология и Лечение Зубов в Андижане",
+    subtitle:
+      "Клиника DM Stomatology под руководством Д-ра МухаммадАли Давронова — персональный подход и гарантия качества в центре Андижана.",
+    intro:
+      "Ищете качественную стоматологическую клинику в Андижане? В DM Stomatology персональный приём ведёт клинический ординатор по челюстно-лицевой хирургии (АГМИ) Д-р МухаммадАли Давронов. Мы применяем сертифицированные южнокорейские биосовместимые титановые импланты, сверхточные коронки из диоксида циркония и бережную анестезию без боли.",
+    col1Title: "Дентальная Имплантация",
+    col1Desc:
+      "Титановые импланты Dentium и DIO Implant. Точная цифровая 3D навигация, быстрое приживление и восстановление зубов без боли.",
+    col2Title: "Ортопедия и Цирконий",
+    col2Desc:
+      "Монолитные коронки из диоксида циркония и эстетические виниры E-max на основе цифрового сканирования CAD/CAM.",
+    col3Title: "Терапия 100% Без Боли",
+    col3Desc:
+      "Бережное лечение кариеса и корневых каналов под двухэтапной анестезией, художественная реставрация зубов.",
+    col4Title: "Адрес и Запись",
+    col4Desc:
+      "г. Андижан, проспект Навои, 91 (ориентир: пиццерия Sariq Bola, каб. №1). Приём строго по предварительной записи без очередей.",
+    btnBooking: "Записаться на Приём в Андижане",
+    btnServices: "Все Услуги и Цены →",
+  },
+  en: {
+    badge: "DENTISTRY IN ANDIJAN",
+    title: "Advanced Dental Care & Implantology in Andijan",
+    subtitle:
+      "DM Stomatology led by Dr. MuhammadAli Davronov — premier personalized dentistry in central Andijan.",
+    intro:
+      "Looking for trusted dental clinics in Andijan, Uzbekistan? At DM Stomatology, Clinical Resident in Oral & Maxillofacial Surgery Dr. MuhammadAli Davronov personally provides comprehensive care using certified biocompatible titanium implants, CAD/CAM zirconia crowns, and 100% pain-free protocols.",
+    col1Title: "Dental Implantology",
+    col1Desc:
+      "Premium Dentium and DIO biocompatible implants with computer-guided 3D placement for maximum safety and comfort.",
+    col2Title: "Orthopedics & Zirconia",
+    col2Desc:
+      "Precision CAD/CAM monolithic zirconia crowns and IPS E-max aesthetic veneers for naturally radiant smiles.",
+    col3Title: "100% Pain-Free Therapy",
+    col3Desc:
+      "Stress-free cavity and root canal treatments utilizing dual-stage local anesthesia and microscopic precision.",
+    col4Title: "Location & Booking",
+    col4Desc:
+      "91 Navoi Avenue, Andijan (next to Sariq Bola pizza, Room #1). Hassle-free appointment scheduling without waiting.",
+    btnBooking: "Book in Andijan",
+    btnServices: "View All Services →",
+  },
+};
+
+const AndijonStomatologiyaSection = ({ onOpenBooking }) => {
+  const { lang } = useLanguage();
+  const to = useLocalizedPath();
+  const d = ANDIJON_SECTION_MAP[lang] || ANDIJON_SECTION_MAP.uz;
+
+  return (
+    <section className="w-full py-12 sm:py-16 bg-slate-900 text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold tracking-widest text-sky-400 bg-sky-400/10 border border-sky-400/20 uppercase mb-3">
+            {d.badge}
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight mb-3">
+            {d.title}
+          </h2>
+          <p className="text-base sm:text-lg text-slate-300">
+            {d.subtitle}
+          </p>
+        </div>
+
+        <div className="bg-slate-800/80 rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-xl mb-8">
+          <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-6">
+            {d.intro}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-700/60">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                01. Implantatsiya
+              </span>
+              <h3 className="text-base font-bold text-white mb-2">{d.col1Title}</h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{d.col1Desc}</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-700/60">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                02. Ortopediya
+              </span>
+              <h3 className="text-base font-bold text-white mb-2">{d.col2Title}</h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{d.col2Desc}</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-700/60">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                03. Terapiya
+              </span>
+              <h3 className="text-base font-bold text-white mb-2">{d.col3Title}</h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{d.col3Desc}</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-700/60">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                04. Markaziy Manzil
+              </span>
+              <h3 className="text-base font-bold text-white mb-2">{d.col4Title}</h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{d.col4Desc}</p>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-slate-700/60 flex flex-wrap items-center justify-between gap-4">
+            <button
+              type="button"
+              onClick={() => onOpenBooking()}
+              className="px-6 py-3 rounded-full text-sm sm:text-base font-bold text-white bg-primary hover:bg-primary-hover shadow-lg transition-transform hover:-translate-y-0.5 cursor-pointer"
+            >
+              {d.btnBooking}
+            </button>
+            <Link
+              to={to("/services")}
+              className="text-sm sm:text-base font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+            >
+              {d.btnServices}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ═══════════════════════════════════════════════════════════════════
    MAIN HOME PAGE COMPONENT (CLEAN, SIMPLE & FOCUSED)
    ═══════════════════════════════════════════════════════════════════ */
 const Home = ({ onOpenBooking }) => {
@@ -633,6 +786,9 @@ const Home = ({ onOpenBooking }) => {
           <WorkingRoomShowcase />
         </div>
       </section>
+
+      {/* 3c. Andijonda Stomatologiya & Local Authority AI Overview Section */}
+      <AndijonStomatologiyaSection onOpenBooking={onOpenBooking} />
 
       {/* 4. Direct Online Booking Section */}
       <InlineBookingSection />

@@ -251,10 +251,16 @@ export const buildDoctorProfileSchema = (lang = "uz", breadcrumbs = []) => {
         "DM Stomatologiya",
         "DM Stomatology",
         "Stomatolog Andijon",
+        "Andijonda stomatologiya",
+        "Andijon stomatologiya klinikalari",
+        "Andijondagi stomatologiya",
         "Стоматолог Андижан",
+        "Стоматология в Андижане",
+        "Стоматологические клиники Андижана",
         "Стоматолог Мухаммадали",
         "Стоматолог Мухаммадали Давронов",
         "Dentist in Andijan",
+        "Dentistry in Andijan",
       ],
       "sameAs": [
         ...(DOCTOR_INFO.socialProfiles || [DOCTOR_INFO.instagramUrl, DOCTOR_INFO.telegramUrl]),
@@ -501,10 +507,17 @@ export const buildHomePageSchema = (lang = "uz") => {
           "https://schema.org/Prosthodontics",
           "https://schema.org/OralSurgery",
         ],
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Andijon viloyati",
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Andijon",
+            "sameAs": "https://en.wikipedia.org/wiki/Andijan",
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Andijon viloyati",
+          },
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": PRIMARY_CLINIC.address[lang] || PRIMARY_CLINIC.address.uz,

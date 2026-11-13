@@ -6,31 +6,31 @@ export const getPageSeo = (pageKey, lang = "uz") =>
 export const PAGE_SEO = {
   home: {
     uz: {
-      title: "Dr. MuhammadAli Davronov — Implantolog, Ortoped | Andijon",
-      description: "Dr. MuhammadAli Davronov — ADTI yuz-jag' jarrohligi klinik ordinatori, 5 yillik tajriba. Dental implantatsiya, sirkon va og'riqsiz davolash. Tel: +998 97 676 01 01.",
-      keywords: "stomatolog muhammadali, stomatolog muhammad ali, muhammadali stomatolog, dr muhammadali, dr muhammad ali, stomatolog muhammadali davronov, muhammadali davronov stomatolog, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, implantologiya andijon, dental implant, yuz jag jarrohligi ordinatori, ortopediya andijon, sirkon koronkalar andijon, vinirlar andijon, tish davolash andijon, ogriqsiz tish davolash, prospekt, navoiy 91",
+      title: "Dr. MuhammadAli Davronov — Andijonda Stomatologiya | Implantolog, Ortoped",
+      description: "Dr. MuhammadAli Davronov — Andijon davlat tibbiyot instituti yuz-jag' jarrohligi klinik ordinatori, 5 yillik tajriba. DM Stomatologiya: dental implantatsiya, sirkon koronkalar va og'riqsiz davolash. Tel: +998 97 676 01 01.",
+      keywords: "andijonda stomatologiya, andijon stomatologiya klinikalari, andijondagi stomatologiya, stomatolog muhammadali, stomatolog muhammad ali, muhammadali stomatolog, dr muhammadali, dr muhammadali davronov, stomatolog andijon, yaxshi stomatolog andijon, dm stomatologiya, implantologiya andijon, dental implant, yuz jag jarrohligi ordinatori, ortopediya andijon, sirkon koronkalar andijon, vinirlar andijon, tish davolash andijon, ogriqsiz tish davolash, prospekt, navoiy 91",
     },
     ru: {
-      title: "Д-р МухаммадАли Давронов — Имплантолог, Ортопед | Андижан",
-      description: "Д-р МухаммадАли Давронов — клинический ординатор по ЧЛХ в АГМИ, 5 лет опыта. Дентальная имплантация, цирконий и лечение без боли. Андижан. Тел: +998 97 676 01 01.",
-      keywords: "стоматолог мухаммадали, доктор мухаммадали, стоматолог мухаммадали давронов, мухаммадали давронов стоматолог, стоматолог андижан, доктор мухаммадали давронов, имплантация зубов андижан, стоматология андижан, dm stomatology, ортопедия андижан, лечение зубов без боли, циркониевые коронки андижан, виниры e-max, зубной врач андижан, проспект, навои 91",
+      title: "Д-р МухаммадАли Давронов — Стоматология в Андижане | Имплантолог, Ортопед",
+      description: "Д-р МухаммадАли Давронов — ординатор по ЧЛХ в АГМИ, 5 лет опыта. DM Stomatology: дентальная имплантация, коронки из циркония и бережное лечение зубов в Андижане. Тел: +998 97 676 01 01.",
+      keywords: "стоматология в андижане, стоматология андижан, стоматологические клиники андижана, лечение зубов в андижане, стоматолог мухаммадали, доктор мухаммадали, стоматолог мухаммадали давронов, мухаммадали давронов стоматолог, стоматолог андижан, имплантация зубов андижан, dm stomatology, ортопедия андижан, лечение зубов без боли, циркониевые коронки андижан, виниры e-max, зубной врач андижан, проспект, навои 91",
     },
     en: {
-      title: "Dr. MuhammadAli Davronov — Dental Implantologist | Andijan",
-      description: "Dr. MuhammadAli Davronov — Clinical resident in Oral & Maxillofacial Surgery at ASMI, 5 yrs practice. Dental implants, zirconia crowns & painless care. Tel: +998 97 676 01 01.",
-      keywords: "stomatolog muhammadali, dentist muhammadali, dr muhammadali davronov, dental implants andijan, dentist andijan, best dentist andijan, dm stomatology, orthopedics andijan, painless dentistry, zirconia crowns andijan, dental veneers, english speaking dentist uzbekistan",
+      title: "Dr. MuhammadAli Davronov — Dentistry in Andijan | Dental Implantologist",
+      description: "Dr. MuhammadAli Davronov — Clinical resident in Oral & Maxillofacial Surgery at ASMI, 5 yrs practice. DM Stomatology: dental implants, zirconia crowns & painless care. Tel: +998 97 676 01 01.",
+      keywords: "dentistry in andijan, dental clinics andijan, stomatolog muhammadali, dentist muhammadali, dr muhammadali davronov, dental implants andijan, dentist andijan, best dentist andijan, dm stomatology, orthopedics andijan, painless dentistry, zirconia crowns andijan, dental veneers, english speaking dentist uzbekistan",
     },
   },
   services: {
     uz: {
       title: "Stomatologik Xizmatlar — Dr. MuhammadAli Davronov | Andijon",
-      description: "Dental implantologiya (biotitan), ortopediya (sirkon koronkalar, vinirlar) va terapiya (100% og'riqsiz davolash). Shaxsiy qabul. Tel: +998 97 676 01 01.",
-      keywords: "tish implant narxi andijon, dental implantatsiya andijon, stomatologiya xizmatlari andijon, sirkon qoplama narxi, tish qoplatish andijon, tish oqartirish airflow, tish ildiz kanali davolash, tish protezi andijon",
+      description: "Andijonda dental implantologiya (biotitan), ortopediya (sirkon koronkalar, vinirlar) va terapiya (100% og'riqsiz davolash). Shaxsiy qabul. Tel: +998 97 676 01 01.",
+      keywords: "andijonda stomatologiya xizmatlari, tish implant narxi andijon, dental implantatsiya andijon, sirkon qoplama narxi, tish qoplatish andijon, tish oqartirish airflow, tish ildiz kanali davolash, tish protezi andijon",
     },
     ru: {
       title: "Услуги Стоматологии — Д-р МухаммадАли Давронов | Андижан",
-      description: "Дентальная имплантация, ортопедия (коронки из циркония, виниры) и терапия без боли. Персональный приём в клинике DM Stomatology: +998 97 676 01 01.",
-      keywords: "установка импланта андижан, имплантация зубов андижан, услуги стоматологии андижан, циркониевые коронки цена, виниры андижан, лечение каналов зуба, чистка airflow андижан, зубные протезы",
+      description: "Услуги стоматологии в Андижане: дентальная имплантация, циркониевые коронки, виниры и бережное лечение без боли. Персональный приём в DM Stomatology: +998 97 676 01 01.",
+      keywords: "услуги стоматологии в андижане, установка импланта андижан, имплантация зубов андижан, циркониевые коронки цена, виниры андижан, лечение каналов зуба, чистка airflow андижан, зубные протезы",
     },
     en: {
       title: "Dental Services — Dr. MuhammadAli Davronov | Andijan",
