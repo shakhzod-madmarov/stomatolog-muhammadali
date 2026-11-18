@@ -207,4 +207,56 @@ export const FAQ_ITEMS = [
       en: "Monolithic zirconia (ZrO2) is a 100% biocompatible, metal-free material replicating natural enamel translucency. Traditional metal-fused crowns frequently cause grayish gum lines and chipping, whereas digital CAD/CAM zirconia provides airtight margins, gum health, and 15-20+ years of durability.",
     },
   },
+  {
+    id: "tish-ogrigi-tez-qoldirish-va-davolash",
+    q: {
+      uz: "Tish qattiq og'riganda, zirqiraganda yoki kechasi sanchiganda nima qilish kerak?",
+      ru: "Что делать если сильно болит зуб, ноет или пульсирует ночью?",
+      en: "What should you do when a severe toothache strikes or throbs at night?",
+    },
+    a: {
+      uz: "Tish qattiq og'riganda (pulsatsiyalaganda yoki issiq-sovuqdan sanchiganda) og'rigan tishga issiq kompress qo'ymaslik va ustiga dori bosmaslik kerak. Vaqtincha og'riq qoldiruvchi vosita qabul qilib, zudlik bilan shifokorga murojaat qilish lozim. DM Stomatologiya klinikasida Dr. MuhammadAli Davronov 2 bosqichli yumshoq anesteziya yordamida og'riqni bir necha daqiqada butunlay to'xtatadi va karies yoki asab (pulpa) yallig'lanishini 100% og'riqsiz davolab beradi.",
+      ru: "При сильной зубной боли нельзя греть щёку или класть таблетки на десну. Можно временно принять обезболивающее и срочно прийти на приём. В клинике DM Stomatology Д-р МухаммадАли Давронов под двухэтапной анестезией за несколько минут полностью снимает болевой синдром и аккуратно вылечит пульпит или кариес без боли и страха.",
+      en: "When suffering from an acute toothache or throbbing pain, never apply heat or place aspirin directly on the gums. Take a mild painkiller temporarily and seek immediate dental attention. At DM Stomatology, Dr. MuhammadAli Davronov uses advanced two-stage local anesthesia to eliminate pain in minutes, treating cavities and pulpitis gently and painlessly.",
+    },
+  },
+  {
+    id: "tish-sinishi-yoki-plomba-tushishi",
+    q: {
+      uz: "Tish sinib qolsa, qarsillab yorilsa yoki eski plomba tushib qolsa qanday tiklanadi?",
+      ru: "Что делать если откололся зуб, сломалась стенка или выпала пломба?",
+      en: "What to do if a tooth is broken, chipped, or an old filling fell out?",
+    },
+    a: {
+      uz: "Tish qisman singanda yoki plomba tushganda o'z vaqtida murojaat qilinsa, tishning tirik asabini saqlab qolish imkoniyati yuqori bo'ladi. Zararlanish hajmiga qarab, tish yapon nano-kompozitlari yordamida badiiy restavratsiya qilinadi yoki CAD/CAM monolit sirkon qoplama (koronka) yordamida uning mustahkamligi va tabiiy ko'rinishi 1-2 qabulda to'liq qayta tiklanadi.",
+      ru: "Если откололся кусочек зуба или выпала пломба, важно обратиться к врачу как можно раньше, пока инфекция не дошла до нерва. В зависимости от скола, зуб восстанавливается светоотверждаемым нанокомпозитом либо анатомической циркониевой коронкой за 1-2 визита с гарантией прочности.",
+      en: "If a tooth chips, cracks, or a filling falls out, prompt treatment preserves the healthy living nerve. Depending on the defect, Dr. MuhammadAli restores it using seamless nano-composites or precision CAD/CAM zirconia crowns in 1-2 visits, restoring natural chewing strength.",
+    },
+  },
+  {
+    id: "milk-qonashi-shishi-flyus",
+    q: {
+      uz: "Tish milki qonasa, shishsa yoki tish tagida yiring (flyus) paydo bo'lsa nima qilish lozim?",
+      ru: "Что делать если кровоточат десны, опухла щека или появился флюс (гной)?",
+      en: "What should you do if your gums bleed, swell, or a dental abscess (flux) forms?",
+    },
+    a: {
+      uz: "Milk qonashi tish toshlari va bakterial karashlar sababli boshlanadi — buni Shveytsariya AirFlow va ultratovushli apparatda tozalash orqali 1 seansda to'xtatish mumkin. Agar tish milki shishib, yiring (flyus) to'plangan bo'lsa, uni o'zboshimchalik bilan siqish yoki qizdirish xavfli! ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov yiring o'chog'ini xavfsiz tozalaydi va asoratlarning oldini oladi.",
+      ru: "Кровоточивость дёсен вызвана зубным камнем и налётом, которые быстро снимаются швейцарской чисткой AirFlow и ультразвуком. Если же десна опухла и образовался флюс (гнойник), греть его категорически нельзя! Клинический ординатор ЧЛХ Д-р МухаммадАли Давронов безопасно устранит воспалительный очаг и спасёт зуб.",
+      en: "Bleeding gums are typically triggered by calculus and bacterial plaque, which are resolved in a single visit via Swiss AirFlow and ultrasonic scaling. If an abscess or swelling (flux) develops, never apply heat. ASMI Oral Surgery resident Dr. MuhammadAli Davronov safely drains the infection and preserves the underlying tooth.",
+    },
+  },
+  {
+    id: "tish-issiq-sovuqqa-sezuvchanligi",
+    q: {
+      uz: "Tishlar issiq, sovuq, nordon yoki shiringa qaqshab og'risa sababi nima va qanday davolanadi?",
+      ru: "Почему зубы реагируют и ноют от горячего, холодного или сладкого?",
+      en: "Why are teeth sensitive to hot, cold, or sweets and how is it treated?",
+    },
+    a: {
+      uz: "Tishning harorat va shiringa sezuvchanligi (giperesteziya) yupqalashgan emal, tish bo'yunchasidagi mayda karies yoki emal mikrodarzlaridan dalolat beradi. DM Stomatologiyada chuqur rem-gel remineralizatsiyasi, emalni ftor-kalsiy bilan to'yintirish yoki mikro-plombalash orqali tishning qaqshashi va og'rig'i tezda bartaraf etiladi.",
+      ru: "Реакция на температуру или сладкое возникает из-за истончения эмали, пришеечного кариеса или оголения шейки зуба. В DM Stomatology дискомфорт устраняется процедурой глубокого фторирования, нанесением реминерализирующего геля или установкой микропломбы.",
+      en: "Tooth sensitivity to temperature or sweets indicates enamel thinning, micro-cracks, or cervical cavities. At DM Stomatology, we eliminate sensitivity through deep remineralization therapy, calcium-fluoride bonding, or micro-restorations.",
+    },
+  },
 ];
