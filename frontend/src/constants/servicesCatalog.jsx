@@ -6,6 +6,7 @@ import {
   DentalDenturesIcon,
   DentalWhiteningZoom,
   DentalDigitalScannerIcon,
+  DentalSurgeryExtraction,
 } from "../components/MedicalIcons";
 import { assets } from "../assets/assets";
 
@@ -79,9 +80,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "dental implantatsiya andijon, tish implant narxi, sun'iy tish ildizi, biotitan implant, bir kunda tish qo'yish, implantolog andijon, dr muhammadali implantatsiya",
-      ru: "имплантация зубов андижан, зубные импланты цена, титановые импланты, имплантация за один день, хирург имплантолог андижан, восстановить зуб без обточки",
-      en: "dental implants andijan, tooth implant specialist, biocompatible titanium implant, immediate load implant, oral surgery andijan, permanent tooth replacement",
+      uz: "tish qoyish, tish qo'ydirish, oq tish qo'yish, tish implanti, tish implant narxi 2026, tish ekish narxi andijon, dental implantatsiya andijon, biotitan implant, bir kunda tish qo'yish, implantolog andijon, dr muhammadali implantatsiya",
+      ru: "поставить зубы андижан, вставить зубы цены, зубные импланты андижан, имплантация зубов андижан, зубные импланты цена, титановые импланты, имплантация за один день, хирург имплантолог андижан, восстановить зуб без обточки",
+      en: "get teeth implants andijan, dental implants andijan, tooth implant specialist, biocompatible titanium implant, immediate load implant, oral surgery andijan, permanent tooth replacement",
     },
   },
   {
@@ -147,9 +148,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "sirkon qoplama andijon, sirkon tish narxi, tish qoplatish andijon, keramika koronka, monolit sirkoniy, tabiiy tish emali, ortopediya andijon, dr muhammadali sirkon",
-      ru: "циркониевые коронки андижан, диоксид циркония цена, коронки на зубы андижан, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
-      en: "zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, broken tooth restoration andijan, dental clinic andijan",
+      uz: "tish karonkalari, tish koronkasi, sirkon karonka narxi, tish qoyish, tish qoplamasi, sirkon qoplama andijon, sirkon tish narxi, tilla tishni oqqa almashtirish, keramika koronka, monolit sirkoniy, ortopediya andijon, dr muhammadali sirkon",
+      ru: "коронки на зубы цена, циркониевые коронки андижан, диоксид циркония цена, поставить белые зубы, заменить золотые зубы, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
+      en: "tooth crown price andijan, zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, replace gold teeth, broken tooth restoration andijan",
     },
   },
   {
@@ -215,9 +216,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "og'riqsiz tish davolash andijon, karies davolash, tish plombalash, tish asabi olish og'riqsiz, kompozit restavratsiya, tish kanallarini davolash, endodontiya andijon",
-      ru: "лечение зубов без боли андижан, лечение кариеса андижан, безболезненное пломбирование, лечение корневых каналов, эстетическая реставрация зубов, световая пломба",
-      en: "pain free dentistry andijan, gentle tooth filling, cavity treatment, root canal therapy endodontics, aesthetic dental restoration, dentist without pain",
+      uz: "kechki payt tishim ogriyapti, kechasi tish ogrishi, tish zirqirashi, tish og'rig'ini qoldirish, og'riqsiz tish davolash andijon, karies davolash, tish plombalash, tish asabi olish og'riqsiz, kompozit restavratsiya, tish kanallarini davolash, endodontiya andijon",
+      ru: "болит зуб ночью что делать, ночная зубная боль снять, ноет зуб, лечение зубов без боли андижан, лечение кариеса андижан, безболезненное пломбирование, лечение корневых каналов, эстетическая реставрация зубов, световая пломба",
+      en: "nighttime toothache relief, emergency tooth pain treatment, throbbing tooth pain, pain free dentistry andijan, gentle tooth filling, cavity treatment, root canal therapy endodontics",
     },
   },
   {
@@ -490,6 +491,77 @@ export const SERVICES_CATALOG = [
       uz: "3d tish skanerlash andijon, raqamli stomatologiya, qoliplarsiz tish o'lchash, intraoral 3d skaner, virtual tabassum loyihasi, zamonaviy stomatologiya",
       ru: "3d сканирование зубов андижан, цифровая стоматология, слепки без слепочной массы, интраоральный сканер, 3d моделирование улыбки",
       en: "3d intraoral scanning andijan, digital dentistry, gag free optical impressions, digital smile design, modern dental care",
+    },
+  },
+  {
+    id: "ogriqsiz-tish-olish",
+    icon: <DentalSurgeryExtraction className="w-7 h-7 text-primary" />,
+    image: assets.treatment_surgery,
+    specialtyKey: "surgery",
+    badge: {
+      uz: "JARROHLIK · 100% OG'RIQSIZ",
+      ru: "ХИРУРГИЯ · 100% БЕЗ БОЛИ",
+      en: "ORAL SURGERY · GENTLE EXTRACTION",
+    },
+    techTag: {
+      uz: "Yuz-Jag' Jarrohi Mahorati",
+      ru: "Опыт Хирурга ЧЛХ",
+      en: "OMFS Surgical Precision",
+    },
+    featurePill: {
+      uz: "Asoratsiz & Yumshoq",
+      ru: "Атравматично и безопасно",
+      en: "Atraumatic & Fast Healing",
+    },
+    badgeTheme: {
+      badgeBg: "bg-red-50 text-primary border-red-200",
+      warrantyBg: "bg-rose-50 text-rose-800 border-rose-200",
+      accentGlow: "hover:shadow-red-500/10",
+    },
+    category: {
+      uz: "Jarrohlik & Tish Olish",
+      ru: "Хирургия и Удаление Зубов",
+      en: "Oral Surgery & Extractions",
+    },
+    title: {
+      uz: "Og'riqsiz Tish Olish va Yuz-Jag' Jarrohligi (Aql Tishlari)",
+      ru: "Атравматичное Удаление Зубов и Хирургия ЧЛХ",
+      en: "Painless Tooth Extraction & Oral Surgery (Wisdom Teeth)",
+    },
+    shortDesc: {
+      uz: "ADTI Yuz-jag' jarrohligi klinik ordinatori tomonidan oddiy va murakkab aql tishlarini (vosmoy), yemirilgan ildizlarni 2 bosqichli mikro-anesteziya ostida og'riqsiz va asoratsiz sug'urish.",
+      ru: "Удаление разрушенных зубов и сложных ретинированных 'зубов мудрости' клиническим ординатором ЧЛХ АГМИ: бережная двухэтапная анестезия, отсутствие боли и быстрое заживление.",
+      en: "Gentle, stress-free extraction of severely decayed roots and complex impacted wisdom teeth by ASMI Oral & Maxillofacial Surgery resident under complete local anesthesia.",
+    },
+    duration: { uz: "15-25 daqiqa", ru: "15-25 минут", en: "15-25 mins" },
+    warranty: { uz: "Tez va asoratsiz bitish", ru: "Быстрое заживление", en: "Rapid recovery guarantee" },
+    highlights: {
+      uz: [
+        "2 bosqichli og'riqsizlantirish: inyeksiya og'rig'i ham, tish sug'urilishi ham mutlaqo sezilmaydi",
+        "ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov shaxsiy jarrohlik amaliyoti",
+        "Murakkab, yotib qolgan (retinirlangan) aql tishlari va singan ildizlarni suyakni shikastlamasdan olish",
+        "Tish olingan katakchani tez bitiruvchi maxsus dori va plazma bilan to'ldirish",
+        "Jarrohlikdan so'ng shish va asoratlarning oldini oluvchi aniq shaxsiy ko'rsatmalar",
+      ],
+      ru: [
+        "Двухэтапная анестезия: место укола предварительно обезболивается гелем",
+        "Мастерство и точность клинического ординатора по челюстно-лицевой хирургии АГМИ",
+        "Атравматичное удаление сложных ретинированных зубов мудрости без повреждения челюсти",
+        "Закладка заживляющих препаратов в лунку для быстрого и безболезненного восстановления",
+        "Подробные рекомендации и врачебное сопровождение в период реабилитации",
+      ],
+      en: [
+        "Two-phase micro-anesthesia: injection site pre-numbed so you feel zero discomfort",
+        "Performed personally by ASMI Oral & Maxillofacial Surgery clinical resident Dr. MuhammadAli",
+        "Atraumatic extraction of impacted wisdom teeth preserving surrounding bone architecture",
+        "Placement of regenerative socket healing agents for swift, clot-safe recovery",
+        "Comprehensive postoperative care instructions and clinical monitoring",
+      ],
+    },
+    keywords: {
+      uz: "tish olish andijon, ogriqsiz tish olish, tish oldirish narxi, aql tishini oldirish, vosmoy tish sug'urish, tish sug'urish narxi andijon, yuz jag jarrohi andijon, singan tish ildizini olish, tish olish narxlari",
+      ru: "удаление зуба андижан, удалить зуб без боли, удаление зуба мудрости цена, ретинированный зуб мудрости, хирург стоматолог андижан, челюстно лицевой хирург, удаление корня зуба",
+      en: "tooth extraction andijan, painless wisdom tooth removal, impacted third molar surgery, gentle tooth pulling, oral surgeon andijan, tooth extraction cost",
     },
   },
 ];

@@ -259,4 +259,82 @@ export const FAQ_ITEMS = [
       en: "Tooth sensitivity to temperature or sweets indicates enamel thinning, micro-cracks, or cervical cavities. At DM Stomatology, we eliminate sensitivity through deep remineralization therapy, calcium-fluoride bonding, or micro-restorations.",
     },
   },
+  {
+    id: "kechki-payt-tish-ogriyapti",
+    q: {
+      uz: "Kechki payt tishim og'riyapti yoki kechasi qattiq zirqirab uxlatmayapti, nima qilsam bo'ladi?",
+      ru: "Что делать если вечером или ночью сильно разболелся зуб и не даёт уснуть?",
+      en: "What should you do if an acute toothache strikes in the evening or throbs at night?",
+    },
+    a: {
+      uz: "Kechki payt va yotgan holatda boshga qon oqimi ko'payib, yallig'langan tish asabiga (pulpa) bosim oshadi — bu o'tkir pulpitning asosiy belgisidir. Birinchi yordam: yonoqni aslo issiq qilmang, og'izni iliq osh tuzi va soda eritmasi bilan chayqang, boshni balandroq yostiqqa qo'ying va shifokor ko'rigigacha og'riq qoldiruvchi dori iching. Ertalab darhol DM Stomatologiyaga murojaat qiling: Dr. MuhammadAli Davronov 2 bosqichli og'riqsiz anesteziya bilan tish asabini 100% og'riqsiz tozalab, tinchlantiradi.",
+      ru: "В вечернее и ночное время в положении лёжа приток крови к голове усиливается, создавая давление на воспалённый нерв (пульпит). Первая помощь: ни в коем случае не грейте щёку, прополощите рот тёплым содово-солевым раствором, примите анальгетик и держите голову выше. Утром сразу приходите в DM Stomatology: Д-р МухаммадАли Давронов под двухэтапной анестезией за 1 визит безболезненно снимет боль и спасёт зуб.",
+      en: "At night, lying flat increases blood flow to the head, elevating pressure on inflamed dental pulp. Emergency relief: never apply warmth to the cheek, rinse with lukewarm saline solution, elevate your head with extra pillows, and take an over-the-counter painkiller. First thing in the morning, visit DM Stomatology: Dr. MuhammadAli Davronov eliminates nerve pain in minutes under gentle two-stage anesthesia.",
+    },
+  },
+  {
+    id: "tish-qoyish-usullari-va-narxlari",
+    q: {
+      uz: "Tish qo'yish (oq tish qo'ydirish) qanday usullarda qilinadi va qaysi biri eng yaxshi?",
+      ru: "Какие бывают способы вставить зубы (поставить белые зубы) и какой лучше?",
+      en: "What are the best modern ways to replace missing teeth and get new teeth?",
+    },
+    a: {
+      uz: "Yo'qolgan tishlar o'rniga tish qo'yishning 3 ta asosiy usuli mavjud: 1) Biotitan implant ustiga tish qo'yish — qo'shni sog'lom tishlarni charxlamasdan o'rnatiladigan eng zamonaviy va umrbod xizmat qiluvchi usul; 2) Sirkon koronkalar va ko'priklar — tish ildizi saqlangan yoki qo'shni tishlarga tayanuvchi o'ta mustahkam oq qoplamalar; 3) Elastik protezlar — ko'p sonli tishlar yo'q bo'lganda olinadigan yengil yechim. Dr. MuhammadAli 3D intraoral skaner yordamida eng ma'qul variantni aniqlab beradi.",
+      ru: "Восстановление зубов выполняется 3 передовыми методами: 1) Дентальная имплантация — самый надёжный способ без обточки соседних зубов с пожизненной гарантией; 2) Циркониевые коронки и мосты — эстетичные белоснежные конструкции неотличимые от родных зубов; 3) Эластичные нейлоновые протезы — при отсутствии большого количества зубов. Д-р МухаммадАли подберёт идеальное решение на 3D сканере.",
+      en: "Tooth replacement is performed through 3 premier approaches: 1) Biocompatible titanium dental implants — the gold standard preserving adjacent teeth with lifetime durability; 2) Monolithic zirconia crowns & bridges — seamless, natural white restorations; 3) Modern flexible prosthetics — for multiple missing teeth. Dr. MuhammadAli plans the ideal option using digital 3D intraoral diagnostics.",
+    },
+  },
+  {
+    id: "ogriqsiz-tish-olish-aql-tishlari",
+    q: {
+      uz: "Tish olish (tish sug'urish) va aql tishini (vosmoy tish) oldirish og'riqlimi?",
+      ru: "Больно ли удалять разрушенный зуб или зуб мудрости (восьмёрку)?",
+      en: "Is tooth extraction or wisdom tooth removal painful?",
+    },
+    a: {
+      uz: "Mutlaqo og'riqsiz! ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov tish olishni zamonaviy 2 bosqichli og'riqsizlantirish (avval milk gel bilan muzlatiladi, so'ng anestetik yuboriladi) ostida o'tkazadi. Hatto yotib qolgan, milk ichida qolgan (retinirlangan) murakkab aql tishlari ham suyak to'qimasini jarohatlamasdan, maxsus jarrohlik asboblari bilan tez va yengil olinadi.",
+      ru: "Абсолютно безболезненно! Клинический ординатор ЧЛХ АГМИ Д-р МухаммадАли Давронов проводит атравматичное удаление под двухэтапной анестезией (десна предварительно обезболивается гелем). Даже сложные ретинированные зубы мудрости извлекаются аккуратно, без дробления кости и без боли.",
+      en: "Completely pain-free! Performed personally by ASMI Oral & Maxillofacial Surgery resident Dr. MuhammadAli Davronov under two-stage local anesthesia (topical pre-numbing gel followed by ultra-fine injection). Complex impacted third molars (wisdom teeth) are extracted gently and atraumatically without bone trauma.",
+    },
+  },
+  {
+    id: "tish-karonkalari-sirkon-narxi",
+    q: {
+      uz: "Tish karonkalari (sirkon qoplamalar) nega metall-keramikadan ustun va qancha xizmat qiladi?",
+      ru: "Чем циркониевые коронки лучше металлокерамики и сколько они служат?",
+      en: "Why are monolithic zirconia crowns superior to metal ceramics and how long do they last?",
+    },
+    a: {
+      uz: "Monolit sirkon karonkalari (ZrO2) 100% metallsiz bo'lib, tabiiy tishdek yorug'lik o'tkazadi va milkda qora-ko'kish hoshiya hosil qilmaydi. Eskirgan metall-keramika sinishi yoki milkni yallig'lantirishi mumkin bo'lsa, CAD/CAM kompyuter aniqligida yo'nilgan sirkon karonka tishga zich o'tiradi, yuvilmaydi va 15-20 yildan ortiq mustahkam xizmat qiladi.",
+      ru: "Циркониевые коронки (ZrO2) полностью безметалловые, пропускают свет как естественная эмаль и не окрашивают десну в тёмный цвет. В отличие от металлокерамики со сколами, монолитный цирконий CAD/CAM имеет микронную точность посадки и служит более 15-20 лет.",
+      en: "Monolithic zirconia crowns are 100% metal-free, match natural enamel translucency, and never create a dark gray line at the gum margin. Unlike traditional porcelain-fused-to-metal crowns, precision CAD/CAM zirconia provides airtight margins and lasts 15-20+ years.",
+    },
+  },
+  {
+    id: "tish-breketlari-va-tekislash",
+    q: {
+      uz: "Tish breketlari (briketlar) va tishlarni tekislash qanday amalga oshiriladi?",
+      ru: "Как работают брекеты и выравнивание кривых зубов?",
+      en: "How do dental braces and aligners straighten crooked teeth?",
+    },
+    a: {
+      uz: "Tishlar egri chiqqanda, bir-birini qisib o'sganda yoki tishlar orasida tirqishlar bo'lganda, zamonaviy metall va keramik breketlar yoki shaffof elaynerlar yordamida tish qatori to'g'irlanadi. DM Stomatologiyada 3D intraoral skanerlash orqali tishlam nuqsonlari aniq o'rganiladi va estetik tabassum loyihalanadi.",
+      ru: "При скученности, кривизне зубов или щелях (диастемах) применяются современные металлические, керамические брекет-системы или прозрачные элайнеры. В DM Stomatology на 3D сканере моделируется правильный прикус и идеальная линия улыбки.",
+      en: "Crooked teeth, crowding, or gaps are corrected using low-profile metal or aesthetic ceramic braces, as well as invisible aligners. At DM Stomatology, digital 3D intraoral scans map out tooth movements for a balanced, functional bite.",
+    },
+  },
+  {
+    id: "tilla-tishlarni-oq-tishga-almashtirish",
+    q: {
+      uz: "Eski tilla tish yoki temir tishlarni zamonaviy oq tishga (sirkoniyaga) almashtirsa bo'ladimi?",
+      ru: "Можно ли заменить старые золотые или металлические зубы на современные белые коронки?",
+      en: "Can old gold or metal teeth be replaced with modern white zirconia teeth?",
+    },
+    a: {
+      uz: "Albatta! Ko'p bemorlarimiz ilgari qo'yilgan tilla yoki metall qoplamalarni zamonaviy oq monolit sirkon koronkalar yoki biotitan implantlarga almashtirish uchun murojaat qilishadi. Eski metall qoplamalar olinib, ostidagi tish tozalanadi, mustahkamlanadi va 1-2 qabulda tabiiy tishlaringiz rangiga 100% mos keluvchi oppoq, chiroyli sirkon tishlar o'rnatiladi.",
+      ru: "Конечно! Замена старых золотых коронок и металлических мостов на современные белые коронки из диоксида циркония — частая процедура. Мы аккуратно снимаем старый металл, лечим опорные зубы и за 1-2 визита ставим естественные эстетичные белые зубы.",
+      en: "Absolutely! Replacing outdated gold teeth and metal bridges with modern natural-white zirconia crowns or implants is very common. We gently remove the old metal, treat the underlying foundation, and deliver pristine, lifelike white zirconia teeth in 1-2 visits.",
+    },
+  },
 ];

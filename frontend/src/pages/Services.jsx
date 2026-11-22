@@ -20,6 +20,7 @@ const Services = ({ onOpenBooking }) => {
   const categories = [
     { id: "all", label: { uz: "Barcha Xizmatlar", ru: "Все Услуги", en: "All Services" } },
     { id: "implantology", label: { uz: "Dental Implantologiya", ru: "Имплантология", en: "Implantology" } },
+    { id: "surgery", label: { uz: "Jarrohlik & Tish Olish", ru: "Хирургия & Удаление", en: "Oral Surgery" } },
     { id: "orthopedia", label: { uz: "Ortopediya & Protezlash", ru: "Ортопедия & Протезы", en: "Orthopedics" } },
     { id: "therapy", label: { uz: "Terapiya & Oqartirish", ru: "Терапия & Лечение", en: "Therapy" } },
     { id: "digital", label: { uz: "Raqamli Stomatologiya", ru: "Цифровая Стоматология", en: "Digital Dentistry" } },
@@ -27,9 +28,10 @@ const Services = ({ onOpenBooking }) => {
 
   const filteredServices = SERVICES_CATALOG.filter((s) => {
     if (activeCategory === "all") return true;
+    if (activeCategory === "implantology") return s.specialtyKey === "implantology";
+    if (activeCategory === "surgery") return s.specialtyKey === "surgery";
     if (activeCategory === "orthopedia") return s.specialtyKey === "orthopedia";
     if (activeCategory === "therapy") return s.specialtyKey === "therapy";
-    if (activeCategory === "implantology") return s.specialtyKey === "implantology";
     if (activeCategory === "digital") return s.specialtyKey === "digital";
     return true;
   });

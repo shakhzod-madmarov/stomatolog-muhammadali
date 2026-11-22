@@ -87,6 +87,17 @@ export const BOOKING_SERVICES = [
     duration: 60,
     price: { uz: "Ko'rikdan so'ng", ru: "После осмотра", en: "After assessment" },
   },
+  {
+    id: "extraction",
+    name: {
+      uz: "Jarrohlik: Og'riqsiz Tish Olish & Aql Tishi",
+      ru: "Хирургия: Атравматичное Удаление Зубов & Зубы Мудрости",
+      en: "Oral Surgery: Painless Tooth Extraction & Wisdom Teeth",
+    },
+    specialty: "surgery",
+    duration: 30,
+    price: { uz: "Ko'rikdan so'ng", ru: "После осмотра", en: "After assessment" },
+  },
 ];
 
 export const normalizeBookingServiceId = (id) => {
@@ -106,6 +117,9 @@ export const normalizeBookingServiceId = (id) => {
     endodontics: "endodontics",
     "tish-oqartirish": "whitening",
     whitening: "whitening",
+    "ogriqsiz-tish-olish": "extraction",
+    "tish-olish": "extraction",
+    extraction: "extraction",
     "digital-dentistry": "consultation",
     consultation: "consultation",
   };

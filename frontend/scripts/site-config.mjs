@@ -146,4 +146,14 @@ export const ROUTES = [
       caption: "AirFlow ultratovush tozalash va emalga zarar yetkazmasdan tishlarni oqartirish",
     },
   },
+  {
+    path: "/services/ogriqsiz-tish-olish",
+    changefreq: "monthly",
+    priority: "0.85",
+    image: {
+      src: "src/assets/treatment_surgery.webp",
+      title: "Og'riqsiz Tish Olish va Yuz-Jag' Jarrohligi — Dr. MuhammadAli Davronov",
+      caption: "ADTI Yuz-jag' jarrohligi klinik ordinatori tomonidan aql tishlarini og'riqsiz va asoratsiz olish",
+    },
+  },
 ];
