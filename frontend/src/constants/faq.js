@@ -337,4 +337,69 @@ export const FAQ_ITEMS = [
       en: "Absolutely! Replacing outdated gold teeth and metal bridges with modern natural-white zirconia crowns or implants is very common. We gently remove the old metal, treat the underlying foundation, and deliver pristine, lifelike white zirconia teeth in 1-2 visits.",
     },
   },
+  {
+    id: "tish-implant-tanlash-kriteriyalari",
+    q: {
+      uz: "Andijonda tish implantatsiyasi (tish ekish) tanlashda nimaga e'tibor berish kerak va narxlari qancha?",
+      ru: "На что обратить внимание при выборе имплантации зубов в Андижане и какие цены?",
+      en: "What should you look for when choosing dental implants in Andijan and what are the costs?",
+    },
+    a: {
+      uz: "Andijonda sifatli tish implantatsiyasi tanlashda 4 ta asosiy omilga e'tibor berish lozim: 1) 3D KT diagnostika va raqamli 3D navigatsion shablon — implantni nerv kanallari va suyak qalinligiga mikron aniqligida o'rnatish uchun zarur; 2) Implant brendi — rasmiy xalqaro sertifikatlangan biotitan tizimlari (Janubiy Koreyaning Dentium, DIO Implant, Osstem yoki Yevropaning Straumann tizimlari); 3) Shifokor mutaxassisligi — operatsiyani ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov shaxsan o'tkazadi; 4) Rasmiy kafolat va og'riqsizlik — DM Stomatologiyada implantlar 2 bosqichli mikro-anesteziya ostida 100% og'riqsiz qo'yiladi va ishlab chiqaruvchi tomonidan umrbod kafolat beriladi.",
+      ru: "При выборе имплантации в Андижане важны 4 критерия: 1) 3D КТ диагностика и навигационные шаблоны — для безопасной установки без риска задеть нервные каналы; 2) Бренд имплантов — проверенный биосовместимый титан (южнокорейские Dentium, DIO, Osstem или европейские Straumann); 3) Квалификация врача — приём ведёт клинический ординатор ЧЛХ АГМИ Д-р МухаммадАли Давронов; 4) Пожизненная гарантия и полное отсутствие боли благодаря двухэтапной анестезии.",
+      en: "When choosing dental implants in Andijan, consider 4 essential factors: 1) 3D CBCT diagnostics & computer-guided surgical templates — safeguarding nerve canals and ensuring optimal bone integration; 2) Verified implant brands — certified medical titanium (Dentium, DIO Implant, Osstem, or Straumann); 3) Surgical expertise — performed personally by ASMI Oral & Maxillofacial Surgery resident Dr. MuhammadAli Davronov; 4) Lifetime manufacturer warranty and 100% pain-free treatment under gentle micro-anesthesia.",
+    },
+  },
+  {
+    id: "breket-turlari-va-narxlari-2026",
+    q: {
+      uz: "Tish breketlari (briketlar) turlari va tishlarni tekislash qanday farq qiladi, qaysi biri yaxshi?",
+      ru: "Какие виды брекетов бывают, чем они отличаются и какой вариант лучше?",
+      en: "What types of dental braces and teeth straightening aligners exist and which is best?",
+    },
+    a: {
+      uz: "Egri, qisilib o'sgan tishlar va noto'g'ri tishlamni (prikus) to'g'irlash uchun 3 xil asosiy tizim qo'llaniladi: 1) Metall breketlar — eng mustahkam, samarali va hamyonbop variant; 2) Keramika va safir breketlar — tish rangida bo'lib, jilmayganda deyarli ko'rinmaydi; 3) Shaffof elaynerlar (kapa) — tishga taqiladigan ko'rinmas olinadigan qoplamalar. Breketlarni 12 yoshdan boshlab har qanday yoshda qo'yish mumkin, o'rtacha muddat 12-18 oyni tashkil etadi. DM Stomatologiyada 3D intraoral skanerlash orqali tish qatoringizga individual aniq reja tuziladi.",
+      ru: "Для исправления скученности и кривизны зубов применяются: 1) Металлические брекеты — классический, самый прочный и эффективный метод; 2) Керамические и сапфировые брекеты — под цвет эмали, эстетичны и малозаметны на зубах; 3) Прозрачные элайнеры — съёмные невидимые каппы. Исправлять прикус можно в любом возрасте (от 12 до 50+ лет), срок лечения составляет в среднем 12-18 месяцев.",
+      en: "To correct crooked teeth and malocclusion, 3 main systems are used: 1) Metal braces — the strongest, most cost-effective and reliable system; 2) Ceramic & sapphire braces — tooth-colored and aesthetically discreet; 3) Clear aligners — virtually invisible removable trays. Braces can be placed at any age (12 to 50+ years), with an average treatment timeline of 12-18 months planned via digital 3D intraoral scans.",
+    },
+  },
+  {
+    id: "tish-karonkalari-turlari-va-narxlari-2026",
+    q: {
+      uz: "Tish karonkalari (sirkoniy, metallokeramika, E-max, PMMA) narxi va xizmat muddati qanday?",
+      ru: "Какие бывают коронки на зубы (цирконий, металлокерамика, E-max, PMMA) и сколько они служат?",
+      en: "What are the differences between dental crown types (zirconia, metal-ceramic, E-max, PMMA) and durability?",
+    },
+    a: {
+      uz: "Tish karonkalari materialiga ko'ra farqlanadi: 1) Monolit sirkoniy (ZrO2) — 2026 yilda eng ko'p tanlanadigan №1 qoplama: 100% metallsiz, o'ta mustahkam, milkni qoraytirmaydi va 15-20+ yil xizmat qiladi; 2) E-max press-keramika — old tishlar uchun ideal tabiiy yarim-shaffof estetika; 3) Eskirgan metall-keramika — mustahkam, ammo milkda qora hoshiya berishi mumkin; 4) PMMA — davolash va implantatsiya davridagi vaqtinchalik yengil koronkalar. DM Stomatologiyada barcha sirkon karonkalar yuqori aniqlikdagi CAD/CAM raqamli frezerlash orqali tayyorlanadi.",
+      ru: "Коронки делятся на основные типы: 1) Монолитный диоксид циркония (ZrO2) — золотой стандарт №1: без металла, гипоаллергенный, не темнеет у десны и служит более 15-20 лет; 2) Керамика E-max — идеальная эстетика для зоны улыбки; 3) Металлокерамика — прочная, но со временем даёт синеву у десны; 4) Временные коронки PMMA — защищают зубы на время изготовления постоянных. Все коронки вытачиваются на цифровых фрезерах CAD/CAM.",
+      en: "Dental crowns are categorized by material: 1) Monolithic Zirconia (ZrO2) — the modern #1 choice: 100% metal-free, fracture-resistant, zero gum discoloration, lasting 15-20+ years; 2) IPS E-max ceramic — unmatched aesthetics for front smile teeth; 3) Metal-ceramics — conventional durability but prone to grayish gum margins; 4) PMMA — temporary protective crowns during implant integration. Fabricated with micron-precision via CAD/CAM milling.",
+    },
+  },
+  {
+    id: "nechta-tishga-implant-qoyiladi-all-on-4",
+    q: {
+      uz: "Nechta tishga implant qo'ydirish mumkin va butun jag'da tish yo'q bo'lsa (All-on-4 / All-on-6) qanday qilinadi?",
+      ru: "Сколько зубов можно восстановить имплантами и что делать при полном отсутствии зубов (All-on-4 / All-on-6)?",
+      en: "How many teeth can be replaced with implants and what is All-on-4 / All-on-6 full arch restoration?",
+    },
+    a: {
+      uz: "Implantatsiya bilan 1 ta tishdan tortib butun tishsiz jag'gacha tiklash mumkin: 1) 1 ta yo'qolgan tish o'rniga — 1 ta biotitan implant va sirkon koronka; 2) Ketma-ket 3-4 ta tish yo'q bo'lsa — 2 ta implant ustiga sirkon ko'prik; 3) Jag'da umuman tish qolmagan bo'lsa — jahon andozasidagi All-on-4 (4 ta implant) yoki All-on-6 (6 ta implant) protokoli bo'yicha mustahkam, yechilmaydigan sirkon tishlar qatori o'rnatiladi. Bemor 1 kunda chaynash qobiliyati va yoshlik qiyofasiga qaytadi.",
+      ru: "С помощью имплантов можно восстановить от одного зуба до всей челюсти: 1) При потере 1 зуба — одиночный титановый имплант с циркониевой коронкой; 2) При потере 3-4 зубов подряд — мостовидный протез на 2 имплантах; 3) При полном отсутствии зубов — протоколы All-on-4 (на 4 имплантах) или All-on-6 (на 6 имплантах) с несъёмным монолитным циркониевым протезом. Пациент возвращает жевание и красивую улыбку в кратчайшие сроки.",
+      en: "Implants can restore anywhere from a single missing tooth to an entire edentulous jaw: 1) Single tooth loss — 1 titanium fixture with a custom zirconia crown; 2) Multiple teeth missing — implant-supported zirconia bridges; 3) Complete toothlessness — international All-on-4 or All-on-6 protocols providing a fixed, non-removable monolithic bridge, restoring youthful masticatory strength and facial harmony.",
+    },
+  },
+  {
+    id: "shoshilinch-tish-yordami-andijon",
+    q: {
+      uz: "Kechasi yoki dam olish kunlari o'tkir tish og'rig'i, shish (flyus) yoki tish sinishi bo'lsa qayerga murojaat qilish kerak?",
+      ru: "Куда обращаться при острой зубной боли, флюсе или сломанном зубе ночью или в выходные в Андижане?",
+      en: "Where to get urgent emergency dental care for severe toothache, swollen abscess, or broken tooth in Andijan?",
+    },
+    a: {
+      uz: "O'tkir sanchuvchi tish og'rig'i, kechasi uxlashga bermaydigan pulpa og'rig'i, yuz-jag' shishi (flyus) yoki avariya/jarohatdan tish sinishi shoshilinch yordamni talab qiladi. Bunday holatda DM Stomatologiyaning +998 97 676 01 01 raqamiga zudlik bilan qo'ng'iroq qiling yoki saytimiz orqali shoshilinch onlayn qabulga yoziling. ADTI Yuz-jag' jarrohligi klinik ordinatori Dr. MuhammadAli Davronov 2 bosqichli og'riqsizlantirish bilan og'riqni bir necha daqiqada butunlay qoldiradi va tishni asrab qoladi.",
+      ru: "Острая пульсирующая зубная боль, ночной пульпит, отёк десны (флюс) или скол переднего зуба требуют неотложного визита. Позвоните по прямому номеру +998 97 676 01 01 или запишитесь на сайте онлайн. Клинический ординатор ЧЛХ Д-р МухаммадАli Давронов под двухэтапной анестезией снимет болевой синдром за несколько минут и проведёт экстренную помощь.",
+      en: "Severe throbbing tooth pain, sleepless night toothaches, facial swelling (flux), or chipped front teeth require urgent attention. Call our direct hotline +998 97 676 01 01 or book urgent online entry. ASMI Oral & Maxillofacial Surgery resident Dr. MuhammadAli Davronov provides rapid pain cessation within minutes under gentle two-stage micro-anesthesia.",
+    },
+  },
 ];

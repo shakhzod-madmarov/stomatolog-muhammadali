@@ -80,9 +80,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "tish qoyish, tish qo'ydirish, oq tish qo'yish, tish implanti, tish implant narxi 2026, tish ekish narxi andijon, dental implantatsiya andijon, biotitan implant, bir kunda tish qo'yish, implantolog andijon, dr muhammadali implantatsiya",
-      ru: "поставить зубы андижан, вставить зубы цены, зубные импланты андижан, имплантация зубов андижан, зубные импланты цена, титановые импланты, имплантация за один день, хирург имплантолог андижан, восстановить зуб без обточки",
-      en: "get teeth implants andijan, dental implants andijan, tooth implant specialist, biocompatible titanium implant, immediate load implant, oral surgery andijan, permanent tooth replacement",
+      uz: "tish implantatsiyasi, tish implantatsiyasi andijon, tish implantatsiyasi narxlari 2026, tish qoyish, tish qo'ydirish, oq tish qo'yish, tish implanti, tish implant narxi 2026, tish ekish narxi andijon, dental implantatsiya andijon, biotitan implant, bir kunda tish qo'yish, 3d kt diagnostika implantatsiya, dentium dio osstem straumann, all on 4 andijon, all on 6 andijon, implantolog andijon, dr muhammadali implantatsiya",
+      ru: "имплантация зубов андижан, дентальная имплантация цены 2026, поставить зубы андижан, вставить зубы цены, зубные импланты андижан, имплантация зубов андижан, зубные импланты цена, титановые импланты, имплантация за один день, 3d кт диагностика, all on 4 андижан, all on 6, хирург имплантолог андижан, восстановить зуб без обточки",
+      en: "dental implants andijan, tooth implant cost 2026, get teeth implants andijan, dental implants andijan, tooth implant specialist, biocompatible titanium implant, immediate load implant, 3d cbct guided implants, all on 4 andijan, oral surgery andijan, permanent tooth replacement",
     },
   },
   {
@@ -148,9 +148,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "tish karonkalari, tish koronkasi, sirkon karonka narxi, tish qoyish, tish qoplamasi, sirkon qoplama andijon, sirkon tish narxi, tilla tishni oqqa almashtirish, keramika koronka, monolit sirkoniy, ortopediya andijon, dr muhammadali sirkon",
-      ru: "коронки на зубы цена, циркониевые коронки андижан, диоксид циркония цена, поставить белые зубы, заменить золотые зубы, безметалловая керамика, коронка из циркония, протезирование зубов андижан, доктор мухаммадали",
-      en: "tooth crown price andijan, zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, replace gold teeth, broken tooth restoration andijan",
+      uz: "tish karonkalari, tish koronkasi, sirkon karonka narxi, tish karonkalari narxi 2026, tish qoyish, tish qoplamasi, sirkon qoplama andijon, sirkon tish narxi, tilla tishni oqqa almashtirish, keramika koronka, monolit sirkoniy, e-max keramika, pmma vaqtinchalik koronka, ortopediya andijon, dr muhammadali sirkon",
+      ru: "коронки на зубы цена, циркониевые коронки андижан, диоксид циркония цена 2026, поставить белые зубы, заменить золотые зубы, безметалловая керамика, коронка из циркония, коронки e-max, протезирование зубов андижан, доктор мухаммадали",
+      en: "tooth crown price andijan, zirconia crowns andijan, ceramic tooth crown, monolithic zirconia prosthodontics, metal free dental crown, replace gold teeth, broken tooth restoration andijan, dental crowns 2026",
     },
   },
   {
@@ -488,9 +488,9 @@ export const SERVICES_CATALOG = [
       ],
     },
     keywords: {
-      uz: "3d tish skanerlash andijon, raqamli stomatologiya, qoliplarsiz tish o'lchash, intraoral 3d skaner, virtual tabassum loyihasi, zamonaviy stomatologiya",
-      ru: "3d сканирование зубов андижан, цифровая стоматология, слепки без слепочной массы, интраоральный сканер, 3d моделирование улыбки",
-      en: "3d intraoral scanning andijan, digital dentistry, gag free optical impressions, digital smile design, modern dental care",
+      uz: "3d tish skanerlash andijon, raqamli stomatologiya, qoliplarsiz tish o'lchash, intraoral 3d skaner, 3d kt diagnostika, tish breketlari konsultatsiyasi, elaynerlar tish tekislash, virtual tabassum loyihasi, zamonaviy stomatologiya",
+      ru: "3d сканирование зубов андижан, цифровая стоматология, слепки без слепочной массы, интраоральный сканер, 3d кт диагностика, консультация по брекетам и элайнерам, 3d моделирование улыбки",
+      en: "3d intraoral scanning andijan, digital dentistry, gag free optical impressions, 3d cbct planning, braces and clear aligners consult, digital smile design, modern dental care",
     },
   },
   {
